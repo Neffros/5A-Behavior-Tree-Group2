@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-namespace BehaviorTree
+﻿namespace BehaviorTree
 {
     public class Sequence : Node
     {
