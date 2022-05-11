@@ -1,5 +1,8 @@
-﻿namespace BehaviorTree
+﻿using NodeReflectionEngine;
+
+namespace BehaviorTree
 {
+    [NodeTag(displayAsBlock: true)]
     public class Sequence : Node
     {
         public Sequence()

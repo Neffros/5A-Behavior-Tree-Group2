@@ -1,5 +1,8 @@
-﻿namespace BehaviorTree
+﻿using NodeReflectionEngine;
+
+namespace BehaviorTree
 {
+    [NodeTag]
     public class Selector : Node
     {
         public Selector() {}
