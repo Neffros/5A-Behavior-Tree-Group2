@@ -13,28 +13,21 @@ namespace BehaviorTree
     {
         protected NodeState State;
 
-        public Node Parent;
+        public Node Parent { get; private set; }
         protected List<Node> Children = new List<Node>();
 
         private readonly Dictionary<string, object> _dataContext = new Dictionary<string, object>();
 
-        protected Node()
+        public Node()
         {
             Parent = null;
         }
 
-        protected Node(List<Node> children)
-        {
-            foreach (var child in children)
-            {
-                Attach(child);
-            }
-        }
-
-        private void Attach(Node node)
+        public Node Attach(Node node)
         {
             node.Parent = this;
             Children.Add(node);
+            return this;
         }
 
         public virtual NodeState Evaluate() => NodeState.FAILURE;
@@ -65,7 +58,7 @@ namespace BehaviorTree
             return Parent?.GetData(key);
         }
 
-        protected bool ClearData(string key)
+        protected bool RemoveData(string key)
         {
             if (_dataContext.TryGetValue(key, out var value))
             {
@@ -76,7 +69,7 @@ namespace BehaviorTree
             var node = Parent;
             while (node != null)
             {
-                var cleared = node.ClearData(key);
+                var cleared = node.RemoveData(key);
                 if (cleared)
                     return true;
                 node = node.Parent;

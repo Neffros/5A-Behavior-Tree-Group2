@@ -5,7 +5,7 @@ namespace BehaviorTree
 {
     public class Sequence : Node
     {
-        public Sequence(List<Node> children) : base(children)
+        public Sequence()
         {
         }
         
