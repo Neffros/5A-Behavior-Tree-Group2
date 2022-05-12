@@ -16,6 +16,9 @@ namespace Infiltration
             var root = new Selector();
             var currentTransform = transform;
 
+            var inverter1 = new Inverter();
+            var checkGameState = new CheckGameState();
+            
             var sequence1 = new Sequence();
             var checkEnemyInRange = new CheckEnemyInRange(currentTransform, attackRange);
             var taskAttackPlayer = new TaskAttackPlayer(currentTransform, attackRange);
@@ -27,6 +30,10 @@ namespace Infiltration
 
             var taskGoPatrol = new TaskPatrol(currentTransform, waypoints, speed);
 
+            // Setup inverter1
+            root.Attach(inverter1);
+            inverter1.Attach(checkGameState);
+            
             // Setup sequence1
             root.Attach(sequence1);
             sequence1.Attach(checkEnemyInRange)

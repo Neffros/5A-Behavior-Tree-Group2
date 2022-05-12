@@ -1,21 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Infiltration
 {
     public class UIManager : MonoBehaviour
     {
         private bool _stateGame;
-        public static bool StateSet;
-
-        private void Start()
-        {
-            StateSet = false;
-        }
 
         private void OnGUI()
         {
-            if (!StateSet) return;
+            if (!GameManager.StateSet) return;
 
             var styleLabel = new GUIStyle
             {
@@ -40,12 +33,11 @@ namespace Infiltration
         public void GetStateGame(bool state)
         {
             _stateGame = state;
-            StateSet = true;
         }
 
         private static void ReloadScene()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.ReloadScene();
         }
     }
 }

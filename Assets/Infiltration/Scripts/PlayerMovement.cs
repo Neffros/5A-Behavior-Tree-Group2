@@ -18,7 +18,7 @@ namespace Infiltration
 
         public void Update()
         {
-            if (UIManager.StateSet)
+            if (GameManager.StateSet)
             {
                 return;
             }

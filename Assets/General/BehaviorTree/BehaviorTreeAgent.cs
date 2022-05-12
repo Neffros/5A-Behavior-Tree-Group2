@@ -14,10 +14,6 @@ namespace BehaviorTree
 
         private void Update()
         {
-            if (UIManager.StateSet)
-            {
-                return;
-            }
             _root?.Evaluate();
         }
 
