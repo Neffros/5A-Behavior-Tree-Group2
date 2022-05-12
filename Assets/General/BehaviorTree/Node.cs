@@ -15,7 +15,7 @@ namespace BehaviorTree
     /// <summary>
     /// Node that is connected to the root, will be evaluated by the agent
     /// </summary>
-    public class Node
+    public abstract class Node
     {
         /// <summary>
         /// Current state of the node
@@ -39,7 +39,7 @@ namespace BehaviorTree
         /// <summary>
         /// Creates a node with no parent
         /// </summary>
-        protected Node()
+        public Node()
         {
             Parent = null;
         }
@@ -63,7 +63,7 @@ namespace BehaviorTree
         public virtual NodeState Evaluate() => NodeState.FAILURE;
 
         /// <summary>
-        /// Add data to the dictionary
+        /// Adds data to the dictionary
         /// </summary>
         /// <param name="key">Key to be added</param>
         /// <param name="value">Value to be added</param>
