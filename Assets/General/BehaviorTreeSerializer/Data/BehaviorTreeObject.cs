@@ -37,7 +37,7 @@ namespace BehaviorTreeSerializer.Data
         {
             if (!this.IdToNode.ContainsKey(parentId))
                 throw new Exception("Parent not found");
-            if (!this.IdToNode.ContainsKey(childId))
+            if (!this.IdToNode[parentId].ChildrenIds.Contains(childId))
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Add(childId);
@@ -61,6 +61,36 @@ namespace BehaviorTreeSerializer.Data
                 this.AddChild(parentId.Value, node.Id);
 
             return node;
+        }
+
+        /// <summary>
+        /// Removes the child node from the parent
+        /// </summary>
+        /// <param name="parentId">ID of the parent node</param>
+        /// <param name="childId">ID of the child node</param>
+        public void RemoveChild(Guid parentId, Guid childId)
+        {
+            if (!this.IdToNode.ContainsKey(parentId))
+                throw new Exception("Parent not found");
+            if (!this.IdToNode[parentId].ChildrenIds.Contains(childId))
+                throw new Exception("Child not found");
+
+            this.IdToNode[parentId].ChildrenIds.Remove(childId);
+        }
+
+        /// <summary>
+        /// Removes the node from the tree
+        /// </summary>
+        /// <param name="nodeId">ID of the node</param>
+        public void RemoveNode(Guid nodeId)
+        {
+            if (!this.IdToNode.ContainsKey(nodeId))
+                throw new Exception("Node not found");
+
+            if (!this.IdToNode[nodeId].ParentId.Equals(Guid.Empty))
+                this.RemoveChild(this.IdToNode[nodeId].ParentId, nodeId);
+
+            this.IdToNode.Remove(nodeId);
         }
 
         /// <summary>
