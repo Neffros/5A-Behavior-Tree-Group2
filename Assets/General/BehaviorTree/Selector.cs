@@ -2,7 +2,7 @@
 
 namespace BehaviorTree
 {
-    [NodeTag]
+    [VisualNode]
     public class Selector : Node
     {
         public Selector() {}

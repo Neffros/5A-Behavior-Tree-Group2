@@ -6,7 +6,7 @@ namespace NodeReflection
     /// Custom attribute for custom node
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
-    public class NodeTagAttribute
+    public class VisualNodeAttribute
         : Attribute
     {
         #region Public Properties
@@ -36,7 +36,7 @@ namespace NodeReflection
         /// <param name="name">Node name, for display purposes</param>
         /// <param name="description">Node description</param>
         /// <param name="displayAsBlock">Indicates if the children should be displayed as a block</param>
-        public NodeTagAttribute(string name = "", string description = "", bool displayAsBlock = false)
+        public VisualNodeAttribute(string name = "", string description = "", bool displayAsBlock = false)
         {
             this.Name = name;
             this.Description = description;

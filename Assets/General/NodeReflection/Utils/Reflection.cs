@@ -12,8 +12,8 @@ namespace NodeReflection.Utils
     {
         #region Private Static Fields
 
-        private static readonly Type exposedAttributeType = typeof(ExposedAttribute);
-        private static readonly Type nodeAttributeType = typeof(NodeTagAttribute);
+        private static readonly Type exposedInVisualEditorAttributeType = typeof(ExposedInVisualEditorAttribute);
+        private static readonly Type visualNodeAttributeType = typeof(VisualNodeAttribute);
 
         #endregion
 
@@ -24,9 +24,9 @@ namespace NodeReflection.Utils
         /// </summary>
         /// <param name="propertyType">Property to check</param>
         /// <returns>An ExposedAttribute</returns>
-        public static ExposedAttribute GetExposedAttribute(PropertyInfo propertyType)
+        public static ExposedInVisualEditorAttribute GetExposedAttribute(PropertyInfo propertyType)
         {
-            return Attribute.GetCustomAttribute(propertyType, Reflection.exposedAttributeType, true) as ExposedAttribute;
+            return Attribute.GetCustomAttribute(propertyType, Reflection.exposedInVisualEditorAttributeType) as ExposedInVisualEditorAttribute;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace NodeReflection.Utils
         {
             return classType
                 .GetProperties()
-                .Where(property => property.GetCustomAttributes(true).OfType<ExposedAttribute>().Any());
+                .Where(property => property.GetCustomAttributes().OfType<ExposedInVisualEditorAttribute>().Any());
         }
 
         /// <summary>
@@ -46,9 +46,9 @@ namespace NodeReflection.Utils
         /// </summary>
         /// <param name="classType">Class to check</param>
         /// <returns>A NodeAttribute</returns>
-        public static NodeTagAttribute GetNodeAttribute(Type classType)
+        public static VisualNodeAttribute GetNodeAttribute(Type classType)
         {
-            return Attribute.GetCustomAttribute(classType, Reflection.nodeAttributeType, true) as NodeTagAttribute;
+            return Attribute.GetCustomAttribute(classType, Reflection.visualNodeAttributeType) as VisualNodeAttribute;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace NodeReflection.Utils
         {
             return assembly
                 .GetTypes()
-                .Where(type => type.GetCustomAttributes(true).OfType<NodeTagAttribute>().Any());
+                .Where(type => type.GetCustomAttributes().OfType<VisualNodeAttribute>().Any());
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace NodeReflection.Utils
                 .CurrentDomain
                 .GetAssemblies()
                 .SelectMany(x => x.GetTypes())
-                .Where(type => type.GetCustomAttributes(true).OfType<NodeTagAttribute>().Any());
+                .Where(type => type.GetCustomAttributes().OfType<VisualNodeAttribute>().Any());
         }
 
         #endregion

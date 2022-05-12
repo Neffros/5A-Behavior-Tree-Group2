@@ -6,7 +6,7 @@ namespace NodeReflection
     /// Custom attribute for node's properties
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    public class ExposedAttribute
+    public class ExposedInVisualEditorAttribute
         : Attribute
     {
         #region Public Properties
@@ -24,7 +24,7 @@ namespace NodeReflection
         /// Class constructor
         /// </summary>
         /// <param name="name">Property name, for display purposes</param>
-        public ExposedAttribute(string name = "")
+        public ExposedInVisualEditorAttribute(string name = "")
         {
             this.Name = name;
         }
