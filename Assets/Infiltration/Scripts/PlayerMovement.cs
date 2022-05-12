@@ -1,3 +1,4 @@
+using Infiltration;
 using UnityEngine;
 
 namespace Infiltration
@@ -10,6 +11,7 @@ namespace Infiltration
         [SerializeField] private float speed = 6f;
         [SerializeField] private float turnSmoothTime = .1f;
         [SerializeField] private float gravity = 9.81f;
+        [SerializeField] private EventBool stateGameEvent;
 
         private Vector3 _velocity;
 
@@ -17,6 +19,10 @@ namespace Infiltration
 
         public void Update()
         {
+            if (UIManager.StateSet)
+            {
+                return;
+            }
             var horizontal = Input.GetAxisRaw("Horizontal");
             var vertical = Input.GetAxisRaw("Vertical");
             var direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -35,6 +41,11 @@ namespace Infiltration
 
             _velocity.y -= gravity * Time.deltaTime;
             controller.Move(_velocity * Time.deltaTime);
+        }
+
+        public void GetHit()
+        {
+            stateGameEvent.Raise(false);
         }
     }
 }

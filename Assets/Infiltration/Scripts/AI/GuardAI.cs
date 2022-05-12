@@ -1,7 +1,7 @@
 ﻿using BehaviorTree;
 using UnityEngine;
 
-namespace Infiltration.Scripts
+namespace Infiltration
 {
     public class GuardAI : BehaviorTreeAgent
     {
@@ -17,8 +17,8 @@ namespace Infiltration.Scripts
             var currentTransform = transform;
 
             var sequence1 = new Sequence();
-            var checkEnemyInRange = new CheckEnemyInRange();
-            var taskAttackPlayer = new TaskAttackPlayer();
+            var checkEnemyInRange = new CheckEnemyInRange(currentTransform);
+            var taskAttackPlayer = new TaskAttackPlayer(currentTransform);
 
             var sequence2 = new Sequence();
             var checkEnemyInFOVRange =

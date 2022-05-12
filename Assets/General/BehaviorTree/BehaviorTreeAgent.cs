@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Infiltration;
+using UnityEngine;
 
 namespace BehaviorTree
 {
@@ -13,6 +14,10 @@ namespace BehaviorTree
 
         private void Update()
         {
+            if (UIManager.StateSet)
+            {
+                return;
+            }
             _root?.Evaluate();
         }
 

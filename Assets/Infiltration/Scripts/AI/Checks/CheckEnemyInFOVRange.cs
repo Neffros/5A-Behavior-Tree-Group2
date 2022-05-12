@@ -1,5 +1,5 @@
 using BehaviorTree;
-using Infiltration.Scripts;
+using Infiltration;
 using UnityEngine;
 
 namespace Infiltration
@@ -7,9 +7,9 @@ namespace Infiltration
     public class CheckEnemyInFOVRange : Node
     {
         private readonly Transform _transform;
-        private const int EnemyLayerMask = 1 << 6;
+        private const int PlayerLayerMask = 1 << 6;
 
-        private SpriteRenderer _renderer;
+        private readonly SpriteRenderer _renderer;
         public CheckEnemyInFOVRange(Transform transform, SpriteRenderer renderer)
         {
             _transform = transform;
@@ -33,7 +33,7 @@ namespace Infiltration
 
             if (target == null)
             {
-                var colliders = Physics.OverlapSphere(_transform.position, GuardAI.FOVRange, EnemyLayerMask);
+                var colliders = Physics.OverlapSphere(_transform.position, GuardAI.FOVRange, PlayerLayerMask);
                 if (colliders.Length > 0)
                 {
                     Parent.Parent.SetData("target", colliders[0].transform);
