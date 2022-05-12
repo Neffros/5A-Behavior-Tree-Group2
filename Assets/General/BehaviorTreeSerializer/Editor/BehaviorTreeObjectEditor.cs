@@ -1,5 +1,4 @@
-﻿using System;
-using BehaviorTreeSerializer.Data;
+﻿using BehaviorTreeSerializer.Data;
 using UnityEditor;
 using UnityEngine;
 using VisualEditor.Editor;

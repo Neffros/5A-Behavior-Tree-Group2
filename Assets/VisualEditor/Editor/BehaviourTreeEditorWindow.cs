@@ -8,7 +8,7 @@ namespace VisualEditor.Editor {
         private BehaviourTreeEditorGraphView _graphView;
         private static BehaviorTreeObject _targetObject;
 
-        private VisualNode _node;
+        private static bool _guiCreated;
         
         /// <summary>
         /// Opens visual editor and loads targetObject
@@ -17,10 +17,17 @@ namespace VisualEditor.Editor {
             _targetObject = targetObject;
             BehaviourTreeEditorWindow wnd = GetWindow<BehaviourTreeEditorWindow>();
             wnd.titleContent = new GUIContent("BehaviourTreeEditorWindow");
+            if (!_guiCreated) {
+                wnd.CreateGUI();
+                _guiCreated = true;
+            }
         }
 
-        public void CreateGUI()
-        {
+        public void CreateGUI() {
+            if (_targetObject == null) {
+                rootVisualElement.Clear();
+                return;
+            }
             // Each editor window contains a root VisualElement object
             VisualElement root = rootVisualElement;
 

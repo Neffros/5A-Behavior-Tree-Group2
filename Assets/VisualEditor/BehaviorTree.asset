@@ -15,8 +15,18 @@ MonoBehaviour:
   _idToNode:
     m_keys:
     - f93f083c-f8c1-4348-ae02-4f6f860d74e5
+    - ac90c572-3435-480d-b813-9dbdb50b3961
+    - f55cf1f3-a261-4a7b-8967-c89a43c39c50
     m_values:
     - ChildrenIds: []
       Id: f93f083c-f8c1-4348-ae02-4f6f860d74e5
       NodeTypeInternalName: Sequence
+      ParentId: 
+    - ChildrenIds: []
+      Id: ac90c572-3435-480d-b813-9dbdb50b3961
+      NodeTypeInternalName: Sequence
+      ParentId: 
+    - ChildrenIds: []
+      Id: f55cf1f3-a261-4a7b-8967-c89a43c39c50
+      NodeTypeInternalName: Selector
       ParentId: 

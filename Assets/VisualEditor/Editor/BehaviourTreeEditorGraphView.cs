@@ -14,6 +14,9 @@ namespace VisualEditor.Editor {
         private Engine _nodeReflectionEngine;
 
         private List<VisualNode> _nodes;
+        
+        private VisualNode _selectedNode;
+        private Vector2 _mousePosOnDown;
 
         public BehaviourTreeEditorGraphView(StyleSheet nodeStyleSheet, BehaviorTreeObject behaviorTreeObject) {
             _nodeStyleSheet = nodeStyleSheet;
@@ -43,6 +46,8 @@ namespace VisualEditor.Editor {
             _nodeReflectionEngine.Update();
             
             RepaintGraph();
+            
+            RegisterCallbacks();
         }
 
         /// <summary>
@@ -53,6 +58,9 @@ namespace VisualEditor.Editor {
             _nodes.Clear();
         }
 
+        /// <summary>
+        /// Updates graph repaint to redraw from data
+        /// </summary>
         private void RepaintGraph() {
             CleanGUI();
             foreach (var nodeEditorInstanceMetadata in _behaviorTreeObject.IdToNode.Values) {
@@ -64,6 +72,10 @@ namespace VisualEditor.Editor {
                         top = nodeEditorInstanceMetadata.PositionInEditor.y
                     }
                 };
+                node.RegisterCallback<MouseDownEvent>(evt => {
+                    _mousePosOnDown = evt.originalMousePosition;
+                    _selectedNode = node;
+                });
 
                 contentViewContainer.Add(node);
                 _nodes.Add(node);
@@ -86,6 +98,31 @@ namespace VisualEditor.Editor {
             }
         }
 
+        /// <summary>
+        /// Registers callbacks for mouse events
+        /// </summary>
+        private void RegisterCallbacks() {
+            UnregisterCallbacks();
+            RegisterCallback<MouseMoveEvent>(OnMouseMoved);
+            RegisterCallback<MouseUpEvent>(OnMouseUp);
+        }
+
+
+        private void UnregisterCallbacks() {
+            UnregisterCallback<MouseMoveEvent>(OnMouseMoved);
+            UnregisterCallback<MouseUpEvent>(OnMouseUp);
+        }
+
+        private void OnMouseMoved(MouseMoveEvent evt) {
+            if (_selectedNode == null) return;
+            Vector2 movement = evt.mouseDelta / viewTransform.scale;
+            MoveNode(_selectedNode, movement);
+        }
+
+        private void OnMouseUp(MouseUpEvent evt) {
+            _selectedNode = null;
+        }
+        
         public VisualNode GetNodeAtPosition(Vector2 position) {
             foreach (var node in _nodes) {
                 if (node.ContainsPoint(position)) return node;
@@ -93,7 +130,7 @@ namespace VisualEditor.Editor {
             return null;
         }
 
-        public void MoveNode(VisualNode node, Vector2 delta) {
+        private void MoveNode(VisualNode node, Vector2 delta) {
             node.Move(delta);
             _behaviorTreeObject.IdToNode[node.Guid].PositionInEditor += delta;
         }

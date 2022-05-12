@@ -51,5 +51,9 @@ namespace VisualEditor.Editor {
             style.left = style.left.value.value + delta.x;
             style.top = style.top.value.value + delta.y;
         }
+
+        public void OnMouseClick() {
+            
+        }
     }
 }
