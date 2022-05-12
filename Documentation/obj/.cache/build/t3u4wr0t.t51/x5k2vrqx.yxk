@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -73,7 +73,7 @@
   
   <h1 id="BehaviorTree_Node" data-uid="BehaviorTree.Node" class="text-break">Class Node
   </h1>
-  <div class="markdown level0 summary"><p>Node class does things and stuff</p>
+  <div class="markdown level0 summary"><p sourcefile="_api/BehaviorTree.Node.yml" sourcestartlinenumber="2">Node class does things and stuff</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -119,7 +119,7 @@
   
   <a id="BehaviorTree_Node__ctor_" data-uid="BehaviorTree.Node.#ctor*"></a>
   <h4 id="BehaviorTree_Node__ctor" data-uid="BehaviorTree.Node.#ctor">Node()</h4>
-  <div class="markdown level1 summary"><p>it does things</p>
+  <div class="markdown level1 summary"><p sourcefile="_api/BehaviorTree.Node.yml" sourcestartlinenumber="2">it does things</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -209,7 +209,7 @@
   
   <a id="BehaviorTree_Node_Attach_" data-uid="BehaviorTree.Node.Attach*"></a>
   <h4 id="BehaviorTree_Node_Attach_BehaviorTree_Node_" data-uid="BehaviorTree.Node.Attach(BehaviorTree.Node)">Attach(Node)</h4>
-  <div class="markdown level1 summary"><p>attaches nodes</p>
+  <div class="markdown level1 summary"><p sourcefile="_api/BehaviorTree.Node.yml" sourcestartlinenumber="2">attaches nodes</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

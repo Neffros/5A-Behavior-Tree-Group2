@@ -25,10 +25,12 @@ items:
   source:
     id: Node
     path: ''
-    startLine: 32
+    startLine: 34
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nNode class does things and stuff\n"
+  example: []
   syntax:
     content: public class Node
     content.vb: Public Class Node
@@ -65,7 +67,7 @@ items:
   source:
     id: State
     path: ''
-    startLine: 34
+    startLine: 36
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -92,7 +94,7 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 36
+    startLine: 38
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -123,7 +125,7 @@ items:
   source:
     id: Children
     path: ''
-    startLine: 37
+    startLine: 39
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -150,7 +152,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 44
+    startLine: 46
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -178,7 +180,7 @@ items:
   source:
     id: Attach
     path: ''
-    startLine: 54
+    startLine: 56
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -213,7 +215,7 @@ items:
   source:
     id: Evaluate
     path: ''
-    startLine: 61
+    startLine: 63
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -243,7 +245,7 @@ items:
   source:
     id: SetData
     path: ''
-    startLine: 63
+    startLine: 65
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -274,7 +276,7 @@ items:
   source:
     id: SetDataToRoot
     path: ''
-    startLine: 68
+    startLine: 70
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -305,7 +307,7 @@ items:
   source:
     id: GetData
     path: ''
-    startLine: 79
+    startLine: 81
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -336,7 +338,7 @@ items:
   source:
     id: RemoveData
     path: ''
-    startLine: 89
+    startLine: 91
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree

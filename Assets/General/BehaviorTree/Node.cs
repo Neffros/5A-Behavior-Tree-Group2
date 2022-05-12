@@ -8,7 +8,9 @@ namespace BehaviorTree
         SUCCESS,
         FAILURE
     }
-
+/// <summary>
+/// Node class does things and stuff
+/// </summary>
     public class Node
     {
         protected NodeState State;
