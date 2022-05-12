@@ -51,20 +51,35 @@ namespace NodeReflection
             if (!Engine.Metadata.ContainsKey(internalName))
                 throw new Exception("Type not existing");
 
-            return Engine.Metadata[internalName]
+            var metadata = Engine.Metadata[internalName];
+
+            return metadata
                 .NameToType
-                .Select((pair) =>
+                .Zip(metadata.NameToDefaultValue, (nameAndType, nameAndDefaultValue) =>
+                    (nameAndType.Key, nameAndType.Value, nameAndDefaultValue.Value)
+                )
+                .Select((data) =>
                 {
-                    switch (pair.Value)
+                    var (key, type, defaultValue) = data;
+
+                    switch (type)
                     {
                         case ExposedPropertyTypeEnum.BOOL:
-                            return new KeyValuePair<string, object>(pair.Key, false);
+                            if (defaultValue is not bool)
+                                throw new Exception("Default value uncompatible");
+                            return new KeyValuePair<string, object>(key, defaultValue ?? false);
                         case ExposedPropertyTypeEnum.FLOAT:
-                            return new KeyValuePair<string, object>(pair.Key, 0);
+                            if (defaultValue is not float)
+                                throw new Exception("Default value uncompatible");
+                            return new KeyValuePair<string, object>(key, defaultValue ?? 0);
                         case ExposedPropertyTypeEnum.INT:
-                            return new KeyValuePair<string, object>(pair.Key, 0);
+                            if (defaultValue is not int)
+                                throw new Exception("Default value uncompatible");
+                            return new KeyValuePair<string, object>(key, defaultValue ?? 0);
                         case ExposedPropertyTypeEnum.STRING:
-                            return new KeyValuePair<string, object>(pair.Key, string.Empty);
+                            if (defaultValue is not string)
+                                throw new Exception("Default value uncompatible");
+                            return new KeyValuePair<string, object>(key, defaultValue ?? string.Empty);
                         default:
                             throw new Exception("Unmanaged property type");
                     }

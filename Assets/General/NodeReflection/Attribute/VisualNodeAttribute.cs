@@ -26,6 +26,11 @@ namespace NodeReflection
         /// </summary>
         public string Name { get; private set; }
 
+        /// <summary>
+        /// Gets the path of the node category
+        /// </summary>
+        public string Path { get; private set; }
+
         #endregion
 
         #region Constructor
@@ -36,11 +41,13 @@ namespace NodeReflection
         /// <param name="name">Node name, for display purposes</param>
         /// <param name="description">Node description</param>
         /// <param name="displayAsBlock">Indicates if the children should be displayed as a block</param>
-        public VisualNodeAttribute(string name = "", string description = "", bool displayAsBlock = false)
+        /// <param name="path">Path of the node in the editor</param>
+        public VisualNodeAttribute(string name = "", string description = "", bool displayAsBlock = false, string path = "Custom")
         {
-            this.Name = name;
             this.Description = description;
             this.DisplayAsBlock = displayAsBlock;
+            this.Name = name;
+            this.Path = path;
         }
 
         #endregion
