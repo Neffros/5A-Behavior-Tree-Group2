@@ -16,7 +16,7 @@ namespace Infiltration
 
         public override void OnInitialized()
         {
-            this._renderer = this.Agent.GetComponentInChildren<SpriteRenderer>();
+            this._renderer = this.Agent.GetComponent<GuardSceneData>().FieldOfView;
         }
 
         public override NodeState Evaluate()
@@ -25,7 +25,7 @@ namespace Infiltration
 
             if (target != null)
             {
-                if (Vector3.Distance(this.Agent.transform.position, ((Transform)target).position) > 8f)
+                if (Vector3.Distance(this.Agent.transform.position, target.position) > 8f)
                 {
                     RemoveData("target");
                     _renderer.color = Color.blue;

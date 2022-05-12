@@ -495,6 +495,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+--- !u!1 &565136608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8375053457969573367, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+  m_PrefabInstance: {fileID: 565136607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &565136609 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8375053458986646280, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+  m_PrefabInstance: {fileID: 565136607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &565136610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565136608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3b677d428f3be4982bab4472d40c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldOfView: {fileID: 565136609}
+  Waypoints:
+  - {fileID: 405053884}
+  - {fileID: 395924347}
 --- !u!1001 &738057659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1049,3 +1075,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+--- !u!1 &8375053457585384669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8375053457969573367, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+  m_PrefabInstance: {fileID: 8375053457585384668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8375053457585384670 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8375053458986646280, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+  m_PrefabInstance: {fileID: 8375053457585384668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8375053457585384671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375053457585384669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3b677d428f3be4982bab4472d40c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldOfView: {fileID: 8375053457585384670}
+  Waypoints:
+  - {fileID: 908598453}
+  - {fileID: 1756825121}
