@@ -1,5 +1,8 @@
-﻿namespace BehaviorTree
+﻿using NodeReflection;
+
+namespace BehaviorTree
 {
+    [VisualNode]
     public class Inverter : Node
     {
         public override NodeState Evaluate()

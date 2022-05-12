@@ -26,7 +26,7 @@ namespace NodeReflection.Utils
         /// <returns>An ExposedAttribute</returns>
         public static ExposedInVisualEditorAttribute GetExposedAttribute(PropertyInfo propertyType)
         {
-            return Attribute.GetCustomAttribute(propertyType, Reflection.exposedInVisualEditorAttributeType) as ExposedInVisualEditorAttribute;
+            return Attribute.GetCustomAttribute(propertyType, Reflection.exposedInVisualEditorAttributeType, true) as ExposedInVisualEditorAttribute;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace NodeReflection.Utils
         {
             return classType
                 .GetProperties()
-                .Where(property => property.GetCustomAttributes().OfType<ExposedInVisualEditorAttribute>().Any());
+                .Where(property => property.GetCustomAttributes(true).OfType<ExposedInVisualEditorAttribute>().Any());
         }
 
         /// <summary>

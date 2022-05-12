@@ -1,7 +1,9 @@
 ﻿using BehaviorTree;
+using NodeReflection;
 
 namespace Infiltration
 {
+    [VisualNode]
     public class CheckGameState : Node
     {
         public override NodeState Evaluate()
