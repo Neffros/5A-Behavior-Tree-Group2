@@ -1,5 +1,8 @@
-﻿namespace BehaviorTree
+﻿using NodeReflection;
+
+namespace BehaviorTree
 {
+    [VisualNode]
     public class Selector : Node
     {
         public Selector() {}

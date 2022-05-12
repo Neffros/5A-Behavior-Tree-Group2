@@ -1,11 +1,14 @@
-﻿namespace BehaviorTree
+﻿using NodeReflection;
+
+namespace BehaviorTree
 {
+    [VisualNode(displayAsBlock: true)]
     public class Sequence : Node
     {
         public Sequence()
         {
         }
-        
+
         public override NodeState Evaluate()
         {
             var anyChildIsRunning = false;
