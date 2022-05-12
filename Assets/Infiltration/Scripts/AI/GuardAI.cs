@@ -5,9 +5,9 @@ namespace Infiltration
 {
     public class GuardAI : BehaviorTreeAgent
     {
-        public const float AttackRange = 2f;
-        public const float FOVRange = 6f;
-        public const float Speed = 6f;
+        [SerializeField] private float attackRange;
+        [SerializeField] private float fovRange;
+        [SerializeField] private float speed;
         [SerializeField] private Transform[] waypoints;
         [SerializeField] private SpriteRenderer fieldOfView;
 
@@ -17,15 +17,15 @@ namespace Infiltration
             var currentTransform = transform;
 
             var sequence1 = new Sequence();
-            var checkEnemyInRange = new CheckEnemyInRange(currentTransform);
-            var taskAttackPlayer = new TaskAttackPlayer(currentTransform);
+            var checkEnemyInRange = new CheckEnemyInRange(currentTransform, attackRange);
+            var taskAttackPlayer = new TaskAttackPlayer(currentTransform, attackRange);
 
             var sequence2 = new Sequence();
             var checkEnemyInFOVRange =
-                new CheckEnemyInFOVRange(currentTransform, fieldOfView);
-            var taskGoTowardEnemy = new TaskGoTowardEnemy(currentTransform);
+                new CheckEnemyInFOVRange(currentTransform, fieldOfView, fovRange);
+            var taskGoTowardEnemy = new TaskGoTowardEnemy(currentTransform, speed);
 
-            var taskGoPatrol = new TaskPatrol(currentTransform, waypoints);
+            var taskGoPatrol = new TaskPatrol(currentTransform, waypoints, speed);
 
             // Setup sequence1
             root.Attach(sequence1);
@@ -47,9 +47,9 @@ namespace Infiltration
             var currentPosition = transform.position;
 
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(currentPosition, AttackRange);
+            Gizmos.DrawWireSphere(currentPosition, attackRange);
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(currentPosition, FOVRange);
+            Gizmos.DrawWireSphere(currentPosition, fovRange);
         }
     }
 }

@@ -9,10 +9,12 @@ namespace Infiltration
         private const int PlayerLayerMask = 1 << 6;
 
         private readonly SpriteRenderer _renderer;
-        public CheckEnemyInFOVRange(Transform transform, SpriteRenderer renderer)
+        private readonly float _fovRange;
+        public CheckEnemyInFOVRange(Transform transform, SpriteRenderer renderer, float fovRange)
         {
             _transform = transform;
             _renderer = renderer;
+            _fovRange = fovRange;
         }
 
         public override NodeState Evaluate()
@@ -21,7 +23,7 @@ namespace Infiltration
 
             if (target != null)
             {
-                if (Vector3.Distance(_transform.position, ((Transform)target).position) > 10f)
+                if (Vector3.Distance(_transform.position, ((Transform)target).position) > 8f)
                 {
                     RemoveData("target");
                     _renderer.color = Color.blue;
@@ -32,7 +34,7 @@ namespace Infiltration
 
             if (target == null)
             {
-                var colliders = Physics.OverlapSphere(_transform.position, GuardAI.FOVRange, PlayerLayerMask);
+                var colliders = Physics.OverlapSphere(_transform.position, _fovRange, PlayerLayerMask);
                 if (colliders.Length > 0)
                 {
                     Parent.Parent.SetData("target", colliders[0].transform);

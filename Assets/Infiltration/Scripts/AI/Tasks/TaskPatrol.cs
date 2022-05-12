@@ -13,10 +13,12 @@ namespace Infiltration
         private float _waitCounter;
         private bool _waiting;
 
-        public TaskPatrol(Transform transform, Transform[] waypoints)
+        private readonly float _speed;
+        public TaskPatrol(Transform transform, Transform[] waypoints, float speed)
         {
             _transform = transform;
             _waypoints = waypoints;
+            _speed = speed;
         }
 
         public override NodeState Evaluate()
@@ -43,7 +45,7 @@ namespace Infiltration
                 else
                 {
                     var position = wp.position;
-                    _transform.position = Vector3.MoveTowards(_transform.position, position, GuardAI.Speed * Time.deltaTime);
+                    _transform.position = Vector3.MoveTowards(_transform.position, position, _speed * Time.deltaTime);
                     _transform.LookAt(position);
                 }
             }

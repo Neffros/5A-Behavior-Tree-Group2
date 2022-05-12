@@ -6,9 +6,11 @@ namespace Infiltration
     public class CheckEnemyInRange : Node
     {
         private readonly Transform _transform;
-        public CheckEnemyInRange(Transform transform)
+        private readonly float _attackRange;
+        public CheckEnemyInRange(Transform transform, float attackRange)
         {
             _transform = transform;
+            _attackRange = attackRange;
         }
         public override NodeState Evaluate()
         {
@@ -22,7 +24,7 @@ namespace Infiltration
 
             var targetPos = (Transform)target;
 
-            if (Vector3.Distance(_transform.position, targetPos.position) <= GuardAI.AttackRange)
+            if (Vector3.Distance(_transform.position, targetPos.position) <= _attackRange)
             {
                 State = NodeState.SUCCESS;
                 return State;
