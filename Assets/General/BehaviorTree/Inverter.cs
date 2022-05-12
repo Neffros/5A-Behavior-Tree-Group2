@@ -3,8 +3,15 @@
 namespace BehaviorTree
 {
     [VisualNode]
+    /// <summary>
+    /// Inverts the result of the child node.
+    /// </summary>
     public class Inverter : Node
     {
+        /// <summary>
+        /// Evaluate the node
+        /// </summary>
+        /// <returns>Return SUCCESS if a child node failed, FAILURE if a child node succeeded, or RUNNING</returns>
         public override NodeState Evaluate()
         {
             var anyChildIsRunning = false;
