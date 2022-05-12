@@ -1,9 +1,17 @@
-﻿namespace BehaviorTree
+﻿using NodeReflection;
+
+namespace BehaviorTree
 {
+    /// <summary>
+    /// Selector nodes contain one or more children. Upon execution, it executes every child until one of them succeeds, otherwise it fails
+    /// </summary>
+    [VisualNode]
     public class Selector : Node
     {
-        public Selector() {}
-
+        /// <summary>
+        /// Evaluate the node
+        /// </summary>
+        /// <returns>Return SUCCESS if a child node succeeded, RUNNING if a child node is running, or FAILURE after every evaluated children </returns>
         public override NodeState Evaluate()
         {
             foreach (var node in Children)
