@@ -7,6 +7,8 @@ namespace VisualEditor.Editor {
     public class BehaviourTreeEditorWindow : EditorWindow {
         private BehaviourTreeEditorGraphView _graphView;
         private static BehaviorTreeObject _targetObject;
+
+        private VisualNode _node;
         
         /// <summary>
         /// Opens visual editor and loads targetObject
@@ -37,5 +39,16 @@ namespace VisualEditor.Editor {
             viewPortContent.Add(_graphView);
             _graphView.CreateGUI();
         }
+
+        /*private void OnGUI() {
+            Event current = Event.current;
+            if (current.type == EventType.MouseDown) {
+                Debug.Log("MOUSE DOWN");
+                _node = _graphView.GetNodeAtPosition(current.mousePosition);
+            } else if (current.type == EventType.MouseDrag && _node != null) {
+                Debug.Log("MOVING NODE");
+                _graphView.MoveNode(_node, current.delta);
+            }
+        }*/
     }
 }

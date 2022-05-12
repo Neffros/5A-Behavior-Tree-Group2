@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using BehaviorTreeSerializer.Data;
 using NodeReflection;
-using NodeReflection.Data;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -14,10 +12,13 @@ namespace VisualEditor.Editor {
         private BehaviorTreeObject _behaviorTreeObject;
 
         private Engine _nodeReflectionEngine;
-        
+
+        private List<VisualNode> _nodes;
+
         public BehaviourTreeEditorGraphView(StyleSheet nodeStyleSheet, BehaviorTreeObject behaviorTreeObject) {
             _nodeStyleSheet = nodeStyleSheet;
             _behaviorTreeObject = behaviorTreeObject;
+            _nodes = new List<VisualNode>();
         }
         
         private class CustomGridBackground : GridBackground{}
@@ -49,6 +50,7 @@ namespace VisualEditor.Editor {
         /// </summary>
         private void CleanGUI() {
             contentViewContainer.Clear();
+            _nodes.Clear();
         }
 
         private void RepaintGraph() {
@@ -56,14 +58,15 @@ namespace VisualEditor.Editor {
             foreach (var nodeEditorInstanceMetadata in _behaviorTreeObject.IdToNode.Values) {
                 var nodeType = nodeEditorInstanceMetadata.NodeTypeInternalName;
                 var nodeMetaData = _nodeReflectionEngine.Metadata[nodeType];
-                var node = new VisualNode(nodeMetaData, _nodeStyleSheet) {
+                var node = new VisualNode(nodeMetaData, _nodeStyleSheet, nodeEditorInstanceMetadata.Id) {
                     style = {
-                        top = nodeEditorInstanceMetadata.PositionInEditor.x,
-                        left = nodeEditorInstanceMetadata.PositionInEditor.y
+                        left = nodeEditorInstanceMetadata.PositionInEditor.x,
+                        top = nodeEditorInstanceMetadata.PositionInEditor.y
                     }
                 };
 
                 contentViewContainer.Add(node);
+                _nodes.Add(node);
             }
         }
 
@@ -81,6 +84,18 @@ namespace VisualEditor.Editor {
                     RepaintGraph();
                 });
             }
+        }
+
+        public VisualNode GetNodeAtPosition(Vector2 position) {
+            foreach (var node in _nodes) {
+                if (node.ContainsPoint(position)) return node;
+            }
+            return null;
+        }
+
+        public void MoveNode(VisualNode node, Vector2 delta) {
+            node.Move(delta);
+            _behaviorTreeObject.IdToNode[node.Guid].PositionInEditor += delta;
         }
     }
 }

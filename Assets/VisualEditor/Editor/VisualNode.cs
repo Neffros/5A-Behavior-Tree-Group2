@@ -1,11 +1,15 @@
 ﻿using NodeReflection.Data;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace VisualEditor.Editor {
     public class VisualNode : VisualElement {
         private readonly TextElement _nodeText;
+        private readonly string _guid;
+        public string Guid => _guid;
 
-        public VisualNode(NodeMetadata data, StyleSheet nodeStyleSheet) : base(){
+        public VisualNode(NodeMetadata data, StyleSheet nodeStyleSheet, string guid) {
+            _guid = guid;
             AddToClassList("node");
             styleSheets.Add(nodeStyleSheet);
             
@@ -41,6 +45,11 @@ namespace VisualEditor.Editor {
 
         public void SetText(string text) {
             _nodeText.text = text;
+        }
+
+        public void Move(Vector2 delta) {
+            style.left = style.left.value.value + delta.x;
+            style.top = style.top.value.value + delta.y;
         }
     }
 }
