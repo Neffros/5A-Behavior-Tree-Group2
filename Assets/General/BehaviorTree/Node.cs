@@ -18,11 +18,19 @@ namespace BehaviorTree
 
         private readonly Dictionary<string, object> _dataContext = new Dictionary<string, object>();
 
+        /// <summary>
+        /// it does things
+        /// </summary>
         public Node()
         {
             Parent = null;
         }
 
+        /// <summary>
+        /// attaches nodes
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public Node Attach(Node node)
         {
             node.Parent = this;

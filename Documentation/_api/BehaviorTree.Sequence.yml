@@ -1,0 +1,700 @@
+### YamlMime:ManagedReference
+items:
+- uid: BehaviorTree.Sequence
+  commentId: T:BehaviorTree.Sequence
+  id: Sequence
+  parent: BehaviorTree
+  children:
+  - BehaviorTree.Sequence.#ctor
+  - BehaviorTree.Sequence.Evaluate
+  langs:
+  - csharp
+  - vb
+  name: Sequence
+  nameWithType: Sequence
+  fullName: BehaviorTree.Sequence
+  type: Class
+  source:
+    id: Sequence
+    path: ''
+    startLine: 142
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: 'public class Sequence : Node'
+    content.vb: >-
+      Public Class Sequence
+          Inherits Node
+  inheritance:
+  - System.Object
+  - BehaviorTree.Node
+  inheritedMembers:
+  - BehaviorTree.Node.State
+  - BehaviorTree.Node.Parent
+  - BehaviorTree.Node.Children
+  - BehaviorTree.Node.Attach(BehaviorTree.Node)
+  - BehaviorTree.Node.SetData(System.String,System.Object)
+  - BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+  - BehaviorTree.Node.GetData(System.String)
+  - BehaviorTree.Node.RemoveData(System.String)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: BehaviorTree.Sequence.#ctor
+  commentId: M:BehaviorTree.Sequence.#ctor
+  id: '#ctor'
+  parent: BehaviorTree.Sequence
+  langs:
+  - csharp
+  - vb
+  name: Sequence()
+  nameWithType: Sequence.Sequence()
+  fullName: BehaviorTree.Sequence.Sequence()
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 144
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: public Sequence()
+    content.vb: Public Sub New
+  overload: BehaviorTree.Sequence.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: BehaviorTree.Sequence.Evaluate
+  commentId: M:BehaviorTree.Sequence.Evaluate
+  id: Evaluate
+  parent: BehaviorTree.Sequence
+  langs:
+  - csharp
+  - vb
+  name: Evaluate()
+  nameWithType: Sequence.Evaluate()
+  fullName: BehaviorTree.Sequence.Evaluate()
+  type: Method
+  source:
+    id: Evaluate
+    path: ''
+    startLine: 148
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: public override NodeState Evaluate()
+    return:
+      type: BehaviorTree.NodeState
+    content.vb: Public Overrides Function Evaluate As NodeState
+  overridden: BehaviorTree.Node.Evaluate
+  overload: BehaviorTree.Sequence.Evaluate*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: BehaviorTree.Node
+  commentId: T:BehaviorTree.Node
+  parent: BehaviorTree
+  name: Node
+  nameWithType: Node
+  fullName: BehaviorTree.Node
+- uid: BehaviorTree.Node.State
+  commentId: F:BehaviorTree.Node.State
+  parent: BehaviorTree.Node
+  name: State
+  nameWithType: Node.State
+  fullName: BehaviorTree.Node.State
+- uid: BehaviorTree.Node.Parent
+  commentId: P:BehaviorTree.Node.Parent
+  parent: BehaviorTree.Node
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: BehaviorTree.Node.Parent
+- uid: BehaviorTree.Node.Children
+  commentId: F:BehaviorTree.Node.Children
+  parent: BehaviorTree.Node
+  name: Children
+  nameWithType: Node.Children
+  fullName: BehaviorTree.Node.Children
+- uid: BehaviorTree.Node.Attach(BehaviorTree.Node)
+  commentId: M:BehaviorTree.Node.Attach(BehaviorTree.Node)
+  parent: BehaviorTree.Node
+  name: Attach(Node)
+  nameWithType: Node.Attach(Node)
+  fullName: BehaviorTree.Node.Attach(BehaviorTree.Node)
+  spec.csharp:
+  - uid: BehaviorTree.Node.Attach(BehaviorTree.Node)
+    name: Attach
+    nameWithType: Node.Attach
+    fullName: BehaviorTree.Node.Attach
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: BehaviorTree.Node
+    name: Node
+    nameWithType: Node
+    fullName: BehaviorTree.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.Attach(BehaviorTree.Node)
+    name: Attach
+    nameWithType: Node.Attach
+    fullName: BehaviorTree.Node.Attach
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: BehaviorTree.Node
+    name: Node
+    nameWithType: Node
+    fullName: BehaviorTree.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.SetData(System.String,System.Object)
+  commentId: M:BehaviorTree.Node.SetData(System.String,System.Object)
+  parent: BehaviorTree.Node
+  isExternal: true
+  name: SetData(String, Object)
+  nameWithType: Node.SetData(String, Object)
+  fullName: BehaviorTree.Node.SetData(System.String, System.Object)
+  spec.csharp:
+  - uid: BehaviorTree.Node.SetData(System.String,System.Object)
+    name: SetData
+    nameWithType: Node.SetData
+    fullName: BehaviorTree.Node.SetData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.SetData(System.String,System.Object)
+    name: SetData
+    nameWithType: Node.SetData
+    fullName: BehaviorTree.Node.SetData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+  commentId: M:BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+  parent: BehaviorTree.Node
+  isExternal: true
+  name: SetDataToRoot(String, Object)
+  nameWithType: Node.SetDataToRoot(String, Object)
+  fullName: BehaviorTree.Node.SetDataToRoot(System.String, System.Object)
+  spec.csharp:
+  - uid: BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+    name: SetDataToRoot
+    nameWithType: Node.SetDataToRoot
+    fullName: BehaviorTree.Node.SetDataToRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+    name: SetDataToRoot
+    nameWithType: Node.SetDataToRoot
+    fullName: BehaviorTree.Node.SetDataToRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.GetData(System.String)
+  commentId: M:BehaviorTree.Node.GetData(System.String)
+  parent: BehaviorTree.Node
+  isExternal: true
+  name: GetData(String)
+  nameWithType: Node.GetData(String)
+  fullName: BehaviorTree.Node.GetData(System.String)
+  spec.csharp:
+  - uid: BehaviorTree.Node.GetData(System.String)
+    name: GetData
+    nameWithType: Node.GetData
+    fullName: BehaviorTree.Node.GetData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.GetData(System.String)
+    name: GetData
+    nameWithType: Node.GetData
+    fullName: BehaviorTree.Node.GetData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.RemoveData(System.String)
+  commentId: M:BehaviorTree.Node.RemoveData(System.String)
+  parent: BehaviorTree.Node
+  isExternal: true
+  name: RemoveData(String)
+  nameWithType: Node.RemoveData(String)
+  fullName: BehaviorTree.Node.RemoveData(System.String)
+  spec.csharp:
+  - uid: BehaviorTree.Node.RemoveData(System.String)
+    name: RemoveData
+    nameWithType: Node.RemoveData
+    fullName: BehaviorTree.Node.RemoveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.RemoveData(System.String)
+    name: RemoveData
+    nameWithType: Node.RemoveData
+    fullName: BehaviorTree.Node.RemoveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BehaviorTree.Sequence.#ctor*
+  commentId: Overload:BehaviorTree.Sequence.#ctor
+  name: Sequence
+  nameWithType: Sequence.Sequence
+  fullName: BehaviorTree.Sequence.Sequence
+- uid: BehaviorTree.Node.Evaluate
+  commentId: M:BehaviorTree.Node.Evaluate
+  parent: BehaviorTree.Node
+  name: Evaluate()
+  nameWithType: Node.Evaluate()
+  fullName: BehaviorTree.Node.Evaluate()
+  spec.csharp:
+  - uid: BehaviorTree.Node.Evaluate
+    name: Evaluate
+    nameWithType: Node.Evaluate
+    fullName: BehaviorTree.Node.Evaluate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.Evaluate
+    name: Evaluate
+    nameWithType: Node.Evaluate
+    fullName: BehaviorTree.Node.Evaluate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Sequence.Evaluate*
+  commentId: Overload:BehaviorTree.Sequence.Evaluate
+  name: Evaluate
+  nameWithType: Sequence.Evaluate
+  fullName: BehaviorTree.Sequence.Evaluate
+- uid: BehaviorTree.NodeState
+  commentId: T:BehaviorTree.NodeState
+  parent: BehaviorTree
+  name: NodeState
+  nameWithType: NodeState
+  fullName: BehaviorTree.NodeState
