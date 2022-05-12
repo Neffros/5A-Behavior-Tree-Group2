@@ -14,26 +14,42 @@ namespace Infiltration
         protected override Node SetupTree()
         {
             var root = new Selector();
-            var currentTransform = transform;
 
             var inverter1 = new Inverter();
             var checkGameState = new CheckGameState();
-            
+
             var sequence1 = new Sequence();
-            var checkEnemyInRange = new CheckEnemyInRange(currentTransform, attackRange);
-            var taskAttackPlayer = new TaskAttackPlayer(currentTransform, attackRange);
+            var checkEnemyInRange = new CheckEnemyInRange()
+            {
+                AttackRange = attackRange,
+
+            };
+            var taskAttackPlayer = new TaskAttackPlayer()
+            {
+                AttackRange = attackRange,
+            };
 
             var sequence2 = new Sequence();
-            var checkEnemyInFOVRange =
-                new CheckEnemyInFOVRange(currentTransform, fieldOfView, fovRange);
-            var taskGoTowardEnemy = new TaskGoTowardEnemy(currentTransform, speed);
+            var checkEnemyInFOVRange = new CheckEnemyInFOVRange()
+            {
+                FovRange = fovRange,
+            };
 
-            var taskGoPatrol = new TaskPatrol(currentTransform, waypoints, speed);
+            var taskGoTowardEnemy = new TaskGoTowardEnemy()
+            {
+                Speed = speed,
+            };
+
+            var taskGoPatrol = new TaskPatrol()
+            {
+                Speed = speed,
+                Waypoints = waypoints,
+            };
 
             // Setup inverter1
             root.Attach(inverter1);
             inverter1.Attach(checkGameState);
-            
+
             // Setup sequence1
             root.Attach(sequence1);
             sequence1.Attach(checkEnemyInRange)
