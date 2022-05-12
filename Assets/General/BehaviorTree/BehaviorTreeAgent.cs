@@ -21,7 +21,7 @@ namespace BehaviorTree
         }
 
         /// <summary>
-        /// Evaluate every node from the tree by browsing every children
+        /// Evaluate every node from the tree by browsing every children every frame
         /// </summary>
         private void Update()
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace BehaviorTree
 {
     /// <summary>
-    /// State of the node
+    /// State of the node : SUCCESS, FAILURE, RUNNING
     /// </summary>
     public enum NodeState
     {
@@ -37,7 +37,7 @@ namespace BehaviorTree
         private readonly Dictionary<string, object> _dataContext = new();
 
         /// <summary>
-        /// Create node with no parent
+        /// Creates a node with no parent
         /// </summary>
         protected Node()
         {
@@ -45,7 +45,7 @@ namespace BehaviorTree
         }
 
         /// <summary>
-        /// Attach child node with this current node
+        /// Attach child node to this instance of Node
         /// </summary>
         /// <param name="node">Child node to be attached</param>
         /// <returns>Return current node for chaining</returns>
@@ -65,15 +65,15 @@ namespace BehaviorTree
         /// <summary>
         /// Add data to the dictionary
         /// </summary>
-        /// <param name="key">Key to be add</param>
-        /// <param name="value">Value to be add</param>
+        /// <param name="key">Key to be added</param>
+        /// <param name="value">Value to be added</param>
         public void SetData(string key, object value)
         {
             _dataContext[key] = value;
         }
 
         /// <summary>
-        /// Add data to the dictionary of the root node
+        /// Adds data to the root node's dictionary
         /// </summary>
         /// <param name="key">Key to be add</param>
         /// <param name="value">Value to be add</param>
@@ -104,7 +104,7 @@ namespace BehaviorTree
         }
 
         /// <summary>
-        /// Remove data from the dictionary
+        /// Remove KeyValuePair from the dictionary
         /// </summary>
         /// <param name="key">Key remove from the dictionary</param>
         /// <returns>Return true if the removal succeeded, false if not</returns>
