@@ -1,3 +1,4 @@
+using BehaviorTree;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,9 @@ namespace BehaviorTreeSerializer.Data
         [SerializeField, Tooltip("Maps a node to its ID")]
         private Dictionary<Guid, NodeEditorInstanceMetadata> _idToNode;
 
+        [SerializeField, Tooltip("ID of the root node")]
+        private Guid _rootId;
+
         #endregion
 
         #region Properties
@@ -23,6 +27,11 @@ namespace BehaviorTreeSerializer.Data
         /// Gets or sets the dictionary of nodes by their IDs
         /// </summary>
         public Dictionary<Guid, NodeEditorInstanceMetadata> IdToNode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ID of the root node
+        /// </summary>
+        public Guid RootId => this._rootId;
 
         #endregion
 
@@ -120,8 +129,18 @@ namespace BehaviorTreeSerializer.Data
         public static BehaviorTreeObject Create()
         {
             var tree = ScriptableObject.CreateInstance<BehaviorTreeObject>();
+            var selectorName = typeof(Selector).Name;
+            var root = new NodeEditorInstanceMetadata(
+                selectorName,
+                NodeReflection.Engine.GetProperties(selectorName),
+                Vector2.zero,
+                null
+            );
 
             tree.IdToNode = new Dictionary<Guid, NodeEditorInstanceMetadata>();
+            tree.IdToNode.Add(root.Id, root);
+            tree._rootId = root.Id;
+
             return tree;
         }
 
