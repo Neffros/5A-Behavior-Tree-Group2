@@ -51,7 +51,7 @@ namespace NodeReflection.Data
         /// <param name="nodeData">Contains display information</param>
         /// <param name="classType">Node type to instantiate</param>
         /// <param name="nameToType">Properties of the node</param>
-        public NodeMetadata(NodeTagAttribute nodeData, Type classType, Dictionary<string, ExposedPropertyTypeEnum> nameToType)
+        public NodeMetadata(VisualNodeAttribute nodeData, Type classType, Dictionary<string, ExposedPropertyTypeEnum> nameToType)
         {
             this.Description = nodeData.Description;
             this.DisplayAsBlock = nodeData.DisplayAsBlock;

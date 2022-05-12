@@ -1,14 +1,7 @@
-﻿using NodeReflection;
-
-namespace BehaviorTree
+﻿namespace BehaviorTree
 {
-    [VisualNode(displayAsBlock: true)]
-    public class Sequence : Node
+    public class Inverter : Node
     {
-        public Sequence()
-        {
-        }
-
         public override NodeState Evaluate()
         {
             var anyChildIsRunning = false;
@@ -18,15 +11,16 @@ namespace BehaviorTree
                 switch (node.Evaluate())
                 {
                     case NodeState.FAILURE:
-                        State = NodeState.FAILURE;
+                        State = NodeState.SUCCESS;
                         return State;
                     case NodeState.SUCCESS:
-                        continue;
+                        State = NodeState.FAILURE;
+                        return State;
                     case NodeState.RUNNING:
                         anyChildIsRunning = true;
                         break;
                     default:
-                        State = NodeState.SUCCESS;
+                        State = NodeState.FAILURE;
                         return State;
                 }
             }
