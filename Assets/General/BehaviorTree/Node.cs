@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BehaviorTree
 {
@@ -17,19 +19,65 @@ namespace BehaviorTree
     /// </summary>
     public abstract class Node
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets the parent of the current node
+        /// </summary>
+        public Node Parent { get; private set; }
+
+        /// <summary>
+        /// Gets the root of the tree
+        /// </summary>
+        public Node Root
+        {
+            get
+            {
+                if (this.Parent == null)
+                    return this;
+
+                Node current = this.Parent;
+
+                while (current.Parent != null)
+                    current = current.Parent;
+
+                return current;
+            }
+        }
+
+        /// <summary>
+        /// Gets the tree of the current node
+        /// </summary>
+        public BehaviorTreeAgent Tree
+        {
+            get
+            {
+                Node current = this;
+
+                while (current._tree == null && current.Parent != null)
+                    current = current.Parent;
+
+                return current._tree;
+            }
+        }
+
+        #endregion
+
+        #region Protected Fields
+
+        /// <summary>
+        /// Children node that the node will have
+        /// </summary>
+        protected readonly List<Node> Children = new();
+
         /// <summary>
         /// Current state of the node
         /// </summary>
         protected NodeState State;
 
-        /// <summary>
-        /// Parent of the current node
-        /// </summary>
-        public Node Parent { get; private set; }
-        /// <summary>
-        /// Children node that the node will have
-        /// </summary>
-        protected readonly List<Node> Children = new();
+        #endregion
+
+        #region Private Fields
 
         /// <summary>
         /// Dictionary that will contain information stocked by the agent
@@ -37,12 +85,27 @@ namespace BehaviorTree
         private readonly Dictionary<string, object> _dataContext = new();
 
         /// <summary>
+        /// The tree containing the node
+        /// </summary>
+        private readonly BehaviorTreeAgent _tree;
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
         /// Creates a node with no parent
         /// </summary>
-        public Node()
+        /// <param name="tree">Tree containing the node</param>
+        public Node(BehaviorTreeAgent tree = null)
         {
-            Parent = null;
+            this.Parent = null;
+            this._tree = tree;
         }
+
+        #endregion
+
+        #region Public Methods
 
         /// <summary>
         /// Attach child node to this instance of Node
@@ -56,11 +119,35 @@ namespace BehaviorTree
             return this;
         }
 
+        public T GetNode<T>() where T : Node
+        {
+            foreach (var node in this.Children)
+                if (node is T castedNode)
+                    return castedNode;
+
+            return null;
+        }
+
+        public IEnumerable<T> GetNodes<T>() where T : Node
+        {
+            return this
+                .Children
+                .SelectMany(child => child is T castedChild
+                    ? child.GetNodes<T>().Prepend(castedChild)
+                    : child.GetNodes<T>()
+                );
+        }
+
         /// <summary>
-        /// Evaluate children node
+        /// Initializes the node
         /// </summary>
-        /// <returns>Return FAILURE by default</returns>
-        public virtual NodeState Evaluate() => NodeState.FAILURE;
+        public void Initialize()
+        {
+            this.OnInitialized();
+
+            foreach (var child in this.Children)
+                child.Initialize();
+        }
 
         /// <summary>
         /// Adds data to the dictionary
@@ -72,21 +159,24 @@ namespace BehaviorTree
             _dataContext[key] = value;
         }
 
-        /// <summary>
-        /// Adds data to the root node's dictionary
-        /// </summary>
-        /// <param name="key">Key to be add</param>
-        /// <param name="value">Value to be add</param>
-        public void SetDataToRoot(string key, object value)
-        {
-            Node node = Parent;
-            while (node.Parent != null)
-            {
-                node = node.Parent;
-            }
+        #endregion
 
-            node._dataContext[key] = value;
-        }
+        #region Public Overrideable Methods
+
+        /// <summary>
+        /// Evaluate children node
+        /// </summary>
+        /// <returns>Return FAILURE by default</returns>
+        public virtual NodeState Evaluate() => NodeState.FAILURE;
+
+        /// <summary>
+        /// Fired on tree initialization
+        /// </summary>
+        public virtual void OnInitialized() { }
+
+        #endregion
+
+        #region Protected Methods
 
         /// <summary>
         /// Retrieve value from dictionary
@@ -96,11 +186,23 @@ namespace BehaviorTree
         protected object GetData(string key)
         {
             if (_dataContext.TryGetValue(key, out var value))
-            {
                 return value;
-            }
 
             return Parent?.GetData(key);
+        }
+
+        /// <summary>
+        /// Retrieve value from dictionary
+        /// </summary>
+        /// <param name="key">Key used to look for data</param>
+        /// <typeparam name="T">Type of the value</typeparam>
+        /// <returns>Return value of the dictionary according to the key</returns>
+        protected T GetData<T>(string key)
+        {
+            if (_dataContext.TryGetValue(key, out var value))
+                return (T)value;
+
+            return (T)Parent?.GetData(key);
         }
 
         /// <summary>
@@ -127,5 +229,7 @@ namespace BehaviorTree
 
             return false;
         }
+
+        #endregion
     }
 }
