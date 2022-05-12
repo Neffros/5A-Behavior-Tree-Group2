@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -60,16 +60,16 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="5a-behavior-tree-group2">5A-Behavior-Tree-Group2</h1>
+<h1 id="5a-behavior-tree-group2" sourcefile="index.md" sourcestartlinenumber="1">5A-Behavior-Tree-Group2</h1>
 
-<h2 id="functionnal-documentation">Functionnal documentation</h2>
-<p>Quick description of what the API does.</p>
-<p>###Getting started</p>
-<p>Create a node in the editor etc etc</p>
-<h3 id="behavior-tree">Behavior Tree</h3>
-<h3 id="visual-editor">Visual Editor</h3>
-<h2 id="api-developper-documentation">API Developper documentation</h2>
-<p>The documentation can be found <a href="api/toc.html">here</a></p>
+<h2 id="functionnal-documentation" sourcefile="index.md" sourcestartlinenumber="3">Functionnal documentation</h2>
+<p sourcefile="index.md" sourcestartlinenumber="4">Quick description of what the API does.</p>
+<p sourcefile="index.md" sourcestartlinenumber="6">###Getting started</p>
+<p sourcefile="index.md" sourcestartlinenumber="8">Create a node in the editor etc etc</p>
+<h3 id="behavior-tree" sourcefile="index.md" sourcestartlinenumber="9">Behavior Tree</h3>
+<h3 id="visual-editor" sourcefile="index.md" sourcestartlinenumber="11">Visual Editor</h3>
+<h2 id="api-developper-documentation" sourcefile="index.md" sourcestartlinenumber="13">API Developper documentation</h2>
+<p sourcefile="index.md" sourcestartlinenumber="15">The documentation can be found <a href="api/toc.html" sourcefile="index.md" sourcestartlinenumber="15">here</a></p>
 </article>
           </div>
           

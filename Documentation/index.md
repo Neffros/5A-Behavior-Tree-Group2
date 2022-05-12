@@ -3,7 +3,7 @@
 ## Functionnal documentation
 Quick description of what the API does.
 
-###Getting started
+### Getting started
 
 Create a node in the editor etc etc
 ### Behavior Tree
