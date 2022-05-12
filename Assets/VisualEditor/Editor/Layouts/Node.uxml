@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="NodeMainContainer" style="flex-grow: 1;">
-        <ui:Label text="NodeName" display-tooltip-when-elided="true" name="NodeName" style="margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto; font-size: 24px; -unity-text-align: middle-center; flex-grow: 1;" />
-        <ui:Button text="+" display-tooltip-when-elided="true" name="AddButton" style="flex-grow: 0;" />
-    </ui:VisualElement>
-</ui:UXML>

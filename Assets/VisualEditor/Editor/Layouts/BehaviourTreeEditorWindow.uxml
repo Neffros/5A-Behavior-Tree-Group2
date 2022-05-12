@@ -1,11 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="MainContainer" style="width: 100%; height: 100%; flex-direction: row; flex-wrap: nowrap;">
         <ui:VisualElement name="Inspector" style="flex-grow: 1;">
-            <ui:Label text="Inspector" style="background-color: rgb(37, 37, 37);" />
+            <ui:Label text="Inspector" style="background-color: rgb(37, 37, 37); padding-top: 1px; padding-bottom: 1px;" />
             <ui:VisualElement name="InspectorContent" style="height: 100%; width: 100%;" />
         </ui:VisualElement>
         <ui:VisualElement name="Viewport" style="border-left-color: rgb(113, 113, 113); border-left-width: 1px; flex-grow: 3;">
-            <ui:Label text="Viewport" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
+            <ui:Label text="Viewport" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37); padding-top: 1px; padding-bottom: 1px;" />
             <ui:VisualElement name="ViewportContent" style="flex-grow: 1;" />
         </ui:VisualElement>
     </ui:VisualElement>

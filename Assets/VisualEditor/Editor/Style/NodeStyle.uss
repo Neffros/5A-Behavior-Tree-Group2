@@ -5,6 +5,7 @@
     border-width: 1px;
     border-color: gray;
     border-radius: 10px;
+    position: absolute;
 }
 
 .node TextElement{
@@ -12,7 +13,7 @@
 }
 
 .node Button{
-    font-size: 10;
+    font-size: 10px;
     overflow: visible;
     margin: 0;
     width: 100%;

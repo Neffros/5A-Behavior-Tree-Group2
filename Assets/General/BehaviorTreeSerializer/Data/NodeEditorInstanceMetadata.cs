@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BehaviorTreeSerializer.Data
@@ -15,22 +16,22 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Gets or sets the list of chidren's IDs
         /// </summary>
-        public List<Guid> ChildrenIds { get; set; }
+        public List<string> ChildrenIds;
 
         /// <summary>
         /// Gets or sets the node's ID
         /// </summary>
-        public Guid Id { get; set; }
+        public string Id;
 
         /// <summary>
         /// Gets or sets the node type's internal name
         /// </summary>
-        public string NodeTypeInternalName { get; set; }
+        public string NodeTypeInternalName;
 
         /// <summary>
         /// Gets or sets the parent node's ID
         /// </summary>
-        public Guid ParentId { get; set; }
+        public string ParentId;
 
         /// <summary>
         /// Gets or sets the position in the visual editor
@@ -40,7 +41,7 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Gets or sets the dictionary of properties of the node
         /// </summary>
-        public Dictionary<string, object> Properties { get; set; }
+        public SerializableDictionary<string, object> Properties { get; set; }
 
         #endregion
 
@@ -56,12 +57,12 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Class constructor
         /// </summary>
-        public NodeEditorInstanceMetadata(string nodeTypeInternalName, Dictionary<string, object> properties, Vector2 positionInEditor, Guid? parentId)
+        public NodeEditorInstanceMetadata(string nodeTypeInternalName, SerializableDictionary<string, object> properties, Vector2 positionInEditor, string parentId)
         {
-            this.ChildrenIds = new List<Guid>();
-            this.Id = Guid.NewGuid();
+            this.ChildrenIds = new List<string>();
+            this.Id = Guid.NewGuid().ToString();
             this.NodeTypeInternalName = nodeTypeInternalName;
-            this.ParentId = parentId ?? Guid.Empty;
+            this.ParentId = parentId;
             this.PositionInEditor = positionInEditor;
             this.Properties = properties;
         }

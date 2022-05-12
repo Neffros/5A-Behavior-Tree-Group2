@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
+using BehaviorTreeSerializer.Data;
 using NodeReflection;
+using NodeReflection.Data;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,80 +11,76 @@ using UnityEngine.UIElements;
 namespace VisualEditor.Editor {
     public class BehaviourTreeEditorGraphView : GraphView {
         private readonly StyleSheet _nodeStyleSheet;
-        private List<VisualElement> _nodes;
+        private BehaviorTreeObject _behaviorTreeObject;
 
         private Engine _nodeReflectionEngine;
         
-        public BehaviourTreeEditorGraphView(StyleSheet nodeStyleSheet) {
+        public BehaviourTreeEditorGraphView(StyleSheet nodeStyleSheet, BehaviorTreeObject behaviorTreeObject) {
             _nodeStyleSheet = nodeStyleSheet;
+            _behaviorTreeObject = behaviorTreeObject;
         }
         
         private class CustomGridBackground : GridBackground{}
+        
+        /// <summary>
+        /// Graph instantiation and nodes loading
+        /// </summary>
         public void CreateGUI() {
-            _nodes = new List<VisualElement>();
+            CleanGUI();
             var gridBackground = new CustomGridBackground {
                 name = "GridBackground"
             };
             Insert(0, gridBackground);
             SetupZoom(ContentZoomer.DefaultMinScale, 2.0f);
-            
-            viewTransform.scale = Vector3.one * 0.25f;
-            
+
+            viewTransform.scale = Vector3.one * 0.5f;
+
             contentViewContainer.transform.scale = Vector3.one * 2;
             this.StretchToParentSize();
 
-            _nodeReflectionEngine = new Engine();
+            _nodeReflectionEngine ??= new Engine();
             _nodeReflectionEngine.Update();
+            
+            RepaintGraph();
         }
 
-        public new void UpdateViewTransform(Vector3 newPosition, Vector3 newScale) {
-             base.UpdateViewTransform(newPosition, newScale);
-             foreach (var node in _nodes) {
-                 node.transform.scale = newScale;
-             }
+        /// <summary>
+        /// Cleans graph
+        /// </summary>
+        private void CleanGUI() {
+            contentViewContainer.Clear();
+        }
+
+        private void RepaintGraph() {
+            CleanGUI();
+            foreach (var nodeEditorInstanceMetadata in _behaviorTreeObject.IdToNode.Values) {
+                var nodeType = nodeEditorInstanceMetadata.NodeTypeInternalName;
+                var nodeMetaData = _nodeReflectionEngine.Metadata[nodeType];
+                var node = new VisualNode(nodeMetaData, _nodeStyleSheet) {
+                    style = {
+                        top = nodeEditorInstanceMetadata.PositionInEditor.x,
+                        left = nodeEditorInstanceMetadata.PositionInEditor.y
+                    }
+                };
+
+                contentViewContainer.Add(node);
+            }
         }
 
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
-            foreach (var nodeMetadata in _nodeReflectionEngine.Metadata) {
-                evt.menu.AppendAction("Create Node/" + nodeMetadata.Value.Name, action => {
-                    var node = new VisualElement();
-                    node.AddToClassList("node");
-                    node.styleSheets.Add(_nodeStyleSheet);
-                    if (nodeMetadata.Value.DisplayAsBlock) {    // sequence
-                        node.AddToClassList("node-sequence");
+            foreach (var nodeMetadata in _nodeReflectionEngine.Metadata.Values) {
+                evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {
+                    /*var node = new VisualNode(nodeMetadata, _nodeStyleSheet);
+                    contentViewContainer.Add(node);*/
 
-                        var vContainer = new VisualElement();
-                        vContainer.AddToClassList("v-container");
-                        vContainer.Add(new TextElement { text = nodeMetadata.Value.Name });
-
-                        var hContainer = new VisualElement();
-                        hContainer.AddToClassList("h-container");
-                        
-                        // add all nodes here
-                        
-                        vContainer.Add(hContainer);
-                        node.Add(vContainer);
-                        
-                        node.Add(new Button(() => {
-                        
-                        }) {
-                            text = "+",
-                        });
-                    }
-                    else {
-                        node.Add(new TextElement { text = nodeMetadata.Value.Name });
-                        var buttonAdd = new Button(() => {
-                        
-                        }) {
-                            text = "+",
-                        };
-                        node.Add(buttonAdd);
-                    }
-                    contentViewContainer.Add(node);
-                    _nodes.Add(node);
+                    var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName, new SerializableDictionary<string, object>(),
+                        evt.mousePosition, null);
+                    
+                    EditorUtility.SetDirty(_behaviorTreeObject);
+                    
+                    RepaintGraph();
                 });
             }
-                
         }
     }
 }

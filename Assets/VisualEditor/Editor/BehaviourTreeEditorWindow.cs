@@ -1,3 +1,4 @@
+using BehaviorTreeSerializer.Data;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -5,10 +6,13 @@ using UnityEngine.UIElements;
 namespace VisualEditor.Editor {
     public class BehaviourTreeEditorWindow : EditorWindow {
         private BehaviourTreeEditorGraphView _graphView;
+        private static BehaviorTreeObject _targetObject;
         
-        [MenuItem("Window/UI Toolkit/BehaviourTreeEditorWindow")]
-        public static void ShowExample()
-        {
+        /// <summary>
+        /// Opens visual editor and loads targetObject
+        /// </summary>
+        public static void OpenWindow(BehaviorTreeObject targetObject) {
+            _targetObject = targetObject;
             BehaviourTreeEditorWindow wnd = GetWindow<BehaviourTreeEditorWindow>();
             wnd.titleContent = new GUIContent("BehaviourTreeEditorWindow");
         }
@@ -28,7 +32,7 @@ namespace VisualEditor.Editor {
 
             var viewPortContent = root.Query("ViewportContent").First();
             if (_graphView == null) {
-                _graphView = new BehaviourTreeEditorGraphView(nodeStyle);
+                _graphView = new BehaviourTreeEditorGraphView(nodeStyle, _targetObject);
             }
             viewPortContent.Add(_graphView);
             _graphView.CreateGUI();
