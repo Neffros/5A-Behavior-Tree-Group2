@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class AgentAi : MonoBehaviour
 {
 
-    private float _patience; 
+    private float _patience;
 
     private GameObject _targetGoal;
     
@@ -19,6 +19,7 @@ public class AgentAi : MonoBehaviour
     {
         UpdatePosition();
         _patience = Random.Range(0, 100);
+        agent.speed = Random.Range(3.5f, 7f);
     }
 
     public void UpdatePosition()
