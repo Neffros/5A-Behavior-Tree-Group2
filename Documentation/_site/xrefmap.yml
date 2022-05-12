@@ -26,6 +26,25 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.BehaviorTreeAgent.SetupTree
   nameWithType: BehaviorTreeAgent.SetupTree
+- uid: BehaviorTree.Inverter
+  name: Inverter
+  href: api/BehaviorTree.Inverter.html
+  commentId: T:BehaviorTree.Inverter
+  fullName: BehaviorTree.Inverter
+  nameWithType: Inverter
+- uid: BehaviorTree.Inverter.Evaluate
+  name: Evaluate()
+  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_Evaluate
+  commentId: M:BehaviorTree.Inverter.Evaluate
+  fullName: BehaviorTree.Inverter.Evaluate()
+  nameWithType: Inverter.Evaluate()
+- uid: BehaviorTree.Inverter.Evaluate*
+  name: Evaluate
+  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_Evaluate_
+  commentId: Overload:BehaviorTree.Inverter.Evaluate
+  isSpec: "True"
+  fullName: BehaviorTree.Inverter.Evaluate
+  nameWithType: Inverter.Evaluate
 - uid: BehaviorTree.Node
   name: Node
   href: api/BehaviorTree.Node.html
@@ -178,19 +197,6 @@ references:
   commentId: T:BehaviorTree.Selector
   fullName: BehaviorTree.Selector
   nameWithType: Selector
-- uid: BehaviorTree.Selector.#ctor
-  name: Selector()
-  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector__ctor
-  commentId: M:BehaviorTree.Selector.#ctor
-  fullName: BehaviorTree.Selector.Selector()
-  nameWithType: Selector.Selector()
-- uid: BehaviorTree.Selector.#ctor*
-  name: Selector
-  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector__ctor_
-  commentId: Overload:BehaviorTree.Selector.#ctor
-  isSpec: "True"
-  fullName: BehaviorTree.Selector.Selector
-  nameWithType: Selector.Selector
 - uid: BehaviorTree.Selector.Evaluate
   name: Evaluate()
   href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_Evaluate
@@ -210,19 +216,6 @@ references:
   commentId: T:BehaviorTree.Sequence
   fullName: BehaviorTree.Sequence
   nameWithType: Sequence
-- uid: BehaviorTree.Sequence.#ctor
-  name: Sequence()
-  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence__ctor
-  commentId: M:BehaviorTree.Sequence.#ctor
-  fullName: BehaviorTree.Sequence.Sequence()
-  nameWithType: Sequence.Sequence()
-- uid: BehaviorTree.Sequence.#ctor*
-  name: Sequence
-  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence__ctor_
-  commentId: Overload:BehaviorTree.Sequence.#ctor
-  isSpec: "True"
-  fullName: BehaviorTree.Sequence.Sequence
-  nameWithType: Sequence.Sequence
 - uid: BehaviorTree.Sequence.Evaluate
   name: Evaluate()
   href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_Evaluate

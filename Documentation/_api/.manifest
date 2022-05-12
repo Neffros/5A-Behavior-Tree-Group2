@@ -2,6 +2,8 @@
   "BehaviorTree": "BehaviorTree.yml",
   "BehaviorTree.BehaviorTreeAgent": "BehaviorTree.BehaviorTreeAgent.yml",
   "BehaviorTree.BehaviorTreeAgent.SetupTree": "BehaviorTree.BehaviorTreeAgent.yml",
+  "BehaviorTree.Inverter": "BehaviorTree.Inverter.yml",
+  "BehaviorTree.Inverter.Evaluate": "BehaviorTree.Inverter.yml",
   "BehaviorTree.Node": "BehaviorTree.Node.yml",
   "BehaviorTree.Node.#ctor": "BehaviorTree.Node.yml",
   "BehaviorTree.Node.Attach(BehaviorTree.Node)": "BehaviorTree.Node.yml",
@@ -18,9 +20,7 @@
   "BehaviorTree.NodeState.RUNNING": "BehaviorTree.NodeState.yml",
   "BehaviorTree.NodeState.SUCCESS": "BehaviorTree.NodeState.yml",
   "BehaviorTree.Selector": "BehaviorTree.Selector.yml",
-  "BehaviorTree.Selector.#ctor": "BehaviorTree.Selector.yml",
   "BehaviorTree.Selector.Evaluate": "BehaviorTree.Selector.yml",
   "BehaviorTree.Sequence": "BehaviorTree.Sequence.yml",
-  "BehaviorTree.Sequence.#ctor": "BehaviorTree.Sequence.yml",
   "BehaviorTree.Sequence.Evaluate": "BehaviorTree.Sequence.yml"
 }

@@ -5,7 +5,6 @@ items:
   id: Selector
   parent: BehaviorTree
   children:
-  - BehaviorTree.Selector.#ctor
   - BehaviorTree.Selector.Evaluate
   langs:
   - csharp
@@ -17,10 +16,12 @@ items:
   source:
     id: Selector
     path: ''
-    startLine: 114
+    startLine: 214
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nSelector nodes contain one or more children. Upon execution, it executes every child until one of them succeeds, otherwise it fails\n"
+  example: []
   syntax:
     content: 'public class Selector : Node'
     content.vb: >-
@@ -51,32 +52,6 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: BehaviorTree.Selector.#ctor
-  commentId: M:BehaviorTree.Selector.#ctor
-  id: '#ctor'
-  parent: BehaviorTree.Selector
-  langs:
-  - csharp
-  - vb
-  name: Selector()
-  nameWithType: Selector.Selector()
-  fullName: BehaviorTree.Selector.Selector()
-  type: Constructor
-  source:
-    id: .ctor
-    path: ''
-    startLine: 116
-  assemblies:
-  - cs.temp.dll
-  namespace: BehaviorTree
-  syntax:
-    content: public Selector()
-    content.vb: Public Sub New
-  overload: BehaviorTree.Selector.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: BehaviorTree.Selector.Evaluate
   commentId: M:BehaviorTree.Selector.Evaluate
   id: Evaluate
@@ -91,14 +66,17 @@ items:
   source:
     id: Evaluate
     path: ''
-    startLine: 118
+    startLine: 221
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nEvaluate the node\n"
+  example: []
   syntax:
     content: public override NodeState Evaluate()
     return:
       type: BehaviorTree.NodeState
+      description: 'Return SUCCESS if a child node succeeded, RUNNING if a child node is running, or FAILURE after every evaluated children '
     content.vb: Public Overrides Function Evaluate As NodeState
   overridden: BehaviorTree.Node.Evaluate
   overload: BehaviorTree.Selector.Evaluate*
@@ -654,11 +632,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: BehaviorTree.Selector.#ctor*
-  commentId: Overload:BehaviorTree.Selector.#ctor
-  name: Selector
-  nameWithType: Selector.Selector
-  fullName: BehaviorTree.Selector.Selector
 - uid: BehaviorTree.Node.Evaluate
   commentId: M:BehaviorTree.Node.Evaluate
   parent: BehaviorTree.Node

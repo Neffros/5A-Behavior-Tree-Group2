@@ -18,10 +18,12 @@ items:
   source:
     id: NodeState
     path: ''
-    startLine: 25
+    startLine: 83
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nState of the node : SUCCESS, FAILURE, RUNNING\n"
+  example: []
   syntax:
     content: public enum NodeState
     content.vb: Public Enum NodeState
@@ -45,7 +47,7 @@ items:
   source:
     id: RUNNING
     path: ''
-    startLine: 27
+    startLine: 85
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -73,7 +75,7 @@ items:
   source:
     id: SUCCESS
     path: ''
-    startLine: 28
+    startLine: 86
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -101,7 +103,7 @@ items:
   source:
     id: FAILURE
     path: ''
-    startLine: 29
+    startLine: 87
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree

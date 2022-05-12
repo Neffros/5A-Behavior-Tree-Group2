@@ -5,7 +5,6 @@ items:
   id: Sequence
   parent: BehaviorTree
   children:
-  - BehaviorTree.Sequence.#ctor
   - BehaviorTree.Sequence.Evaluate
   langs:
   - csharp
@@ -17,10 +16,12 @@ items:
   source:
     id: Sequence
     path: ''
-    startLine: 144
+    startLine: 252
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nSequence nodes contain one or more children. Upon execution, it executes every child and fails when one of the children fails.\n"
+  example: []
   syntax:
     content: 'public class Sequence : Node'
     content.vb: >-
@@ -51,32 +52,6 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: BehaviorTree.Sequence.#ctor
-  commentId: M:BehaviorTree.Sequence.#ctor
-  id: '#ctor'
-  parent: BehaviorTree.Sequence
-  langs:
-  - csharp
-  - vb
-  name: Sequence()
-  nameWithType: Sequence.Sequence()
-  fullName: BehaviorTree.Sequence.Sequence()
-  type: Constructor
-  source:
-    id: .ctor
-    path: ''
-    startLine: 146
-  assemblies:
-  - cs.temp.dll
-  namespace: BehaviorTree
-  syntax:
-    content: public Sequence()
-    content.vb: Public Sub New
-  overload: BehaviorTree.Sequence.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: BehaviorTree.Sequence.Evaluate
   commentId: M:BehaviorTree.Sequence.Evaluate
   id: Evaluate
@@ -91,14 +66,17 @@ items:
   source:
     id: Evaluate
     path: ''
-    startLine: 150
+    startLine: 259
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nEvaluate the node\n"
+  example: []
   syntax:
     content: public override NodeState Evaluate()
     return:
       type: BehaviorTree.NodeState
+      description: 'Return FAILURE if a child node failed, RUNNING if a child is running after every evaluated node, SUCCESS if none of the child is running or failing '
     content.vb: Public Overrides Function Evaluate As NodeState
   overridden: BehaviorTree.Node.Evaluate
   overload: BehaviorTree.Sequence.Evaluate*
@@ -654,11 +632,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: BehaviorTree.Sequence.#ctor*
-  commentId: Overload:BehaviorTree.Sequence.#ctor
-  name: Sequence
-  nameWithType: Sequence.Sequence
-  fullName: BehaviorTree.Sequence.Sequence
 - uid: BehaviorTree.Node.Evaluate
   commentId: M:BehaviorTree.Node.Evaluate
   parent: BehaviorTree.Node

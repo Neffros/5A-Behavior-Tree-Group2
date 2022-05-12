@@ -25,18 +25,19 @@ items:
   source:
     id: Node
     path: ''
-    startLine: 34
+    startLine: 93
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nNode class does things and stuff\n"
+  summary: "\nNode that is connected to the root, will be evaluated by the agent\n"
   example: []
   syntax:
-    content: public class Node
-    content.vb: Public Class Node
+    content: public abstract class Node
+    content.vb: Public MustInherit Class Node
   inheritance:
   - System.Object
   derivedClasses:
+  - BehaviorTree.Inverter
   - BehaviorTree.Selector
   - BehaviorTree.Sequence
   inheritedMembers:
@@ -49,9 +50,11 @@ items:
   - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
+  - abstract
   - class
   modifiers.vb:
   - Public
+  - MustInherit
   - Class
 - uid: BehaviorTree.Node.State
   commentId: F:BehaviorTree.Node.State
@@ -67,10 +70,12 @@ items:
   source:
     id: State
     path: ''
-    startLine: 36
+    startLine: 98
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nCurrent state of the node\n"
+  example: []
   syntax:
     content: protected NodeState State
     return:
@@ -94,10 +99,12 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 38
+    startLine: 103
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nParent of the current node\n"
+  example: []
   syntax:
     content: public Node Parent { get; }
     parameters: []
@@ -125,19 +132,23 @@ items:
   source:
     id: Children
     path: ''
-    startLine: 39
+    startLine: 107
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nChildren node that the node will have\n"
+  example: []
   syntax:
-    content: protected List<Node> Children
+    content: protected readonly List<Node> Children
     return:
       type: List{BehaviorTree.Node}
-    content.vb: Protected Children As List(Of Node)
+    content.vb: Protected ReadOnly Children As List(Of Node)
   modifiers.csharp:
   - protected
+  - readonly
   modifiers.vb:
   - Protected
+  - ReadOnly
 - uid: BehaviorTree.Node.#ctor
   commentId: M:BehaviorTree.Node.#ctor
   id: '#ctor'
@@ -152,11 +163,11 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 46
+    startLine: 117
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nit does things\n"
+  summary: "\nCreates a node with no parent\n"
   example: []
   syntax:
     content: public Node()
@@ -180,21 +191,21 @@ items:
   source:
     id: Attach
     path: ''
-    startLine: 56
+    startLine: 127
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nattaches nodes\n"
+  summary: "\nAttach child node to this instance of Node\n"
   example: []
   syntax:
     content: public Node Attach(Node node)
     parameters:
     - id: node
       type: BehaviorTree.Node
-      description: ''
+      description: Child node to be attached
     return:
       type: BehaviorTree.Node
-      description: ''
+      description: Return current node for chaining
     content.vb: Public Function Attach(node As Node) As Node
   overload: BehaviorTree.Node.Attach*
   modifiers.csharp:
@@ -215,14 +226,17 @@ items:
   source:
     id: Evaluate
     path: ''
-    startLine: 63
+    startLine: 138
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nEvaluate children node\n"
+  example: []
   syntax:
     content: public virtual NodeState Evaluate()
     return:
       type: BehaviorTree.NodeState
+      description: Return FAILURE by default
     content.vb: Public Overridable Function Evaluate As NodeState
   overload: BehaviorTree.Node.Evaluate*
   modifiers.csharp:
@@ -245,17 +259,21 @@ items:
   source:
     id: SetData
     path: ''
-    startLine: 65
+    startLine: 145
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nAdds data to the dictionary\n"
+  example: []
   syntax:
     content: public void SetData(string key, object value)
     parameters:
     - id: key
       type: System.String
+      description: Key to be added
     - id: value
       type: System.Object
+      description: Value to be added
     content.vb: Public Sub SetData(key As String, value As Object)
   overload: BehaviorTree.Node.SetData*
   modifiers.csharp:
@@ -276,17 +294,21 @@ items:
   source:
     id: SetDataToRoot
     path: ''
-    startLine: 70
+    startLine: 155
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nAdds data to the root node&apos;s dictionary\n"
+  example: []
   syntax:
     content: public void SetDataToRoot(string key, object value)
     parameters:
     - id: key
       type: System.String
+      description: Key to be add
     - id: value
       type: System.Object
+      description: Value to be add
     content.vb: Public Sub SetDataToRoot(key As String, value As Object)
   overload: BehaviorTree.Node.SetDataToRoot*
   modifiers.csharp:
@@ -307,17 +329,21 @@ items:
   source:
     id: GetData
     path: ''
-    startLine: 81
+    startLine: 171
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nRetrieve value from dictionary\n"
+  example: []
   syntax:
     content: protected object GetData(string key)
     parameters:
     - id: key
       type: System.String
+      description: Key used to look for data
     return:
       type: System.Object
+      description: Return value of the dictionary according to the key
     content.vb: Protected Function GetData(key As String) As Object
   overload: BehaviorTree.Node.GetData*
   modifiers.csharp:
@@ -338,17 +364,21 @@ items:
   source:
     id: RemoveData
     path: ''
-    startLine: 91
+    startLine: 186
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nRemove KeyValuePair from the dictionary\n"
+  example: []
   syntax:
     content: protected bool RemoveData(string key)
     parameters:
     - id: key
       type: System.String
+      description: Key remove from the dictionary
     return:
       type: System.Boolean
+      description: Return true if the removal succeeded, false if not
     content.vb: Protected Function RemoveData(key As String) As Boolean
   overload: BehaviorTree.Node.RemoveData*
   modifiers.csharp:

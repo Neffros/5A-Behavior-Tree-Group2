@@ -5,6 +5,7 @@ items:
   id: BehaviorTree
   children:
   - BehaviorTree.BehaviorTreeAgent
+  - BehaviorTree.Inverter
   - BehaviorTree.Node
   - BehaviorTree.NodeState
   - BehaviorTree.Selector
@@ -24,6 +25,11 @@ references:
   name: BehaviorTreeAgent
   nameWithType: BehaviorTreeAgent
   fullName: BehaviorTree.BehaviorTreeAgent
+- uid: BehaviorTree.Inverter
+  commentId: T:BehaviorTree.Inverter
+  name: Inverter
+  nameWithType: Inverter
+  fullName: BehaviorTree.Inverter
 - uid: BehaviorTree.NodeState
   commentId: T:BehaviorTree.NodeState
   parent: BehaviorTree

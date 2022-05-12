@@ -4,6 +4,8 @@
   items:
   - uid: BehaviorTree.BehaviorTreeAgent
     name: BehaviorTreeAgent
+  - uid: BehaviorTree.Inverter
+    name: Inverter
   - uid: BehaviorTree.Node
     name: Node
   - uid: BehaviorTree.NodeState

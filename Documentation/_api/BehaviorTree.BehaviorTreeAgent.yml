@@ -16,10 +16,12 @@ items:
   source:
     id: BehaviorTreeAgent
     path: ''
-    startLine: 4
+    startLine: 7
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nMain class for the behavior of the agent\n"
+  example: []
   syntax:
     content: 'public abstract class BehaviorTreeAgent : MonoBehaviour'
     content.vb: >-
@@ -49,14 +51,17 @@ items:
   source:
     id: SetupTree
     path: ''
-    startLine: 18
+    startLine: 34
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
+  summary: "\nSetup nodes for the behavior of the agent\n"
+  example: []
   syntax:
     content: protected abstract Node SetupTree()
     return:
       type: BehaviorTree.Node
+      description: ''
     content.vb: Protected MustOverride Function SetupTree As Node
   overload: BehaviorTree.BehaviorTreeAgent.SetupTree*
   modifiers.csharp:
