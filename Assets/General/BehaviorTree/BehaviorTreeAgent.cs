@@ -7,31 +7,51 @@ namespace BehaviorTree
     /// </summary>
     public abstract class BehaviorTreeAgent : MonoBehaviour
     {
-        /// <summary>
-        /// A root node that will contain children node
-        /// </summary>
-        private Node _root;
+        #region Properties
 
         /// <summary>
-        /// Setup the tree by adding node (selector, sequences ...)
+        /// Gets the root node that will contain children node
+        /// </summary>
+        public Node Root { get; private set; }
+
+        #endregion
+
+        #region Unity Callbacks
+
+        /// <summary>
+        /// Sets up this agent's tree hierarchy
+        /// </summary>
+        private void Awake()
+        {
+            Root = SetupTree();
+        }
+
+        /// <summary>
+        /// Initializes this agent's tree nodes
         /// </summary>
         private void Start()
         {
-            _root = SetupTree();
+            Root?.Initialize(this);
         }
 
         /// <summary>
-        /// Evaluate every node from the tree by browsing every children every frame
+        /// Evaluates every node from the tree by browsing every children every frame
         /// </summary>
         private void Update()
         {
-            _root?.Evaluate();
+            Root?.Evaluate();
         }
 
+        #endregion
+
+        #region Protected Abstract Methods
+
         /// <summary>
-        /// Setup nodes for the behavior of the agent
+        /// Sets up nodes for the behavior of the agent
         /// </summary>
         /// <returns></returns>
         protected abstract Node SetupTree();
+
+        #endregion
     }
 }
