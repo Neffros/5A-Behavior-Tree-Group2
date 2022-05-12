@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1413605340618008736}
   - component: {fileID: 4054016674854261797}
   - component: {fileID: -3744776389609080136}
+  - component: {fileID: 5774094238987609361}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -112,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1652b24bf9f390b4baa496ed58c9bf1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 4054016674854261797}
 --- !u!195 &4054016674854261797
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -151,3 +151,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5774094238987609361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054016674854261852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93ff056f1524764c9b38c839640b05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints:
+  - {x: 25, y: 1, z: 25}
+  - {x: 25, y: 1, z: -25}
+  - {x: -25, y: 1, z: 25}
+  - {x: -25, y: 1, z: -25}
+  NavAgent: {fileID: 4054016674854261797}
