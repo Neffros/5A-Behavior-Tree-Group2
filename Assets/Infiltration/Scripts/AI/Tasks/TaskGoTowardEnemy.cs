@@ -10,18 +10,18 @@ namespace Infiltration
         [ExposedInVisualEditor]
         public float Speed { get; set; }
 
-        [ExposedInVisualEditor]
-        public Transform Transform { get; set; }
-
         public override NodeState Evaluate()
         {
-            var target = (Transform)GetData("target");
+            var target = this.GetData<Transform>("target");
 
-            if (Vector3.Distance(Transform.position, target.position) > .1f)
+            if (Vector3.Distance(this.Agent.transform.position, target.position) > .1f)
             {
-                Transform.position =
-                    Vector3.MoveTowards(Transform.position, target.position, Speed * Time.deltaTime);
-                Transform.LookAt(target);
+                this.Agent.transform.position = Vector3.MoveTowards(
+                    this.Agent.transform.position,
+                    target.position,
+                    Speed * Time.deltaTime
+                );
+                this.Agent.transform.LookAt(target);
             }
 
             State = NodeState.RUNNING;

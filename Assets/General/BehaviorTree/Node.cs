@@ -19,7 +19,17 @@ namespace BehaviorTree
     /// </summary>
     public abstract class Node
     {
-        #region Properties
+        #region Public Properties
+
+        /// <summary>
+        /// Gets the behavior tree agent
+        /// </summary>
+        public BehaviorTreeAgent Agent { get; private set; }
+
+        /// <summary>
+        /// Children node that the node will have
+        /// </summary>
+        public List<Node> Children { get; private set; } = new();
 
         /// <summary>
         /// Gets the parent of the current node
@@ -27,53 +37,14 @@ namespace BehaviorTree
         public Node Parent { get; private set; }
 
         /// <summary>
-        /// Gets the root of the tree
+        /// Gets the root of the tree containing the node
         /// </summary>
-        public Node Root
-        {
-            get
-            {
-                if (this.Parent == null)
-                    return this;
-
-                Node current = this.Parent;
-
-                while (current.Parent != null)
-                    current = current.Parent;
-
-                return current;
-            }
-        }
-
-        /// <summary>
-        /// Gets the tree of the current node
-        /// </summary>
-        public BehaviorTreeAgent Tree
-        {
-            get
-            {
-                Node current = this;
-
-                while (current._tree == null && current.Parent != null)
-                    current = current.Parent;
-
-                return current._tree;
-            }
-        }
-
-        #endregion
-
-        #region Protected Fields
-
-        /// <summary>
-        /// Children node that the node will have
-        /// </summary>
-        protected readonly List<Node> Children = new();
+        public Node Root { get; private set; }
 
         /// <summary>
         /// Current state of the node
         /// </summary>
-        protected NodeState State;
+        public NodeState State { get; set; }
 
         #endregion
 
@@ -83,25 +54,6 @@ namespace BehaviorTree
         /// Dictionary that will contain information stocked by the agent
         /// </summary>
         private readonly Dictionary<string, object> _dataContext = new();
-
-        /// <summary>
-        /// The tree containing the node
-        /// </summary>
-        private readonly BehaviorTreeAgent _tree;
-
-        #endregion
-
-        #region Constructor
-
-        /// <summary>
-        /// Creates a node with no parent
-        /// </summary>
-        /// <param name="tree">Tree containing the node</param>
-        public Node(BehaviorTreeAgent tree = null)
-        {
-            this.Parent = null;
-            this._tree = tree;
-        }
 
         #endregion
 
@@ -119,15 +71,35 @@ namespace BehaviorTree
             return this;
         }
 
+        /// <summary>
+        /// Gets the first found node with the given type in the tree of this node
+        /// </summary>
+        /// <typeparam name="T">Node type to find</typeparam>
+        /// <returns>A node with the given type</returns>
         public T GetNode<T>() where T : Node
         {
             foreach (var node in this.Children)
+            {
                 if (node is T castedNode)
                     return castedNode;
+            }
+
+            foreach (var node in this.Children)
+            {
+                var found = node.GetNode<T>();
+
+                if (found != null)
+                    return found;
+            }
 
             return null;
         }
 
+        /// <summary>
+        /// Gets nodes by type in the tree of this node
+        /// </summary>
+        /// <typeparam name="T">Node type to find</typeparam>
+        /// <returns>An enumerable of nodes with the given type</returns>
         public IEnumerable<T> GetNodes<T>() where T : Node
         {
             return this
@@ -141,12 +113,15 @@ namespace BehaviorTree
         /// <summary>
         /// Initializes the node
         /// </summary>
-        public void Initialize()
+        public void Initialize(BehaviorTreeAgent agent, Node root = null)
         {
+            this.Agent = agent;
+            this.Root = root;
+
             this.OnInitialized();
 
             foreach (var child in this.Children)
-                child.Initialize();
+                child.Initialize(agent, root ?? this);
         }
 
         /// <summary>

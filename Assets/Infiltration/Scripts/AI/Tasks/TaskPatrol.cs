@@ -11,9 +11,6 @@ namespace Infiltration
         public float Speed { get; set; }
 
         [ExposedInVisualEditor]
-        public Transform Transform { get; set; }
-
-        [ExposedInVisualEditor]
         public Transform[] Waypoints { get; set; }
 
         private int _currentWaypointIndex;
@@ -35,9 +32,9 @@ namespace Infiltration
             else
             {
                 var wp = Waypoints[_currentWaypointIndex];
-                if (Vector3.Distance(Transform.position, wp.position) < 0.01f)
+                if (Vector3.Distance(this.Agent.transform.position, wp.position) < 0.01f)
                 {
-                    Transform.position = wp.position;
+                    this.Agent.transform.position = wp.position;
                     _waitCounter = 0f;
                     _waiting = true;
 
@@ -46,8 +43,8 @@ namespace Infiltration
                 else
                 {
                     var position = wp.position;
-                    Transform.position = Vector3.MoveTowards(Transform.position, position, Speed * Time.deltaTime);
-                    Transform.LookAt(position);
+                    this.Agent.transform.position = Vector3.MoveTowards(this.Agent.transform.position, position, Speed * Time.deltaTime);
+                    this.Agent.transform.LookAt(position);
                 }
             }
 

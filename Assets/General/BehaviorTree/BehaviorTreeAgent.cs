@@ -9,7 +9,6 @@ namespace BehaviorTree
     {
         #region Properties
 
-
         /// <summary>
         /// Gets the root node that will contain children node
         /// </summary>
@@ -20,16 +19,23 @@ namespace BehaviorTree
         #region Unity Callbacks
 
         /// <summary>
-        /// Setup the tree by adding node (selector, sequences ...)
+        /// Sets up this agent's tree hierarchy
         /// </summary>
-        private void Start()
+        private void Awake()
         {
             Root = SetupTree();
-            Root?.Initialize();
         }
 
         /// <summary>
-        /// Evaluate every node from the tree by browsing every children every frame
+        /// Initializes this agent's tree nodes
+        /// </summary>
+        private void Start()
+        {
+            Root?.Initialize(this);
+        }
+
+        /// <summary>
+        /// Evaluates every node from the tree by browsing every children every frame
         /// </summary>
         private void Update()
         {
@@ -41,7 +47,7 @@ namespace BehaviorTree
         #region Protected Abstract Methods
 
         /// <summary>
-        /// Setup nodes for the behavior of the agent
+        /// Sets up nodes for the behavior of the agent
         /// </summary>
         /// <returns></returns>
         protected abstract Node SetupTree();
