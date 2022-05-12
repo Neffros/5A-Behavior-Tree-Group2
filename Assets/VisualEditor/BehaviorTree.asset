@@ -22,11 +22,14 @@ MonoBehaviour:
       Id: f93f083c-f8c1-4348-ae02-4f6f860d74e5
       NodeTypeInternalName: Sequence
       ParentId: 
+      PositionInEditor: {x: -2.645, y: -116.38003}
     - ChildrenIds: []
       Id: ac90c572-3435-480d-b813-9dbdb50b3961
       NodeTypeInternalName: Sequence
       ParentId: 
+      PositionInEditor: {x: -304.17505, y: 100.51001}
     - ChildrenIds: []
       Id: f55cf1f3-a261-4a7b-8967-c89a43c39c50
       NodeTypeInternalName: Selector
       ParentId: 
+      PositionInEditor: {x: 347.8175, y: 46.287487}

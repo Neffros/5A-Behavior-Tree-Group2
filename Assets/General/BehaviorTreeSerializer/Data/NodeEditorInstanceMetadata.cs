@@ -36,7 +36,7 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Gets or sets the position in the visual editor
         /// </summary>
-        public Vector2 PositionInEditor { get; set; }
+        public Vector2 PositionInEditor;
 
         /// <summary>
         /// Gets or sets the dictionary of properties of the node
