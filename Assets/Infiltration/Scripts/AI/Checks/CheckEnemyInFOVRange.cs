@@ -1,21 +1,22 @@
 using BehaviorTree;
+using NodeReflection;
 using UnityEngine;
 
 namespace Infiltration
 {
+    [VisualNode]
     public class CheckEnemyInFOVRange : Node
     {
-        private readonly Transform _transform;
         private const int PlayerLayerMask = 1 << 6;
 
-        private readonly SpriteRenderer _renderer;
-        private readonly float _fovRange;
-        public CheckEnemyInFOVRange(Transform transform, SpriteRenderer renderer, float fovRange)
-        {
-            _transform = transform;
-            _renderer = renderer;
-            _fovRange = fovRange;
-        }
+        [ExposedInVisualEditor]
+        public float FovRange { get; set; }
+
+        [ExposedInVisualEditor]
+        public SpriteRenderer Renderer { get; set; }
+
+        [ExposedInVisualEditor]
+        public Transform Transform { get; set; }
 
         public override NodeState Evaluate()
         {
@@ -23,10 +24,10 @@ namespace Infiltration
 
             if (target != null)
             {
-                if (Vector3.Distance(_transform.position, ((Transform)target).position) > 8f)
+                if (Vector3.Distance(Transform.position, ((Transform)target).position) > 8f)
                 {
                     RemoveData("target");
-                    _renderer.color = Color.blue;
+                    Renderer.color = Color.blue;
                     State = NodeState.FAILURE;
                     return State;
                 }
@@ -34,11 +35,11 @@ namespace Infiltration
 
             if (target == null)
             {
-                var colliders = Physics.OverlapSphere(_transform.position, _fovRange, PlayerLayerMask);
+                var colliders = Physics.OverlapSphere(Transform.position, FovRange, PlayerLayerMask);
                 if (colliders.Length > 0)
                 {
                     Parent.Parent.SetData("target", colliders[0].transform);
-                    _renderer.color = Color.red;
+                    Renderer.color = Color.red;
                     State = NodeState.SUCCESS;
                     return State;
                 }

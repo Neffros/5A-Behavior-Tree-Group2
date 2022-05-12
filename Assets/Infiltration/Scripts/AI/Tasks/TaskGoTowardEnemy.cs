@@ -1,28 +1,27 @@
 using BehaviorTree;
+using NodeReflection;
 using UnityEngine;
 
 namespace Infiltration
 {
+    [VisualNode]
     public class TaskGoTowardEnemy : Node
     {
-        private readonly Transform _transform;
-        private readonly float _speed;
+        [ExposedInVisualEditor]
+        public float Speed { get; set; }
 
-        public TaskGoTowardEnemy(Transform transform, float speed)
-        {
-            _transform = transform;
-            _speed = speed;
-        }
+        [ExposedInVisualEditor]
+        public Transform Transform { get; set; }
 
         public override NodeState Evaluate()
         {
             var target = (Transform)GetData("target");
 
-            if (Vector3.Distance(_transform.position, target.position) > .1f)
+            if (Vector3.Distance(Transform.position, target.position) > .1f)
             {
-                _transform.position =
-                    Vector3.MoveTowards(_transform.position, target.position, _speed * Time.deltaTime);
-                _transform.LookAt(target);
+                Transform.position =
+                    Vector3.MoveTowards(Transform.position, target.position, Speed * Time.deltaTime);
+                Transform.LookAt(target);
             }
 
             State = NodeState.RUNNING;

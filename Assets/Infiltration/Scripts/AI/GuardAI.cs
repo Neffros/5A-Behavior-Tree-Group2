@@ -18,22 +18,45 @@ namespace Infiltration
 
             var inverter1 = new Inverter();
             var checkGameState = new CheckGameState();
-            
+
             var sequence1 = new Sequence();
-            var checkEnemyInRange = new CheckEnemyInRange(currentTransform, attackRange);
-            var taskAttackPlayer = new TaskAttackPlayer(currentTransform, attackRange);
+            var checkEnemyInRange = new CheckEnemyInRange()
+            {
+                AttackRange = attackRange,
+                Transform = currentTransform,
+
+            };
+            var taskAttackPlayer = new TaskAttackPlayer()
+            {
+                AttackRange = attackRange,
+                Transform = currentTransform,
+            };
 
             var sequence2 = new Sequence();
-            var checkEnemyInFOVRange =
-                new CheckEnemyInFOVRange(currentTransform, fieldOfView, fovRange);
-            var taskGoTowardEnemy = new TaskGoTowardEnemy(currentTransform, speed);
+            var checkEnemyInFOVRange = new CheckEnemyInFOVRange()
+            {
+                FovRange = fovRange,
+                Renderer = fieldOfView,
+                Transform = currentTransform,
+            };
 
-            var taskGoPatrol = new TaskPatrol(currentTransform, waypoints, speed);
+            var taskGoTowardEnemy = new TaskGoTowardEnemy()
+            {
+                Speed = speed,
+                Transform = currentTransform,
+            };
+
+            var taskGoPatrol = new TaskPatrol()
+            {
+                Speed = speed,
+                Transform = currentTransform,
+                Waypoints = waypoints,
+            };
 
             // Setup inverter1
             root.Attach(inverter1);
             inverter1.Attach(checkGameState);
-            
+
             // Setup sequence1
             root.Attach(sequence1);
             sequence1.Attach(checkEnemyInRange)

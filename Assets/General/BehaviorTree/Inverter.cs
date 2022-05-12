@@ -1,5 +1,8 @@
-﻿namespace BehaviorTree
+﻿using NodeReflection;
+
+namespace BehaviorTree
 {
+    [VisualNode]
     /// <summary>
     /// Inverts the result of the child node.
     /// </summary>
