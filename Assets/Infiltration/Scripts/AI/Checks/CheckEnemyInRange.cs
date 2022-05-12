@@ -1,12 +1,11 @@
 using BehaviorTree;
-using Infiltration;
 using UnityEngine;
 
 namespace Infiltration
 {
     public class CheckEnemyInRange : Node
     {
-        private Transform _transform;
+        private readonly Transform _transform;
         public CheckEnemyInRange(Transform transform)
         {
             _transform = transform;

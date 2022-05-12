@@ -6,7 +6,7 @@ namespace Infiltration
     [CreateAssetMenu(fileName = "Event Bool", menuName = "Events/Event Bool", order = 1)]
     public class EventBool : ScriptableObject
     {
-        private readonly List<GameEventBoolListener> _listeners = new List<GameEventBoolListener>();
+        private readonly List<GameEventBoolListener> _listeners = new();
         public void RegisterListener(GameEventBoolListener listener)
         {
             _listeners.Add(listener);

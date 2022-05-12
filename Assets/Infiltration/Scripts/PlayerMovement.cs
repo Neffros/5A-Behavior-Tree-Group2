@@ -1,4 +1,3 @@
-using Infiltration;
 using UnityEngine;
 
 namespace Infiltration

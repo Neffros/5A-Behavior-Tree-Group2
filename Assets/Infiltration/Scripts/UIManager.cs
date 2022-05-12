@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,8 +28,6 @@ namespace Infiltration
             };
             GUI.skin.label = styleLabel;
             GUI.skin.button = styleButton;
-
-            // print(StateSet);
 
             GUI.Label(new Rect(Screen.width / 4f, Screen.height / 2.5f, 250, 250),
                 _stateGame ? "You win" : "You lose");

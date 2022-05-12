@@ -1,5 +1,4 @@
 using BehaviorTree;
-using Infiltration;
 using UnityEngine;
 
 namespace Infiltration
