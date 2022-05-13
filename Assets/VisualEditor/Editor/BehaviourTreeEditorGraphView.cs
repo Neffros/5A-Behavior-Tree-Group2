@@ -93,12 +93,18 @@ namespace VisualEditor.Editor {
                 if (evt.button != (int)MouseButton.RightMouse)
                     return;
                 var menu = new GenericMenu();
-                menu.AddItem(new GUIContent("Delete Node"), false, () => {
-                    node.Clear();
-                    _behaviorTreeObject.RemoveNode(nodeEditorInstanceMetadata.Id);
-                    EditorUtility.SetDirty(_behaviorTreeObject);
-                    RepaintGraph();
-                });
+                if (nodeEditorInstanceMetadata.Id == _behaviorTreeObject.RootId) {
+                    menu.AddDisabledItem(new GUIContent("Delete Node"), false);
+                }
+                else {
+                    menu.AddItem(new GUIContent("Delete Node"), false, () => {
+                        node.Clear();
+                        _behaviorTreeObject.RemoveNode(nodeEditorInstanceMetadata.Id);
+                        EditorUtility.SetDirty(_behaviorTreeObject);
+                        RepaintGraph();
+                    });
+                }
+
                 menu.ShowAsContext();
             });
 
