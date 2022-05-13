@@ -3,12 +3,21 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
-	public GameObject agentPrefab;
-	public GameObject buildingPrefab;
+	[SerializeField]
+	private GameObject agentPrefab;
+	
+	[SerializeField]
+	private GameObject buildingPrefab;
     
-	public int nbAgents;
-	public Vector3 minSpawnPoint;
-	public Vector3 maxSpawnPoint;
+	[SerializeField]
+	private int nbAgents;
+	
+	[SerializeField]
+	private Vector3 minSpawnPoint;
+	
+	[SerializeField]
+	private Vector3 maxSpawnPoint;
+
 
 	private void Start()
 	{
@@ -24,7 +33,6 @@ public class GameManager : MonoBehaviour
 				continue;
                 
 			}
-
 			Instantiate(agentPrefab, spawnPoint, Quaternion.identity);
 		}
 	}

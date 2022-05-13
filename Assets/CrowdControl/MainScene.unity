@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 4054016674854261852, guid: 7dcb5a3e1e8a8184a9d759bdc0d9aaeb, type: 3}
   buildingPrefab: {fileID: 8046157971912238141, guid: 9bbea1bc277463e41bf10b9929cb7328, type: 3}
-  nbAgents: 30
+  nbAgents: 100
   minSpawnPoint: {x: -33, y: 1, z: -33}
   maxSpawnPoint: {x: 33, y: 1, z: 33}
 --- !u!4 &147043819

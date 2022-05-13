@@ -163,9 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93ff056f1524764c9b38c839640b05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waypoints:
-  - {x: 25, y: 1, z: 25}
-  - {x: 25, y: 1, z: -25}
-  - {x: -25, y: 1, z: 25}
-  - {x: -25, y: 1, z: -25}
-  NavAgent: {fileID: 4054016674854261797}
+  waypoints:
+  - {x: 33, y: 1, z: 33}
+  - {x: 33, y: 1, z: -33}
+  - {x: -33, y: 1, z: 33}
+  - {x: -33, y: 1, z: -33}
+  navAgent: {fileID: 4054016674854261797}
+  radius: 5
+  minSpeed: 3.5
+  maxSpeed: 7
