@@ -15,11 +15,25 @@ MonoBehaviour:
   _idToNode:
     m_keys:
     - 778840fe-76e2-414b-9ba6-05b73aee58da
+    - f8ceb6e1-723a-40c6-a032-e363e84cb640
+    - 54ab45db-b423-43d0-a678-c236d35cbed7
     m_values:
-    - ChildrenIds: []
+    - ChildrenIds:
+      - f8ceb6e1-723a-40c6-a032-e363e84cb640
+      - 54ab45db-b423-43d0-a678-c236d35cbed7
       Id: 778840fe-76e2-414b-9ba6-05b73aee58da
       NodeTypeInternalName: Selector
       ParentId: 
-      PositionInEditor: {x: 0, y: 0}
+      PositionInEditor: {x: -130.86018, y: -103.561844}
+    - ChildrenIds: []
+      Id: f8ceb6e1-723a-40c6-a032-e363e84cb640
+      NodeTypeInternalName: Selector
+      ParentId: 778840fe-76e2-414b-9ba6-05b73aee58da
+      PositionInEditor: {x: 397.55396, y: -206.589}
+    - ChildrenIds: []
+      Id: 54ab45db-b423-43d0-a678-c236d35cbed7
+      NodeTypeInternalName: Selector
+      ParentId: 778840fe-76e2-414b-9ba6-05b73aee58da
+      PositionInEditor: {x: 362.47498, y: 57.309174}
   _initialized: 1
   _rootId: 778840fe-76e2-414b-9ba6-05b73aee58da

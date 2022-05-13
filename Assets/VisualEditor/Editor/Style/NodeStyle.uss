@@ -10,10 +10,11 @@
 
 .node TextElement{
     margin: auto;
+    font-size: 15px;
 }
 
 .node Button{
-    font-size: 10px;
+    font-size: 13px;
     overflow: visible;
     margin: 0;
     width: 100%;
@@ -55,4 +56,13 @@
     height: 100%;
     background-color: #252525;
     border-bottom-left-radius: 10px;
+}
+
+.node-root{
+    background-color: #b94919;
+    border-color: darkred;
+}
+
+.node-root Button{
+    background-color: #b82c19;
 }

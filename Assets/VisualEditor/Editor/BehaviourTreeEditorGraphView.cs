@@ -15,7 +15,6 @@ namespace VisualEditor.Editor {
         private List<VisualNode> _nodes;
         
         private VisualNode _selectedNode;
-        private Vector2 _mousePosOnDown;
 
         public BehaviourTreeEditorGraphView(StyleSheet nodeStyleSheet, BehaviorTreeObject behaviorTreeObject) {
             _nodeStyleSheet = nodeStyleSheet;
@@ -83,10 +82,12 @@ namespace VisualEditor.Editor {
                     top = nodePos.y
                 }
             };
+            if (nodeEditorInstanceMetadata.Id == _behaviorTreeObject.RootId) {
+                node.AddToClassList("node-root");
+            }
             node.RegisterCallback<MouseDownEvent>(evt => {
                 if (evt.button != (int)MouseButton.LeftMouse)
                     return;
-                _mousePosOnDown = evt.originalMousePosition;
                 _selectedNode = node;
             });
             node.RegisterCallback<MouseUpEvent>(evt => {
@@ -139,12 +140,13 @@ namespace VisualEditor.Editor {
             UnregisterCallbacks();
             RegisterCallback<MouseMoveEvent>(OnMouseMoved);
             RegisterCallback<MouseUpEvent>(OnMouseUp);
+            generateVisualContent += OnGenerateVisualContent;
         }
-
-
+        
         private void UnregisterCallbacks() {
             UnregisterCallback<MouseMoveEvent>(OnMouseMoved);
             UnregisterCallback<MouseUpEvent>(OnMouseUp);
+            generateVisualContent -= OnGenerateVisualContent;
         }
 
         private void OnMouseMoved(MouseMoveEvent evt) {
@@ -168,6 +170,15 @@ namespace VisualEditor.Editor {
             node.Move(delta);
             _behaviorTreeObject.IdToNode[node.Guid].PositionInEditor += delta;
             EditorUtility.SetDirty(_behaviorTreeObject);
+        }
+        
+        private void OnGenerateVisualContent(MeshGenerationContext obj) {
+            foreach (var nodeEditorInstanceMetadata in _behaviorTreeObject.IdToNode.Values) {
+                foreach(var childId in nodeEditorInstanceMetadata.ChildrenIds) {
+                    Vector2 start = nodeEditorInstanceMetadata.PositionInEditor;
+                    Vector2 end = _behaviorTreeObject.IdToNode[childId].PositionInEditor;
+                }
+            }
         }
     }
 }
