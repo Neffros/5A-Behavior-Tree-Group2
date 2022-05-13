@@ -115,17 +115,16 @@ namespace VisualEditor.Editor {
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
             foreach (var nodeMetadata in Engine.Metadata.Values) {
                 evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {
-                    Debug.Log(scale);
-                    var mousePos = Vector2.zero;//action.eventInfo.mousePosition;
+                    var mousePos = Vector2.zero;//action.eventInfo.mousePosition; todo tofix
                     AddNode(nodeMetadata, mousePos, null);
                 });
             }
         }
 
         private NodeEditorInstanceMetadata AddNode(NodeMetadata nodeMetadata, Vector2 position, string parentId) {
-            Debug.Log("Drawing a node at position " + position);
             var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName,
-                new SerializableDictionary<string, object>(), position, parentId);
+                new SerializableDictionary<string, object>(Engine.GetProperties(nodeMetadata.InternalName)), position,
+                parentId);
 
             EditorUtility.SetDirty(_behaviorTreeObject);
                     

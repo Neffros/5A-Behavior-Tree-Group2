@@ -1,6 +1,7 @@
 using BehaviorTree;
 using NodeReflection;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace BehaviorTreeSerializer.Data
@@ -61,7 +62,7 @@ namespace BehaviorTreeSerializer.Data
         {
             if (!this.IdToNode.ContainsKey(parentId))
                 throw new Exception("Parent not found");
-            if (!this.IdToNode[parentId].ChildrenIds.Contains(childId))
+            if (!this.IdToNode.ContainsKey(childId))
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Add(childId);
