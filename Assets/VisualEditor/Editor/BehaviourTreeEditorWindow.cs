@@ -24,8 +24,8 @@ namespace VisualEditor.Editor {
         }
 
         public void CreateGUI() {
+            rootVisualElement.Clear();
             if (_targetObject == null) {
-                rootVisualElement.Clear();
                 return;
             }
             // Each editor window contains a root VisualElement object

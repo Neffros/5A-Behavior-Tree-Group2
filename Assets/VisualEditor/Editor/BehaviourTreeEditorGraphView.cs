@@ -93,12 +93,18 @@ namespace VisualEditor.Editor {
                 if (evt.button != (int)MouseButton.RightMouse)
                     return;
                 var menu = new GenericMenu();
-                menu.AddItem(new GUIContent("Delete Node"), false, () => {
-                    node.Clear();
-                    _behaviorTreeObject.RemoveNode(nodeEditorInstanceMetadata.Id);
-                    EditorUtility.SetDirty(_behaviorTreeObject);
-                    RepaintGraph();
-                });
+                if (nodeEditorInstanceMetadata.Id == _behaviorTreeObject.RootId) {
+                    menu.AddDisabledItem(new GUIContent("Delete Node"), false);
+                }
+                else {
+                    menu.AddItem(new GUIContent("Delete Node"), false, () => {
+                        node.Clear();
+                        _behaviorTreeObject.RemoveNode(nodeEditorInstanceMetadata.Id);
+                        EditorUtility.SetDirty(_behaviorTreeObject);
+                        RepaintGraph();
+                    });
+                }
+
                 menu.ShowAsContext();
             });
 
@@ -109,17 +115,16 @@ namespace VisualEditor.Editor {
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
             foreach (var nodeMetadata in Engine.Metadata.Values) {
                 evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {
-                    Debug.Log(scale);
-                    var mousePos = Vector2.zero;//action.eventInfo.mousePosition;
+                    var mousePos = Vector2.zero;//action.eventInfo.mousePosition; todo tofix
                     AddNode(nodeMetadata, mousePos, null);
                 });
             }
         }
 
         private NodeEditorInstanceMetadata AddNode(NodeMetadata nodeMetadata, Vector2 position, string parentId) {
-            Debug.Log("Drawing a node at position " + position);
             var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName,
-                new SerializableDictionary<string, object>(), position, parentId);
+                new SerializableDictionary<string, object>(Engine.GetProperties(nodeMetadata.InternalName)), position,
+                parentId);
 
             EditorUtility.SetDirty(_behaviorTreeObject);
                     
