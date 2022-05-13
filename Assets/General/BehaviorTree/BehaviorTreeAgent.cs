@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using BehaviorTreeSerializer.Data;
+using NodeReflection;
+using UnityEngine;
 
 namespace BehaviorTree
 {
@@ -7,6 +9,13 @@ namespace BehaviorTree
     /// </summary>
     public abstract class BehaviorTreeAgent : MonoBehaviour
     {
+        #region Unity Fields
+
+        [SerializeField, Tooltip("Behavior tree of the agent")]
+        private BehaviorTreeObject _behaviorTree;
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -23,7 +32,7 @@ namespace BehaviorTree
         /// </summary>
         private void Awake()
         {
-            Root = SetupTree();
+            this.Root = SetupTree();
         }
 
         /// <summary>
@@ -31,7 +40,7 @@ namespace BehaviorTree
         /// </summary>
         private void Start()
         {
-            Root?.Initialize(this);
+            this.Root?.Initialize(this);
         }
 
         /// <summary>
@@ -39,18 +48,27 @@ namespace BehaviorTree
         /// </summary>
         private void Update()
         {
-            Root?.Evaluate();
+            this.Root?.Evaluate();
         }
 
         #endregion
 
-        #region Protected Abstract Methods
+        #region Protected Virtual Methods
 
         /// <summary>
         /// Sets up nodes for the behavior of the agent
         /// </summary>
         /// <returns></returns>
-        protected abstract Node SetupTree();
+        protected virtual Node SetupTree()
+        {
+            if (this._behaviorTree == null)
+            {
+                Debug.LogError("Behavior tree not set");
+                return null;
+            }
+
+            return Engine.GenerateTree(this._behaviorTree);
+        }
 
         #endregion
     }

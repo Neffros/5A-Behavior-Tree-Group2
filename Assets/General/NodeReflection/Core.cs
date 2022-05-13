@@ -19,7 +19,26 @@ namespace NodeReflection
         /// <summary>
         /// Gets the current nodes types' metadata
         /// </summary>
-        public static Dictionary<string, NodeMetadata> Metadata { get; private set; }
+        public static Dictionary<string, NodeMetadata> Metadata
+        {
+            get
+            {
+                if (Engine._metadata == null)
+                    Engine.Update();
+
+                return Engine._metadata;
+            }
+            private set
+            {
+                Engine._metadata = value;
+            }
+        }
+
+        #endregion
+
+        #region Private Static Fields
+
+        private static Dictionary<string, NodeMetadata> _metadata;
 
         #endregion
 
@@ -32,9 +51,6 @@ namespace NodeReflection
         /// <returns></returns>
         public static Node GenerateTree(BehaviorTreeObject data)
         {
-            if (Engine.Metadata == null)
-                throw new Exception("Metadata not initialized");
-
             return Engine.CreateNodeInstance(data, data.RootId);
         }
 
@@ -45,9 +61,6 @@ namespace NodeReflection
         /// <returns>A dictionary of properties</returns>
         public static Dictionary<string, object> GetProperties(string internalName)
         {
-            if (Engine.Metadata == null)
-                throw new Exception("Metadata not initialized");
-
             if (!Engine.Metadata.ContainsKey(internalName))
                 throw new Exception("Type not existing");
 
