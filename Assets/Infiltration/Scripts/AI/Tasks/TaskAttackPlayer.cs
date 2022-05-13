@@ -10,7 +10,7 @@ namespace Infiltration
         [ExposedInVisualEditor]
         public float AttackRange { get; set; }
 
-        protected override NodeState OnEvaluate()
+        protected override NodeState OnUpdate()
         {
             var target = this.GetData<Transform>("target");
 
@@ -20,7 +20,7 @@ namespace Infiltration
                 player.GetHit();
             }
 
-            return NodeState.RUNNING;
+            return NodeState.Success;
         }
     }
 }

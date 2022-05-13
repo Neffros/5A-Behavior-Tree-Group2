@@ -1,17 +1,17 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BehaviorTree
 {
     /// <summary>
-    /// State of the node : SUCCESS, FAILURE, RUNNING
+    /// State of the node
     /// </summary>
     public enum NodeState
     {
-        RUNNING,
-        SUCCESS,
-        FAILURE
+        NotExecuted,
+        Running,
+        Success,
+        Failure
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ namespace BehaviorTree
         /// <summary>
         /// Current state of the node
         /// </summary>
-        public NodeState State { get; private set; }
+        public NodeState State { get; private set; } = NodeState.NotExecuted;
 
         #endregion
 
@@ -118,18 +118,38 @@ namespace BehaviorTree
             this.Agent = agent;
             this.Root = root;
 
-            this.OnInitialized();
+            this.OnInitialize();
 
-            foreach (var child in this.Children)
-                child.Initialize(agent, root ?? this);
+            for (int i = 0; i < Children.Count; i++)
+            {
+                Children[i].Initialize(agent, root ?? this);
+            }
         }
 
         /// <summary>
-        /// Triggers the evaluation of the node
+        /// Updates the node
         /// </summary>
-        public void Evaluate()
+        public void Update()
         {
-            State = OnEvaluate();
+            if (State == NodeState.NotExecuted)
+            {
+                State = OnStart();
+            }
+
+            if (State == NodeState.Running)
+            {
+                State = OnUpdate();
+            }
+        }
+
+        public void Reset()
+        {
+            State = NodeState.NotExecuted;
+
+            for (int i = 0; i < Children.Count; i++)
+            {
+                Children[i].Reset();
+            }
         }
 
         /// <summary>
@@ -147,15 +167,27 @@ namespace BehaviorTree
         #region Protected Overrideable Methods
 
         /// <summary>
-        /// Evaluate children node
-        /// </summary>
-        /// <returns>Return FAILURE by default</returns>
-        protected virtual NodeState OnEvaluate() => NodeState.FAILURE;
-
-        /// <summary>
         /// Fired on tree initialization
         /// </summary>
-        protected virtual void OnInitialized() { }
+        protected virtual void OnInitialize() { }
+
+        /// <summary>
+        /// Called on node update if the status is NotExecuted.
+        /// </summary>
+        /// <returns>Returns the new state of this node. Must not be NodeState.NotExecuted.</returns>
+        protected virtual NodeState OnStart()
+        {
+            return NodeState.Running;
+        }
+
+        /// <summary>
+        /// Called on node update if the status is Running.
+        /// </summary>
+        /// <returns>Returns the new state of this node. Must not be NodeState.NotExecuted.</returns>
+        protected virtual NodeState OnUpdate()
+        {
+            return NodeState.Running;
+        }
 
         #endregion
 
