@@ -1,4 +1,5 @@
 ﻿using System;
+using NodeReflection;
 
 namespace BehaviorTree
 {
@@ -14,12 +15,14 @@ namespace BehaviorTree
 	/// <summary>
 	/// Repeats the child while its state does not match the RepeatMode
 	/// </summary>
+	[VisualNode]
 	public class Repeater : Node
 	{
 		/// <summary>
 		/// Repeat mode
 		/// </summary>
-		public RepeatMode RepeatMode { get; set; } = RepeatMode.RepeatIfSuccess;
+		[ExposedInVisualEditor(defaultValue: RepeatMode.RepeatIfSuccess)]
+		public RepeatMode RepeatMode { get; set; }
 		
 		/// <summary>
 		/// Evaluates the node
