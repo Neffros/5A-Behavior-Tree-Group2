@@ -1,4 +1,6 @@
-﻿using System;
+
+
+using System;
 using BehaviorTreeSerializer.Data;
 using NodeReflection;
 using UnityEngine;
@@ -8,7 +10,7 @@ namespace BehaviorTree
     /// <summary>
     /// Main class for the behavior of the agent
     /// </summary>
-    public abstract class BehaviorTreeAgent : MonoBehaviour
+    public class BehaviorTreeAgent : MonoBehaviour
     {
         #region Unity Fields
 

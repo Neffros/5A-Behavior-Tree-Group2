@@ -78,19 +78,19 @@ namespace NodeReflection
                     switch (type)
                     {
                         case ExposedPropertyTypeEnum.BOOL:
-                            if (defaultValue is not bool)
+                            if (defaultValue != null && defaultValue is not bool)
                                 throw new Exception("Default value uncompatible");
                             return new KeyValuePair<string, object>(key, defaultValue ?? false);
                         case ExposedPropertyTypeEnum.FLOAT:
-                            if (defaultValue is not float)
+                            if (defaultValue != null && defaultValue is not float)
                                 throw new Exception("Default value uncompatible");
                             return new KeyValuePair<string, object>(key, defaultValue ?? 0);
                         case ExposedPropertyTypeEnum.INT:
-                            if (defaultValue is not int)
+                            if (defaultValue != null && defaultValue is not int)
                                 throw new Exception("Default value uncompatible");
                             return new KeyValuePair<string, object>(key, defaultValue ?? 0);
                         case ExposedPropertyTypeEnum.STRING:
-                            if (defaultValue is not string)
+                            if (defaultValue != null && defaultValue is not string)
                                 throw new Exception("Default value uncompatible");
                             return new KeyValuePair<string, object>(key, defaultValue ?? string.Empty);
                         default:

@@ -10,7 +10,7 @@ namespace Infiltration
         private const int PlayerLayerMask = 1 << 6;
 
         [ExposedInVisualEditor]
-        public float SeeRange { get; set; }
+        public float SeeRange { get; set; } = 6;
 
         protected override NodeState OnStart()
         {

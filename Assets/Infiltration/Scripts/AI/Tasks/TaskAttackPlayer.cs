@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Infiltration
 {
     [VisualNode]
-    public class TaskAttackPlayer : Node
-    {
-        [ExposedInVisualEditor]
-        public float AttackRange { get; set; }
+    public class TaskAttackPlayer : Node {
+        [ExposedInVisualEditor] public float AttackRange { get; set; } = 1;
 
         protected override NodeState OnUpdate()
         {

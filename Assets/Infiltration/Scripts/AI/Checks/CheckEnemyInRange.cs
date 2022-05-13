@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Infiltration
 {
     [VisualNode]
-    public class CheckEnemyInRange : Node
-    {
-        [ExposedInVisualEditor]
-        public float AttackRange { get; set; }
+    public class CheckEnemyInRange : Node {
+        [ExposedInVisualEditor] public float AttackRange { get; set; } = 1;
 
         protected override NodeState OnStart()
         {

@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Infiltration
 {
     [VisualNode]
-    public class TaskGoTowardEnemy : Node
-    {
-        [ExposedInVisualEditor]
-        public float Speed { get; set; }
+    public class TaskGoTowardEnemy : Node {
+        [ExposedInVisualEditor] public float Speed { get; set; } = 6;
 
         [ExposedInVisualEditor]
         public float UnseeRange { get; set; }

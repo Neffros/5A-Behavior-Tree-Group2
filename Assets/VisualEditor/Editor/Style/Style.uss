@@ -1,4 +1,11 @@
-.node {
+GridBackground{
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(193, 196, 192, 0.1);
+    --thick-line-color: rgba(193, 196, 192, 0.1);
+    --spacing: 15;
+}
+
+/*.node {
     width: 300px;
     height: 120px;
     background-color: rgb(56, 56, 56);
@@ -10,16 +17,17 @@
 
 .node TextElement{
     margin: auto;
+    font-size: 15px;
 }
 
 .node Button{
-    font-size: 10px;
+    font-size: 13px;
     overflow: visible;
     margin: 0;
     width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
+}*/
 
 .node-sequence{
     flex-direction: row;
@@ -55,4 +63,13 @@
     height: 100%;
     background-color: #252525;
     border-bottom-left-radius: 10px;
+}
+
+.node-root{
+    background-color: #b94919;
+    border-color: darkred;
+}
+
+.node-root Button{
+    background-color: #b82c19;
 }
