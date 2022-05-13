@@ -1,0 +1,414 @@
+### YamlMime:ManagedReference
+items:
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorGraphView
+  id: BehaviourTreeEditorGraphView
+  parent: VisualEditor.Editor
+  children:
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView.#ctor
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts(Port,NodeAdapter)
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView.OnNodeSelected
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView(BehaviorTreeObject)
+  langs:
+  - csharp
+  - vb
+  name: BehaviourTreeEditorGraphView
+  nameWithType: BehaviourTreeEditorGraphView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  type: Class
+  source:
+    id: BehaviourTreeEditorGraphView
+    path: ''
+    startLine: 656
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: 'public class BehaviourTreeEditorGraphView : GraphView'
+    content.vb: >-
+      Public Class BehaviourTreeEditorGraphView
+          Inherits GraphView
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.OnNodeSelected
+  commentId: F:VisualEditor.Editor.BehaviourTreeEditorGraphView.OnNodeSelected
+  id: OnNodeSelected
+  parent: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  langs:
+  - csharp
+  - vb
+  name: OnNodeSelected
+  nameWithType: BehaviourTreeEditorGraphView.OnNodeSelected
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.OnNodeSelected
+  type: Field
+  source:
+    id: OnNodeSelected
+    path: ''
+    startLine: 661
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: public Action<NodeView> OnNodeSelected
+    return:
+      type: System.Action{VisualEditor.Editor.NodeView}
+    content.vb: Public OnNodeSelected As Action(Of NodeView)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.#ctor
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorGraphView.#ctor
+  id: '#ctor'
+  parent: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  langs:
+  - csharp
+  - vb
+  name: BehaviourTreeEditorGraphView()
+  nameWithType: BehaviourTreeEditorGraphView.BehaviourTreeEditorGraphView()
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.BehaviourTreeEditorGraphView()
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 663
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: public BehaviourTreeEditorGraphView()
+    content.vb: Public Sub New
+  overload: VisualEditor.Editor.BehaviourTreeEditorGraphView.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView(BehaviorTreeObject)
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView(BehaviorTreeObject)
+  id: PopulateView(BehaviorTreeObject)
+  parent: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  langs:
+  - csharp
+  - vb
+  name: PopulateView(BehaviorTreeObject)
+  nameWithType: BehaviourTreeEditorGraphView.PopulateView(BehaviorTreeObject)
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView(BehaviorTreeObject)
+  type: Method
+  source:
+    id: PopulateView
+    path: ''
+    startLine: 685
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  summary: "\nPopulates graph view when the visual editor is loaded\n"
+  example: []
+  syntax:
+    content: public void PopulateView(BehaviorTreeObject behaviorTreeObject)
+    parameters:
+    - id: behaviorTreeObject
+      type: BehaviorTreeObject
+    content.vb: Public Sub PopulateView(behaviorTreeObject As BehaviorTreeObject)
+  overload: VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts(Port,NodeAdapter)
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts(Port,NodeAdapter)
+  id: GetCompatiblePorts(Port,NodeAdapter)
+  parent: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  langs:
+  - csharp
+  - vb
+  name: GetCompatiblePorts(Port, NodeAdapter)
+  nameWithType: BehaviourTreeEditorGraphView.GetCompatiblePorts(Port, NodeAdapter)
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts(Port, NodeAdapter)
+  type: Method
+  source:
+    id: GetCompatiblePorts
+    path: ''
+    startLine: 712
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+    parameters:
+    - id: startPort
+      type: Port
+    - id: nodeAdapter
+      type: NodeAdapter
+    return:
+      type: List{Port}
+    content.vb: Public Overrides Function GetCompatiblePorts(startPort As Port, nodeAdapter As NodeAdapter) As List(Of Port)
+  overload: VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  id: BuildContextualMenu(ContextualMenuPopulateEvent)
+  parent: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  langs:
+  - csharp
+  - vb
+  name: BuildContextualMenu(ContextualMenuPopulateEvent)
+  nameWithType: BehaviourTreeEditorGraphView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu(ContextualMenuPopulateEvent)
+  type: Method
+  source:
+    id: BuildContextualMenu
+    path: ''
+    startLine: 752
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  summary: "\nGeneric menu showed when right clicking\n"
+  example: []
+  syntax:
+    content: public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+    parameters:
+    - id: evt
+      type: ContextualMenuPopulateEvent
+    content.vb: Public Overrides Sub BuildContextualMenu(evt As ContextualMenuPopulateEvent)
+  overload: VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: VisualEditor.Editor
+  commentId: N:VisualEditor.Editor
+  name: VisualEditor.Editor
+  nameWithType: VisualEditor.Editor
+  fullName: VisualEditor.Editor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Action{VisualEditor.Editor.NodeView}
+  commentId: T:System.Action{VisualEditor.Editor.NodeView}
+  parent: System
+  definition: System.Action`1
+  name: Action<NodeView>
+  nameWithType: Action<NodeView>
+  fullName: System.Action<VisualEditor.Editor.NodeView>
+  nameWithType.vb: Action(Of NodeView)
+  fullName.vb: System.Action(Of VisualEditor.Editor.NodeView)
+  name.vb: Action(Of NodeView)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: VisualEditor.Editor.NodeView
+    name: NodeView
+    nameWithType: NodeView
+    fullName: VisualEditor.Editor.NodeView
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: VisualEditor.Editor.NodeView
+    name: NodeView
+    nameWithType: NodeView
+    fullName: VisualEditor.Editor.NodeView
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.#ctor*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorGraphView.#ctor
+  name: BehaviourTreeEditorGraphView
+  nameWithType: BehaviourTreeEditorGraphView.BehaviourTreeEditorGraphView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.BehaviourTreeEditorGraphView
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView
+  name: PopulateView
+  nameWithType: BehaviourTreeEditorGraphView.PopulateView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.PopulateView
+- uid: BehaviorTreeObject
+  isExternal: true
+  name: BehaviorTreeObject
+  nameWithType: BehaviorTreeObject
+  fullName: BehaviorTreeObject
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts
+  name: GetCompatiblePorts
+  nameWithType: BehaviourTreeEditorGraphView.GetCompatiblePorts
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.GetCompatiblePorts
+- uid: Port
+  isExternal: true
+  name: Port
+  nameWithType: Port
+  fullName: Port
+- uid: NodeAdapter
+  commentId: '!:NodeAdapter'
+  isExternal: true
+  name: NodeAdapter
+  nameWithType: NodeAdapter
+  fullName: NodeAdapter
+- uid: List{Port}
+  commentId: '!:List{Port}'
+  definition: List`1
+  name: List<Port>
+  nameWithType: List<Port>
+  fullName: List<Port>
+  nameWithType.vb: List(Of Port)
+  fullName.vb: List(Of Port)
+  name.vb: List(Of Port)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Port
+    name: Port
+    nameWithType: Port
+    fullName: Port
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Port
+    name: Port
+    nameWithType: Port
+    fullName: Port
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: List`1
+  isExternal: true
+  name: List<>
+  nameWithType: List<>
+  fullName: List<>
+  nameWithType.vb: List(Of )
+  fullName.vb: List(Of )
+  name.vb: List(Of )
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu
+  name: BuildContextualMenu
+  nameWithType: BehaviourTreeEditorGraphView.BuildContextualMenu
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.BuildContextualMenu
+- uid: ContextualMenuPopulateEvent
+  commentId: '!:ContextualMenuPopulateEvent'
+  isExternal: true
+  name: ContextualMenuPopulateEvent
+  nameWithType: ContextualMenuPopulateEvent
+  fullName: ContextualMenuPopulateEvent

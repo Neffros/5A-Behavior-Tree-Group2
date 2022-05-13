@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace BehaviorTree
 {
@@ -145,6 +146,8 @@ namespace BehaviorTree
         public void Reset()
         {
             State = NodeState.NotExecuted;
+            
+            OnReset();
 
             for (int i = 0; i < Children.Count; i++)
             {
@@ -198,6 +201,14 @@ namespace BehaviorTree
         protected virtual NodeState OnUpdate()
         {
             return NodeState.Running;
+        }
+
+        /// <summary>
+        /// Called when the node is reset.
+        /// </summary>
+        protected virtual void OnReset()
+        {
+            
         }
 
         #endregion

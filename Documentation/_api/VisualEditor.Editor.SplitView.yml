@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: VisualEditor.Editor.SplitView
+  commentId: T:VisualEditor.Editor.SplitView
+  id: SplitView
+  parent: VisualEditor.Editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: SplitView
+  nameWithType: SplitView
+  fullName: VisualEditor.Editor.SplitView
+  type: Class
+  source:
+    id: SplitView
+    path: ''
+    startLine: 1033
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: 'public class SplitView : TwoPaneSplitView'
+    content.vb: >-
+      Public Class SplitView
+          Inherits TwoPaneSplitView
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+references:
+- uid: VisualEditor.Editor
+  commentId: N:VisualEditor.Editor
+  name: VisualEditor.Editor
+  nameWithType: VisualEditor.Editor
+  fullName: VisualEditor.Editor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

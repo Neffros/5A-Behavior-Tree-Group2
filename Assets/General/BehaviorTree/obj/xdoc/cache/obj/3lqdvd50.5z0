@@ -1,0 +1,3111 @@
+id: cs.temp.dll
+language: CSharp
+name:
+  Default: cs.temp.dll
+qualifiedName:
+  Default: cs.temp.dll
+type: Assembly
+modifiers: {}
+items:
+- id: BehaviorTree
+  commentId: N:BehaviorTree
+  language: CSharp
+  name:
+    CSharp: BehaviorTree
+    VB: BehaviorTree
+  nameWithType:
+    CSharp: BehaviorTree
+    VB: BehaviorTree
+  qualifiedName:
+    CSharp: BehaviorTree
+    VB: BehaviorTree
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+  modifiers: {}
+  items:
+  - id: BehaviorTree.BehaviorTreeAgent
+    commentId: T:BehaviorTree.BehaviorTreeAgent
+    language: CSharp
+    name:
+      CSharp: BehaviorTreeAgent
+      VB: BehaviorTreeAgent
+    nameWithType:
+      CSharp: BehaviorTreeAgent
+      VB: BehaviorTreeAgent
+    qualifiedName:
+      CSharp: BehaviorTree.BehaviorTreeAgent
+      VB: BehaviorTree.BehaviorTreeAgent
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: BehaviorTree
+    source:
+      id: BehaviorTreeAgent
+      path: ''
+      startLine: 9
+    summary: "\nMain class for the behavior of the agent\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public abstract class BehaviorTreeAgent : MonoBehaviour'
+        VB: >-
+          Public MustInherit Class BehaviorTreeAgent
+
+              Inherits MonoBehaviour
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - abstract
+      - class
+      VB:
+      - Public
+      - MustInherit
+      - Class
+    items:
+    - id: BehaviorTree.BehaviorTreeAgent.Root
+      commentId: P:BehaviorTree.BehaviorTreeAgent.Root
+      language: CSharp
+      name:
+        CSharp: Root
+        VB: Root
+      nameWithType:
+        CSharp: BehaviorTreeAgent.Root
+        VB: BehaviorTreeAgent.Root
+      qualifiedName:
+        CSharp: BehaviorTree.BehaviorTreeAgent.Root
+        VB: BehaviorTree.BehaviorTreeAgent.Root
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Root
+        path: ''
+        startLine: 23
+      summary: "\nGets the root node that will contain children node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public Node Root { get; }
+          VB: Public ReadOnly Property Root As Node
+        parameters: []
+        return:
+          type: BehaviorTree.Node
+      overload: BehaviorTree.BehaviorTreeAgent.Root*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: BehaviorTree.BehaviorTreeAgent.SetupTree
+      commentId: M:BehaviorTree.BehaviorTreeAgent.SetupTree
+      language: CSharp
+      name:
+        CSharp: SetupTree()
+        VB: SetupTree()
+      nameWithType:
+        CSharp: BehaviorTreeAgent.SetupTree()
+        VB: BehaviorTreeAgent.SetupTree()
+      qualifiedName:
+        CSharp: BehaviorTree.BehaviorTreeAgent.SetupTree()
+        VB: BehaviorTree.BehaviorTreeAgent.SetupTree()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: SetupTree
+        path: ''
+        startLine: 61
+      summary: "\nSets up nodes for the behavior of the agent\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected virtual Node SetupTree()
+          VB: Protected Overridable Function SetupTree As Node
+        return:
+          type: BehaviorTree.Node
+          description: ''
+      overload: BehaviorTree.BehaviorTreeAgent.SetupTree*
+      modifiers:
+        CSharp:
+        - protected
+        - virtual
+        VB:
+        - Protected
+        - Overridable
+  - id: BehaviorTree.Inverter
+    commentId: T:BehaviorTree.Inverter
+    language: CSharp
+    name:
+      CSharp: Inverter
+      VB: Inverter
+    nameWithType:
+      CSharp: Inverter
+      VB: Inverter
+    qualifiedName:
+      CSharp: BehaviorTree.Inverter
+      VB: BehaviorTree.Inverter
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: BehaviorTree
+    source:
+      id: Inverter
+      path: ''
+      startLine: 82
+    summary: "\nInverts the result of the child node.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class Inverter : Node'
+        VB: >-
+          Public Class Inverter
+
+              Inherits Node
+    inheritance:
+    - System.Object
+    - BehaviorTree.Node
+    inheritedMembers:
+    - BehaviorTree.Node.Agent
+    - BehaviorTree.Node.Children
+    - BehaviorTree.Node.Parent
+    - BehaviorTree.Node.Root
+    - BehaviorTree.Node.State
+    - BehaviorTree.Node.Attach(BehaviorTree.Node)
+    - BehaviorTree.Node.GetNode``1
+    - BehaviorTree.Node.GetNodes``1
+    - BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+    - BehaviorTree.Node.Evaluate
+    - BehaviorTree.Node.SetData(System.String,System.Object)
+    - BehaviorTree.Node.OnInitialized
+    - BehaviorTree.Node.GetData(System.String)
+    - BehaviorTree.Node.GetData``1(System.String)
+    - BehaviorTree.Node.RemoveData(System.String)
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: BehaviorTree.Inverter.OnEvaluate
+      commentId: M:BehaviorTree.Inverter.OnEvaluate
+      language: CSharp
+      name:
+        CSharp: OnEvaluate()
+        VB: OnEvaluate()
+      nameWithType:
+        CSharp: Inverter.OnEvaluate()
+        VB: Inverter.OnEvaluate()
+      qualifiedName:
+        CSharp: BehaviorTree.Inverter.OnEvaluate()
+        VB: BehaviorTree.Inverter.OnEvaluate()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: OnEvaluate
+        path: ''
+        startLine: 89
+      summary: "\nEvaluate the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected override NodeState OnEvaluate()
+          VB: Protected Overrides Function OnEvaluate As NodeState
+        return:
+          type: BehaviorTree.NodeState
+          description: Return SUCCESS if a child node failed, FAILURE if a child node succeeded, or RUNNING
+      overload: BehaviorTree.Inverter.OnEvaluate*
+      overridden: BehaviorTree.Node.OnEvaluate
+      modifiers:
+        CSharp:
+        - protected
+        - override
+        VB:
+        - Protected
+        - Overrides
+  - id: BehaviorTree.NodeState
+    commentId: T:BehaviorTree.NodeState
+    language: CSharp
+    name:
+      CSharp: NodeState
+      VB: NodeState
+    nameWithType:
+      CSharp: NodeState
+      VB: NodeState
+    qualifiedName:
+      CSharp: BehaviorTree.NodeState
+      VB: BehaviorTree.NodeState
+    type: Enum
+    assemblies:
+    - cs.temp.dll
+    namespace: BehaviorTree
+    source:
+      id: NodeState
+      path: ''
+      startLine: 123
+    summary: "\nState of the node : SUCCESS, FAILURE, RUNNING\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public enum NodeState
+        VB: Public Enum NodeState
+    modifiers:
+      CSharp:
+      - public
+      - enum
+      VB:
+      - Public
+      - Enum
+    items:
+    - id: BehaviorTree.NodeState.RUNNING
+      commentId: F:BehaviorTree.NodeState.RUNNING
+      language: CSharp
+      name:
+        CSharp: RUNNING
+        VB: RUNNING
+      nameWithType:
+        CSharp: NodeState.RUNNING
+        VB: NodeState.RUNNING
+      qualifiedName:
+        CSharp: BehaviorTree.NodeState.RUNNING
+        VB: BehaviorTree.NodeState.RUNNING
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: RUNNING
+        path: ''
+        startLine: 125
+      syntax:
+        content:
+          CSharp: RUNNING = 0
+          VB: RUNNING = 0
+        return:
+          type: BehaviorTree.NodeState
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: BehaviorTree.NodeState.SUCCESS
+      commentId: F:BehaviorTree.NodeState.SUCCESS
+      language: CSharp
+      name:
+        CSharp: SUCCESS
+        VB: SUCCESS
+      nameWithType:
+        CSharp: NodeState.SUCCESS
+        VB: NodeState.SUCCESS
+      qualifiedName:
+        CSharp: BehaviorTree.NodeState.SUCCESS
+        VB: BehaviorTree.NodeState.SUCCESS
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: SUCCESS
+        path: ''
+        startLine: 126
+      syntax:
+        content:
+          CSharp: SUCCESS = 1
+          VB: SUCCESS = 1
+        return:
+          type: BehaviorTree.NodeState
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: BehaviorTree.NodeState.FAILURE
+      commentId: F:BehaviorTree.NodeState.FAILURE
+      language: CSharp
+      name:
+        CSharp: FAILURE
+        VB: FAILURE
+      nameWithType:
+        CSharp: NodeState.FAILURE
+        VB: NodeState.FAILURE
+      qualifiedName:
+        CSharp: BehaviorTree.NodeState.FAILURE
+        VB: BehaviorTree.NodeState.FAILURE
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: FAILURE
+        path: ''
+        startLine: 127
+      syntax:
+        content:
+          CSharp: FAILURE = 2
+          VB: FAILURE = 2
+        return:
+          type: BehaviorTree.NodeState
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+  - id: BehaviorTree.Node
+    commentId: T:BehaviorTree.Node
+    language: CSharp
+    name:
+      CSharp: Node
+      VB: Node
+    nameWithType:
+      CSharp: Node
+      VB: Node
+    qualifiedName:
+      CSharp: BehaviorTree.Node
+      VB: BehaviorTree.Node
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: BehaviorTree
+    source:
+      id: Node
+      path: ''
+      startLine: 133
+    summary: "\nNode that is connected to the root, will be evaluated by the agent\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public abstract class Node
+        VB: Public MustInherit Class Node
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - abstract
+      - class
+      VB:
+      - Public
+      - MustInherit
+      - Class
+    items:
+    - id: BehaviorTree.Node.Agent
+      commentId: P:BehaviorTree.Node.Agent
+      language: CSharp
+      name:
+        CSharp: Agent
+        VB: Agent
+      nameWithType:
+        CSharp: Node.Agent
+        VB: Node.Agent
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Agent
+        VB: BehaviorTree.Node.Agent
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Agent
+        path: ''
+        startLine: 140
+      summary: "\nGets the behavior tree agent\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public BehaviorTreeAgent Agent { get; }
+          VB: Public ReadOnly Property Agent As BehaviorTreeAgent
+        parameters: []
+        return:
+          type: BehaviorTree.BehaviorTreeAgent
+      overload: BehaviorTree.Node.Agent*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: BehaviorTree.Node.Children
+      commentId: P:BehaviorTree.Node.Children
+      language: CSharp
+      name:
+        CSharp: Children
+        VB: Children
+      nameWithType:
+        CSharp: Node.Children
+        VB: Node.Children
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Children
+        VB: BehaviorTree.Node.Children
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Children
+        path: ''
+        startLine: 145
+      summary: "\nChildren node that the node will have\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public List<Node> Children { get; }
+          VB: Public ReadOnly Property Children As List(Of Node)
+        parameters: []
+        return:
+          type: List{BehaviorTree.Node}
+      overload: BehaviorTree.Node.Children*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: BehaviorTree.Node.Parent
+      commentId: P:BehaviorTree.Node.Parent
+      language: CSharp
+      name:
+        CSharp: Parent
+        VB: Parent
+      nameWithType:
+        CSharp: Node.Parent
+        VB: Node.Parent
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Parent
+        VB: BehaviorTree.Node.Parent
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Parent
+        path: ''
+        startLine: 150
+      summary: "\nGets the parent of the current node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public Node Parent { get; }
+          VB: Public ReadOnly Property Parent As Node
+        parameters: []
+        return:
+          type: BehaviorTree.Node
+      overload: BehaviorTree.Node.Parent*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: BehaviorTree.Node.Root
+      commentId: P:BehaviorTree.Node.Root
+      language: CSharp
+      name:
+        CSharp: Root
+        VB: Root
+      nameWithType:
+        CSharp: Node.Root
+        VB: Node.Root
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Root
+        VB: BehaviorTree.Node.Root
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Root
+        path: ''
+        startLine: 155
+      summary: "\nGets the root of the tree containing the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public Node Root { get; }
+          VB: Public ReadOnly Property Root As Node
+        parameters: []
+        return:
+          type: BehaviorTree.Node
+      overload: BehaviorTree.Node.Root*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: BehaviorTree.Node.State
+      commentId: P:BehaviorTree.Node.State
+      language: CSharp
+      name:
+        CSharp: State
+        VB: State
+      nameWithType:
+        CSharp: Node.State
+        VB: Node.State
+      qualifiedName:
+        CSharp: BehaviorTree.Node.State
+        VB: BehaviorTree.Node.State
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: State
+        path: ''
+        startLine: 160
+      summary: "\nCurrent state of the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public NodeState State { get; }
+          VB: Public ReadOnly Property State As NodeState
+        parameters: []
+        return:
+          type: BehaviorTree.NodeState
+      overload: BehaviorTree.Node.State*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: BehaviorTree.Node.Attach(BehaviorTree.Node)
+      commentId: M:BehaviorTree.Node.Attach(BehaviorTree.Node)
+      language: CSharp
+      name:
+        CSharp: Attach(Node)
+        VB: Attach(Node)
+      nameWithType:
+        CSharp: Node.Attach(Node)
+        VB: Node.Attach(Node)
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Attach(BehaviorTree.Node)
+        VB: BehaviorTree.Node.Attach(BehaviorTree.Node)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Attach
+        path: ''
+        startLine: 180
+      summary: "\nAttach child node to this instance of Node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public Node Attach(Node node)
+          VB: Public Function Attach(node As Node) As Node
+        parameters:
+        - id: node
+          type: BehaviorTree.Node
+          description: Child node to be attached
+        return:
+          type: BehaviorTree.Node
+          description: Return current node for chaining
+      overload: BehaviorTree.Node.Attach*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: BehaviorTree.Node.GetNode``1
+      commentId: M:BehaviorTree.Node.GetNode``1
+      language: CSharp
+      name:
+        CSharp: GetNode<T>()
+        VB: GetNode(Of T)()
+      nameWithType:
+        CSharp: Node.GetNode<T>()
+        VB: Node.GetNode(Of T)()
+      qualifiedName:
+        CSharp: BehaviorTree.Node.GetNode<T>()
+        VB: BehaviorTree.Node.GetNode(Of T)()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: GetNode
+        path: ''
+        startLine: 192
+      summary: "\nGets the first found node with the given type in the tree of this node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public T GetNode<T>()
+
+                where T : Node
+          VB: Public Function GetNode(Of T As Node) As T
+        typeParameters:
+        - id: T
+          description: Node type to find
+        return:
+          type: '{T}'
+          description: A node with the given type
+      overload: BehaviorTree.Node.GetNode*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: BehaviorTree.Node.GetNodes``1
+      commentId: M:BehaviorTree.Node.GetNodes``1
+      language: CSharp
+      name:
+        CSharp: GetNodes<T>()
+        VB: GetNodes(Of T)()
+      nameWithType:
+        CSharp: Node.GetNodes<T>()
+        VB: Node.GetNodes(Of T)()
+      qualifiedName:
+        CSharp: BehaviorTree.Node.GetNodes<T>()
+        VB: BehaviorTree.Node.GetNodes(Of T)()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: GetNodes
+        path: ''
+        startLine: 216
+      summary: "\nGets nodes by type in the tree of this node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public IEnumerable<T> GetNodes<T>()
+
+                where T : Node
+          VB: Public Function GetNodes(Of T As Node) As IEnumerable(Of T)
+        typeParameters:
+        - id: T
+          description: Node type to find
+        return:
+          type: IEnumerable{{T}}
+          description: An enumerable of nodes with the given type
+      overload: BehaviorTree.Node.GetNodes*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+      commentId: M:BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+      language: CSharp
+      name:
+        CSharp: Initialize(BehaviorTreeAgent, Node)
+        VB: Initialize(BehaviorTreeAgent, Node)
+      nameWithType:
+        CSharp: Node.Initialize(BehaviorTreeAgent, Node)
+        VB: Node.Initialize(BehaviorTreeAgent, Node)
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent, BehaviorTree.Node)
+        VB: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent, BehaviorTree.Node)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Initialize
+        path: ''
+        startLine: 229
+      summary: "\nInitializes the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void Initialize(BehaviorTreeAgent agent, Node root = null)
+          VB: Public Sub Initialize(agent As BehaviorTreeAgent, root As Node = Nothing)
+        parameters:
+        - id: agent
+          type: BehaviorTree.BehaviorTreeAgent
+        - id: root
+          type: BehaviorTree.Node
+      overload: BehaviorTree.Node.Initialize*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: BehaviorTree.Node.Evaluate
+      commentId: M:BehaviorTree.Node.Evaluate
+      language: CSharp
+      name:
+        CSharp: Evaluate()
+        VB: Evaluate()
+      nameWithType:
+        CSharp: Node.Evaluate()
+        VB: Node.Evaluate()
+      qualifiedName:
+        CSharp: BehaviorTree.Node.Evaluate()
+        VB: BehaviorTree.Node.Evaluate()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: Evaluate
+        path: ''
+        startLine: 243
+      summary: "\nTriggers the evaluation of the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void Evaluate()
+          VB: Public Sub Evaluate
+      overload: BehaviorTree.Node.Evaluate*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: BehaviorTree.Node.SetData(System.String,System.Object)
+      commentId: M:BehaviorTree.Node.SetData(System.String,System.Object)
+      language: CSharp
+      name:
+        CSharp: SetData(String, Object)
+        VB: SetData(String, Object)
+      nameWithType:
+        CSharp: Node.SetData(String, Object)
+        VB: Node.SetData(String, Object)
+      qualifiedName:
+        CSharp: BehaviorTree.Node.SetData(System.String, System.Object)
+        VB: BehaviorTree.Node.SetData(System.String, System.Object)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: SetData
+        path: ''
+        startLine: 253
+      summary: "\nAdds data to the dictionary\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void SetData(string key, object value)
+          VB: Public Sub SetData(key As String, value As Object)
+        parameters:
+        - id: key
+          type: System.String
+          description: Key to be added
+        - id: value
+          type: System.Object
+          description: Value to be added
+      overload: BehaviorTree.Node.SetData*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: BehaviorTree.Node.OnEvaluate
+      commentId: M:BehaviorTree.Node.OnEvaluate
+      language: CSharp
+      name:
+        CSharp: OnEvaluate()
+        VB: OnEvaluate()
+      nameWithType:
+        CSharp: Node.OnEvaluate()
+        VB: Node.OnEvaluate()
+      qualifiedName:
+        CSharp: BehaviorTree.Node.OnEvaluate()
+        VB: BehaviorTree.Node.OnEvaluate()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: OnEvaluate
+        path: ''
+        startLine: 266
+      summary: "\nEvaluate children node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected virtual NodeState OnEvaluate()
+          VB: Protected Overridable Function OnEvaluate As NodeState
+        return:
+          type: BehaviorTree.NodeState
+          description: Return FAILURE by default
+      overload: BehaviorTree.Node.OnEvaluate*
+      modifiers:
+        CSharp:
+        - protected
+        - virtual
+        VB:
+        - Protected
+        - Overridable
+    - id: BehaviorTree.Node.OnInitialized
+      commentId: M:BehaviorTree.Node.OnInitialized
+      language: CSharp
+      name:
+        CSharp: OnInitialized()
+        VB: OnInitialized()
+      nameWithType:
+        CSharp: Node.OnInitialized()
+        VB: Node.OnInitialized()
+      qualifiedName:
+        CSharp: BehaviorTree.Node.OnInitialized()
+        VB: BehaviorTree.Node.OnInitialized()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: OnInitialized
+        path: ''
+        startLine: 271
+      summary: "\nFired on tree initialization\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected virtual void OnInitialized()
+          VB: Protected Overridable Sub OnInitialized
+      overload: BehaviorTree.Node.OnInitialized*
+      modifiers:
+        CSharp:
+        - protected
+        - virtual
+        VB:
+        - Protected
+        - Overridable
+    - id: BehaviorTree.Node.GetData(System.String)
+      commentId: M:BehaviorTree.Node.GetData(System.String)
+      language: CSharp
+      name:
+        CSharp: GetData(String)
+        VB: GetData(String)
+      nameWithType:
+        CSharp: Node.GetData(String)
+        VB: Node.GetData(String)
+      qualifiedName:
+        CSharp: BehaviorTree.Node.GetData(System.String)
+        VB: BehaviorTree.Node.GetData(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: GetData
+        path: ''
+        startLine: 282
+      summary: "\nRetrieve value from dictionary\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected object GetData(string key)
+          VB: Protected Function GetData(key As String) As Object
+        parameters:
+        - id: key
+          type: System.String
+          description: Key used to look for data
+        return:
+          type: System.Object
+          description: Return value of the dictionary according to the key
+      overload: BehaviorTree.Node.GetData*
+      modifiers:
+        CSharp:
+        - protected
+        VB:
+        - Protected
+    - id: BehaviorTree.Node.GetData``1(System.String)
+      commentId: M:BehaviorTree.Node.GetData``1(System.String)
+      language: CSharp
+      name:
+        CSharp: GetData<T>(String)
+        VB: GetData(Of T)(String)
+      nameWithType:
+        CSharp: Node.GetData<T>(String)
+        VB: Node.GetData(Of T)(String)
+      qualifiedName:
+        CSharp: BehaviorTree.Node.GetData<T>(System.String)
+        VB: BehaviorTree.Node.GetData(Of T)(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: GetData
+        path: ''
+        startLine: 296
+      summary: "\nRetrieve value from dictionary\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected T GetData<T>(string key)
+          VB: Protected Function GetData(Of T)(key As String) As T
+        parameters:
+        - id: key
+          type: System.String
+          description: Key used to look for data
+        typeParameters:
+        - id: T
+          description: Type of the value
+        return:
+          type: '{T}'
+          description: Return value of the dictionary according to the key
+      overload: BehaviorTree.Node.GetData*
+      modifiers:
+        CSharp:
+        - protected
+        VB:
+        - Protected
+    - id: BehaviorTree.Node.RemoveData(System.String)
+      commentId: M:BehaviorTree.Node.RemoveData(System.String)
+      language: CSharp
+      name:
+        CSharp: RemoveData(String)
+        VB: RemoveData(String)
+      nameWithType:
+        CSharp: Node.RemoveData(String)
+        VB: Node.RemoveData(String)
+      qualifiedName:
+        CSharp: BehaviorTree.Node.RemoveData(System.String)
+        VB: BehaviorTree.Node.RemoveData(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: RemoveData
+        path: ''
+        startLine: 309
+      summary: "\nRemove KeyValuePair from the dictionary\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected bool RemoveData(string key)
+          VB: Protected Function RemoveData(key As String) As Boolean
+        parameters:
+        - id: key
+          type: System.String
+          description: Key remove from the dictionary
+        return:
+          type: System.Boolean
+          description: Return true if the removal succeeded, false if not
+      overload: BehaviorTree.Node.RemoveData*
+      modifiers:
+        CSharp:
+        - protected
+        VB:
+        - Protected
+  - id: BehaviorTree.Selector
+    commentId: T:BehaviorTree.Selector
+    language: CSharp
+    name:
+      CSharp: Selector
+      VB: Selector
+    nameWithType:
+      CSharp: Selector
+      VB: Selector
+    qualifiedName:
+      CSharp: BehaviorTree.Selector
+      VB: BehaviorTree.Selector
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: BehaviorTree
+    source:
+      id: Selector
+      path: ''
+      startLine: 339
+    summary: "\nSelector nodes contain one or more children. Upon execution, it executes every child until one of them succeeds, otherwise it fails\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class Selector : Node'
+        VB: >-
+          Public Class Selector
+
+              Inherits Node
+    inheritance:
+    - System.Object
+    - BehaviorTree.Node
+    inheritedMembers:
+    - BehaviorTree.Node.Agent
+    - BehaviorTree.Node.Children
+    - BehaviorTree.Node.Parent
+    - BehaviorTree.Node.Root
+    - BehaviorTree.Node.State
+    - BehaviorTree.Node.Attach(BehaviorTree.Node)
+    - BehaviorTree.Node.GetNode``1
+    - BehaviorTree.Node.GetNodes``1
+    - BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+    - BehaviorTree.Node.Evaluate
+    - BehaviorTree.Node.SetData(System.String,System.Object)
+    - BehaviorTree.Node.OnInitialized
+    - BehaviorTree.Node.GetData(System.String)
+    - BehaviorTree.Node.GetData``1(System.String)
+    - BehaviorTree.Node.RemoveData(System.String)
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: BehaviorTree.Selector.OnEvaluate
+      commentId: M:BehaviorTree.Selector.OnEvaluate
+      language: CSharp
+      name:
+        CSharp: OnEvaluate()
+        VB: OnEvaluate()
+      nameWithType:
+        CSharp: Selector.OnEvaluate()
+        VB: Selector.OnEvaluate()
+      qualifiedName:
+        CSharp: BehaviorTree.Selector.OnEvaluate()
+        VB: BehaviorTree.Selector.OnEvaluate()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: OnEvaluate
+        path: ''
+        startLine: 346
+      summary: "\nEvaluate the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected override NodeState OnEvaluate()
+          VB: Protected Overrides Function OnEvaluate As NodeState
+        return:
+          type: BehaviorTree.NodeState
+          description: 'Return SUCCESS if a child node succeeded, RUNNING if a child node is running, or FAILURE after every evaluated children '
+      overload: BehaviorTree.Selector.OnEvaluate*
+      overridden: BehaviorTree.Node.OnEvaluate
+      modifiers:
+        CSharp:
+        - protected
+        - override
+        VB:
+        - Protected
+        - Overrides
+  - id: BehaviorTree.Sequence
+    commentId: T:BehaviorTree.Sequence
+    language: CSharp
+    name:
+      CSharp: Sequence
+      VB: Sequence
+    nameWithType:
+      CSharp: Sequence
+      VB: Sequence
+    qualifiedName:
+      CSharp: BehaviorTree.Sequence
+      VB: BehaviorTree.Sequence
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: BehaviorTree
+    source:
+      id: Sequence
+      path: ''
+      startLine: 375
+    summary: "\nSequence nodes contain one or more children. Upon execution, it executes every child and fails when one of the children fails.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class Sequence : Node'
+        VB: >-
+          Public Class Sequence
+
+              Inherits Node
+    inheritance:
+    - System.Object
+    - BehaviorTree.Node
+    inheritedMembers:
+    - BehaviorTree.Node.Agent
+    - BehaviorTree.Node.Children
+    - BehaviorTree.Node.Parent
+    - BehaviorTree.Node.Root
+    - BehaviorTree.Node.State
+    - BehaviorTree.Node.Attach(BehaviorTree.Node)
+    - BehaviorTree.Node.GetNode``1
+    - BehaviorTree.Node.GetNodes``1
+    - BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+    - BehaviorTree.Node.Evaluate
+    - BehaviorTree.Node.SetData(System.String,System.Object)
+    - BehaviorTree.Node.OnInitialized
+    - BehaviorTree.Node.GetData(System.String)
+    - BehaviorTree.Node.GetData``1(System.String)
+    - BehaviorTree.Node.RemoveData(System.String)
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: BehaviorTree.Sequence.OnEvaluate
+      commentId: M:BehaviorTree.Sequence.OnEvaluate
+      language: CSharp
+      name:
+        CSharp: OnEvaluate()
+        VB: OnEvaluate()
+      nameWithType:
+        CSharp: Sequence.OnEvaluate()
+        VB: Sequence.OnEvaluate()
+      qualifiedName:
+        CSharp: BehaviorTree.Sequence.OnEvaluate()
+        VB: BehaviorTree.Sequence.OnEvaluate()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: BehaviorTree
+      source:
+        id: OnEvaluate
+        path: ''
+        startLine: 382
+      summary: "\nEvaluate the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected override NodeState OnEvaluate()
+          VB: Protected Overrides Function OnEvaluate As NodeState
+        return:
+          type: BehaviorTree.NodeState
+          description: 'Return FAILURE if a child node failed, RUNNING if a child is running after every evaluated node, SUCCESS if none of the child is running or failing '
+      overload: BehaviorTree.Sequence.OnEvaluate*
+      overridden: BehaviorTree.Node.OnEvaluate
+      modifiers:
+        CSharp:
+        - protected
+        - override
+        VB:
+        - Protected
+        - Overrides
+- id: NodeReflection
+  commentId: N:NodeReflection
+  language: CSharp
+  name:
+    CSharp: NodeReflection
+    VB: NodeReflection
+  nameWithType:
+    CSharp: NodeReflection
+    VB: NodeReflection
+  qualifiedName:
+    CSharp: NodeReflection
+    VB: NodeReflection
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+  modifiers: {}
+  items:
+  - id: NodeReflection.ExposedInVisualEditorAttribute
+    commentId: T:NodeReflection.ExposedInVisualEditorAttribute
+    language: CSharp
+    name:
+      CSharp: ExposedInVisualEditorAttribute
+      VB: ExposedInVisualEditorAttribute
+    nameWithType:
+      CSharp: ExposedInVisualEditorAttribute
+      VB: ExposedInVisualEditorAttribute
+    qualifiedName:
+      CSharp: NodeReflection.ExposedInVisualEditorAttribute
+      VB: NodeReflection.ExposedInVisualEditorAttribute
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: NodeReflection
+    source:
+      id: ExposedInVisualEditorAttribute
+      path: ''
+      startLine: 414
+    summary: "\nCustom attribute for node&apos;s properties\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class ExposedInVisualEditorAttribute : Attribute'
+        VB: >-
+          Public Class ExposedInVisualEditorAttribute
+
+              Inherits Attribute
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+      commentId: P:NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+      language: CSharp
+      name:
+        CSharp: DefaultValue
+        VB: DefaultValue
+      nameWithType:
+        CSharp: ExposedInVisualEditorAttribute.DefaultValue
+        VB: ExposedInVisualEditorAttribute.DefaultValue
+      qualifiedName:
+        CSharp: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+        VB: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: DefaultValue
+        path: ''
+        startLine: 423
+      summary: "\nGets the default value of the property\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public object DefaultValue { get; }
+          VB: Public ReadOnly Property DefaultValue As Object
+        parameters: []
+        return:
+          type: System.Object
+      overload: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: NodeReflection.ExposedInVisualEditorAttribute.Name
+      commentId: P:NodeReflection.ExposedInVisualEditorAttribute.Name
+      language: CSharp
+      name:
+        CSharp: Name
+        VB: Name
+      nameWithType:
+        CSharp: ExposedInVisualEditorAttribute.Name
+        VB: ExposedInVisualEditorAttribute.Name
+      qualifiedName:
+        CSharp: NodeReflection.ExposedInVisualEditorAttribute.Name
+        VB: NodeReflection.ExposedInVisualEditorAttribute.Name
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: Name
+        path: ''
+        startLine: 428
+      summary: "\nGets the name of the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Name { get; }
+          VB: Public ReadOnly Property Name As String
+        parameters: []
+        return:
+          type: System.String
+      overload: NodeReflection.ExposedInVisualEditorAttribute.Name*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+      commentId: M:NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+      language: CSharp
+      name:
+        CSharp: ExposedInVisualEditorAttribute(String, Object)
+        VB: ExposedInVisualEditorAttribute(String, Object)
+      nameWithType:
+        CSharp: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(String, Object)
+        VB: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(String, Object)
+      qualifiedName:
+        CSharp: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(System.String, System.Object)
+        VB: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(System.String, System.Object)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: .ctor
+        path: ''
+        startLine: 438
+      summary: "\nClass constructor\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public ExposedInVisualEditorAttribute(string name = "", object defaultValue = null)
+          VB: Public Sub New(name As String = "", defaultValue As Object = Nothing)
+        parameters:
+        - id: name
+          type: System.String
+          description: Property name, for display purposes
+        - id: defaultValue
+          type: System.Object
+      overload: NodeReflection.ExposedInVisualEditorAttribute.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: NodeReflection.VisualNodeAttribute
+    commentId: T:NodeReflection.VisualNodeAttribute
+    language: CSharp
+    name:
+      CSharp: VisualNodeAttribute
+      VB: VisualNodeAttribute
+    nameWithType:
+      CSharp: VisualNodeAttribute
+      VB: VisualNodeAttribute
+    qualifiedName:
+      CSharp: NodeReflection.VisualNodeAttribute
+      VB: NodeReflection.VisualNodeAttribute
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: NodeReflection
+    source:
+      id: VisualNodeAttribute
+      path: ''
+      startLine: 455
+    summary: "\nCustom attribute for custom node\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class VisualNodeAttribute : Attribute'
+        VB: >-
+          Public Class VisualNodeAttribute
+
+              Inherits Attribute
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: NodeReflection.VisualNodeAttribute.Description
+      commentId: P:NodeReflection.VisualNodeAttribute.Description
+      language: CSharp
+      name:
+        CSharp: Description
+        VB: Description
+      nameWithType:
+        CSharp: VisualNodeAttribute.Description
+        VB: VisualNodeAttribute.Description
+      qualifiedName:
+        CSharp: NodeReflection.VisualNodeAttribute.Description
+        VB: NodeReflection.VisualNodeAttribute.Description
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: Description
+        path: ''
+        startLine: 464
+      summary: "\nGets the description of the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Description { get; }
+          VB: Public ReadOnly Property Description As String
+        parameters: []
+        return:
+          type: System.String
+      overload: NodeReflection.VisualNodeAttribute.Description*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+      commentId: P:NodeReflection.VisualNodeAttribute.DisplayAsBlock
+      language: CSharp
+      name:
+        CSharp: DisplayAsBlock
+        VB: DisplayAsBlock
+      nameWithType:
+        CSharp: VisualNodeAttribute.DisplayAsBlock
+        VB: VisualNodeAttribute.DisplayAsBlock
+      qualifiedName:
+        CSharp: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+        VB: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: DisplayAsBlock
+        path: ''
+        startLine: 469
+      summary: "\nGets if the children should be displayed as a block\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public bool DisplayAsBlock { get; }
+          VB: Public ReadOnly Property DisplayAsBlock As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: NodeReflection.VisualNodeAttribute.DisplayAsBlock*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: NodeReflection.VisualNodeAttribute.Name
+      commentId: P:NodeReflection.VisualNodeAttribute.Name
+      language: CSharp
+      name:
+        CSharp: Name
+        VB: Name
+      nameWithType:
+        CSharp: VisualNodeAttribute.Name
+        VB: VisualNodeAttribute.Name
+      qualifiedName:
+        CSharp: NodeReflection.VisualNodeAttribute.Name
+        VB: NodeReflection.VisualNodeAttribute.Name
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: Name
+        path: ''
+        startLine: 474
+      summary: "\nGets the name of the node\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Name { get; }
+          VB: Public ReadOnly Property Name As String
+        parameters: []
+        return:
+          type: System.String
+      overload: NodeReflection.VisualNodeAttribute.Name*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: NodeReflection.VisualNodeAttribute.Path
+      commentId: P:NodeReflection.VisualNodeAttribute.Path
+      language: CSharp
+      name:
+        CSharp: Path
+        VB: Path
+      nameWithType:
+        CSharp: VisualNodeAttribute.Path
+        VB: VisualNodeAttribute.Path
+      qualifiedName:
+        CSharp: NodeReflection.VisualNodeAttribute.Path
+        VB: NodeReflection.VisualNodeAttribute.Path
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: Path
+        path: ''
+        startLine: 479
+      summary: "\nGets the path of the node category\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Path { get; }
+          VB: Public ReadOnly Property Path As String
+        parameters: []
+        return:
+          type: System.String
+      overload: NodeReflection.VisualNodeAttribute.Path*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+      commentId: M:NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+      language: CSharp
+      name:
+        CSharp: VisualNodeAttribute(String, String, Boolean, String)
+        VB: VisualNodeAttribute(String, String, Boolean, String)
+      nameWithType:
+        CSharp: VisualNodeAttribute.VisualNodeAttribute(String, String, Boolean, String)
+        VB: VisualNodeAttribute.VisualNodeAttribute(String, String, Boolean, String)
+      qualifiedName:
+        CSharp: NodeReflection.VisualNodeAttribute.VisualNodeAttribute(System.String, System.String, System.Boolean, System.String)
+        VB: NodeReflection.VisualNodeAttribute.VisualNodeAttribute(System.String, System.String, System.Boolean, System.String)
+      type: Constructor
+      assemblies:
+      - cs.temp.dll
+      namespace: NodeReflection
+      source:
+        id: .ctor
+        path: ''
+        startLine: 492
+      summary: "\nClass constructor\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public VisualNodeAttribute(string name = "", string description = "", bool displayAsBlock = false, string path = "Custom")
+          VB: Public Sub New(name As String = "", description As String = "", displayAsBlock As Boolean = False, path As String = "Custom")
+        parameters:
+        - id: name
+          type: System.String
+          description: Node name, for display purposes
+        - id: description
+          type: System.String
+          description: Node description
+        - id: displayAsBlock
+          type: System.Boolean
+          description: Indicates if the children should be displayed as a block
+        - id: path
+          type: System.String
+          description: Path of the node in the editor
+      overload: NodeReflection.VisualNodeAttribute.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+references:
+  BehaviorTree:
+    name:
+      CSharp:
+      - name: BehaviorTree
+        nameWithType: BehaviorTree
+        qualifiedName: BehaviorTree
+      VB:
+      - name: BehaviorTree
+        nameWithType: BehaviorTree
+        qualifiedName: BehaviorTree
+    isDefinition: true
+    commentId: N:BehaviorTree
+  BehaviorTree.Node:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      VB:
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+    isDefinition: true
+    parent: BehaviorTree
+    commentId: T:BehaviorTree.Node
+  BehaviorTree.BehaviorTreeAgent.Root*:
+    name:
+      CSharp:
+      - id: BehaviorTree.BehaviorTreeAgent.Root*
+        name: Root
+        nameWithType: BehaviorTreeAgent.Root
+        qualifiedName: BehaviorTree.BehaviorTreeAgent.Root
+      VB:
+      - id: BehaviorTree.BehaviorTreeAgent.Root*
+        name: Root
+        nameWithType: BehaviorTreeAgent.Root
+        qualifiedName: BehaviorTree.BehaviorTreeAgent.Root
+    isDefinition: true
+    commentId: Overload:BehaviorTree.BehaviorTreeAgent.Root
+  BehaviorTree.BehaviorTreeAgent.SetupTree*:
+    name:
+      CSharp:
+      - id: BehaviorTree.BehaviorTreeAgent.SetupTree*
+        name: SetupTree
+        nameWithType: BehaviorTreeAgent.SetupTree
+        qualifiedName: BehaviorTree.BehaviorTreeAgent.SetupTree
+      VB:
+      - id: BehaviorTree.BehaviorTreeAgent.SetupTree*
+        name: SetupTree
+        nameWithType: BehaviorTreeAgent.SetupTree
+        qualifiedName: BehaviorTree.BehaviorTreeAgent.SetupTree
+    isDefinition: true
+    commentId: Overload:BehaviorTree.BehaviorTreeAgent.SetupTree
+  BehaviorTree.BehaviorTreeAgent:
+    name:
+      CSharp:
+      - id: BehaviorTree.BehaviorTreeAgent
+        name: BehaviorTreeAgent
+        nameWithType: BehaviorTreeAgent
+        qualifiedName: BehaviorTree.BehaviorTreeAgent
+      VB:
+      - id: BehaviorTree.BehaviorTreeAgent
+        name: BehaviorTreeAgent
+        nameWithType: BehaviorTreeAgent
+        qualifiedName: BehaviorTree.BehaviorTreeAgent
+    isDefinition: true
+    parent: BehaviorTree
+    commentId: T:BehaviorTree.BehaviorTreeAgent
+  BehaviorTree.Node.Agent:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Agent
+        name: Agent
+        nameWithType: Node.Agent
+        qualifiedName: BehaviorTree.Node.Agent
+      VB:
+      - id: BehaviorTree.Node.Agent
+        name: Agent
+        nameWithType: Node.Agent
+        qualifiedName: BehaviorTree.Node.Agent
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: P:BehaviorTree.Node.Agent
+  BehaviorTree.Node.Children:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Children
+        name: Children
+        nameWithType: Node.Children
+        qualifiedName: BehaviorTree.Node.Children
+      VB:
+      - id: BehaviorTree.Node.Children
+        name: Children
+        nameWithType: Node.Children
+        qualifiedName: BehaviorTree.Node.Children
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: P:BehaviorTree.Node.Children
+  BehaviorTree.Node.Parent:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Parent
+        name: Parent
+        nameWithType: Node.Parent
+        qualifiedName: BehaviorTree.Node.Parent
+      VB:
+      - id: BehaviorTree.Node.Parent
+        name: Parent
+        nameWithType: Node.Parent
+        qualifiedName: BehaviorTree.Node.Parent
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: P:BehaviorTree.Node.Parent
+  BehaviorTree.Node.Root:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Root
+        name: Root
+        nameWithType: Node.Root
+        qualifiedName: BehaviorTree.Node.Root
+      VB:
+      - id: BehaviorTree.Node.Root
+        name: Root
+        nameWithType: Node.Root
+        qualifiedName: BehaviorTree.Node.Root
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: P:BehaviorTree.Node.Root
+  BehaviorTree.Node.State:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.State
+        name: State
+        nameWithType: Node.State
+        qualifiedName: BehaviorTree.Node.State
+      VB:
+      - id: BehaviorTree.Node.State
+        name: State
+        nameWithType: Node.State
+        qualifiedName: BehaviorTree.Node.State
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: P:BehaviorTree.Node.State
+  BehaviorTree.Node.Attach(BehaviorTree.Node):
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Attach(BehaviorTree.Node)
+        name: Attach
+        nameWithType: Node.Attach
+        qualifiedName: BehaviorTree.Node.Attach
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.Attach(BehaviorTree.Node)
+        name: Attach
+        nameWithType: Node.Attach
+        qualifiedName: BehaviorTree.Node.Attach
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.Attach(BehaviorTree.Node)
+  BehaviorTree.Node.GetNode``1:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetNode``1
+        name: GetNode<T>
+        nameWithType: Node.GetNode<T>
+        qualifiedName: BehaviorTree.Node.GetNode<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.GetNode``1
+        name: GetNode(Of T)
+        nameWithType: Node.GetNode(Of T)
+        qualifiedName: BehaviorTree.Node.GetNode(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.GetNode``1
+  BehaviorTree.Node.GetNodes``1:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetNodes``1
+        name: GetNodes<T>
+        nameWithType: Node.GetNodes<T>
+        qualifiedName: BehaviorTree.Node.GetNodes<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.GetNodes``1
+        name: GetNodes(Of T)
+        nameWithType: Node.GetNodes(Of T)
+        qualifiedName: BehaviorTree.Node.GetNodes(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.GetNodes``1
+  BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node):
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+        name: Initialize
+        nameWithType: Node.Initialize
+        qualifiedName: BehaviorTree.Node.Initialize
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: BehaviorTree.BehaviorTreeAgent
+        name: BehaviorTreeAgent
+        nameWithType: BehaviorTreeAgent
+        qualifiedName: BehaviorTree.BehaviorTreeAgent
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+        name: Initialize
+        nameWithType: Node.Initialize
+        qualifiedName: BehaviorTree.Node.Initialize
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: BehaviorTree.BehaviorTreeAgent
+        name: BehaviorTreeAgent
+        nameWithType: BehaviorTreeAgent
+        qualifiedName: BehaviorTree.BehaviorTreeAgent
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  BehaviorTree.Node.Evaluate:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Evaluate
+        name: Evaluate
+        nameWithType: Node.Evaluate
+        qualifiedName: BehaviorTree.Node.Evaluate
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.Evaluate
+        name: Evaluate
+        nameWithType: Node.Evaluate
+        qualifiedName: BehaviorTree.Node.Evaluate
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.Evaluate
+  BehaviorTree.Node.SetData(System.String,System.Object):
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.SetData(System.String,System.Object)
+        name: SetData
+        nameWithType: Node.SetData
+        qualifiedName: BehaviorTree.Node.SetData
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.SetData(System.String,System.Object)
+        name: SetData
+        nameWithType: Node.SetData
+        qualifiedName: BehaviorTree.Node.SetData
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.SetData(System.String,System.Object)
+  BehaviorTree.Node.OnInitialized:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.OnInitialized
+        name: OnInitialized
+        nameWithType: Node.OnInitialized
+        qualifiedName: BehaviorTree.Node.OnInitialized
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.OnInitialized
+        name: OnInitialized
+        nameWithType: Node.OnInitialized
+        qualifiedName: BehaviorTree.Node.OnInitialized
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.OnInitialized
+  BehaviorTree.Node.GetData(System.String):
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetData(System.String)
+        name: GetData
+        nameWithType: Node.GetData
+        qualifiedName: BehaviorTree.Node.GetData
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.GetData(System.String)
+        name: GetData
+        nameWithType: Node.GetData
+        qualifiedName: BehaviorTree.Node.GetData
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.GetData(System.String)
+  BehaviorTree.Node.GetData``1(System.String):
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetData``1(System.String)
+        name: GetData<T>
+        nameWithType: Node.GetData<T>
+        qualifiedName: BehaviorTree.Node.GetData<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.GetData``1(System.String)
+        name: GetData(Of T)
+        nameWithType: Node.GetData(Of T)
+        qualifiedName: BehaviorTree.Node.GetData(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.GetData``1(System.String)
+  BehaviorTree.Node.RemoveData(System.String):
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.RemoveData(System.String)
+        name: RemoveData
+        nameWithType: Node.RemoveData
+        qualifiedName: BehaviorTree.Node.RemoveData
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.RemoveData(System.String)
+        name: RemoveData
+        nameWithType: Node.RemoveData
+        qualifiedName: BehaviorTree.Node.RemoveData
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.RemoveData(System.String)
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Object:
+    name:
+      CSharp:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      VB:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Object
+  System.Object.ToString:
+    name:
+      CSharp:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ToString
+  System.Object.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object)
+  System.Object.Equals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object,System.Object)
+  System.Object.ReferenceEquals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  System.Object.GetHashCode:
+    name:
+      CSharp:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetHashCode
+  System.Object.GetType:
+    name:
+      CSharp:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetType
+  System.Object.MemberwiseClone:
+    name:
+      CSharp:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.MemberwiseClone
+  BehaviorTree.NodeState:
+    name:
+      CSharp:
+      - id: BehaviorTree.NodeState
+        name: NodeState
+        nameWithType: NodeState
+        qualifiedName: BehaviorTree.NodeState
+      VB:
+      - id: BehaviorTree.NodeState
+        name: NodeState
+        nameWithType: NodeState
+        qualifiedName: BehaviorTree.NodeState
+    isDefinition: true
+    parent: BehaviorTree
+    commentId: T:BehaviorTree.NodeState
+  BehaviorTree.Node.OnEvaluate:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.OnEvaluate
+        name: OnEvaluate
+        nameWithType: Node.OnEvaluate
+        qualifiedName: BehaviorTree.Node.OnEvaluate
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: BehaviorTree.Node.OnEvaluate
+        name: OnEvaluate
+        nameWithType: Node.OnEvaluate
+        qualifiedName: BehaviorTree.Node.OnEvaluate
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: BehaviorTree.Node
+    commentId: M:BehaviorTree.Node.OnEvaluate
+  BehaviorTree.Inverter.OnEvaluate*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Inverter.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Inverter.OnEvaluate
+        qualifiedName: BehaviorTree.Inverter.OnEvaluate
+      VB:
+      - id: BehaviorTree.Inverter.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Inverter.OnEvaluate
+        qualifiedName: BehaviorTree.Inverter.OnEvaluate
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Inverter.OnEvaluate
+  BehaviorTree.Inverter:
+    name:
+      CSharp:
+      - id: BehaviorTree.Inverter
+        name: Inverter
+        nameWithType: Inverter
+        qualifiedName: BehaviorTree.Inverter
+      VB:
+      - id: BehaviorTree.Inverter
+        name: Inverter
+        nameWithType: Inverter
+        qualifiedName: BehaviorTree.Inverter
+    isDefinition: true
+    commentId: T:BehaviorTree.Inverter
+  BehaviorTree.Node.Agent*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Agent*
+        name: Agent
+        nameWithType: Node.Agent
+        qualifiedName: BehaviorTree.Node.Agent
+      VB:
+      - id: BehaviorTree.Node.Agent*
+        name: Agent
+        nameWithType: Node.Agent
+        qualifiedName: BehaviorTree.Node.Agent
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Agent
+  List`1:
+    name:
+      CSharp:
+      - id: List`1
+        name: List
+        nameWithType: List
+        qualifiedName: List
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: ''
+        nameWithType: ''
+        qualifiedName: ''
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: List`1
+        name: List
+        nameWithType: List
+        qualifiedName: List
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: ''
+        nameWithType: ''
+        qualifiedName: ''
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: '!:List`1'
+  List{BehaviorTree.Node}:
+    name:
+      CSharp:
+      - id: List`1
+        name: List
+        nameWithType: List
+        qualifiedName: List
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: List`1
+        name: List
+        nameWithType: List
+        qualifiedName: List
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: BehaviorTree.Node
+        name: Node
+        nameWithType: Node
+        qualifiedName: BehaviorTree.Node
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: List`1
+    commentId: '!:List{BehaviorTree.Node}'
+  BehaviorTree.Node.Children*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Children*
+        name: Children
+        nameWithType: Node.Children
+        qualifiedName: BehaviorTree.Node.Children
+      VB:
+      - id: BehaviorTree.Node.Children*
+        name: Children
+        nameWithType: Node.Children
+        qualifiedName: BehaviorTree.Node.Children
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Children
+  BehaviorTree.Node.Parent*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Parent*
+        name: Parent
+        nameWithType: Node.Parent
+        qualifiedName: BehaviorTree.Node.Parent
+      VB:
+      - id: BehaviorTree.Node.Parent*
+        name: Parent
+        nameWithType: Node.Parent
+        qualifiedName: BehaviorTree.Node.Parent
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Parent
+  BehaviorTree.Node.Root*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Root*
+        name: Root
+        nameWithType: Node.Root
+        qualifiedName: BehaviorTree.Node.Root
+      VB:
+      - id: BehaviorTree.Node.Root*
+        name: Root
+        nameWithType: Node.Root
+        qualifiedName: BehaviorTree.Node.Root
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Root
+  BehaviorTree.Node.State*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.State*
+        name: State
+        nameWithType: Node.State
+        qualifiedName: BehaviorTree.Node.State
+      VB:
+      - id: BehaviorTree.Node.State*
+        name: State
+        nameWithType: Node.State
+        qualifiedName: BehaviorTree.Node.State
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.State
+  BehaviorTree.Node.Attach*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Attach*
+        name: Attach
+        nameWithType: Node.Attach
+        qualifiedName: BehaviorTree.Node.Attach
+      VB:
+      - id: BehaviorTree.Node.Attach*
+        name: Attach
+        nameWithType: Node.Attach
+        qualifiedName: BehaviorTree.Node.Attach
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Attach
+  T:
+    name:
+      CSharp:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      VB:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+    isDefinition: true
+  '{T}':
+    name:
+      CSharp:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      VB:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+    isDefinition: false
+    definition: T
+    commentId: '!:T'
+  BehaviorTree.Node.GetNode*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetNode*
+        name: GetNode
+        nameWithType: Node.GetNode
+        qualifiedName: BehaviorTree.Node.GetNode
+      VB:
+      - id: BehaviorTree.Node.GetNode*
+        name: GetNode
+        nameWithType: Node.GetNode
+        qualifiedName: BehaviorTree.Node.GetNode
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.GetNode
+  IEnumerable`1:
+    name:
+      CSharp:
+      - id: IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: IEnumerable
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: ''
+        nameWithType: ''
+        qualifiedName: ''
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: IEnumerable
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: ''
+        nameWithType: ''
+        qualifiedName: ''
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: '!:IEnumerable`1'
+  IEnumerable{{T}}:
+    name:
+      CSharp:
+      - id: IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: IEnumerable
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: IEnumerable`1
+        name: IEnumerable
+        nameWithType: IEnumerable
+        qualifiedName: IEnumerable
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: IEnumerable`1
+    commentId: '!:IEnumerable{``0}'
+  BehaviorTree.Node.GetNodes*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetNodes*
+        name: GetNodes
+        nameWithType: Node.GetNodes
+        qualifiedName: BehaviorTree.Node.GetNodes
+      VB:
+      - id: BehaviorTree.Node.GetNodes*
+        name: GetNodes
+        nameWithType: Node.GetNodes
+        qualifiedName: BehaviorTree.Node.GetNodes
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.GetNodes
+  BehaviorTree.Node.Initialize*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Initialize*
+        name: Initialize
+        nameWithType: Node.Initialize
+        qualifiedName: BehaviorTree.Node.Initialize
+      VB:
+      - id: BehaviorTree.Node.Initialize*
+        name: Initialize
+        nameWithType: Node.Initialize
+        qualifiedName: BehaviorTree.Node.Initialize
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Initialize
+  BehaviorTree.Node.Evaluate*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.Evaluate*
+        name: Evaluate
+        nameWithType: Node.Evaluate
+        qualifiedName: BehaviorTree.Node.Evaluate
+      VB:
+      - id: BehaviorTree.Node.Evaluate*
+        name: Evaluate
+        nameWithType: Node.Evaluate
+        qualifiedName: BehaviorTree.Node.Evaluate
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.Evaluate
+  System.String:
+    name:
+      CSharp:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      VB:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.String
+  BehaviorTree.Node.SetData*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.SetData*
+        name: SetData
+        nameWithType: Node.SetData
+        qualifiedName: BehaviorTree.Node.SetData
+      VB:
+      - id: BehaviorTree.Node.SetData*
+        name: SetData
+        nameWithType: Node.SetData
+        qualifiedName: BehaviorTree.Node.SetData
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.SetData
+  BehaviorTree.Node.OnEvaluate*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Node.OnEvaluate
+        qualifiedName: BehaviorTree.Node.OnEvaluate
+      VB:
+      - id: BehaviorTree.Node.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Node.OnEvaluate
+        qualifiedName: BehaviorTree.Node.OnEvaluate
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.OnEvaluate
+  BehaviorTree.Node.OnInitialized*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.OnInitialized*
+        name: OnInitialized
+        nameWithType: Node.OnInitialized
+        qualifiedName: BehaviorTree.Node.OnInitialized
+      VB:
+      - id: BehaviorTree.Node.OnInitialized*
+        name: OnInitialized
+        nameWithType: Node.OnInitialized
+        qualifiedName: BehaviorTree.Node.OnInitialized
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.OnInitialized
+  BehaviorTree.Node.GetData*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.GetData*
+        name: GetData
+        nameWithType: Node.GetData
+        qualifiedName: BehaviorTree.Node.GetData
+      VB:
+      - id: BehaviorTree.Node.GetData*
+        name: GetData
+        nameWithType: Node.GetData
+        qualifiedName: BehaviorTree.Node.GetData
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.GetData
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Boolean
+  BehaviorTree.Node.RemoveData*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Node.RemoveData*
+        name: RemoveData
+        nameWithType: Node.RemoveData
+        qualifiedName: BehaviorTree.Node.RemoveData
+      VB:
+      - id: BehaviorTree.Node.RemoveData*
+        name: RemoveData
+        nameWithType: Node.RemoveData
+        qualifiedName: BehaviorTree.Node.RemoveData
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Node.RemoveData
+  BehaviorTree.Selector.OnEvaluate*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Selector.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Selector.OnEvaluate
+        qualifiedName: BehaviorTree.Selector.OnEvaluate
+      VB:
+      - id: BehaviorTree.Selector.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Selector.OnEvaluate
+        qualifiedName: BehaviorTree.Selector.OnEvaluate
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Selector.OnEvaluate
+  BehaviorTree.Selector:
+    name:
+      CSharp:
+      - id: BehaviorTree.Selector
+        name: Selector
+        nameWithType: Selector
+        qualifiedName: BehaviorTree.Selector
+      VB:
+      - id: BehaviorTree.Selector
+        name: Selector
+        nameWithType: Selector
+        qualifiedName: BehaviorTree.Selector
+    isDefinition: true
+    commentId: T:BehaviorTree.Selector
+  BehaviorTree.Sequence.OnEvaluate*:
+    name:
+      CSharp:
+      - id: BehaviorTree.Sequence.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Sequence.OnEvaluate
+        qualifiedName: BehaviorTree.Sequence.OnEvaluate
+      VB:
+      - id: BehaviorTree.Sequence.OnEvaluate*
+        name: OnEvaluate
+        nameWithType: Sequence.OnEvaluate
+        qualifiedName: BehaviorTree.Sequence.OnEvaluate
+    isDefinition: true
+    commentId: Overload:BehaviorTree.Sequence.OnEvaluate
+  BehaviorTree.Sequence:
+    name:
+      CSharp:
+      - id: BehaviorTree.Sequence
+        name: Sequence
+        nameWithType: Sequence
+        qualifiedName: BehaviorTree.Sequence
+      VB:
+      - id: BehaviorTree.Sequence
+        name: Sequence
+        nameWithType: Sequence
+        qualifiedName: BehaviorTree.Sequence
+    isDefinition: true
+    commentId: T:BehaviorTree.Sequence
+  NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*:
+    name:
+      CSharp:
+      - id: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*
+        name: DefaultValue
+        nameWithType: ExposedInVisualEditorAttribute.DefaultValue
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+      VB:
+      - id: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*
+        name: DefaultValue
+        nameWithType: ExposedInVisualEditorAttribute.DefaultValue
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+    isDefinition: true
+    commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  NodeReflection.ExposedInVisualEditorAttribute.Name*:
+    name:
+      CSharp:
+      - id: NodeReflection.ExposedInVisualEditorAttribute.Name*
+        name: Name
+        nameWithType: ExposedInVisualEditorAttribute.Name
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute.Name
+      VB:
+      - id: NodeReflection.ExposedInVisualEditorAttribute.Name*
+        name: Name
+        nameWithType: ExposedInVisualEditorAttribute.Name
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute.Name
+    isDefinition: true
+    commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.Name
+  NodeReflection.ExposedInVisualEditorAttribute.#ctor*:
+    name:
+      CSharp:
+      - id: NodeReflection.ExposedInVisualEditorAttribute.#ctor*
+        name: ExposedInVisualEditorAttribute
+        nameWithType: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+      VB:
+      - id: NodeReflection.ExposedInVisualEditorAttribute.#ctor*
+        name: ExposedInVisualEditorAttribute
+        nameWithType: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+    isDefinition: true
+    commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.#ctor
+  NodeReflection.ExposedInVisualEditorAttribute:
+    name:
+      CSharp:
+      - id: NodeReflection.ExposedInVisualEditorAttribute
+        name: ExposedInVisualEditorAttribute
+        nameWithType: ExposedInVisualEditorAttribute
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute
+      VB:
+      - id: NodeReflection.ExposedInVisualEditorAttribute
+        name: ExposedInVisualEditorAttribute
+        nameWithType: ExposedInVisualEditorAttribute
+        qualifiedName: NodeReflection.ExposedInVisualEditorAttribute
+    isDefinition: true
+    commentId: T:NodeReflection.ExposedInVisualEditorAttribute
+  NodeReflection.VisualNodeAttribute.Description*:
+    name:
+      CSharp:
+      - id: NodeReflection.VisualNodeAttribute.Description*
+        name: Description
+        nameWithType: VisualNodeAttribute.Description
+        qualifiedName: NodeReflection.VisualNodeAttribute.Description
+      VB:
+      - id: NodeReflection.VisualNodeAttribute.Description*
+        name: Description
+        nameWithType: VisualNodeAttribute.Description
+        qualifiedName: NodeReflection.VisualNodeAttribute.Description
+    isDefinition: true
+    commentId: Overload:NodeReflection.VisualNodeAttribute.Description
+  NodeReflection.VisualNodeAttribute.DisplayAsBlock*:
+    name:
+      CSharp:
+      - id: NodeReflection.VisualNodeAttribute.DisplayAsBlock*
+        name: DisplayAsBlock
+        nameWithType: VisualNodeAttribute.DisplayAsBlock
+        qualifiedName: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+      VB:
+      - id: NodeReflection.VisualNodeAttribute.DisplayAsBlock*
+        name: DisplayAsBlock
+        nameWithType: VisualNodeAttribute.DisplayAsBlock
+        qualifiedName: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+    isDefinition: true
+    commentId: Overload:NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  NodeReflection.VisualNodeAttribute.Name*:
+    name:
+      CSharp:
+      - id: NodeReflection.VisualNodeAttribute.Name*
+        name: Name
+        nameWithType: VisualNodeAttribute.Name
+        qualifiedName: NodeReflection.VisualNodeAttribute.Name
+      VB:
+      - id: NodeReflection.VisualNodeAttribute.Name*
+        name: Name
+        nameWithType: VisualNodeAttribute.Name
+        qualifiedName: NodeReflection.VisualNodeAttribute.Name
+    isDefinition: true
+    commentId: Overload:NodeReflection.VisualNodeAttribute.Name
+  NodeReflection.VisualNodeAttribute.Path*:
+    name:
+      CSharp:
+      - id: NodeReflection.VisualNodeAttribute.Path*
+        name: Path
+        nameWithType: VisualNodeAttribute.Path
+        qualifiedName: NodeReflection.VisualNodeAttribute.Path
+      VB:
+      - id: NodeReflection.VisualNodeAttribute.Path*
+        name: Path
+        nameWithType: VisualNodeAttribute.Path
+        qualifiedName: NodeReflection.VisualNodeAttribute.Path
+    isDefinition: true
+    commentId: Overload:NodeReflection.VisualNodeAttribute.Path
+  NodeReflection.VisualNodeAttribute.#ctor*:
+    name:
+      CSharp:
+      - id: NodeReflection.VisualNodeAttribute.#ctor*
+        name: VisualNodeAttribute
+        nameWithType: VisualNodeAttribute.VisualNodeAttribute
+        qualifiedName: NodeReflection.VisualNodeAttribute.VisualNodeAttribute
+      VB:
+      - id: NodeReflection.VisualNodeAttribute.#ctor*
+        name: VisualNodeAttribute
+        nameWithType: VisualNodeAttribute.VisualNodeAttribute
+        qualifiedName: NodeReflection.VisualNodeAttribute.VisualNodeAttribute
+    isDefinition: true
+    commentId: Overload:NodeReflection.VisualNodeAttribute.#ctor
+  NodeReflection.VisualNodeAttribute:
+    name:
+      CSharp:
+      - id: NodeReflection.VisualNodeAttribute
+        name: VisualNodeAttribute
+        nameWithType: VisualNodeAttribute
+        qualifiedName: NodeReflection.VisualNodeAttribute
+      VB:
+      - id: NodeReflection.VisualNodeAttribute
+        name: VisualNodeAttribute
+        nameWithType: VisualNodeAttribute
+        qualifiedName: NodeReflection.VisualNodeAttribute
+    isDefinition: true
+    commentId: T:NodeReflection.VisualNodeAttribute
+  NodeReflection:
+    name:
+      CSharp:
+      - name: NodeReflection
+        nameWithType: NodeReflection
+        qualifiedName: NodeReflection
+      VB:
+      - name: NodeReflection
+        nameWithType: NodeReflection
+        qualifiedName: NodeReflection
+    isDefinition: true
+    commentId: N:NodeReflection

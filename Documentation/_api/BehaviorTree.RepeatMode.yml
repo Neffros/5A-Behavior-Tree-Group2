@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: BehaviorTree.RepeatMode
+  commentId: T:BehaviorTree.RepeatMode
+  id: RepeatMode
+  parent: BehaviorTree
+  children:
+  - BehaviorTree.RepeatMode.RepeatIfFailure
+  - BehaviorTree.RepeatMode.RepeatIfSuccess
+  langs:
+  - csharp
+  - vb
+  name: RepeatMode
+  nameWithType: RepeatMode
+  fullName: BehaviorTree.RepeatMode
+  type: Enum
+  source:
+    id: RepeatMode
+    path: ''
+    startLine: 395
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nRepeat mode\n"
+  example: []
+  syntax:
+    content: public enum RepeatMode
+    content.vb: Public Enum RepeatMode
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: BehaviorTree.RepeatMode.RepeatIfSuccess
+  commentId: F:BehaviorTree.RepeatMode.RepeatIfSuccess
+  id: RepeatIfSuccess
+  parent: BehaviorTree.RepeatMode
+  langs:
+  - csharp
+  - vb
+  name: RepeatIfSuccess
+  nameWithType: RepeatMode.RepeatIfSuccess
+  fullName: BehaviorTree.RepeatMode.RepeatIfSuccess
+  type: Field
+  source:
+    id: RepeatIfSuccess
+    path: ''
+    startLine: 397
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: RepeatIfSuccess = 0
+    return:
+      type: BehaviorTree.RepeatMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: BehaviorTree.RepeatMode.RepeatIfFailure
+  commentId: F:BehaviorTree.RepeatMode.RepeatIfFailure
+  id: RepeatIfFailure
+  parent: BehaviorTree.RepeatMode
+  langs:
+  - csharp
+  - vb
+  name: RepeatIfFailure
+  nameWithType: RepeatMode.RepeatIfFailure
+  fullName: BehaviorTree.RepeatMode.RepeatIfFailure
+  type: Field
+  source:
+    id: RepeatIfFailure
+    path: ''
+    startLine: 398
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: RepeatIfFailure = 1
+    return:
+      type: BehaviorTree.RepeatMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+- uid: BehaviorTree.RepeatMode
+  commentId: T:BehaviorTree.RepeatMode
+  parent: BehaviorTree
+  name: RepeatMode
+  nameWithType: RepeatMode
+  fullName: BehaviorTree.RepeatMode

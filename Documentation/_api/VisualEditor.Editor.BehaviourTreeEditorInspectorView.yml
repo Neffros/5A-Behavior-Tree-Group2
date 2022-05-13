@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  id: BehaviourTreeEditorInspectorView
+  parent: VisualEditor.Editor
+  children:
+  - VisualEditor.Editor.BehaviourTreeEditorInspectorView.#ctor
+  - VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection(BehaviorTreeObject,NodeEditorInstanceMetadata)
+  langs:
+  - csharp
+  - vb
+  name: BehaviourTreeEditorInspectorView
+  nameWithType: BehaviourTreeEditorInspectorView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  type: Class
+  source:
+    id: BehaviourTreeEditorInspectorView
+    path: ''
+    startLine: 780
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: 'public class BehaviourTreeEditorInspectorView : VisualElement'
+    content.vb: >-
+      Public Class BehaviourTreeEditorInspectorView
+          Inherits VisualElement
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView.#ctor
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorInspectorView.#ctor
+  id: '#ctor'
+  parent: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  langs:
+  - csharp
+  - vb
+  name: BehaviourTreeEditorInspectorView()
+  nameWithType: BehaviourTreeEditorInspectorView.BehaviourTreeEditorInspectorView()
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView.BehaviourTreeEditorInspectorView()
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 785
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: public BehaviourTreeEditorInspectorView()
+    content.vb: Public Sub New
+  overload: VisualEditor.Editor.BehaviourTreeEditorInspectorView.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection(BehaviorTreeObject,NodeEditorInstanceMetadata)
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection(BehaviorTreeObject,NodeEditorInstanceMetadata)
+  id: UpdateSelection(BehaviorTreeObject,NodeEditorInstanceMetadata)
+  parent: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  langs:
+  - csharp
+  - vb
+  name: UpdateSelection(BehaviorTreeObject, NodeEditorInstanceMetadata)
+  nameWithType: BehaviourTreeEditorInspectorView.UpdateSelection(BehaviorTreeObject, NodeEditorInstanceMetadata)
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection(BehaviorTreeObject, NodeEditorInstanceMetadata)
+  type: Method
+  source:
+    id: UpdateSelection
+    path: ''
+    startLine: 794
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  summary: "\nUpdates inspector to display selected node information\n"
+  example: []
+  syntax:
+    content: public void UpdateSelection(BehaviorTreeObject tree, NodeEditorInstanceMetadata node)
+    parameters:
+    - id: tree
+      type: BehaviorTreeObject
+      description: Behaviour tree scriptable object used by visual editor
+    - id: node
+      type: NodeEditorInstanceMetadata
+      description: Node metadata reference
+    content.vb: Public Sub UpdateSelection(tree As BehaviorTreeObject, node As NodeEditorInstanceMetadata)
+  overload: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: VisualEditor.Editor
+  commentId: N:VisualEditor.Editor
+  name: VisualEditor.Editor
+  nameWithType: VisualEditor.Editor
+  fullName: VisualEditor.Editor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView.#ctor*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorInspectorView.#ctor
+  name: BehaviourTreeEditorInspectorView
+  nameWithType: BehaviourTreeEditorInspectorView.BehaviourTreeEditorInspectorView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView.BehaviourTreeEditorInspectorView
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection
+  name: UpdateSelection
+  nameWithType: BehaviourTreeEditorInspectorView.UpdateSelection
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UpdateSelection
+- uid: BehaviorTreeObject
+  isExternal: true
+  name: BehaviorTreeObject
+  nameWithType: BehaviorTreeObject
+  fullName: BehaviorTreeObject
+- uid: NodeEditorInstanceMetadata
+  isExternal: true
+  name: NodeEditorInstanceMetadata
+  nameWithType: NodeEditorInstanceMetadata
+  fullName: NodeEditorInstanceMetadata

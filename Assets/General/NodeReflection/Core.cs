@@ -55,11 +55,11 @@ namespace NodeReflection
         }
 
         /// <summary>
-        /// Returns the property dictionary of the wanted node type
+        /// Returns the bool properties of the wanted node type
         /// </summary>
         /// <param name="internalName">Internal name of the node type</param>
-        /// <returns>A dictionary of properties</returns>
-        public static Dictionary<string, object> GetProperties(string internalName)
+        /// <returns>A dictionary of bool properties</returns>
+        public static Dictionary<string, bool> GetPropertiesBool(string internalName)
         {
             if (!Engine.Metadata.ContainsKey(internalName))
                 throw new Exception("Type not existing");
@@ -68,34 +68,96 @@ namespace NodeReflection
 
             return metadata
                 .NameToType
-                .Zip(metadata.NameToDefaultValue, (nameAndType, nameAndDefaultValue) =>
-                    (nameAndType.Key, nameAndType.Value, nameAndDefaultValue.Value)
-                )
+                .Where(pair => pair.Value == ExposedPropertyTypeEnum.BOOL)
+                .Zip(metadata.NameToDefaultValue, (nameAndType, nameAndDefaultValue) => (nameAndType.Key, nameAndDefaultValue.Value))
                 .Select((data) =>
                 {
-                    var (key, type, defaultValue) = data;
+                    var (key, defaultValue) = data;
 
-                    switch (type)
-                    {
-                        case ExposedPropertyTypeEnum.BOOL:
-                            if (defaultValue is not bool)
-                                throw new Exception("Default value uncompatible");
-                            return new KeyValuePair<string, object>(key, defaultValue ?? false);
-                        case ExposedPropertyTypeEnum.FLOAT:
-                            if (defaultValue is not float)
-                                throw new Exception("Default value uncompatible");
-                            return new KeyValuePair<string, object>(key, defaultValue ?? 0);
-                        case ExposedPropertyTypeEnum.INT:
-                            if (defaultValue is not int)
-                                throw new Exception("Default value uncompatible");
-                            return new KeyValuePair<string, object>(key, defaultValue ?? 0);
-                        case ExposedPropertyTypeEnum.STRING:
-                            if (defaultValue is not string)
-                                throw new Exception("Default value uncompatible");
-                            return new KeyValuePair<string, object>(key, defaultValue ?? string.Empty);
-                        default:
-                            throw new Exception("Unmanaged property type");
-                    }
+                    if (defaultValue != null && defaultValue is not bool)
+                        throw new Exception("Default value uncompatible");
+                    return new KeyValuePair<string, bool>(key, defaultValue != null && (bool)defaultValue);
+                })
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
+        }
+
+        /// <summary>
+        /// Returns the float properties of the wanted node type
+        /// </summary>
+        /// <param name="internalName">Internal name of the node type</param>
+        /// <returns>A dictionary of float properties</returns>
+        public static Dictionary<string, float> GetPropertiesFloat(string internalName)
+        {
+            if (!Engine.Metadata.ContainsKey(internalName))
+                throw new Exception("Type not existing");
+
+            var metadata = Engine.Metadata[internalName];
+
+            return metadata
+                .NameToType
+                .Where(pair => pair.Value == ExposedPropertyTypeEnum.FLOAT)
+                .Zip(metadata.NameToDefaultValue, (nameAndType, nameAndDefaultValue) => (nameAndType.Key, nameAndDefaultValue.Value))
+                .Select((data) =>
+                {
+                    var (key, defaultValue) = data;
+
+                    if (defaultValue != null && defaultValue is not float)
+                        throw new Exception("Default value uncompatible");
+                    return new KeyValuePair<string, float>(key, defaultValue == null ? 0f : (float)defaultValue);
+                })
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
+        }
+
+        /// <summary>
+        /// Returns the int properties of the wanted node type
+        /// </summary>
+        /// <param name="internalName">Internal name of the node type</param>
+        /// <returns>A dictionary of int properties</returns>
+        public static Dictionary<string, int> GetPropertiesInt(string internalName)
+        {
+            if (!Engine.Metadata.ContainsKey(internalName))
+                throw new Exception("Type not existing");
+
+            var metadata = Engine.Metadata[internalName];
+
+            return metadata
+                .NameToType
+                .Where(pair => pair.Value == ExposedPropertyTypeEnum.INT)
+                .Zip(metadata.NameToDefaultValue, (nameAndType, nameAndDefaultValue) => (nameAndType.Key, nameAndDefaultValue.Value))
+                .Select((data) =>
+                {
+                    var (key, defaultValue) = data;
+
+                    if (defaultValue != null && defaultValue is not int)
+                        throw new Exception("Default value uncompatible");
+                    return new KeyValuePair<string, int>(key, defaultValue == null ? 0 : (int)defaultValue);
+                })
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
+        }
+
+        /// <summary>
+        /// Returns the string properties of the wanted node type
+        /// </summary>
+        /// <param name="internalName">Internal name of the node type</param>
+        /// <returns>A dictionary of string properties</returns>
+        public static Dictionary<string, string> GetPropertiesString(string internalName)
+        {
+            if (!Engine.Metadata.ContainsKey(internalName))
+                throw new Exception("Type not existing");
+
+            var metadata = Engine.Metadata[internalName];
+
+            return metadata
+                .NameToType
+                .Where(pair => pair.Value == ExposedPropertyTypeEnum.STRING)
+                .Zip(metadata.NameToDefaultValue, (nameAndType, nameAndDefaultValue) => (nameAndType.Key, nameAndDefaultValue.Value))
+                .Select((data) =>
+                {
+                    var (key, defaultValue) = data;
+
+                    if (defaultValue != null && defaultValue is not string)
+                        throw new Exception("Default value uncompatible");
+                    return new KeyValuePair<string, string>(key, defaultValue == null ? string.Empty : (string)defaultValue);
                 })
                 .ToDictionary(pair => pair.Key, pair => pair.Value);
         }
@@ -132,29 +194,36 @@ namespace NodeReflection
 
             NodeMetadata metadata = Engine.Metadata[data.NodeTypeInternalName];
 
-            foreach (var (property, value) in data.Properties)
+            foreach (var (property, _) in data.PropertiesBool)
             {
                 if (!metadata.NameToType.ContainsKey(property))
-                    throw new Exception("Property not found");
-
-                switch (metadata.NameToType[property])
-                {
-                    case ExposedPropertyTypeEnum.BOOL when value is not bool:
-                        throw new Exception("Property uncompatible");
-                    case ExposedPropertyTypeEnum.FLOAT when value is not float:
-                        throw new Exception("Property uncompatible");
-                    case ExposedPropertyTypeEnum.INT when value is not int:
-                        throw new Exception("Property uncompatible");
-                    case ExposedPropertyTypeEnum.STRING when value is not string:
-                        throw new Exception("Property uncompatible");
-                    default:
-                        throw new Exception("Unmanaged property type");
-                }
+                    throw new Exception("Bool property not found");
+            }
+            foreach (var (property, _) in data.PropertiesFloat)
+            {
+                if (!metadata.NameToType.ContainsKey(property))
+                    throw new Exception("Bool property not found");
+            }
+            foreach (var (property, _) in data.PropertiesInt)
+            {
+                if (!metadata.NameToType.ContainsKey(property))
+                    throw new Exception("Bool property not found");
+            }
+            foreach (var (property, _) in data.PropertiesString)
+            {
+                if (!metadata.NameToType.ContainsKey(property))
+                    throw new Exception("Bool property not found");
             }
 
             Node node = (Node)Activator.CreateInstance(metadata.NodeType);
 
-            foreach (var (property, value) in data.Properties)
+            foreach (var (property, value) in data.PropertiesBool)
+                metadata.NodeType.GetProperty(property).SetValue(node, value);
+            foreach (var (property, value) in data.PropertiesFloat)
+                metadata.NodeType.GetProperty(property).SetValue(node, value);
+            foreach (var (property, value) in data.PropertiesInt)
+                metadata.NodeType.GetProperty(property).SetValue(node, value);
+            foreach (var (property, value) in data.PropertiesString)
                 metadata.NodeType.GetProperty(property).SetValue(node, value);
 
             foreach (var child in data.ChildrenIds)

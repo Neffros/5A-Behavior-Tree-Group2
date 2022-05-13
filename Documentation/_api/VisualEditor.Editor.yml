@@ -1,0 +1,64 @@
+### YamlMime:ManagedReference
+items:
+- uid: VisualEditor.Editor
+  commentId: N:VisualEditor.Editor
+  id: VisualEditor.Editor
+  children:
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView
+  - VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory
+  - VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  - VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory
+  - VisualEditor.Editor.BehaviourTreeEditorWindow
+  - VisualEditor.Editor.NodeView
+  - VisualEditor.Editor.SplitView
+  - VisualEditor.Editor.SplitView.UxmlFactory
+  langs:
+  - csharp
+  - vb
+  name: VisualEditor.Editor
+  nameWithType: VisualEditor.Editor
+  fullName: VisualEditor.Editor
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorGraphView
+  name: BehaviourTreeEditorGraphView
+  nameWithType: BehaviourTreeEditorGraphView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView
+- uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory
+  name: BehaviourTreeEditorGraphView.UxmlFactory
+  nameWithType: BehaviourTreeEditorGraphView.UxmlFactory
+  fullName: VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorInspectorView
+  name: BehaviourTreeEditorInspectorView
+  nameWithType: BehaviourTreeEditorInspectorView
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+- uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory
+  name: BehaviourTreeEditorInspectorView.UxmlFactory
+  nameWithType: BehaviourTreeEditorInspectorView.UxmlFactory
+  fullName: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory
+- uid: VisualEditor.Editor.BehaviourTreeEditorWindow
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorWindow
+  name: BehaviourTreeEditorWindow
+  nameWithType: BehaviourTreeEditorWindow
+  fullName: VisualEditor.Editor.BehaviourTreeEditorWindow
+- uid: VisualEditor.Editor.NodeView
+  commentId: T:VisualEditor.Editor.NodeView
+  name: NodeView
+  nameWithType: NodeView
+  fullName: VisualEditor.Editor.NodeView
+- uid: VisualEditor.Editor.SplitView
+  commentId: T:VisualEditor.Editor.SplitView
+  name: SplitView
+  nameWithType: SplitView
+  fullName: VisualEditor.Editor.SplitView
+- uid: VisualEditor.Editor.SplitView.UxmlFactory
+  commentId: T:VisualEditor.Editor.SplitView.UxmlFactory
+  name: SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
+  fullName: VisualEditor.Editor.SplitView.UxmlFactory

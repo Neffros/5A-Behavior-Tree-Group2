@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Unity Behavior Tree API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Unity Behavior Tree API ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="unity-behavior-tree-api" sourcefile="index.md" sourcestartlinenumber="1">Unity Behavior Tree API</h1>
+
+<h1 id="functional-documentation" sourcefile="index.md" sourcestartlinenumber="3">Functional documentation</h1>
+<h2 id="introduction" sourcefile="index.md" sourcestartlinenumber="5">Introduction</h2>
+<p sourcefile="index.md" sourcestartlinenumber="7">This API facilitates the development of tree nodes and offers a visual tool to constitute behaviortrees based on these nodes.</p>
+<p sourcefile="index.md" sourcestartlinenumber="9">This tool is intuitive to use and can be used by game designers.</p>
+<h2 id="getting-started" sourcefile="index.md" sourcestartlinenumber="11">Getting started</h2>
+<p sourcefile="index.md" sourcestartlinenumber="13">First, the developer must create the tree's nodes.
+The abstract class <a href="api/BehaviorTree.Node.html" sourcefile="index.md" sourcestartlinenumber="14">node</a> allows for an easy implementation of the node.
+Every class that inherits from Node will be detected in the visual tool.</p>
+<h3 id="implementing-a-node" sourcefile="index.md" sourcestartlinenumber="17">Implementing a node</h3>
+<p sourcefile="index.md" sourcestartlinenumber="19">In this case we will implement an action of AI in an infiltration game.
+The wanted behavior is that the AI runs after the player if they are spotted.</p>
+<h4 id="create-the-node" sourcefile="index.md" sourcestartlinenumber="23">Create the node</h4>
+<p sourcefile="index.md" sourcestartlinenumber="25">First, we create a class for the desired action which inherits from <a href="api/BehaviorTree.Node.html" sourcefile="index.md" sourcestartlinenumber="25">Node</a>.</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="27">using BehaviorTree;
+using NodeReflection;
+using UnityEngine;
+
+namespace Infiltration
+{
+    [VisualNode] //Makes the class usable in the visual editor
+    public class TaskGoTowardEnemy : Node //Inherits 
+    {
+    
+    }
+}
+</code></pre>
+<p sourcefile="index.md" sourcestartlinenumber="42">The [VisualNode] tag lets the visual editor know this is a node which can be used.</p>
+<h4 id="adding-properties" sourcefile="index.md" sourcestartlinenumber="44">Adding properties</h4>
+<p sourcefile="index.md" sourcestartlinenumber="46">We can define properties which can be altered in the visual editor with the [ExposedInVisualEditor] tag.</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="47">namespace Infiltration
+{
+    [VisualNode] 
+    public class TaskGoTowardEnemy : Node
+    {
+        //Properties that are editable in the visual editor inspector.
+        [ExposedInVisualEditor]
+        public float Speed { get; set; }
+        [ExposedInVisualEditor]
+        public float UnseeRange { get; set; }
+    }
+}
+</code></pre>
+<h4 id="retrieving-agent-components" sourcefile="index.md" sourcestartlinenumber="64">Retrieving agent components</h4>
+<p sourcefile="index.md" sourcestartlinenumber="66">We retrieve the Spriterenderer from the data stored in the AI's gameobject so that we can modify it during the behavior.</p>
+<p sourcefile="index.md" sourcestartlinenumber="68">The OnInitialize method is called once when the tree is initialized</p>
+<p sourcefile="index.md" sourcestartlinenumber="70">The OnStart method is called when the status is not executed.</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="72">namespace Infiltration
+{
+    [VisualNode] 
+    public class TaskGoTowardEnemy : Node
+    {
+        //Properties that are editable in the visual editor inspector.
+        [ExposedInVisualEditor]
+        public float Speed { get; set; }
+        [ExposedInVisualEditor]
+        public float UnseeRange { get; set; }
+        
+        private SpriteRenderer _renderer;
+
+        //Is called once when the tree is initialized
+        protected override void OnInitialize()
+        {
+            this._renderer = this.Agent.GetComponent&lt;GuardSceneData&gt;().FieldOfView;
+        }
+
+        //Called on node update if the status is NotExecuted.
+        protected override NodeState OnStart()
+        {
+            _renderer.color = Color.red;
+
+            return NodeState.Running;
+        }
+        
+    }
+}
+</code></pre>
+<h4 id="adding-the-verifications-and-behavior" sourcefile="index.md" sourcestartlinenumber="104">Adding the verifications and behavior</h4>
+<p sourcefile="index.md" sourcestartlinenumber="106">All that is left to do is to add the verifications and behavior to get this finalized node:</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="107">using BehaviorTree;
+using NodeReflection;
+using UnityEngine;
+
+namespace Infiltration
+    {
+    [VisualNode] //Makes the class usable in the visual editor
+    public class TaskGoTowardEnemy : Node
+    {
+        //Properties that are editable in the visual editor inspector.
+        [ExposedInVisualEditor]
+        public float Speed { get; set; }
+        [ExposedInVisualEditor]
+        public float UnseeRange { get; set; }
+        
+        private SpriteRenderer _renderer;
+
+        //Is called once when the tree is initialized
+        protected override void OnInitialize()
+        {
+            this._renderer = this.Agent.GetComponent&lt;GuardSceneData&gt;().FieldOfView;
+        }
+
+        //Called on node update if the status is NotExecuted.
+        protected override NodeState OnStart()
+        {
+            _renderer.color = Color.red;
+
+            return NodeState.Running;
+        }
+        
+        //Called on node update if the status is Running.
+        protected override NodeState OnUpdate()
+        {
+            var target = this.GetData&lt;Transform&gt;(&quot;target&quot;);
+            
+            //If the player is no longer in range, the action doesn't apply   
+            if (Vector3.Distance(this.Agent.transform.position, target.position) &gt; UnseeRange || GameManager.StateSet)
+            {
+                RemoveData(&quot;target&quot;);
+                _renderer.color = Color.blue;
+                return NodeState.Failure;
+            }
+
+            //If the player is in range, run the action
+            if (Vector3.Distance(this.Agent.transform.position, target.position) &gt; .1f)
+            {
+                this.Agent.transform.position = Vector3.MoveTowards(
+                    this.Agent.transform.position,
+                    target.position,
+                    Speed * Time.deltaTime
+                );
+                this.Agent.transform.LookAt(target);
+                
+                return NodeState.Running;
+            }
+            
+            //The Behavior succeeded.
+            return NodeState.Success;
+        }
+    }
+}
+</code></pre>
+<p sourcefile="index.md" sourcestartlinenumber="172">The node can now easily be used and apply actual behavior in the visaul editor as shown in the image below.
+<img src="visualeditor.png" sourcefile="index.md" sourcestartlinenumber="173" alt="alt text" title="Title"></p>
+<h2 id="visual-editor" sourcefile="index.md" sourcestartlinenumber="175">Visual Editor</h2>
+<h2 id="api-developper-documentation" sourcefile="index.md" sourcestartlinenumber="177"><a href="api/toc.html" sourcefile="index.md" sourcestartlinenumber="177">API Developper documentation</a></h2>
+<p sourcefile="index.md" sourcestartlinenumber="179">The documentation can be found <a href="api/toc.html" sourcefile="index.md" sourcestartlinenumber="179">here</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Neffros/5A-Behavior-Tree-Group2/blob/doc/project/Documentation/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

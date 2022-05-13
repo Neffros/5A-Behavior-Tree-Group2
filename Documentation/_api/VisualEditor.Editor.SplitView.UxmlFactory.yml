@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: VisualEditor.Editor.SplitView.UxmlFactory
+  commentId: T:VisualEditor.Editor.SplitView.UxmlFactory
+  id: SplitView.UxmlFactory
+  parent: VisualEditor.Editor
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
+  fullName: VisualEditor.Editor.SplitView.UxmlFactory
+  type: Class
+  source:
+    id: UxmlFactory
+    path: ''
+    startLine: 1034
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: 'public class UxmlFactory : SplitView.UxmlFactory<SplitView, TwoPaneSplitView.UxmlTraits>'
+    content.vb: >-
+      Public Class UxmlFactory
+          Inherits SplitView.UxmlFactory(Of SplitView, TwoPaneSplitView.UxmlTraits)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+references:
+- uid: VisualEditor.Editor
+  commentId: N:VisualEditor.Editor
+  name: VisualEditor.Editor
+  nameWithType: VisualEditor.Editor
+  fullName: VisualEditor.Editor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

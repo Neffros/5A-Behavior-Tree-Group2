@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Infiltration
 {
     [VisualNode]
-    public class TaskPatrol : Node
-    {
-        [ExposedInVisualEditor]
-        public float Speed { get; set; }
+    public class TaskPatrol : Node {
+        [ExposedInVisualEditor] public float Speed { get; set; } = 6;
 
         private Transform[] _waypoints;
 

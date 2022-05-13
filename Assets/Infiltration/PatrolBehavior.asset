@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd7f66316022294f94e3956b4dd9f72, type: 3}
+  m_Name: PatrolBehavior
+  m_EditorClassIdentifier: 
+  _idToNode:
+    m_keys:
+    - 93a2502b-a3d5-4611-8685-b7fdf34e2141
+    - 0461dfbd-01ad-4b45-906b-35da61328383
+    - 9f9e04fd-9848-4c28-9dfb-44bf045c25f6
+    - 05bdaefa-def6-4d5f-80ba-09285ccddfb5
+    - c8834161-033f-47ca-a157-15582f71da0f
+    - c2bd454a-704d-44fb-8aaa-e6993e9cbb21
+    - 93866b17-34d2-4efa-8d03-e9e487c04f1c
+    - 44edb97d-15e2-47b0-8fbd-2001598cbfb7
+    - 708f8d21-95db-4987-a50e-57e9b1ecaf2c
+    - 4c552506-bafd-4638-9192-51c39c9045da
+    m_values:
+    - ChildrenIds:
+      - 0461dfbd-01ad-4b45-906b-35da61328383
+      - 4c552506-bafd-4638-9192-51c39c9045da
+      - 44edb97d-15e2-47b0-8fbd-2001598cbfb7
+      - 708f8d21-95db-4987-a50e-57e9b1ecaf2c
+      Id: 93a2502b-a3d5-4611-8685-b7fdf34e2141
+      NodeTypeInternalName: Selector
+      ParentId: 
+      PositionInEditor: {x: 163.28, y: 111.16}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys: []
+        m_values: []
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds:
+      - 05bdaefa-def6-4d5f-80ba-09285ccddfb5
+      Id: 0461dfbd-01ad-4b45-906b-35da61328383
+      NodeTypeInternalName: Inverter
+      ParentId: 
+      PositionInEditor: {x: 346, y: 114.8}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys: []
+        m_values: []
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds: []
+      Id: 9f9e04fd-9848-4c28-9dfb-44bf045c25f6
+      NodeTypeInternalName: TaskGoTowardEnemy
+      ParentId: 
+      PositionInEditor: {x: 525.5849, y: 654.2251}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys:
+        - Speed
+        - UnseeRange
+        m_values:
+        - 5
+        - 7
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds: []
+      Id: 05bdaefa-def6-4d5f-80ba-09285ccddfb5
+      NodeTypeInternalName: CheckGameState
+      ParentId: 
+      PositionInEditor: {x: 504.80002, y: 107.600006}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys: []
+        m_values: []
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds: []
+      Id: c8834161-033f-47ca-a157-15582f71da0f
+      NodeTypeInternalName: CheckEnemyInRange
+      ParentId: 
+      PositionInEditor: {x: 510.4325, y: 346.5325}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys:
+        - AttackRange
+        m_values:
+        - 1
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds: []
+      Id: c2bd454a-704d-44fb-8aaa-e6993e9cbb21
+      NodeTypeInternalName: TaskAttackPlayer
+      ParentId: 
+      PositionInEditor: {x: 528.0325, y: 448.9326}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys:
+        - AttackRange
+        m_values:
+        - 1
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds: []
+      Id: 93866b17-34d2-4efa-8d03-e9e487c04f1c
+      NodeTypeInternalName: CheckEnemyInFOVRange
+      ParentId: 
+      PositionInEditor: {x: 512.83234, y: 547.33246}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys:
+        - SeeRange
+        m_values:
+        - 6
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds:
+      - c8834161-033f-47ca-a157-15582f71da0f
+      - c2bd454a-704d-44fb-8aaa-e6993e9cbb21
+      Id: 44edb97d-15e2-47b0-8fbd-2001598cbfb7
+      NodeTypeInternalName: Sequence
+      ParentId: 
+      PositionInEditor: {x: 325.63242, y: 375.3325}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys: []
+        m_values: []
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds:
+      - 93866b17-34d2-4efa-8d03-e9e487c04f1c
+      - 9f9e04fd-9848-4c28-9dfb-44bf045c25f6
+      Id: 708f8d21-95db-4987-a50e-57e9b1ecaf2c
+      NodeTypeInternalName: Sequence
+      ParentId: 
+      PositionInEditor: {x: 328.83246, y: 504.13257}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys: []
+        m_values: []
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+    - ChildrenIds: []
+      Id: 4c552506-bafd-4638-9192-51c39c9045da
+      NodeTypeInternalName: TaskPatrol
+      ParentId: 
+      PositionInEditor: {x: 379.40002, y: 242}
+      PropertiesBool:
+        m_keys: []
+        m_values: 
+      PropertiesFloat:
+        m_keys:
+        - Speed
+        m_values:
+        - 5
+      PropertiesInt:
+        m_keys: []
+        m_values: 
+      PropertiesString:
+        m_keys: []
+        m_values: []
+  _initialized: 1
+  _rootId: 93a2502b-a3d5-4611-8685-b7fdf34e2141
