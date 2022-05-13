@@ -10,6 +10,10 @@
     name: Node
   - uid: BehaviorTree.NodeState
     name: NodeState
+  - uid: BehaviorTree.Repeater
+    name: Repeater
+  - uid: BehaviorTree.RepeatMode
+    name: RepeatMode
   - uid: BehaviorTree.Selector
     name: Selector
   - uid: BehaviorTree.Sequence

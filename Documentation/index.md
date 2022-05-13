@@ -169,9 +169,8 @@ namespace Infiltration
 }
 ```
 
-The node can now easily be used and apply actual behavior in the visaul editor as shown in the image below.
+The node can now easily be used and apply actual behavior in the visual editor as shown in the image below.
 ![alt text](visualeditor.png "Title")
-
 ## Visual Editor
 
 ## [API Developper documentation](api/toc.html)

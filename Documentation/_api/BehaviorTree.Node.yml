@@ -8,19 +8,22 @@ items:
   - BehaviorTree.Node.Agent
   - BehaviorTree.Node.Attach(BehaviorTree.Node)
   - BehaviorTree.Node.Children
-  - BehaviorTree.Node.Evaluate
   - BehaviorTree.Node.GetData(System.String)
   - BehaviorTree.Node.GetData``1(System.String)
   - BehaviorTree.Node.GetNode``1
   - BehaviorTree.Node.GetNodes``1
   - BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
-  - BehaviorTree.Node.OnEvaluate
-  - BehaviorTree.Node.OnInitialized
+  - BehaviorTree.Node.OnInitialize
+  - BehaviorTree.Node.OnReset
+  - BehaviorTree.Node.OnStart
+  - BehaviorTree.Node.OnUpdate
   - BehaviorTree.Node.Parent
   - BehaviorTree.Node.RemoveData(System.String)
+  - BehaviorTree.Node.Reset
   - BehaviorTree.Node.Root
   - BehaviorTree.Node.SetData(System.String,System.Object)
   - BehaviorTree.Node.State
+  - BehaviorTree.Node.Update
   langs:
   - csharp
   - vb
@@ -31,7 +34,7 @@ items:
   source:
     id: Node
     path: ''
-    startLine: 133
+    startLine: 146
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -44,6 +47,7 @@ items:
   - System.Object
   derivedClasses:
   - BehaviorTree.Inverter
+  - BehaviorTree.Repeater
   - BehaviorTree.Selector
   - BehaviorTree.Sequence
   inheritedMembers:
@@ -76,7 +80,7 @@ items:
   source:
     id: Agent
     path: ''
-    startLine: 140
+    startLine: 153
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -109,7 +113,7 @@ items:
   source:
     id: Children
     path: ''
-    startLine: 145
+    startLine: 158
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -142,7 +146,7 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 150
+    startLine: 163
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -175,7 +179,7 @@ items:
   source:
     id: Root
     path: ''
-    startLine: 155
+    startLine: 168
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -208,7 +212,7 @@ items:
   source:
     id: State
     path: ''
-    startLine: 160
+    startLine: 173
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -241,7 +245,7 @@ items:
   source:
     id: Attach
     path: ''
-    startLine: 180
+    startLine: 193
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -276,7 +280,7 @@ items:
   source:
     id: GetNode
     path: ''
-    startLine: 192
+    startLine: 205
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -315,7 +319,7 @@ items:
   source:
     id: GetNodes
     path: ''
-    startLine: 216
+    startLine: 229
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -354,7 +358,7 @@ items:
   source:
     id: Initialize
     path: ''
-    startLine: 229
+    startLine: 242
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -373,30 +377,56 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: BehaviorTree.Node.Evaluate
-  commentId: M:BehaviorTree.Node.Evaluate
-  id: Evaluate
+- uid: BehaviorTree.Node.Update
+  commentId: M:BehaviorTree.Node.Update
+  id: Update
   parent: BehaviorTree.Node
   langs:
   - csharp
   - vb
-  name: Evaluate()
-  nameWithType: Node.Evaluate()
-  fullName: BehaviorTree.Node.Evaluate()
+  name: Update()
+  nameWithType: Node.Update()
+  fullName: BehaviorTree.Node.Update()
   type: Method
   source:
-    id: Evaluate
+    id: Update
     path: ''
-    startLine: 243
+    startLine: 258
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nTriggers the evaluation of the node\n"
+  summary: "\nUpdates the node\n"
   example: []
   syntax:
-    content: public void Evaluate()
-    content.vb: Public Sub Evaluate
-  overload: BehaviorTree.Node.Evaluate*
+    content: public void Update()
+    content.vb: Public Sub Update
+  overload: BehaviorTree.Node.Update*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: BehaviorTree.Node.Reset
+  commentId: M:BehaviorTree.Node.Reset
+  id: Reset
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: Node.Reset()
+  fullName: BehaviorTree.Node.Reset()
+  type: Method
+  source:
+    id: Reset
+    path: ''
+    startLine: 271
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset
+  overload: BehaviorTree.Node.Reset*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -415,7 +445,7 @@ items:
   source:
     id: SetData
     path: ''
-    startLine: 253
+    startLine: 288
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -436,63 +466,126 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: BehaviorTree.Node.OnEvaluate
-  commentId: M:BehaviorTree.Node.OnEvaluate
-  id: OnEvaluate
+- uid: BehaviorTree.Node.OnInitialize
+  commentId: M:BehaviorTree.Node.OnInitialize
+  id: OnInitialize
   parent: BehaviorTree.Node
   langs:
   - csharp
   - vb
-  name: OnEvaluate()
-  nameWithType: Node.OnEvaluate()
-  fullName: BehaviorTree.Node.OnEvaluate()
+  name: OnInitialize()
+  nameWithType: Node.OnInitialize()
+  fullName: BehaviorTree.Node.OnInitialize()
   type: Method
   source:
-    id: OnEvaluate
+    id: OnInitialize
     path: ''
-    startLine: 266
-  assemblies:
-  - cs.temp.dll
-  namespace: BehaviorTree
-  summary: "\nEvaluate children node\n"
-  example: []
-  syntax:
-    content: protected virtual NodeState OnEvaluate()
-    return:
-      type: BehaviorTree.NodeState
-      description: Return FAILURE by default
-    content.vb: Protected Overridable Function OnEvaluate As NodeState
-  overload: BehaviorTree.Node.OnEvaluate*
-  modifiers.csharp:
-  - protected
-  - virtual
-  modifiers.vb:
-  - Protected
-  - Overridable
-- uid: BehaviorTree.Node.OnInitialized
-  commentId: M:BehaviorTree.Node.OnInitialized
-  id: OnInitialized
-  parent: BehaviorTree.Node
-  langs:
-  - csharp
-  - vb
-  name: OnInitialized()
-  nameWithType: Node.OnInitialized()
-  fullName: BehaviorTree.Node.OnInitialized()
-  type: Method
-  source:
-    id: OnInitialized
-    path: ''
-    startLine: 271
+    startLine: 300
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
   summary: "\nFired on tree initialization\n"
   example: []
   syntax:
-    content: protected virtual void OnInitialized()
-    content.vb: Protected Overridable Sub OnInitialized
-  overload: BehaviorTree.Node.OnInitialized*
+    content: protected virtual void OnInitialize()
+    content.vb: Protected Overridable Sub OnInitialize
+  overload: BehaviorTree.Node.OnInitialize*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: BehaviorTree.Node.OnStart
+  commentId: M:BehaviorTree.Node.OnStart
+  id: OnStart
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: OnStart()
+  nameWithType: Node.OnStart()
+  fullName: BehaviorTree.Node.OnStart()
+  type: Method
+  source:
+    id: OnStart
+    path: ''
+    startLine: 306
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nCalled on node update if the status is NotExecuted.\n"
+  example: []
+  syntax:
+    content: protected virtual NodeState OnStart()
+    return:
+      type: BehaviorTree.NodeState
+      description: Returns the new state of this node. Must not be NodeState.NotExecuted.
+    content.vb: Protected Overridable Function OnStart As NodeState
+  overload: BehaviorTree.Node.OnStart*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: BehaviorTree.Node.OnUpdate
+  commentId: M:BehaviorTree.Node.OnUpdate
+  id: OnUpdate
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: OnUpdate()
+  nameWithType: Node.OnUpdate()
+  fullName: BehaviorTree.Node.OnUpdate()
+  type: Method
+  source:
+    id: OnUpdate
+    path: ''
+    startLine: 315
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nCalled on node update if the status is Running.\n"
+  example: []
+  syntax:
+    content: protected virtual NodeState OnUpdate()
+    return:
+      type: BehaviorTree.NodeState
+      description: Returns the new state of this node. Must not be NodeState.NotExecuted.
+    content.vb: Protected Overridable Function OnUpdate As NodeState
+  overload: BehaviorTree.Node.OnUpdate*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: BehaviorTree.Node.OnReset
+  commentId: M:BehaviorTree.Node.OnReset
+  id: OnReset
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: OnReset()
+  nameWithType: Node.OnReset()
+  fullName: BehaviorTree.Node.OnReset()
+  type: Method
+  source:
+    id: OnReset
+    path: ''
+    startLine: 323
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nCalled when the node is reset.\n"
+  example: []
+  syntax:
+    content: protected virtual void OnReset()
+    content.vb: Protected Overridable Sub OnReset
+  overload: BehaviorTree.Node.OnReset*
   modifiers.csharp:
   - protected
   - virtual
@@ -513,7 +606,7 @@ items:
   source:
     id: GetData
     path: ''
-    startLine: 282
+    startLine: 337
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -548,7 +641,7 @@ items:
   source:
     id: GetData
     path: ''
-    startLine: 296
+    startLine: 351
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -589,7 +682,7 @@ items:
   source:
     id: RemoveData
     path: ''
-    startLine: 309
+    startLine: 364
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -1139,11 +1232,16 @@ references:
   name: Initialize
   nameWithType: Node.Initialize
   fullName: BehaviorTree.Node.Initialize
-- uid: BehaviorTree.Node.Evaluate*
-  commentId: Overload:BehaviorTree.Node.Evaluate
-  name: Evaluate
-  nameWithType: Node.Evaluate
-  fullName: BehaviorTree.Node.Evaluate
+- uid: BehaviorTree.Node.Update*
+  commentId: Overload:BehaviorTree.Node.Update
+  name: Update
+  nameWithType: Node.Update
+  fullName: BehaviorTree.Node.Update
+- uid: BehaviorTree.Node.Reset*
+  commentId: Overload:BehaviorTree.Node.Reset
+  name: Reset
+  nameWithType: Node.Reset
+  fullName: BehaviorTree.Node.Reset
 - uid: BehaviorTree.Node.SetData*
   commentId: Overload:BehaviorTree.Node.SetData
   name: SetData
@@ -1156,16 +1254,26 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: BehaviorTree.Node.OnEvaluate*
-  commentId: Overload:BehaviorTree.Node.OnEvaluate
-  name: OnEvaluate
-  nameWithType: Node.OnEvaluate
-  fullName: BehaviorTree.Node.OnEvaluate
-- uid: BehaviorTree.Node.OnInitialized*
-  commentId: Overload:BehaviorTree.Node.OnInitialized
-  name: OnInitialized
-  nameWithType: Node.OnInitialized
-  fullName: BehaviorTree.Node.OnInitialized
+- uid: BehaviorTree.Node.OnInitialize*
+  commentId: Overload:BehaviorTree.Node.OnInitialize
+  name: OnInitialize
+  nameWithType: Node.OnInitialize
+  fullName: BehaviorTree.Node.OnInitialize
+- uid: BehaviorTree.Node.OnStart*
+  commentId: Overload:BehaviorTree.Node.OnStart
+  name: OnStart
+  nameWithType: Node.OnStart
+  fullName: BehaviorTree.Node.OnStart
+- uid: BehaviorTree.Node.OnUpdate*
+  commentId: Overload:BehaviorTree.Node.OnUpdate
+  name: OnUpdate
+  nameWithType: Node.OnUpdate
+  fullName: BehaviorTree.Node.OnUpdate
+- uid: BehaviorTree.Node.OnReset*
+  commentId: Overload:BehaviorTree.Node.OnReset
+  name: OnReset
+  nameWithType: Node.OnReset
+  fullName: BehaviorTree.Node.OnReset
 - uid: BehaviorTree.Node.GetData*
   commentId: Overload:BehaviorTree.Node.GetData
   name: GetData

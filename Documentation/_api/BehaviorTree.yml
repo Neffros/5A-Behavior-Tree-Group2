@@ -8,6 +8,8 @@ items:
   - BehaviorTree.Inverter
   - BehaviorTree.Node
   - BehaviorTree.NodeState
+  - BehaviorTree.Repeater
+  - BehaviorTree.RepeatMode
   - BehaviorTree.Selector
   - BehaviorTree.Sequence
   langs:
@@ -43,6 +45,17 @@ references:
   name: Node
   nameWithType: Node
   fullName: BehaviorTree.Node
+- uid: BehaviorTree.RepeatMode
+  commentId: T:BehaviorTree.RepeatMode
+  parent: BehaviorTree
+  name: RepeatMode
+  nameWithType: RepeatMode
+  fullName: BehaviorTree.RepeatMode
+- uid: BehaviorTree.Repeater
+  commentId: T:BehaviorTree.Repeater
+  name: Repeater
+  nameWithType: Repeater
+  fullName: BehaviorTree.Repeater
 - uid: BehaviorTree.Selector
   commentId: T:BehaviorTree.Selector
   name: Selector

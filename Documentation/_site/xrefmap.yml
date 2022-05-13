@@ -45,19 +45,19 @@ references:
   commentId: T:BehaviorTree.Inverter
   fullName: BehaviorTree.Inverter
   nameWithType: Inverter
-- uid: BehaviorTree.Inverter.OnEvaluate
-  name: OnEvaluate()
-  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_OnEvaluate
-  commentId: M:BehaviorTree.Inverter.OnEvaluate
-  fullName: BehaviorTree.Inverter.OnEvaluate()
-  nameWithType: Inverter.OnEvaluate()
-- uid: BehaviorTree.Inverter.OnEvaluate*
-  name: OnEvaluate
-  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_OnEvaluate_
-  commentId: Overload:BehaviorTree.Inverter.OnEvaluate
+- uid: BehaviorTree.Inverter.OnUpdate
+  name: OnUpdate()
+  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_OnUpdate
+  commentId: M:BehaviorTree.Inverter.OnUpdate
+  fullName: BehaviorTree.Inverter.OnUpdate()
+  nameWithType: Inverter.OnUpdate()
+- uid: BehaviorTree.Inverter.OnUpdate*
+  name: OnUpdate
+  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_OnUpdate_
+  commentId: Overload:BehaviorTree.Inverter.OnUpdate
   isSpec: "True"
-  fullName: BehaviorTree.Inverter.OnEvaluate
-  nameWithType: Inverter.OnEvaluate
+  fullName: BehaviorTree.Inverter.OnUpdate
+  nameWithType: Inverter.OnUpdate
 - uid: BehaviorTree.Node
   name: Node
   href: api/BehaviorTree.Node.html
@@ -103,19 +103,6 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.Children
   nameWithType: Node.Children
-- uid: BehaviorTree.Node.Evaluate
-  name: Evaluate()
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Evaluate
-  commentId: M:BehaviorTree.Node.Evaluate
-  fullName: BehaviorTree.Node.Evaluate()
-  nameWithType: Node.Evaluate()
-- uid: BehaviorTree.Node.Evaluate*
-  name: Evaluate
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Evaluate_
-  commentId: Overload:BehaviorTree.Node.Evaluate
-  isSpec: "True"
-  fullName: BehaviorTree.Node.Evaluate
-  nameWithType: Node.Evaluate
 - uid: BehaviorTree.Node.GetData(System.String)
   name: GetData(String)
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_GetData_System_String_
@@ -183,32 +170,58 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.Initialize
   nameWithType: Node.Initialize
-- uid: BehaviorTree.Node.OnEvaluate
-  name: OnEvaluate()
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnEvaluate
-  commentId: M:BehaviorTree.Node.OnEvaluate
-  fullName: BehaviorTree.Node.OnEvaluate()
-  nameWithType: Node.OnEvaluate()
-- uid: BehaviorTree.Node.OnEvaluate*
-  name: OnEvaluate
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnEvaluate_
-  commentId: Overload:BehaviorTree.Node.OnEvaluate
+- uid: BehaviorTree.Node.OnInitialize
+  name: OnInitialize()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnInitialize
+  commentId: M:BehaviorTree.Node.OnInitialize
+  fullName: BehaviorTree.Node.OnInitialize()
+  nameWithType: Node.OnInitialize()
+- uid: BehaviorTree.Node.OnInitialize*
+  name: OnInitialize
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnInitialize_
+  commentId: Overload:BehaviorTree.Node.OnInitialize
   isSpec: "True"
-  fullName: BehaviorTree.Node.OnEvaluate
-  nameWithType: Node.OnEvaluate
-- uid: BehaviorTree.Node.OnInitialized
-  name: OnInitialized()
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnInitialized
-  commentId: M:BehaviorTree.Node.OnInitialized
-  fullName: BehaviorTree.Node.OnInitialized()
-  nameWithType: Node.OnInitialized()
-- uid: BehaviorTree.Node.OnInitialized*
-  name: OnInitialized
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnInitialized_
-  commentId: Overload:BehaviorTree.Node.OnInitialized
+  fullName: BehaviorTree.Node.OnInitialize
+  nameWithType: Node.OnInitialize
+- uid: BehaviorTree.Node.OnReset
+  name: OnReset()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnReset
+  commentId: M:BehaviorTree.Node.OnReset
+  fullName: BehaviorTree.Node.OnReset()
+  nameWithType: Node.OnReset()
+- uid: BehaviorTree.Node.OnReset*
+  name: OnReset
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnReset_
+  commentId: Overload:BehaviorTree.Node.OnReset
   isSpec: "True"
-  fullName: BehaviorTree.Node.OnInitialized
-  nameWithType: Node.OnInitialized
+  fullName: BehaviorTree.Node.OnReset
+  nameWithType: Node.OnReset
+- uid: BehaviorTree.Node.OnStart
+  name: OnStart()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnStart
+  commentId: M:BehaviorTree.Node.OnStart
+  fullName: BehaviorTree.Node.OnStart()
+  nameWithType: Node.OnStart()
+- uid: BehaviorTree.Node.OnStart*
+  name: OnStart
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnStart_
+  commentId: Overload:BehaviorTree.Node.OnStart
+  isSpec: "True"
+  fullName: BehaviorTree.Node.OnStart
+  nameWithType: Node.OnStart
+- uid: BehaviorTree.Node.OnUpdate
+  name: OnUpdate()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnUpdate
+  commentId: M:BehaviorTree.Node.OnUpdate
+  fullName: BehaviorTree.Node.OnUpdate()
+  nameWithType: Node.OnUpdate()
+- uid: BehaviorTree.Node.OnUpdate*
+  name: OnUpdate
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnUpdate_
+  commentId: Overload:BehaviorTree.Node.OnUpdate
+  isSpec: "True"
+  fullName: BehaviorTree.Node.OnUpdate
+  nameWithType: Node.OnUpdate
 - uid: BehaviorTree.Node.Parent
   name: Parent
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_Parent
@@ -235,6 +248,19 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.RemoveData
   nameWithType: Node.RemoveData
+- uid: BehaviorTree.Node.Reset
+  name: Reset()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Reset
+  commentId: M:BehaviorTree.Node.Reset
+  fullName: BehaviorTree.Node.Reset()
+  nameWithType: Node.Reset()
+- uid: BehaviorTree.Node.Reset*
+  name: Reset
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Reset_
+  commentId: Overload:BehaviorTree.Node.Reset
+  isSpec: "True"
+  fullName: BehaviorTree.Node.Reset
+  nameWithType: Node.Reset
 - uid: BehaviorTree.Node.Root
   name: Root
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_Root
@@ -274,68 +300,137 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.State
   nameWithType: Node.State
+- uid: BehaviorTree.Node.Update
+  name: Update()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Update
+  commentId: M:BehaviorTree.Node.Update
+  fullName: BehaviorTree.Node.Update()
+  nameWithType: Node.Update()
+- uid: BehaviorTree.Node.Update*
+  name: Update
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Update_
+  commentId: Overload:BehaviorTree.Node.Update
+  isSpec: "True"
+  fullName: BehaviorTree.Node.Update
+  nameWithType: Node.Update
 - uid: BehaviorTree.NodeState
   name: NodeState
   href: api/BehaviorTree.NodeState.html
   commentId: T:BehaviorTree.NodeState
   fullName: BehaviorTree.NodeState
   nameWithType: NodeState
-- uid: BehaviorTree.NodeState.FAILURE
-  name: FAILURE
-  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_FAILURE
-  commentId: F:BehaviorTree.NodeState.FAILURE
-  fullName: BehaviorTree.NodeState.FAILURE
-  nameWithType: NodeState.FAILURE
-- uid: BehaviorTree.NodeState.RUNNING
-  name: RUNNING
-  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_RUNNING
-  commentId: F:BehaviorTree.NodeState.RUNNING
-  fullName: BehaviorTree.NodeState.RUNNING
-  nameWithType: NodeState.RUNNING
-- uid: BehaviorTree.NodeState.SUCCESS
-  name: SUCCESS
-  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_SUCCESS
-  commentId: F:BehaviorTree.NodeState.SUCCESS
-  fullName: BehaviorTree.NodeState.SUCCESS
-  nameWithType: NodeState.SUCCESS
+- uid: BehaviorTree.NodeState.Failure
+  name: Failure
+  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_Failure
+  commentId: F:BehaviorTree.NodeState.Failure
+  fullName: BehaviorTree.NodeState.Failure
+  nameWithType: NodeState.Failure
+- uid: BehaviorTree.NodeState.NotExecuted
+  name: NotExecuted
+  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_NotExecuted
+  commentId: F:BehaviorTree.NodeState.NotExecuted
+  fullName: BehaviorTree.NodeState.NotExecuted
+  nameWithType: NodeState.NotExecuted
+- uid: BehaviorTree.NodeState.Running
+  name: Running
+  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_Running
+  commentId: F:BehaviorTree.NodeState.Running
+  fullName: BehaviorTree.NodeState.Running
+  nameWithType: NodeState.Running
+- uid: BehaviorTree.NodeState.Success
+  name: Success
+  href: api/BehaviorTree.NodeState.html#BehaviorTree_NodeState_Success
+  commentId: F:BehaviorTree.NodeState.Success
+  fullName: BehaviorTree.NodeState.Success
+  nameWithType: NodeState.Success
+- uid: BehaviorTree.Repeater
+  name: Repeater
+  href: api/BehaviorTree.Repeater.html
+  commentId: T:BehaviorTree.Repeater
+  fullName: BehaviorTree.Repeater
+  nameWithType: Repeater
+- uid: BehaviorTree.Repeater.OnUpdate
+  name: OnUpdate()
+  href: api/BehaviorTree.Repeater.html#BehaviorTree_Repeater_OnUpdate
+  commentId: M:BehaviorTree.Repeater.OnUpdate
+  fullName: BehaviorTree.Repeater.OnUpdate()
+  nameWithType: Repeater.OnUpdate()
+- uid: BehaviorTree.Repeater.OnUpdate*
+  name: OnUpdate
+  href: api/BehaviorTree.Repeater.html#BehaviorTree_Repeater_OnUpdate_
+  commentId: Overload:BehaviorTree.Repeater.OnUpdate
+  isSpec: "True"
+  fullName: BehaviorTree.Repeater.OnUpdate
+  nameWithType: Repeater.OnUpdate
+- uid: BehaviorTree.Repeater.RepeatMode
+  name: RepeatMode
+  href: api/BehaviorTree.Repeater.html#BehaviorTree_Repeater_RepeatMode
+  commentId: P:BehaviorTree.Repeater.RepeatMode
+  fullName: BehaviorTree.Repeater.RepeatMode
+  nameWithType: Repeater.RepeatMode
+- uid: BehaviorTree.Repeater.RepeatMode*
+  name: RepeatMode
+  href: api/BehaviorTree.Repeater.html#BehaviorTree_Repeater_RepeatMode_
+  commentId: Overload:BehaviorTree.Repeater.RepeatMode
+  isSpec: "True"
+  fullName: BehaviorTree.Repeater.RepeatMode
+  nameWithType: Repeater.RepeatMode
+- uid: BehaviorTree.RepeatMode
+  name: RepeatMode
+  href: api/BehaviorTree.RepeatMode.html
+  commentId: T:BehaviorTree.RepeatMode
+  fullName: BehaviorTree.RepeatMode
+  nameWithType: RepeatMode
+- uid: BehaviorTree.RepeatMode.RepeatIfFailure
+  name: RepeatIfFailure
+  href: api/BehaviorTree.RepeatMode.html#BehaviorTree_RepeatMode_RepeatIfFailure
+  commentId: F:BehaviorTree.RepeatMode.RepeatIfFailure
+  fullName: BehaviorTree.RepeatMode.RepeatIfFailure
+  nameWithType: RepeatMode.RepeatIfFailure
+- uid: BehaviorTree.RepeatMode.RepeatIfSuccess
+  name: RepeatIfSuccess
+  href: api/BehaviorTree.RepeatMode.html#BehaviorTree_RepeatMode_RepeatIfSuccess
+  commentId: F:BehaviorTree.RepeatMode.RepeatIfSuccess
+  fullName: BehaviorTree.RepeatMode.RepeatIfSuccess
+  nameWithType: RepeatMode.RepeatIfSuccess
 - uid: BehaviorTree.Selector
   name: Selector
   href: api/BehaviorTree.Selector.html
   commentId: T:BehaviorTree.Selector
   fullName: BehaviorTree.Selector
   nameWithType: Selector
-- uid: BehaviorTree.Selector.OnEvaluate
-  name: OnEvaluate()
-  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_OnEvaluate
-  commentId: M:BehaviorTree.Selector.OnEvaluate
-  fullName: BehaviorTree.Selector.OnEvaluate()
-  nameWithType: Selector.OnEvaluate()
-- uid: BehaviorTree.Selector.OnEvaluate*
-  name: OnEvaluate
-  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_OnEvaluate_
-  commentId: Overload:BehaviorTree.Selector.OnEvaluate
+- uid: BehaviorTree.Selector.OnUpdate
+  name: OnUpdate()
+  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_OnUpdate
+  commentId: M:BehaviorTree.Selector.OnUpdate
+  fullName: BehaviorTree.Selector.OnUpdate()
+  nameWithType: Selector.OnUpdate()
+- uid: BehaviorTree.Selector.OnUpdate*
+  name: OnUpdate
+  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_OnUpdate_
+  commentId: Overload:BehaviorTree.Selector.OnUpdate
   isSpec: "True"
-  fullName: BehaviorTree.Selector.OnEvaluate
-  nameWithType: Selector.OnEvaluate
+  fullName: BehaviorTree.Selector.OnUpdate
+  nameWithType: Selector.OnUpdate
 - uid: BehaviorTree.Sequence
   name: Sequence
   href: api/BehaviorTree.Sequence.html
   commentId: T:BehaviorTree.Sequence
   fullName: BehaviorTree.Sequence
   nameWithType: Sequence
-- uid: BehaviorTree.Sequence.OnEvaluate
-  name: OnEvaluate()
-  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_OnEvaluate
-  commentId: M:BehaviorTree.Sequence.OnEvaluate
-  fullName: BehaviorTree.Sequence.OnEvaluate()
-  nameWithType: Sequence.OnEvaluate()
-- uid: BehaviorTree.Sequence.OnEvaluate*
-  name: OnEvaluate
-  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_OnEvaluate_
-  commentId: Overload:BehaviorTree.Sequence.OnEvaluate
+- uid: BehaviorTree.Sequence.OnUpdate
+  name: OnUpdate()
+  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_OnUpdate
+  commentId: M:BehaviorTree.Sequence.OnUpdate
+  fullName: BehaviorTree.Sequence.OnUpdate()
+  nameWithType: Sequence.OnUpdate()
+- uid: BehaviorTree.Sequence.OnUpdate*
+  name: OnUpdate
+  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_OnUpdate_
+  commentId: Overload:BehaviorTree.Sequence.OnUpdate
   isSpec: "True"
-  fullName: BehaviorTree.Sequence.OnEvaluate
-  nameWithType: Sequence.OnEvaluate
+  fullName: BehaviorTree.Sequence.OnUpdate
+  nameWithType: Sequence.OnUpdate
 - uid: NodeReflection
   name: NodeReflection
   href: api/NodeReflection.html

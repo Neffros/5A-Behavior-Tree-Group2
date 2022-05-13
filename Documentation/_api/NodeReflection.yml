@@ -18,11 +18,18 @@ items:
 references:
 - uid: NodeReflection.ExposedInVisualEditorAttribute
   commentId: T:NodeReflection.ExposedInVisualEditorAttribute
+  parent: NodeReflection
   name: ExposedInVisualEditorAttribute
   nameWithType: ExposedInVisualEditorAttribute
   fullName: NodeReflection.ExposedInVisualEditorAttribute
 - uid: NodeReflection.VisualNodeAttribute
   commentId: T:NodeReflection.VisualNodeAttribute
+  parent: NodeReflection
   name: VisualNodeAttribute
   nameWithType: VisualNodeAttribute
   fullName: NodeReflection.VisualNodeAttribute
+- uid: NodeReflection
+  commentId: N:NodeReflection
+  name: NodeReflection
+  nameWithType: NodeReflection
+  fullName: NodeReflection

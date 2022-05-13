@@ -5,7 +5,7 @@ items:
   id: Sequence
   parent: BehaviorTree
   children:
-  - BehaviorTree.Sequence.OnEvaluate
+  - BehaviorTree.Sequence.OnUpdate
   langs:
   - csharp
   - vb
@@ -16,15 +16,20 @@ items:
   source:
     id: Sequence
     path: ''
-    startLine: 375
+    startLine: 513
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
   summary: "\nSequence nodes contain one or more children. Upon execution, it executes every child and fails when one of the children fails.\n"
   example: []
   syntax:
-    content: 'public class Sequence : Node'
+    content: >-
+      [VisualNode("", "", true, "Custom")]
+
+      public class Sequence : Node
     content.vb: >-
+      <VisualNode("", "", True, "Custom")>
+
       Public Class Sequence
           Inherits Node
   inheritance:
@@ -40,9 +45,12 @@ items:
   - BehaviorTree.Node.GetNode``1
   - BehaviorTree.Node.GetNodes``1
   - BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
-  - BehaviorTree.Node.Evaluate
+  - BehaviorTree.Node.Update
+  - BehaviorTree.Node.Reset
   - BehaviorTree.Node.SetData(System.String,System.Object)
-  - BehaviorTree.Node.OnInitialized
+  - BehaviorTree.Node.OnInitialize
+  - BehaviorTree.Node.OnStart
+  - BehaviorTree.Node.OnReset
   - BehaviorTree.Node.GetData(System.String)
   - BehaviorTree.Node.GetData``1(System.String)
   - BehaviorTree.Node.RemoveData(System.String)
@@ -53,40 +61,52 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  attributes:
+  - type: NodeReflection.VisualNodeAttribute
+    ctor: NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+    arguments:
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: ''
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Custom
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
-- uid: BehaviorTree.Sequence.OnEvaluate
-  commentId: M:BehaviorTree.Sequence.OnEvaluate
-  id: OnEvaluate
+- uid: BehaviorTree.Sequence.OnUpdate
+  commentId: M:BehaviorTree.Sequence.OnUpdate
+  id: OnUpdate
   parent: BehaviorTree.Sequence
   langs:
   - csharp
   - vb
-  name: OnEvaluate()
-  nameWithType: Sequence.OnEvaluate()
-  fullName: BehaviorTree.Sequence.OnEvaluate()
+  name: OnUpdate()
+  nameWithType: Sequence.OnUpdate()
+  fullName: BehaviorTree.Sequence.OnUpdate()
   type: Method
   source:
-    id: OnEvaluate
+    id: OnUpdate
     path: ''
-    startLine: 382
+    startLine: 520
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
   summary: "\nEvaluate the node\n"
   example: []
   syntax:
-    content: protected override NodeState OnEvaluate()
+    content: protected override NodeState OnUpdate()
     return:
       type: BehaviorTree.NodeState
       description: 'Return FAILURE if a child node failed, RUNNING if a child is running after every evaluated node, SUCCESS if none of the child is running or failing '
-    content.vb: Protected Overrides Function OnEvaluate As NodeState
-  overridden: BehaviorTree.Node.OnEvaluate
-  overload: BehaviorTree.Sequence.OnEvaluate*
+    content.vb: Protected Overrides Function OnUpdate As NodeState
+  overridden: BehaviorTree.Node.OnUpdate
+  overload: BehaviorTree.Sequence.OnUpdate*
   modifiers.csharp:
   - protected
   - override
@@ -290,17 +310,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: BehaviorTree.Node.Evaluate
-  commentId: M:BehaviorTree.Node.Evaluate
+- uid: BehaviorTree.Node.Update
+  commentId: M:BehaviorTree.Node.Update
   parent: BehaviorTree.Node
-  name: Evaluate()
-  nameWithType: Node.Evaluate()
-  fullName: BehaviorTree.Node.Evaluate()
+  name: Update()
+  nameWithType: Node.Update()
+  fullName: BehaviorTree.Node.Update()
   spec.csharp:
-  - uid: BehaviorTree.Node.Evaluate
-    name: Evaluate
-    nameWithType: Node.Evaluate
-    fullName: BehaviorTree.Node.Evaluate
+  - uid: BehaviorTree.Node.Update
+    name: Update
+    nameWithType: Node.Update
+    fullName: BehaviorTree.Node.Update
   - name: (
     nameWithType: (
     fullName: (
@@ -308,10 +328,38 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: BehaviorTree.Node.Evaluate
-    name: Evaluate
-    nameWithType: Node.Evaluate
-    fullName: BehaviorTree.Node.Evaluate
+  - uid: BehaviorTree.Node.Update
+    name: Update
+    nameWithType: Node.Update
+    fullName: BehaviorTree.Node.Update
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.Reset
+  commentId: M:BehaviorTree.Node.Reset
+  parent: BehaviorTree.Node
+  name: Reset()
+  nameWithType: Node.Reset()
+  fullName: BehaviorTree.Node.Reset()
+  spec.csharp:
+  - uid: BehaviorTree.Node.Reset
+    name: Reset
+    nameWithType: Node.Reset
+    fullName: BehaviorTree.Node.Reset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.Reset
+    name: Reset
+    nameWithType: Node.Reset
+    fullName: BehaviorTree.Node.Reset
   - name: (
     nameWithType: (
     fullName: (
@@ -373,17 +421,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: BehaviorTree.Node.OnInitialized
-  commentId: M:BehaviorTree.Node.OnInitialized
+- uid: BehaviorTree.Node.OnInitialize
+  commentId: M:BehaviorTree.Node.OnInitialize
   parent: BehaviorTree.Node
-  name: OnInitialized()
-  nameWithType: Node.OnInitialized()
-  fullName: BehaviorTree.Node.OnInitialized()
+  name: OnInitialize()
+  nameWithType: Node.OnInitialize()
+  fullName: BehaviorTree.Node.OnInitialize()
   spec.csharp:
-  - uid: BehaviorTree.Node.OnInitialized
-    name: OnInitialized
-    nameWithType: Node.OnInitialized
-    fullName: BehaviorTree.Node.OnInitialized
+  - uid: BehaviorTree.Node.OnInitialize
+    name: OnInitialize
+    nameWithType: Node.OnInitialize
+    fullName: BehaviorTree.Node.OnInitialize
   - name: (
     nameWithType: (
     fullName: (
@@ -391,10 +439,66 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: BehaviorTree.Node.OnInitialized
-    name: OnInitialized
-    nameWithType: Node.OnInitialized
-    fullName: BehaviorTree.Node.OnInitialized
+  - uid: BehaviorTree.Node.OnInitialize
+    name: OnInitialize
+    nameWithType: Node.OnInitialize
+    fullName: BehaviorTree.Node.OnInitialize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.OnStart
+  commentId: M:BehaviorTree.Node.OnStart
+  parent: BehaviorTree.Node
+  name: OnStart()
+  nameWithType: Node.OnStart()
+  fullName: BehaviorTree.Node.OnStart()
+  spec.csharp:
+  - uid: BehaviorTree.Node.OnStart
+    name: OnStart
+    nameWithType: Node.OnStart
+    fullName: BehaviorTree.Node.OnStart
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.OnStart
+    name: OnStart
+    nameWithType: Node.OnStart
+    fullName: BehaviorTree.Node.OnStart
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.OnReset
+  commentId: M:BehaviorTree.Node.OnReset
+  parent: BehaviorTree.Node
+  name: OnReset()
+  nameWithType: Node.OnReset()
+  fullName: BehaviorTree.Node.OnReset()
+  spec.csharp:
+  - uid: BehaviorTree.Node.OnReset
+    name: OnReset
+    nameWithType: Node.OnReset
+    fullName: BehaviorTree.Node.OnReset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: BehaviorTree.Node.OnReset
+    name: OnReset
+    nameWithType: Node.OnReset
+    fullName: BehaviorTree.Node.OnReset
   - name: (
     nameWithType: (
     fullName: (
@@ -806,17 +910,17 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: BehaviorTree.Node.OnEvaluate
-  commentId: M:BehaviorTree.Node.OnEvaluate
+- uid: BehaviorTree.Node.OnUpdate
+  commentId: M:BehaviorTree.Node.OnUpdate
   parent: BehaviorTree.Node
-  name: OnEvaluate()
-  nameWithType: Node.OnEvaluate()
-  fullName: BehaviorTree.Node.OnEvaluate()
+  name: OnUpdate()
+  nameWithType: Node.OnUpdate()
+  fullName: BehaviorTree.Node.OnUpdate()
   spec.csharp:
-  - uid: BehaviorTree.Node.OnEvaluate
-    name: OnEvaluate
-    nameWithType: Node.OnEvaluate
-    fullName: BehaviorTree.Node.OnEvaluate
+  - uid: BehaviorTree.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: BehaviorTree.Node.OnUpdate
   - name: (
     nameWithType: (
     fullName: (
@@ -824,21 +928,21 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: BehaviorTree.Node.OnEvaluate
-    name: OnEvaluate
-    nameWithType: Node.OnEvaluate
-    fullName: BehaviorTree.Node.OnEvaluate
+  - uid: BehaviorTree.Node.OnUpdate
+    name: OnUpdate
+    nameWithType: Node.OnUpdate
+    fullName: BehaviorTree.Node.OnUpdate
   - name: (
     nameWithType: (
     fullName: (
   - name: )
     nameWithType: )
     fullName: )
-- uid: BehaviorTree.Sequence.OnEvaluate*
-  commentId: Overload:BehaviorTree.Sequence.OnEvaluate
-  name: OnEvaluate
-  nameWithType: Sequence.OnEvaluate
-  fullName: BehaviorTree.Sequence.OnEvaluate
+- uid: BehaviorTree.Sequence.OnUpdate*
+  commentId: Overload:BehaviorTree.Sequence.OnUpdate
+  name: OnUpdate
+  nameWithType: Sequence.OnUpdate
+  fullName: BehaviorTree.Sequence.OnUpdate
 - uid: BehaviorTree.NodeState
   commentId: T:BehaviorTree.NodeState
   parent: BehaviorTree
