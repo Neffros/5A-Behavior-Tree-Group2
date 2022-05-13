@@ -15,24 +15,15 @@ MonoBehaviour:
   _idToNode:
     m_keys:
     - 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
-    - bfa37f59-87a8-4d8d-b00c-ae5fe21b31c0
     - c1471f16-1bbb-496f-8944-398359c5cef8
     - 192e633b-7c8e-4103-a05c-cfe20fe3bb34
     - bda02a74-0bdc-4ee4-8c89-c21fe8232a29
     m_values:
-    - ChildrenIds:
-      - bfa37f59-87a8-4d8d-b00c-ae5fe21b31c0
+    - ChildrenIds: []
       Id: 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
       NodeTypeInternalName: Selector
       ParentId: 
       PositionInEditor: {x: 345, y: 236}
-      Properties:
-        m_keys: []
-    - ChildrenIds: []
-      Id: bfa37f59-87a8-4d8d-b00c-ae5fe21b31c0
-      NodeTypeInternalName: Selector
-      ParentId: 
-      PositionInEditor: {x: 477, y: 236}
       Properties:
         m_keys: []
     - ChildrenIds:
