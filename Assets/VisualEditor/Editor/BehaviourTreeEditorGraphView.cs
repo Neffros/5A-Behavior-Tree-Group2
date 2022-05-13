@@ -31,6 +31,8 @@ namespace VisualEditor.Editor {
         }
 
         public void PopulateView(BehaviorTreeObject behaviorTreeObject) {
+            Engine.Update();
+            
             _behaviorTreeObject = behaviorTreeObject;
 
             graphViewChanged -= OnGraphViewChanged;
