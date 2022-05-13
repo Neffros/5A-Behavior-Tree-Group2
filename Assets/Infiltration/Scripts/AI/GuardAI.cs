@@ -8,8 +8,6 @@ namespace Infiltration
         [SerializeField] private float attackRange;
         [SerializeField] private float fovRange;
         [SerializeField] private float speed;
-        [SerializeField] private Transform[] waypoints;
-        [SerializeField] private SpriteRenderer fieldOfView;
 
         protected override Node SetupTree()
         {
@@ -43,7 +41,6 @@ namespace Infiltration
             var taskGoPatrol = new TaskPatrol()
             {
                 Speed = speed,
-                Waypoints = waypoints,
             };
 
             // Setup inverter1
