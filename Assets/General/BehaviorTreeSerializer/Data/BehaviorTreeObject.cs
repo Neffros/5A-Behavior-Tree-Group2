@@ -1,4 +1,5 @@
 using BehaviorTree;
+using NodeReflection;
 using System;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace BehaviorTreeSerializer.Data
         private bool _initialized;
 
         [SerializeField, Tooltip("ID of the root node")]
-        private Guid _rootId;
+        private string _rootId;
 
         #endregion
 
@@ -33,7 +34,7 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Gets or sets the ID of the root node
         /// </summary>
-        public Guid RootId => this._rootId;
+        public string RootId => this._rootId;
 
         #endregion
 
@@ -98,12 +99,12 @@ namespace BehaviorTreeSerializer.Data
             var selectorName = typeof(Selector).Name;
             var root = new NodeEditorInstanceMetadata(
                 selectorName,
-                NodeReflection.Engine.GetProperties(selectorName),
+                new SerializableDictionary<string, object>(Engine.GetProperties(selectorName)),
                 Vector2.zero,
                 null
             );
 
-            this.IdToNode = new SerializableDictionary<string, NodeEditorInstanceMetadata>();
+            this._idToNode = new SerializableDictionary<string, NodeEditorInstanceMetadata>();
             this.IdToNode.Add(root.Id, root);
             this._rootId = root.Id;
 
@@ -126,7 +127,7 @@ namespace BehaviorTreeSerializer.Data
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Remove(childId);
-            this.IdToNode[childId].ParentId = Guid.Empty;
+            this.IdToNode[childId].ParentId = string.Empty;
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace BehaviorTreeSerializer.Data
                 this.RemoveChild(this.IdToNode[nodeId].ParentId, nodeId);
 
             foreach (var childId in this.IdToNode[nodeId].ChildrenIds)
-                this.IdToNode[childId].ParentId = Guid.Empty;
+                this.IdToNode[childId].ParentId = string.Empty;
 
             this.IdToNode.Remove(nodeId);
         }

@@ -12,8 +12,6 @@ namespace VisualEditor.Editor {
         private readonly StyleSheet _nodeStyleSheet;
         private BehaviorTreeObject _behaviorTreeObject;
 
-        private Engine _nodeReflectionEngine;
-
         private List<VisualNode> _nodes;
         
         private VisualNode _selectedNode;
@@ -43,9 +41,8 @@ namespace VisualEditor.Editor {
             contentViewContainer.transform.scale = Vector3.one * 2;
             this.StretchToParentSize();
 
-            _nodeReflectionEngine ??= new Engine();
-            _nodeReflectionEngine.Update();
-            
+            Engine.Update();
+
             RepaintGraph();
             
             RegisterCallbacks();
@@ -66,7 +63,7 @@ namespace VisualEditor.Editor {
             CleanGUI();
             foreach (var nodeEditorInstanceMetadata in _behaviorTreeObject.IdToNode.Values) {
                 var nodeType = nodeEditorInstanceMetadata.NodeTypeInternalName;
-                var nodeMetaData = _nodeReflectionEngine.Metadata[nodeType];
+                var nodeMetaData = Engine.Metadata[nodeType];
                 var nodePos = nodeEditorInstanceMetadata.PositionInEditor;
 
                 DrawVisualNode(nodeMetaData, nodeEditorInstanceMetadata, nodePos);
@@ -110,7 +107,7 @@ namespace VisualEditor.Editor {
         }
 
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
-            foreach (var nodeMetadata in _nodeReflectionEngine.Metadata.Values) {
+            foreach (var nodeMetadata in Engine.Metadata.Values) {
                 evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {
                     Debug.Log(scale);
                     var mousePos = Vector2.zero;//action.eventInfo.mousePosition;

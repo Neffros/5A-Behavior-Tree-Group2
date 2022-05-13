@@ -120,7 +120,7 @@ namespace NodeReflection
         /// <param name="tree">Behavior tree metadata object</param>
         /// <param name="nodeId">ID of the node to instantiate</param>
         /// <returns>The instantiated node and children</returns>
-        private static Node CreateNodeInstance(BehaviorTreeObject tree, Guid nodeId)
+        private static Node CreateNodeInstance(BehaviorTreeObject tree, string nodeId)
         {
             if (!tree.IdToNode.ContainsKey(nodeId))
                 throw new Exception("Node not found");
