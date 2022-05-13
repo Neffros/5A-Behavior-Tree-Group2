@@ -1,6 +1,6 @@
 # Unity Behavior Tree API
 
-## Functionnal documentation
+## Functional documentation
 
 ### Introduction
 
