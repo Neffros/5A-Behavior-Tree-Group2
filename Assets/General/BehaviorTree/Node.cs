@@ -161,6 +161,17 @@ namespace BehaviorTree
         {
             _dataContext[key] = value;
         }
+        
+        public void SetDataToRoot(string key, object value)
+        {
+            Node node = Parent;
+            while (node.Parent != null)
+            {
+                node = node.Parent;
+            }
+
+            node._dataContext[key] = value;
+        }
 
         #endregion
 
