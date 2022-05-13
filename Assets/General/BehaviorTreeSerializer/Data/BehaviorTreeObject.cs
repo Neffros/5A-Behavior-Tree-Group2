@@ -1,6 +1,7 @@
 using BehaviorTree;
+using NodeReflection;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BehaviorTreeSerializer.Data
@@ -14,13 +15,13 @@ namespace BehaviorTreeSerializer.Data
         #region Unity Fields
 
         [SerializeField, Tooltip("Maps a node to its ID")]
-        private Dictionary<Guid, NodeEditorInstanceMetadata> _idToNode;
+        private SerializableDictionary<string, NodeEditorInstanceMetadata> _idToNode;
 
         [SerializeField, HideInInspector]
         private bool _initialized;
 
         [SerializeField, Tooltip("ID of the root node")]
-        private Guid _rootId;
+        private string _rootId;
 
         #endregion
 
@@ -29,12 +30,12 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Gets or sets the dictionary of nodes by their IDs
         /// </summary>
-        public Dictionary<Guid, NodeEditorInstanceMetadata> IdToNode { get; set; }
+        public SerializableDictionary<string, NodeEditorInstanceMetadata> IdToNode => this._idToNode;
 
         /// <summary>
         /// Gets or sets the ID of the root node
         /// </summary>
-        public Guid RootId => this._rootId;
+        public string RootId => this._rootId;
 
         #endregion
 
@@ -43,7 +44,7 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Fired on serialized field edition in inspector
         /// </summary>
-        private void OnValidate()
+        private void Awake()
         {
             this.Initialize();
         }
@@ -57,11 +58,11 @@ namespace BehaviorTreeSerializer.Data
         /// </summary>
         /// <param name="parentId">ID of the parent</param>
         /// <param name="childId">ID of the child</param>
-        public void AddChild(Guid parentId, Guid childId)
+        public void AddChild(string parentId, string childId)
         {
             if (!this.IdToNode.ContainsKey(parentId))
                 throw new Exception("Parent not found");
-            if (!this.IdToNode[parentId].ChildrenIds.Contains(childId))
+            if (!this.IdToNode.ContainsKey(childId))
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Add(childId);
@@ -75,14 +76,14 @@ namespace BehaviorTreeSerializer.Data
         /// <param name="positionInEditor">Position on the grid</param>
         /// <param name="parentId">ID of the parent node</param>
         /// <returns>The instantiated node metadata</returns>
-        public NodeEditorInstanceMetadata AddNode(string nodeTypeInternalName, Dictionary<string, object> properties, Vector2 positionInEditor, Guid? parentId)
+        public NodeEditorInstanceMetadata AddNode(string nodeTypeInternalName, SerializableDictionary<string, object> properties, Vector2 positionInEditor, string parentId)
         {
             var node = new NodeEditorInstanceMetadata(nodeTypeInternalName, properties, positionInEditor, parentId);
 
             this.IdToNode.Add(node.Id, node);
 
-            if (parentId.HasValue)
-                this.AddChild(parentId.Value, node.Id);
+            if (!string.IsNullOrEmpty(parentId))
+                this.AddChild(parentId, node.Id);
 
             return node;
         }
@@ -96,18 +97,17 @@ namespace BehaviorTreeSerializer.Data
             if (this._initialized)
                 return this;
 
+            this._idToNode = new SerializableDictionary<string, NodeEditorInstanceMetadata>();
+            
             var selectorName = typeof(Selector).Name;
-            var root = new NodeEditorInstanceMetadata(
+            var root = this.AddNode(
                 selectorName,
-                NodeReflection.Engine.GetProperties(selectorName),
+                new SerializableDictionary<string, object>(Engine.GetProperties(selectorName)),
                 Vector2.zero,
                 null
             );
-
-            this.IdToNode = new Dictionary<Guid, NodeEditorInstanceMetadata>();
-            this.IdToNode.Add(root.Id, root);
+            
             this._rootId = root.Id;
-
             this._initialized = true;
 
             return this;
@@ -118,7 +118,7 @@ namespace BehaviorTreeSerializer.Data
         /// </summary>
         /// <param name="parentId">ID of the parent node</param>
         /// <param name="childId">ID of the child node</param>
-        public void RemoveChild(Guid parentId, Guid childId)
+        public void RemoveChild(string parentId, string childId)
         {
             if (!this.IdToNode.ContainsKey(parentId))
                 throw new Exception("Parent not found");
@@ -127,23 +127,23 @@ namespace BehaviorTreeSerializer.Data
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Remove(childId);
-            this.IdToNode[childId].ParentId = Guid.Empty;
+            this.IdToNode[childId].ParentId = null;
         }
 
         /// <summary>
         /// Removes the node from the tree
         /// </summary>
         /// <param name="nodeId">ID of the node</param>
-        public void RemoveNode(Guid nodeId)
+        public void RemoveNode(string nodeId)
         {
             if (!this.IdToNode.ContainsKey(nodeId))
                 throw new Exception("Node not found");
 
-            if (!this.IdToNode[nodeId].ParentId.Equals(Guid.Empty))
+            if (!string.IsNullOrEmpty(this.IdToNode[nodeId].ParentId))
                 this.RemoveChild(this.IdToNode[nodeId].ParentId, nodeId);
 
             foreach (var childId in this.IdToNode[nodeId].ChildrenIds)
-                this.IdToNode[childId].ParentId = Guid.Empty;
+                this.IdToNode[childId].ParentId = null;
 
             this.IdToNode.Remove(nodeId);
         }
@@ -154,7 +154,7 @@ namespace BehaviorTreeSerializer.Data
         /// <param name="nodeId">ID of the node</param>
         /// <param name="property">Property name</param>
         /// <param name="value">Value of the property</param>
-        public void SetNodeProperty(Guid nodeId, string property, object value)
+        public void SetNodeProperty(string nodeId, string property, object value)
         {
             if (!this.IdToNode.ContainsKey(nodeId))
                 throw new Exception("Node not found");
