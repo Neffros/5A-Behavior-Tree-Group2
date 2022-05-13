@@ -13,6 +13,19 @@ references:
   commentId: T:BehaviorTree.BehaviorTreeAgent
   fullName: BehaviorTree.BehaviorTreeAgent
   nameWithType: BehaviorTreeAgent
+- uid: BehaviorTree.BehaviorTreeAgent.Root
+  name: Root
+  href: api/BehaviorTree.BehaviorTreeAgent.html#BehaviorTree_BehaviorTreeAgent_Root
+  commentId: P:BehaviorTree.BehaviorTreeAgent.Root
+  fullName: BehaviorTree.BehaviorTreeAgent.Root
+  nameWithType: BehaviorTreeAgent.Root
+- uid: BehaviorTree.BehaviorTreeAgent.Root*
+  name: Root
+  href: api/BehaviorTree.BehaviorTreeAgent.html#BehaviorTree_BehaviorTreeAgent_Root_
+  commentId: Overload:BehaviorTree.BehaviorTreeAgent.Root
+  isSpec: "True"
+  fullName: BehaviorTree.BehaviorTreeAgent.Root
+  nameWithType: BehaviorTreeAgent.Root
 - uid: BehaviorTree.BehaviorTreeAgent.SetupTree
   name: SetupTree()
   href: api/BehaviorTree.BehaviorTreeAgent.html#BehaviorTree_BehaviorTreeAgent_SetupTree
@@ -32,38 +45,38 @@ references:
   commentId: T:BehaviorTree.Inverter
   fullName: BehaviorTree.Inverter
   nameWithType: Inverter
-- uid: BehaviorTree.Inverter.Evaluate
-  name: Evaluate()
-  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_Evaluate
-  commentId: M:BehaviorTree.Inverter.Evaluate
-  fullName: BehaviorTree.Inverter.Evaluate()
-  nameWithType: Inverter.Evaluate()
-- uid: BehaviorTree.Inverter.Evaluate*
-  name: Evaluate
-  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_Evaluate_
-  commentId: Overload:BehaviorTree.Inverter.Evaluate
+- uid: BehaviorTree.Inverter.OnEvaluate
+  name: OnEvaluate()
+  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_OnEvaluate
+  commentId: M:BehaviorTree.Inverter.OnEvaluate
+  fullName: BehaviorTree.Inverter.OnEvaluate()
+  nameWithType: Inverter.OnEvaluate()
+- uid: BehaviorTree.Inverter.OnEvaluate*
+  name: OnEvaluate
+  href: api/BehaviorTree.Inverter.html#BehaviorTree_Inverter_OnEvaluate_
+  commentId: Overload:BehaviorTree.Inverter.OnEvaluate
   isSpec: "True"
-  fullName: BehaviorTree.Inverter.Evaluate
-  nameWithType: Inverter.Evaluate
+  fullName: BehaviorTree.Inverter.OnEvaluate
+  nameWithType: Inverter.OnEvaluate
 - uid: BehaviorTree.Node
   name: Node
   href: api/BehaviorTree.Node.html
   commentId: T:BehaviorTree.Node
   fullName: BehaviorTree.Node
   nameWithType: Node
-- uid: BehaviorTree.Node.#ctor
-  name: Node()
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node__ctor
-  commentId: M:BehaviorTree.Node.#ctor
-  fullName: BehaviorTree.Node.Node()
-  nameWithType: Node.Node()
-- uid: BehaviorTree.Node.#ctor*
-  name: Node
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node__ctor_
-  commentId: Overload:BehaviorTree.Node.#ctor
+- uid: BehaviorTree.Node.Agent
+  name: Agent
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Agent
+  commentId: P:BehaviorTree.Node.Agent
+  fullName: BehaviorTree.Node.Agent
+  nameWithType: Node.Agent
+- uid: BehaviorTree.Node.Agent*
+  name: Agent
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Agent_
+  commentId: Overload:BehaviorTree.Node.Agent
   isSpec: "True"
-  fullName: BehaviorTree.Node.Node
-  nameWithType: Node.Node
+  fullName: BehaviorTree.Node.Agent
+  nameWithType: Node.Agent
 - uid: BehaviorTree.Node.Attach(BehaviorTree.Node)
   name: Attach(Node)
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_Attach_BehaviorTree_Node_
@@ -80,7 +93,14 @@ references:
 - uid: BehaviorTree.Node.Children
   name: Children
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_Children
-  commentId: F:BehaviorTree.Node.Children
+  commentId: P:BehaviorTree.Node.Children
+  fullName: BehaviorTree.Node.Children
+  nameWithType: Node.Children
+- uid: BehaviorTree.Node.Children*
+  name: Children
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Children_
+  commentId: Overload:BehaviorTree.Node.Children
+  isSpec: "True"
   fullName: BehaviorTree.Node.Children
   nameWithType: Node.Children
 - uid: BehaviorTree.Node.Evaluate
@@ -109,6 +129,86 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.GetData
   nameWithType: Node.GetData
+- uid: BehaviorTree.Node.GetData``1(System.String)
+  name: GetData<T>(String)
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_GetData__1_System_String_
+  commentId: M:BehaviorTree.Node.GetData``1(System.String)
+  name.vb: GetData(Of T)(String)
+  fullName: BehaviorTree.Node.GetData<T>(System.String)
+  fullName.vb: BehaviorTree.Node.GetData(Of T)(System.String)
+  nameWithType: Node.GetData<T>(String)
+  nameWithType.vb: Node.GetData(Of T)(String)
+- uid: BehaviorTree.Node.GetNode*
+  name: GetNode
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_GetNode_
+  commentId: Overload:BehaviorTree.Node.GetNode
+  isSpec: "True"
+  fullName: BehaviorTree.Node.GetNode
+  nameWithType: Node.GetNode
+- uid: BehaviorTree.Node.GetNode``1
+  name: GetNode<T>()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_GetNode__1
+  commentId: M:BehaviorTree.Node.GetNode``1
+  name.vb: GetNode(Of T)()
+  fullName: BehaviorTree.Node.GetNode<T>()
+  fullName.vb: BehaviorTree.Node.GetNode(Of T)()
+  nameWithType: Node.GetNode<T>()
+  nameWithType.vb: Node.GetNode(Of T)()
+- uid: BehaviorTree.Node.GetNodes*
+  name: GetNodes
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_GetNodes_
+  commentId: Overload:BehaviorTree.Node.GetNodes
+  isSpec: "True"
+  fullName: BehaviorTree.Node.GetNodes
+  nameWithType: Node.GetNodes
+- uid: BehaviorTree.Node.GetNodes``1
+  name: GetNodes<T>()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_GetNodes__1
+  commentId: M:BehaviorTree.Node.GetNodes``1
+  name.vb: GetNodes(Of T)()
+  fullName: BehaviorTree.Node.GetNodes<T>()
+  fullName.vb: BehaviorTree.Node.GetNodes(Of T)()
+  nameWithType: Node.GetNodes<T>()
+  nameWithType.vb: Node.GetNodes(Of T)()
+- uid: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  name: Initialize(BehaviorTreeAgent, Node)
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Initialize_BehaviorTree_BehaviorTreeAgent_BehaviorTree_Node_
+  commentId: M:BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  fullName: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent, BehaviorTree.Node)
+  nameWithType: Node.Initialize(BehaviorTreeAgent, Node)
+- uid: BehaviorTree.Node.Initialize*
+  name: Initialize
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Initialize_
+  commentId: Overload:BehaviorTree.Node.Initialize
+  isSpec: "True"
+  fullName: BehaviorTree.Node.Initialize
+  nameWithType: Node.Initialize
+- uid: BehaviorTree.Node.OnEvaluate
+  name: OnEvaluate()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnEvaluate
+  commentId: M:BehaviorTree.Node.OnEvaluate
+  fullName: BehaviorTree.Node.OnEvaluate()
+  nameWithType: Node.OnEvaluate()
+- uid: BehaviorTree.Node.OnEvaluate*
+  name: OnEvaluate
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnEvaluate_
+  commentId: Overload:BehaviorTree.Node.OnEvaluate
+  isSpec: "True"
+  fullName: BehaviorTree.Node.OnEvaluate
+  nameWithType: Node.OnEvaluate
+- uid: BehaviorTree.Node.OnInitialized
+  name: OnInitialized()
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnInitialized
+  commentId: M:BehaviorTree.Node.OnInitialized
+  fullName: BehaviorTree.Node.OnInitialized()
+  nameWithType: Node.OnInitialized()
+- uid: BehaviorTree.Node.OnInitialized*
+  name: OnInitialized
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_OnInitialized_
+  commentId: Overload:BehaviorTree.Node.OnInitialized
+  isSpec: "True"
+  fullName: BehaviorTree.Node.OnInitialized
+  nameWithType: Node.OnInitialized
 - uid: BehaviorTree.Node.Parent
   name: Parent
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_Parent
@@ -135,6 +235,19 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.RemoveData
   nameWithType: Node.RemoveData
+- uid: BehaviorTree.Node.Root
+  name: Root
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Root
+  commentId: P:BehaviorTree.Node.Root
+  fullName: BehaviorTree.Node.Root
+  nameWithType: Node.Root
+- uid: BehaviorTree.Node.Root*
+  name: Root
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_Root_
+  commentId: Overload:BehaviorTree.Node.Root
+  isSpec: "True"
+  fullName: BehaviorTree.Node.Root
+  nameWithType: Node.Root
 - uid: BehaviorTree.Node.SetData(System.String,System.Object)
   name: SetData(String, Object)
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_SetData_System_String_System_Object_
@@ -148,23 +261,17 @@ references:
   isSpec: "True"
   fullName: BehaviorTree.Node.SetData
   nameWithType: Node.SetData
-- uid: BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
-  name: SetDataToRoot(String, Object)
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_SetDataToRoot_System_String_System_Object_
-  commentId: M:BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
-  fullName: BehaviorTree.Node.SetDataToRoot(System.String, System.Object)
-  nameWithType: Node.SetDataToRoot(String, Object)
-- uid: BehaviorTree.Node.SetDataToRoot*
-  name: SetDataToRoot
-  href: api/BehaviorTree.Node.html#BehaviorTree_Node_SetDataToRoot_
-  commentId: Overload:BehaviorTree.Node.SetDataToRoot
-  isSpec: "True"
-  fullName: BehaviorTree.Node.SetDataToRoot
-  nameWithType: Node.SetDataToRoot
 - uid: BehaviorTree.Node.State
   name: State
   href: api/BehaviorTree.Node.html#BehaviorTree_Node_State
-  commentId: F:BehaviorTree.Node.State
+  commentId: P:BehaviorTree.Node.State
+  fullName: BehaviorTree.Node.State
+  nameWithType: Node.State
+- uid: BehaviorTree.Node.State*
+  name: State
+  href: api/BehaviorTree.Node.html#BehaviorTree_Node_State_
+  commentId: Overload:BehaviorTree.Node.State
+  isSpec: "True"
   fullName: BehaviorTree.Node.State
   nameWithType: Node.State
 - uid: BehaviorTree.NodeState
@@ -197,35 +304,157 @@ references:
   commentId: T:BehaviorTree.Selector
   fullName: BehaviorTree.Selector
   nameWithType: Selector
-- uid: BehaviorTree.Selector.Evaluate
-  name: Evaluate()
-  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_Evaluate
-  commentId: M:BehaviorTree.Selector.Evaluate
-  fullName: BehaviorTree.Selector.Evaluate()
-  nameWithType: Selector.Evaluate()
-- uid: BehaviorTree.Selector.Evaluate*
-  name: Evaluate
-  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_Evaluate_
-  commentId: Overload:BehaviorTree.Selector.Evaluate
+- uid: BehaviorTree.Selector.OnEvaluate
+  name: OnEvaluate()
+  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_OnEvaluate
+  commentId: M:BehaviorTree.Selector.OnEvaluate
+  fullName: BehaviorTree.Selector.OnEvaluate()
+  nameWithType: Selector.OnEvaluate()
+- uid: BehaviorTree.Selector.OnEvaluate*
+  name: OnEvaluate
+  href: api/BehaviorTree.Selector.html#BehaviorTree_Selector_OnEvaluate_
+  commentId: Overload:BehaviorTree.Selector.OnEvaluate
   isSpec: "True"
-  fullName: BehaviorTree.Selector.Evaluate
-  nameWithType: Selector.Evaluate
+  fullName: BehaviorTree.Selector.OnEvaluate
+  nameWithType: Selector.OnEvaluate
 - uid: BehaviorTree.Sequence
   name: Sequence
   href: api/BehaviorTree.Sequence.html
   commentId: T:BehaviorTree.Sequence
   fullName: BehaviorTree.Sequence
   nameWithType: Sequence
-- uid: BehaviorTree.Sequence.Evaluate
-  name: Evaluate()
-  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_Evaluate
-  commentId: M:BehaviorTree.Sequence.Evaluate
-  fullName: BehaviorTree.Sequence.Evaluate()
-  nameWithType: Sequence.Evaluate()
-- uid: BehaviorTree.Sequence.Evaluate*
-  name: Evaluate
-  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_Evaluate_
-  commentId: Overload:BehaviorTree.Sequence.Evaluate
+- uid: BehaviorTree.Sequence.OnEvaluate
+  name: OnEvaluate()
+  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_OnEvaluate
+  commentId: M:BehaviorTree.Sequence.OnEvaluate
+  fullName: BehaviorTree.Sequence.OnEvaluate()
+  nameWithType: Sequence.OnEvaluate()
+- uid: BehaviorTree.Sequence.OnEvaluate*
+  name: OnEvaluate
+  href: api/BehaviorTree.Sequence.html#BehaviorTree_Sequence_OnEvaluate_
+  commentId: Overload:BehaviorTree.Sequence.OnEvaluate
   isSpec: "True"
-  fullName: BehaviorTree.Sequence.Evaluate
-  nameWithType: Sequence.Evaluate
+  fullName: BehaviorTree.Sequence.OnEvaluate
+  nameWithType: Sequence.OnEvaluate
+- uid: NodeReflection
+  name: NodeReflection
+  href: api/NodeReflection.html
+  commentId: N:NodeReflection
+  fullName: NodeReflection
+  nameWithType: NodeReflection
+- uid: NodeReflection.ExposedInVisualEditorAttribute
+  name: ExposedInVisualEditorAttribute
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html
+  commentId: T:NodeReflection.ExposedInVisualEditorAttribute
+  fullName: NodeReflection.ExposedInVisualEditorAttribute
+  nameWithType: ExposedInVisualEditorAttribute
+- uid: NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+  name: ExposedInVisualEditorAttribute(String, Object)
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html#NodeReflection_ExposedInVisualEditorAttribute__ctor_System_String_System_Object_
+  commentId: M:NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(System.String, System.Object)
+  nameWithType: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(String, Object)
+- uid: NodeReflection.ExposedInVisualEditorAttribute.#ctor*
+  name: ExposedInVisualEditorAttribute
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html#NodeReflection_ExposedInVisualEditorAttribute__ctor_
+  commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.#ctor
+  isSpec: "True"
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+  nameWithType: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+- uid: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  name: DefaultValue
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html#NodeReflection_ExposedInVisualEditorAttribute_DefaultValue
+  commentId: P:NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  nameWithType: ExposedInVisualEditorAttribute.DefaultValue
+- uid: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*
+  name: DefaultValue
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html#NodeReflection_ExposedInVisualEditorAttribute_DefaultValue_
+  commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  isSpec: "True"
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  nameWithType: ExposedInVisualEditorAttribute.DefaultValue
+- uid: NodeReflection.ExposedInVisualEditorAttribute.Name
+  name: Name
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html#NodeReflection_ExposedInVisualEditorAttribute_Name
+  commentId: P:NodeReflection.ExposedInVisualEditorAttribute.Name
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.Name
+  nameWithType: ExposedInVisualEditorAttribute.Name
+- uid: NodeReflection.ExposedInVisualEditorAttribute.Name*
+  name: Name
+  href: api/NodeReflection.ExposedInVisualEditorAttribute.html#NodeReflection_ExposedInVisualEditorAttribute_Name_
+  commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.Name
+  isSpec: "True"
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.Name
+  nameWithType: ExposedInVisualEditorAttribute.Name
+- uid: NodeReflection.VisualNodeAttribute
+  name: VisualNodeAttribute
+  href: api/NodeReflection.VisualNodeAttribute.html
+  commentId: T:NodeReflection.VisualNodeAttribute
+  fullName: NodeReflection.VisualNodeAttribute
+  nameWithType: VisualNodeAttribute
+- uid: NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+  name: VisualNodeAttribute(String, String, Boolean, String)
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute__ctor_System_String_System_String_System_Boolean_System_String_
+  commentId: M:NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+  fullName: NodeReflection.VisualNodeAttribute.VisualNodeAttribute(System.String, System.String, System.Boolean, System.String)
+  nameWithType: VisualNodeAttribute.VisualNodeAttribute(String, String, Boolean, String)
+- uid: NodeReflection.VisualNodeAttribute.#ctor*
+  name: VisualNodeAttribute
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute__ctor_
+  commentId: Overload:NodeReflection.VisualNodeAttribute.#ctor
+  isSpec: "True"
+  fullName: NodeReflection.VisualNodeAttribute.VisualNodeAttribute
+  nameWithType: VisualNodeAttribute.VisualNodeAttribute
+- uid: NodeReflection.VisualNodeAttribute.Description
+  name: Description
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_Description
+  commentId: P:NodeReflection.VisualNodeAttribute.Description
+  fullName: NodeReflection.VisualNodeAttribute.Description
+  nameWithType: VisualNodeAttribute.Description
+- uid: NodeReflection.VisualNodeAttribute.Description*
+  name: Description
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_Description_
+  commentId: Overload:NodeReflection.VisualNodeAttribute.Description
+  isSpec: "True"
+  fullName: NodeReflection.VisualNodeAttribute.Description
+  nameWithType: VisualNodeAttribute.Description
+- uid: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  name: DisplayAsBlock
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_DisplayAsBlock
+  commentId: P:NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  fullName: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  nameWithType: VisualNodeAttribute.DisplayAsBlock
+- uid: NodeReflection.VisualNodeAttribute.DisplayAsBlock*
+  name: DisplayAsBlock
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_DisplayAsBlock_
+  commentId: Overload:NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  isSpec: "True"
+  fullName: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  nameWithType: VisualNodeAttribute.DisplayAsBlock
+- uid: NodeReflection.VisualNodeAttribute.Name
+  name: Name
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_Name
+  commentId: P:NodeReflection.VisualNodeAttribute.Name
+  fullName: NodeReflection.VisualNodeAttribute.Name
+  nameWithType: VisualNodeAttribute.Name
+- uid: NodeReflection.VisualNodeAttribute.Name*
+  name: Name
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_Name_
+  commentId: Overload:NodeReflection.VisualNodeAttribute.Name
+  isSpec: "True"
+  fullName: NodeReflection.VisualNodeAttribute.Name
+  nameWithType: VisualNodeAttribute.Name
+- uid: NodeReflection.VisualNodeAttribute.Path
+  name: Path
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_Path
+  commentId: P:NodeReflection.VisualNodeAttribute.Path
+  fullName: NodeReflection.VisualNodeAttribute.Path
+  nameWithType: VisualNodeAttribute.Path
+- uid: NodeReflection.VisualNodeAttribute.Path*
+  name: Path
+  href: api/NodeReflection.VisualNodeAttribute.html#NodeReflection_VisualNodeAttribute_Path_
+  commentId: Overload:NodeReflection.VisualNodeAttribute.Path
+  isSpec: "True"
+  fullName: NodeReflection.VisualNodeAttribute.Path
+  nameWithType: VisualNodeAttribute.Path

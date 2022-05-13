@@ -1,0 +1,180 @@
+### YamlMime:ManagedReference
+items:
+- uid: NodeReflection.ExposedInVisualEditorAttribute
+  commentId: T:NodeReflection.ExposedInVisualEditorAttribute
+  id: ExposedInVisualEditorAttribute
+  parent: NodeReflection
+  children:
+  - NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+  - NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  - NodeReflection.ExposedInVisualEditorAttribute.Name
+  langs:
+  - csharp
+  - vb
+  name: ExposedInVisualEditorAttribute
+  nameWithType: ExposedInVisualEditorAttribute
+  fullName: NodeReflection.ExposedInVisualEditorAttribute
+  type: Class
+  source:
+    id: ExposedInVisualEditorAttribute
+    path: ''
+    startLine: 414
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nCustom attribute for node&apos;s properties\n"
+  example: []
+  syntax:
+    content: 'public class ExposedInVisualEditorAttribute : Attribute'
+    content.vb: >-
+      Public Class ExposedInVisualEditorAttribute
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  commentId: P:NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  id: DefaultValue
+  parent: NodeReflection.ExposedInVisualEditorAttribute
+  langs:
+  - csharp
+  - vb
+  name: DefaultValue
+  nameWithType: ExposedInVisualEditorAttribute.DefaultValue
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  type: Property
+  source:
+    id: DefaultValue
+    path: ''
+    startLine: 423
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nGets the default value of the property\n"
+  example: []
+  syntax:
+    content: public object DefaultValue { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public ReadOnly Property DefaultValue As Object
+  overload: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NodeReflection.ExposedInVisualEditorAttribute.Name
+  commentId: P:NodeReflection.ExposedInVisualEditorAttribute.Name
+  id: Name
+  parent: NodeReflection.ExposedInVisualEditorAttribute
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ExposedInVisualEditorAttribute.Name
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.Name
+  type: Property
+  source:
+    id: Name
+    path: ''
+    startLine: 428
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nGets the name of the node\n"
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: NodeReflection.ExposedInVisualEditorAttribute.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+  commentId: M:NodeReflection.ExposedInVisualEditorAttribute.#ctor(System.String,System.Object)
+  id: '#ctor(System.String,System.Object)'
+  parent: NodeReflection.ExposedInVisualEditorAttribute
+  langs:
+  - csharp
+  - vb
+  name: ExposedInVisualEditorAttribute(String, Object)
+  nameWithType: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(String, Object)
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute(System.String, System.Object)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 438
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nClass constructor\n"
+  example: []
+  syntax:
+    content: public ExposedInVisualEditorAttribute(string name = "", object defaultValue = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: Property name, for display purposes
+    - id: defaultValue
+      type: System.Object
+    content.vb: Public Sub New(name As String = "", defaultValue As Object = Nothing)
+  overload: NodeReflection.ExposedInVisualEditorAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NodeReflection
+  commentId: N:NodeReflection
+  name: NodeReflection
+  nameWithType: NodeReflection
+  fullName: NodeReflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue*
+  commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+  name: DefaultValue
+  nameWithType: ExposedInVisualEditorAttribute.DefaultValue
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.DefaultValue
+- uid: NodeReflection.ExposedInVisualEditorAttribute.Name*
+  commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.Name
+  name: Name
+  nameWithType: ExposedInVisualEditorAttribute.Name
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NodeReflection.ExposedInVisualEditorAttribute.#ctor*
+  commentId: Overload:NodeReflection.ExposedInVisualEditorAttribute.#ctor
+  name: ExposedInVisualEditorAttribute
+  nameWithType: ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute
+  fullName: NodeReflection.ExposedInVisualEditorAttribute.ExposedInVisualEditorAttribute

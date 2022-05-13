@@ -14,3 +14,10 @@
     name: Selector
   - uid: BehaviorTree.Sequence
     name: Sequence
+- uid: NodeReflection
+  name: NodeReflection
+  items:
+  - uid: NodeReflection.ExposedInVisualEditorAttribute
+    name: ExposedInVisualEditorAttribute
+  - uid: NodeReflection.VisualNodeAttribute
+    name: VisualNodeAttribute

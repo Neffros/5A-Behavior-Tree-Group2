@@ -5,15 +5,21 @@ items:
   id: Node
   parent: BehaviorTree
   children:
-  - BehaviorTree.Node.#ctor
+  - BehaviorTree.Node.Agent
   - BehaviorTree.Node.Attach(BehaviorTree.Node)
   - BehaviorTree.Node.Children
   - BehaviorTree.Node.Evaluate
   - BehaviorTree.Node.GetData(System.String)
+  - BehaviorTree.Node.GetData``1(System.String)
+  - BehaviorTree.Node.GetNode``1
+  - BehaviorTree.Node.GetNodes``1
+  - BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  - BehaviorTree.Node.OnEvaluate
+  - BehaviorTree.Node.OnInitialized
   - BehaviorTree.Node.Parent
   - BehaviorTree.Node.RemoveData(System.String)
+  - BehaviorTree.Node.Root
   - BehaviorTree.Node.SetData(System.String,System.Object)
-  - BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
   - BehaviorTree.Node.State
   langs:
   - csharp
@@ -25,7 +31,7 @@ items:
   source:
     id: Node
     path: ''
-    startLine: 93
+    startLine: 133
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -56,35 +62,72 @@ items:
   - Public
   - MustInherit
   - Class
-- uid: BehaviorTree.Node.State
-  commentId: F:BehaviorTree.Node.State
-  id: State
+- uid: BehaviorTree.Node.Agent
+  commentId: P:BehaviorTree.Node.Agent
+  id: Agent
   parent: BehaviorTree.Node
   langs:
   - csharp
   - vb
-  name: State
-  nameWithType: Node.State
-  fullName: BehaviorTree.Node.State
-  type: Field
+  name: Agent
+  nameWithType: Node.Agent
+  fullName: BehaviorTree.Node.Agent
+  type: Property
   source:
-    id: State
+    id: Agent
     path: ''
-    startLine: 98
+    startLine: 140
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nCurrent state of the node\n"
+  summary: "\nGets the behavior tree agent\n"
   example: []
   syntax:
-    content: protected NodeState State
+    content: public BehaviorTreeAgent Agent { get; }
+    parameters: []
     return:
-      type: BehaviorTree.NodeState
-    content.vb: Protected State As NodeState
+      type: BehaviorTree.BehaviorTreeAgent
+    content.vb: Public ReadOnly Property Agent As BehaviorTreeAgent
+  overload: BehaviorTree.Node.Agent*
   modifiers.csharp:
-  - protected
+  - public
+  - get
   modifiers.vb:
-  - Protected
+  - Public
+  - ReadOnly
+- uid: BehaviorTree.Node.Children
+  commentId: P:BehaviorTree.Node.Children
+  id: Children
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: Node.Children
+  fullName: BehaviorTree.Node.Children
+  type: Property
+  source:
+    id: Children
+    path: ''
+    startLine: 145
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nChildren node that the node will have\n"
+  example: []
+  syntax:
+    content: public List<Node> Children { get; }
+    parameters: []
+    return:
+      type: List{BehaviorTree.Node}
+    content.vb: Public ReadOnly Property Children As List(Of Node)
+  overload: BehaviorTree.Node.Children*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: BehaviorTree.Node.Parent
   commentId: P:BehaviorTree.Node.Parent
   id: Parent
@@ -99,11 +142,11 @@ items:
   source:
     id: Parent
     path: ''
-    startLine: 103
+    startLine: 150
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nParent of the current node\n"
+  summary: "\nGets the parent of the current node\n"
   example: []
   syntax:
     content: public Node Parent { get; }
@@ -118,65 +161,72 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: BehaviorTree.Node.Children
-  commentId: F:BehaviorTree.Node.Children
-  id: Children
+- uid: BehaviorTree.Node.Root
+  commentId: P:BehaviorTree.Node.Root
+  id: Root
   parent: BehaviorTree.Node
   langs:
   - csharp
   - vb
-  name: Children
-  nameWithType: Node.Children
-  fullName: BehaviorTree.Node.Children
-  type: Field
+  name: Root
+  nameWithType: Node.Root
+  fullName: BehaviorTree.Node.Root
+  type: Property
   source:
-    id: Children
+    id: Root
     path: ''
-    startLine: 107
+    startLine: 155
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nChildren node that the node will have\n"
+  summary: "\nGets the root of the tree containing the node\n"
   example: []
   syntax:
-    content: protected readonly List<Node> Children
+    content: public Node Root { get; }
+    parameters: []
     return:
-      type: List{BehaviorTree.Node}
-    content.vb: Protected ReadOnly Children As List(Of Node)
-  modifiers.csharp:
-  - protected
-  - readonly
-  modifiers.vb:
-  - Protected
-  - ReadOnly
-- uid: BehaviorTree.Node.#ctor
-  commentId: M:BehaviorTree.Node.#ctor
-  id: '#ctor'
-  parent: BehaviorTree.Node
-  langs:
-  - csharp
-  - vb
-  name: Node()
-  nameWithType: Node.Node()
-  fullName: BehaviorTree.Node.Node()
-  type: Constructor
-  source:
-    id: .ctor
-    path: ''
-    startLine: 117
-  assemblies:
-  - cs.temp.dll
-  namespace: BehaviorTree
-  summary: "\nCreates a node with no parent\n"
-  example: []
-  syntax:
-    content: public Node()
-    content.vb: Public Sub New
-  overload: BehaviorTree.Node.#ctor*
+      type: BehaviorTree.Node
+    content.vb: Public ReadOnly Property Root As Node
+  overload: BehaviorTree.Node.Root*
   modifiers.csharp:
   - public
+  - get
   modifiers.vb:
   - Public
+  - ReadOnly
+- uid: BehaviorTree.Node.State
+  commentId: P:BehaviorTree.Node.State
+  id: State
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: Node.State
+  fullName: BehaviorTree.Node.State
+  type: Property
+  source:
+    id: State
+    path: ''
+    startLine: 160
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nCurrent state of the node\n"
+  example: []
+  syntax:
+    content: public NodeState State { get; }
+    parameters: []
+    return:
+      type: BehaviorTree.NodeState
+    content.vb: Public ReadOnly Property State As NodeState
+  overload: BehaviorTree.Node.State*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: BehaviorTree.Node.Attach(BehaviorTree.Node)
   commentId: M:BehaviorTree.Node.Attach(BehaviorTree.Node)
   id: Attach(BehaviorTree.Node)
@@ -191,7 +241,7 @@ items:
   source:
     id: Attach
     path: ''
-    startLine: 127
+    startLine: 180
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -212,6 +262,117 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: BehaviorTree.Node.GetNode``1
+  commentId: M:BehaviorTree.Node.GetNode``1
+  id: GetNode``1
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: GetNode<T>()
+  nameWithType: Node.GetNode<T>()
+  fullName: BehaviorTree.Node.GetNode<T>()
+  type: Method
+  source:
+    id: GetNode
+    path: ''
+    startLine: 192
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nGets the first found node with the given type in the tree of this node\n"
+  example: []
+  syntax:
+    content: >-
+      public T GetNode<T>()
+          where T : Node
+    typeParameters:
+    - id: T
+      description: Node type to find
+    return:
+      type: '{T}'
+      description: A node with the given type
+    content.vb: Public Function GetNode(Of T As Node) As T
+  overload: BehaviorTree.Node.GetNode*
+  nameWithType.vb: Node.GetNode(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: BehaviorTree.Node.GetNode(Of T)()
+  name.vb: GetNode(Of T)()
+- uid: BehaviorTree.Node.GetNodes``1
+  commentId: M:BehaviorTree.Node.GetNodes``1
+  id: GetNodes``1
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: GetNodes<T>()
+  nameWithType: Node.GetNodes<T>()
+  fullName: BehaviorTree.Node.GetNodes<T>()
+  type: Method
+  source:
+    id: GetNodes
+    path: ''
+    startLine: 216
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nGets nodes by type in the tree of this node\n"
+  example: []
+  syntax:
+    content: >-
+      public IEnumerable<T> GetNodes<T>()
+          where T : Node
+    typeParameters:
+    - id: T
+      description: Node type to find
+    return:
+      type: IEnumerable{{T}}
+      description: An enumerable of nodes with the given type
+    content.vb: Public Function GetNodes(Of T As Node) As IEnumerable(Of T)
+  overload: BehaviorTree.Node.GetNodes*
+  nameWithType.vb: Node.GetNodes(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: BehaviorTree.Node.GetNodes(Of T)()
+  name.vb: GetNodes(Of T)()
+- uid: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  commentId: M:BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  id: Initialize(BehaviorTree.BehaviorTreeAgent,BehaviorTree.Node)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Initialize(BehaviorTreeAgent, Node)
+  nameWithType: Node.Initialize(BehaviorTreeAgent, Node)
+  fullName: BehaviorTree.Node.Initialize(BehaviorTree.BehaviorTreeAgent, BehaviorTree.Node)
+  type: Method
+  source:
+    id: Initialize
+    path: ''
+    startLine: 229
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nInitializes the node\n"
+  example: []
+  syntax:
+    content: public void Initialize(BehaviorTreeAgent agent, Node root = null)
+    parameters:
+    - id: agent
+      type: BehaviorTree.BehaviorTreeAgent
+    - id: root
+      type: BehaviorTree.Node
+    content.vb: Public Sub Initialize(agent As BehaviorTreeAgent, root As Node = Nothing)
+  overload: BehaviorTree.Node.Initialize*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: BehaviorTree.Node.Evaluate
   commentId: M:BehaviorTree.Node.Evaluate
   id: Evaluate
@@ -226,25 +387,20 @@ items:
   source:
     id: Evaluate
     path: ''
-    startLine: 138
+    startLine: 243
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nEvaluate children node\n"
+  summary: "\nTriggers the evaluation of the node\n"
   example: []
   syntax:
-    content: public virtual NodeState Evaluate()
-    return:
-      type: BehaviorTree.NodeState
-      description: Return FAILURE by default
-    content.vb: Public Overridable Function Evaluate As NodeState
+    content: public void Evaluate()
+    content.vb: Public Sub Evaluate
   overload: BehaviorTree.Node.Evaluate*
   modifiers.csharp:
   - public
-  - virtual
   modifiers.vb:
   - Public
-  - Overridable
 - uid: BehaviorTree.Node.SetData(System.String,System.Object)
   commentId: M:BehaviorTree.Node.SetData(System.String,System.Object)
   id: SetData(System.String,System.Object)
@@ -259,7 +415,7 @@ items:
   source:
     id: SetData
     path: ''
-    startLine: 145
+    startLine: 253
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -280,41 +436,69 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
-  commentId: M:BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
-  id: SetDataToRoot(System.String,System.Object)
+- uid: BehaviorTree.Node.OnEvaluate
+  commentId: M:BehaviorTree.Node.OnEvaluate
+  id: OnEvaluate
   parent: BehaviorTree.Node
   langs:
   - csharp
   - vb
-  name: SetDataToRoot(String, Object)
-  nameWithType: Node.SetDataToRoot(String, Object)
-  fullName: BehaviorTree.Node.SetDataToRoot(System.String, System.Object)
+  name: OnEvaluate()
+  nameWithType: Node.OnEvaluate()
+  fullName: BehaviorTree.Node.OnEvaluate()
   type: Method
   source:
-    id: SetDataToRoot
+    id: OnEvaluate
     path: ''
-    startLine: 155
+    startLine: 266
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nAdds data to the root node&apos;s dictionary\n"
+  summary: "\nEvaluate children node\n"
   example: []
   syntax:
-    content: public void SetDataToRoot(string key, object value)
-    parameters:
-    - id: key
-      type: System.String
-      description: Key to be add
-    - id: value
-      type: System.Object
-      description: Value to be add
-    content.vb: Public Sub SetDataToRoot(key As String, value As Object)
-  overload: BehaviorTree.Node.SetDataToRoot*
+    content: protected virtual NodeState OnEvaluate()
+    return:
+      type: BehaviorTree.NodeState
+      description: Return FAILURE by default
+    content.vb: Protected Overridable Function OnEvaluate As NodeState
+  overload: BehaviorTree.Node.OnEvaluate*
   modifiers.csharp:
-  - public
+  - protected
+  - virtual
   modifiers.vb:
-  - Public
+  - Protected
+  - Overridable
+- uid: BehaviorTree.Node.OnInitialized
+  commentId: M:BehaviorTree.Node.OnInitialized
+  id: OnInitialized
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: OnInitialized()
+  nameWithType: Node.OnInitialized()
+  fullName: BehaviorTree.Node.OnInitialized()
+  type: Method
+  source:
+    id: OnInitialized
+    path: ''
+    startLine: 271
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nFired on tree initialization\n"
+  example: []
+  syntax:
+    content: protected virtual void OnInitialized()
+    content.vb: Protected Overridable Sub OnInitialized
+  overload: BehaviorTree.Node.OnInitialized*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
 - uid: BehaviorTree.Node.GetData(System.String)
   commentId: M:BehaviorTree.Node.GetData(System.String)
   id: GetData(System.String)
@@ -329,7 +513,7 @@ items:
   source:
     id: GetData
     path: ''
-    startLine: 171
+    startLine: 282
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -350,6 +534,47 @@ items:
   - protected
   modifiers.vb:
   - Protected
+- uid: BehaviorTree.Node.GetData``1(System.String)
+  commentId: M:BehaviorTree.Node.GetData``1(System.String)
+  id: GetData``1(System.String)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: GetData<T>(String)
+  nameWithType: Node.GetData<T>(String)
+  fullName: BehaviorTree.Node.GetData<T>(System.String)
+  type: Method
+  source:
+    id: GetData
+    path: ''
+    startLine: 296
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nRetrieve value from dictionary\n"
+  example: []
+  syntax:
+    content: protected T GetData<T>(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: Key used to look for data
+    typeParameters:
+    - id: T
+      description: Type of the value
+    return:
+      type: '{T}'
+      description: Return value of the dictionary according to the key
+    content.vb: Protected Function GetData(Of T)(key As String) As T
+  overload: BehaviorTree.Node.GetData*
+  nameWithType.vb: Node.GetData(Of T)(String)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: BehaviorTree.Node.GetData(Of T)(System.String)
+  name.vb: GetData(Of T)(String)
 - uid: BehaviorTree.Node.RemoveData(System.String)
   commentId: M:BehaviorTree.Node.RemoveData(System.String)
   id: RemoveData(System.String)
@@ -364,7 +589,7 @@ items:
   source:
     id: RemoveData
     path: ''
-    startLine: 186
+    startLine: 309
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -683,23 +908,22 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: BehaviorTree.NodeState
-  commentId: T:BehaviorTree.NodeState
+- uid: BehaviorTree.Node.Agent*
+  commentId: Overload:BehaviorTree.Node.Agent
+  name: Agent
+  nameWithType: Node.Agent
+  fullName: BehaviorTree.Node.Agent
+- uid: BehaviorTree.BehaviorTreeAgent
+  commentId: T:BehaviorTree.BehaviorTreeAgent
   parent: BehaviorTree
-  name: NodeState
-  nameWithType: NodeState
-  fullName: BehaviorTree.NodeState
-- uid: BehaviorTree.Node.Parent*
-  commentId: Overload:BehaviorTree.Node.Parent
-  name: Parent
-  nameWithType: Node.Parent
-  fullName: BehaviorTree.Node.Parent
-- uid: BehaviorTree.Node
-  commentId: T:BehaviorTree.Node
-  parent: BehaviorTree
-  name: Node
-  nameWithType: Node
-  fullName: BehaviorTree.Node
+  name: BehaviorTreeAgent
+  nameWithType: BehaviorTreeAgent
+  fullName: BehaviorTree.BehaviorTreeAgent
+- uid: BehaviorTree.Node.Children*
+  commentId: Overload:BehaviorTree.Node.Children
+  name: Children
+  nameWithType: Node.Children
+  fullName: BehaviorTree.Node.Children
 - uid: List{BehaviorTree.Node}
   commentId: '!:List{BehaviorTree.Node}'
   definition: List`1
@@ -780,16 +1004,141 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: BehaviorTree.Node.#ctor*
-  commentId: Overload:BehaviorTree.Node.#ctor
+- uid: BehaviorTree.Node.Parent*
+  commentId: Overload:BehaviorTree.Node.Parent
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: BehaviorTree.Node.Parent
+- uid: BehaviorTree.Node
+  commentId: T:BehaviorTree.Node
+  parent: BehaviorTree
   name: Node
-  nameWithType: Node.Node
-  fullName: BehaviorTree.Node.Node
+  nameWithType: Node
+  fullName: BehaviorTree.Node
+- uid: BehaviorTree.Node.Root*
+  commentId: Overload:BehaviorTree.Node.Root
+  name: Root
+  nameWithType: Node.Root
+  fullName: BehaviorTree.Node.Root
+- uid: BehaviorTree.Node.State*
+  commentId: Overload:BehaviorTree.Node.State
+  name: State
+  nameWithType: Node.State
+  fullName: BehaviorTree.Node.State
+- uid: BehaviorTree.NodeState
+  commentId: T:BehaviorTree.NodeState
+  parent: BehaviorTree
+  name: NodeState
+  nameWithType: NodeState
+  fullName: BehaviorTree.NodeState
 - uid: BehaviorTree.Node.Attach*
   commentId: Overload:BehaviorTree.Node.Attach
   name: Attach
   nameWithType: Node.Attach
   fullName: BehaviorTree.Node.Attach
+- uid: BehaviorTree.Node.GetNode*
+  commentId: Overload:BehaviorTree.Node.GetNode
+  name: GetNode
+  nameWithType: Node.GetNode
+  fullName: BehaviorTree.Node.GetNode
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: BehaviorTree.Node.GetNodes*
+  commentId: Overload:BehaviorTree.Node.GetNodes
+  name: GetNodes
+  nameWithType: Node.GetNodes
+  fullName: BehaviorTree.Node.GetNodes
+- uid: IEnumerable{{T}}
+  commentId: '!:IEnumerable{``0}'
+  definition: IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  commentId: '!:IEnumerable`1'
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: BehaviorTree.Node.Initialize*
+  commentId: Overload:BehaviorTree.Node.Initialize
+  name: Initialize
+  nameWithType: Node.Initialize
+  fullName: BehaviorTree.Node.Initialize
 - uid: BehaviorTree.Node.Evaluate*
   commentId: Overload:BehaviorTree.Node.Evaluate
   name: Evaluate
@@ -807,11 +1156,16 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: BehaviorTree.Node.SetDataToRoot*
-  commentId: Overload:BehaviorTree.Node.SetDataToRoot
-  name: SetDataToRoot
-  nameWithType: Node.SetDataToRoot
-  fullName: BehaviorTree.Node.SetDataToRoot
+- uid: BehaviorTree.Node.OnEvaluate*
+  commentId: Overload:BehaviorTree.Node.OnEvaluate
+  name: OnEvaluate
+  nameWithType: Node.OnEvaluate
+  fullName: BehaviorTree.Node.OnEvaluate
+- uid: BehaviorTree.Node.OnInitialized*
+  commentId: Overload:BehaviorTree.Node.OnInitialized
+  name: OnInitialized
+  nameWithType: Node.OnInitialized
+  fullName: BehaviorTree.Node.OnInitialized
 - uid: BehaviorTree.Node.GetData*
   commentId: Overload:BehaviorTree.Node.GetData
   name: GetData
