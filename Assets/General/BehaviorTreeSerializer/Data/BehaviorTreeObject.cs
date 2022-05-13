@@ -1,3 +1,4 @@
+using BehaviorTree;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,12 @@ namespace BehaviorTreeSerializer.Data
         [SerializeField, Tooltip("Maps a node to its ID")]
         private Dictionary<Guid, NodeEditorInstanceMetadata> _idToNode;
 
+        [SerializeField, HideInInspector]
+        private bool _initialized;
+
+        [SerializeField, Tooltip("ID of the root node")]
+        private Guid _rootId;
+
         #endregion
 
         #region Properties
@@ -23,6 +30,23 @@ namespace BehaviorTreeSerializer.Data
         /// Gets or sets the dictionary of nodes by their IDs
         /// </summary>
         public Dictionary<Guid, NodeEditorInstanceMetadata> IdToNode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ID of the root node
+        /// </summary>
+        public Guid RootId => this._rootId;
+
+        #endregion
+
+        #region Unity Callbacks
+
+        /// <summary>
+        /// Fired on serialized field edition in inspector
+        /// </summary>
+        private void OnValidate()
+        {
+            this.Initialize();
+        }
 
         #endregion
 
@@ -64,6 +88,32 @@ namespace BehaviorTreeSerializer.Data
         }
 
         /// <summary>
+        /// Initializes this BehaviorTreeObject with default properties
+        /// </summary>
+        /// <returns>This instance</returns>
+        public BehaviorTreeObject Initialize()
+        {
+            if (this._initialized)
+                return this;
+
+            var selectorName = typeof(Selector).Name;
+            var root = new NodeEditorInstanceMetadata(
+                selectorName,
+                NodeReflection.Engine.GetProperties(selectorName),
+                Vector2.zero,
+                null
+            );
+
+            this.IdToNode = new Dictionary<Guid, NodeEditorInstanceMetadata>();
+            this.IdToNode.Add(root.Id, root);
+            this._rootId = root.Id;
+
+            this._initialized = true;
+
+            return this;
+        }
+
+        /// <summary>
         /// Removes the child node from the parent
         /// </summary>
         /// <param name="parentId">ID of the parent node</param>
@@ -72,10 +122,12 @@ namespace BehaviorTreeSerializer.Data
         {
             if (!this.IdToNode.ContainsKey(parentId))
                 throw new Exception("Parent not found");
+
             if (!this.IdToNode[parentId].ChildrenIds.Contains(childId))
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Remove(childId);
+            this.IdToNode[childId].ParentId = Guid.Empty;
         }
 
         /// <summary>
@@ -89,6 +141,9 @@ namespace BehaviorTreeSerializer.Data
 
             if (!this.IdToNode[nodeId].ParentId.Equals(Guid.Empty))
                 this.RemoveChild(this.IdToNode[nodeId].ParentId, nodeId);
+
+            foreach (var childId in this.IdToNode[nodeId].ChildrenIds)
+                this.IdToNode[childId].ParentId = Guid.Empty;
 
             this.IdToNode.Remove(nodeId);
         }
@@ -114,16 +169,10 @@ namespace BehaviorTreeSerializer.Data
         #region Public Static Methods
 
         /// <summary>
-        /// Creates a BehaviorTreeObject with default properties
+        /// Creates an initialized BehaviorTreeObject
         /// </summary>
         /// <returns>A BehaviorTreeObject</returns>
-        public static BehaviorTreeObject Create()
-        {
-            var tree = ScriptableObject.CreateInstance<BehaviorTreeObject>();
-
-            tree.IdToNode = new Dictionary<Guid, NodeEditorInstanceMetadata>();
-            return tree;
-        }
+        public static BehaviorTreeObject Create() => ScriptableObject.CreateInstance<BehaviorTreeObject>().Initialize();
 
         #endregion
     }
