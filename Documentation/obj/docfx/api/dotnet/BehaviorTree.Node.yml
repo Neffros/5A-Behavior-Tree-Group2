@@ -1,0 +1,851 @@
+### YamlMime:ManagedReference
+items:
+- uid: BehaviorTree.Node
+  commentId: T:BehaviorTree.Node
+  id: Node
+  parent: BehaviorTree
+  children:
+  - BehaviorTree.Node.#ctor
+  - BehaviorTree.Node.Attach(BehaviorTree.Node)
+  - BehaviorTree.Node.Children
+  - BehaviorTree.Node.Evaluate
+  - BehaviorTree.Node.GetData(System.String)
+  - BehaviorTree.Node.Parent
+  - BehaviorTree.Node.RemoveData(System.String)
+  - BehaviorTree.Node.SetData(System.String,System.Object)
+  - BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+  - BehaviorTree.Node.State
+  langs:
+  - csharp
+  - vb
+  name: Node
+  nameWithType: Node
+  fullName: BehaviorTree.Node
+  type: Class
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: Node
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 11
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: public class Node
+    content.vb: Public Class Node
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - BehaviorTree.Selector
+  - BehaviorTree.Sequence
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: BehaviorTree.Node.State
+  commentId: F:BehaviorTree.Node.State
+  id: State
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: Node.State
+  fullName: BehaviorTree.Node.State
+  type: Field
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: State
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: protected NodeState State
+    return:
+      type: BehaviorTree.NodeState
+    content.vb: Protected State As NodeState
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: BehaviorTree.Node.Parent
+  commentId: P:BehaviorTree.Node.Parent
+  id: Parent
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: BehaviorTree.Node.Parent
+  type: Property
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: Parent
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 15
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: public Node Parent { get; }
+    parameters: []
+    return:
+      type: BehaviorTree.Node
+    content.vb: Public ReadOnly Property Parent As Node
+  overload: BehaviorTree.Node.Parent*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: BehaviorTree.Node.Children
+  commentId: F:BehaviorTree.Node.Children
+  id: Children
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: Node.Children
+  fullName: BehaviorTree.Node.Children
+  type: Field
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: Children
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: protected List<Node> Children
+    return:
+      type: System.Collections.Generic.List{BehaviorTree.Node}
+    content.vb: Protected Children As List(Of Node)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: BehaviorTree.Node.#ctor
+  commentId: M:BehaviorTree.Node.#ctor
+  id: '#ctor'
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Node()
+  nameWithType: Node.Node()
+  fullName: BehaviorTree.Node.Node()
+  type: Constructor
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: .ctor
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  summary: "\nit does things\n"
+  example: []
+  syntax:
+    content: public Node()
+    content.vb: Public Sub New
+  overload: BehaviorTree.Node.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: BehaviorTree.Node.Attach(BehaviorTree.Node)
+  commentId: M:BehaviorTree.Node.Attach(BehaviorTree.Node)
+  id: Attach(BehaviorTree.Node)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Attach(Node)
+  nameWithType: Node.Attach(Node)
+  fullName: BehaviorTree.Node.Attach(BehaviorTree.Node)
+  type: Method
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: Attach
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  summary: "\nattaches nodes\n"
+  example: []
+  syntax:
+    content: public Node Attach(Node node)
+    parameters:
+    - id: node
+      type: BehaviorTree.Node
+      description: ''
+    return:
+      type: BehaviorTree.Node
+      description: ''
+    content.vb: Public Function Attach(node As Node) As Node
+  overload: BehaviorTree.Node.Attach*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: BehaviorTree.Node.Evaluate
+  commentId: M:BehaviorTree.Node.Evaluate
+  id: Evaluate
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: Evaluate()
+  nameWithType: Node.Evaluate()
+  fullName: BehaviorTree.Node.Evaluate()
+  type: Method
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: Evaluate
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 40
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: public virtual NodeState Evaluate()
+    return:
+      type: BehaviorTree.NodeState
+    content.vb: Public Overridable Function Evaluate As NodeState
+  overload: BehaviorTree.Node.Evaluate*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: BehaviorTree.Node.SetData(System.String,System.Object)
+  commentId: M:BehaviorTree.Node.SetData(System.String,System.Object)
+  id: SetData(System.String,System.Object)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: SetData(String, Object)
+  nameWithType: Node.SetData(String, Object)
+  fullName: BehaviorTree.Node.SetData(System.String, System.Object)
+  type: Method
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: SetData
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 42
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: public void SetData(string key, object value)
+    parameters:
+    - id: key
+      type: System.String
+    - id: value
+      type: System.Object
+    content.vb: Public Sub SetData(key As String, value As Object)
+  overload: BehaviorTree.Node.SetData*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+  commentId: M:BehaviorTree.Node.SetDataToRoot(System.String,System.Object)
+  id: SetDataToRoot(System.String,System.Object)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: SetDataToRoot(String, Object)
+  nameWithType: Node.SetDataToRoot(String, Object)
+  fullName: BehaviorTree.Node.SetDataToRoot(System.String, System.Object)
+  type: Method
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: SetDataToRoot
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 47
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: public void SetDataToRoot(string key, object value)
+    parameters:
+    - id: key
+      type: System.String
+    - id: value
+      type: System.Object
+    content.vb: Public Sub SetDataToRoot(key As String, value As Object)
+  overload: BehaviorTree.Node.SetDataToRoot*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: BehaviorTree.Node.GetData(System.String)
+  commentId: M:BehaviorTree.Node.GetData(System.String)
+  id: GetData(System.String)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: GetData(String)
+  nameWithType: Node.GetData(String)
+  fullName: BehaviorTree.Node.GetData(System.String)
+  type: Method
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: GetData
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 58
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: protected object GetData(string key)
+    parameters:
+    - id: key
+      type: System.String
+    return:
+      type: System.Object
+    content.vb: Protected Function GetData(key As String) As Object
+  overload: BehaviorTree.Node.GetData*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: BehaviorTree.Node.RemoveData(System.String)
+  commentId: M:BehaviorTree.Node.RemoveData(System.String)
+  id: RemoveData(System.String)
+  parent: BehaviorTree.Node
+  langs:
+  - csharp
+  - vb
+  name: RemoveData(String)
+  nameWithType: Node.RemoveData(String)
+  fullName: BehaviorTree.Node.RemoveData(System.String)
+  type: Method
+  source:
+    remote:
+      path: Assets/General/BehaviorTree/Node.cs
+      branch: feature/documentation_generator
+      repo: https://github.com/Neffros/5A-Behavior-Tree-Group2.git
+    id: RemoveData
+    path: ../Assets/General/BehaviorTree/Node.cs
+    startLine: 68
+  assemblies:
+  - Assembly-CSharp
+  namespace: BehaviorTree
+  syntax:
+    content: protected bool RemoveData(string key)
+    parameters:
+    - id: key
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Function RemoveData(key As String) As Boolean
+  overload: BehaviorTree.Node.RemoveData*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BehaviorTree.NodeState
+  commentId: T:BehaviorTree.NodeState
+  parent: BehaviorTree
+  name: NodeState
+  nameWithType: NodeState
+  fullName: BehaviorTree.NodeState
+- uid: BehaviorTree.Node.Parent*
+  commentId: Overload:BehaviorTree.Node.Parent
+  name: Parent
+  nameWithType: Node.Parent
+  fullName: BehaviorTree.Node.Parent
+- uid: BehaviorTree.Node
+  commentId: T:BehaviorTree.Node
+  parent: BehaviorTree
+  name: Node
+  nameWithType: Node
+  fullName: BehaviorTree.Node
+- uid: System.Collections.Generic.List{BehaviorTree.Node}
+  commentId: T:System.Collections.Generic.List{BehaviorTree.Node}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Node>
+  nameWithType: List<Node>
+  fullName: System.Collections.Generic.List<BehaviorTree.Node>
+  nameWithType.vb: List(Of Node)
+  fullName.vb: System.Collections.Generic.List(Of BehaviorTree.Node)
+  name.vb: List(Of Node)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: BehaviorTree.Node
+    name: Node
+    nameWithType: Node
+    fullName: BehaviorTree.Node
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: BehaviorTree.Node
+    name: Node
+    nameWithType: Node
+    fullName: BehaviorTree.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: BehaviorTree.Node.#ctor*
+  commentId: Overload:BehaviorTree.Node.#ctor
+  name: Node
+  nameWithType: Node.Node
+  fullName: BehaviorTree.Node.Node
+- uid: BehaviorTree.Node.Attach*
+  commentId: Overload:BehaviorTree.Node.Attach
+  name: Attach
+  nameWithType: Node.Attach
+  fullName: BehaviorTree.Node.Attach
+- uid: BehaviorTree.Node.Evaluate*
+  commentId: Overload:BehaviorTree.Node.Evaluate
+  name: Evaluate
+  nameWithType: Node.Evaluate
+  fullName: BehaviorTree.Node.Evaluate
+- uid: BehaviorTree.Node.SetData*
+  commentId: Overload:BehaviorTree.Node.SetData
+  name: SetData
+  nameWithType: Node.SetData
+  fullName: BehaviorTree.Node.SetData
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: BehaviorTree.Node.SetDataToRoot*
+  commentId: Overload:BehaviorTree.Node.SetDataToRoot
+  name: SetDataToRoot
+  nameWithType: Node.SetDataToRoot
+  fullName: BehaviorTree.Node.SetDataToRoot
+- uid: BehaviorTree.Node.GetData*
+  commentId: Overload:BehaviorTree.Node.GetData
+  name: GetData
+  nameWithType: Node.GetData
+  fullName: BehaviorTree.Node.GetData
+- uid: BehaviorTree.Node.RemoveData*
+  commentId: Overload:BehaviorTree.Node.RemoveData
+  name: RemoveData
+  nameWithType: Node.RemoveData
+  fullName: BehaviorTree.Node.RemoveData
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+shouldSkipMarkup: true

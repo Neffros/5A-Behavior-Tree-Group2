@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: BehaviorTree.NodeState
+  commentId: T:BehaviorTree.NodeState
+  id: NodeState
+  parent: BehaviorTree
+  children:
+  - BehaviorTree.NodeState.FAILURE
+  - BehaviorTree.NodeState.RUNNING
+  - BehaviorTree.NodeState.SUCCESS
+  langs:
+  - csharp
+  - vb
+  name: NodeState
+  nameWithType: NodeState
+  fullName: BehaviorTree.NodeState
+  type: Enum
+  source:
+    id: NodeState
+    path: ''
+    startLine: 83
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nState of the node : SUCCESS, FAILURE, RUNNING\n"
+  example: []
+  syntax:
+    content: public enum NodeState
+    content.vb: Public Enum NodeState
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: BehaviorTree.NodeState.RUNNING
+  commentId: F:BehaviorTree.NodeState.RUNNING
+  id: RUNNING
+  parent: BehaviorTree.NodeState
+  langs:
+  - csharp
+  - vb
+  name: RUNNING
+  nameWithType: NodeState.RUNNING
+  fullName: BehaviorTree.NodeState.RUNNING
+  type: Field
+  source:
+    id: RUNNING
+    path: ''
+    startLine: 85
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: RUNNING = 0
+    return:
+      type: BehaviorTree.NodeState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: BehaviorTree.NodeState.SUCCESS
+  commentId: F:BehaviorTree.NodeState.SUCCESS
+  id: SUCCESS
+  parent: BehaviorTree.NodeState
+  langs:
+  - csharp
+  - vb
+  name: SUCCESS
+  nameWithType: NodeState.SUCCESS
+  fullName: BehaviorTree.NodeState.SUCCESS
+  type: Field
+  source:
+    id: SUCCESS
+    path: ''
+    startLine: 86
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: SUCCESS = 1
+    return:
+      type: BehaviorTree.NodeState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: BehaviorTree.NodeState.FAILURE
+  commentId: F:BehaviorTree.NodeState.FAILURE
+  id: FAILURE
+  parent: BehaviorTree.NodeState
+  langs:
+  - csharp
+  - vb
+  name: FAILURE
+  nameWithType: NodeState.FAILURE
+  fullName: BehaviorTree.NodeState.FAILURE
+  type: Field
+  source:
+    id: FAILURE
+    path: ''
+    startLine: 87
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  syntax:
+    content: FAILURE = 2
+    return:
+      type: BehaviorTree.NodeState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+- uid: BehaviorTree.NodeState
+  commentId: T:BehaviorTree.NodeState
+  parent: BehaviorTree
+  name: NodeState
+  nameWithType: NodeState
+  fullName: BehaviorTree.NodeState

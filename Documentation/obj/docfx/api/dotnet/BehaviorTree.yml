@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  id: BehaviorTree
+  children:
+  - BehaviorTree.BehaviorTreeAgent
+  - BehaviorTree.Node
+  - BehaviorTree.NodeState
+  - BehaviorTree.Selector
+  - BehaviorTree.Sequence
+  langs:
+  - csharp
+  - vb
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: BehaviorTree.Selector
+  commentId: T:BehaviorTree.Selector
+  name: Selector
+  nameWithType: Selector
+  fullName: BehaviorTree.Selector
+- uid: BehaviorTree.Sequence
+  commentId: T:BehaviorTree.Sequence
+  name: Sequence
+  nameWithType: Sequence
+  fullName: BehaviorTree.Sequence
+- uid: BehaviorTree.NodeState
+  commentId: T:BehaviorTree.NodeState
+  parent: BehaviorTree
+  name: NodeState
+  nameWithType: NodeState
+  fullName: BehaviorTree.NodeState
+- uid: BehaviorTree.Node
+  commentId: T:BehaviorTree.Node
+  parent: BehaviorTree
+  name: Node
+  nameWithType: Node
+  fullName: BehaviorTree.Node
+- uid: BehaviorTree.BehaviorTreeAgent
+  commentId: T:BehaviorTree.BehaviorTreeAgent
+  name: BehaviorTreeAgent
+  nameWithType: BehaviorTreeAgent
+  fullName: BehaviorTree.BehaviorTreeAgent
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+shouldSkipMarkup: true
