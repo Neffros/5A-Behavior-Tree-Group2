@@ -1,4 +1,5 @@
-﻿using NodeReflection;
+﻿using System;
+using NodeReflection;
 
 namespace BehaviorTree
 {
@@ -12,28 +13,27 @@ namespace BehaviorTree
         /// Evaluate the node
         /// </summary>
         /// <returns>Return SUCCESS if a child node failed, FAILURE if a child node succeeded, or RUNNING</returns>
-        protected override NodeState OnEvaluate()
+        protected override NodeState OnUpdate()
         {
-            var anyChildIsRunning = false;
-
-            foreach (var node in Children)
+            if (Children.Count != 1)
             {
-                node.Evaluate();
-                switch (node.State)
-                {
-                    case NodeState.FAILURE:
-                        return NodeState.SUCCESS;
-                    case NodeState.SUCCESS:
-                        return NodeState.FAILURE;
-                    case NodeState.RUNNING:
-                        anyChildIsRunning = true;
-                        break;
-                    default:
-                        return NodeState.FAILURE;
-                }
+                throw new InvalidOperationException("An Inverter must have exactly one child.");
             }
 
-            return anyChildIsRunning ? NodeState.RUNNING : NodeState.SUCCESS;
+            Node child = Children[0];
+            
+            child.Update();
+            switch (child.State)
+            {
+                case NodeState.Failure:
+                    return NodeState.Success;
+                case NodeState.Success:
+                    return NodeState.Failure;
+                case NodeState.Running:
+                    return NodeState.Running;
+                default:
+                    throw new InvalidOperationException("");
+            }
         }
     }
 }

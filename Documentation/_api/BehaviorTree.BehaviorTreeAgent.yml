@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: BehaviorTree.BehaviorTreeAgent
+  commentId: T:BehaviorTree.BehaviorTreeAgent
+  id: BehaviorTreeAgent
+  parent: BehaviorTree
+  children:
+  - BehaviorTree.BehaviorTreeAgent.SetupTree
+  langs:
+  - csharp
+  - vb
+  name: BehaviorTreeAgent
+  nameWithType: BehaviorTreeAgent
+  fullName: BehaviorTree.BehaviorTreeAgent
+  type: Class
+  source:
+    id: BehaviorTreeAgent
+    path: ''
+    startLine: 7
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nMain class for the behavior of the agent\n"
+  example: []
+  syntax:
+    content: 'public abstract class BehaviorTreeAgent : MonoBehaviour'
+    content.vb: >-
+      Public MustInherit Class BehaviorTreeAgent
+          Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: BehaviorTree.BehaviorTreeAgent.SetupTree
+  commentId: M:BehaviorTree.BehaviorTreeAgent.SetupTree
+  id: SetupTree
+  parent: BehaviorTree.BehaviorTreeAgent
+  langs:
+  - csharp
+  - vb
+  name: SetupTree()
+  nameWithType: BehaviorTreeAgent.SetupTree()
+  fullName: BehaviorTree.BehaviorTreeAgent.SetupTree()
+  type: Method
+  source:
+    id: SetupTree
+    path: ''
+    startLine: 34
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nSetup nodes for the behavior of the agent\n"
+  example: []
+  syntax:
+    content: protected abstract Node SetupTree()
+    return:
+      type: BehaviorTree.Node
+      description: ''
+    content.vb: Protected MustOverride Function SetupTree As Node
+  overload: BehaviorTree.BehaviorTreeAgent.SetupTree*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+references:
+- uid: BehaviorTree
+  commentId: N:BehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: BehaviorTree
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BehaviorTree.BehaviorTreeAgent.SetupTree*
+  commentId: Overload:BehaviorTree.BehaviorTreeAgent.SetupTree
+  name: SetupTree
+  nameWithType: BehaviorTreeAgent.SetupTree
+  fullName: BehaviorTree.BehaviorTreeAgent.SetupTree
+- uid: BehaviorTree.Node
+  commentId: T:BehaviorTree.Node
+  parent: BehaviorTree
+  name: Node
+  nameWithType: Node
+  fullName: BehaviorTree.Node

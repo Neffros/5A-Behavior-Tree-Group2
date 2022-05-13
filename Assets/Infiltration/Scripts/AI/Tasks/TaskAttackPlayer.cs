@@ -8,7 +8,7 @@ namespace Infiltration
     public class TaskAttackPlayer : Node {
         [ExposedInVisualEditor] public float AttackRange { get; set; } = 1;
 
-        protected override NodeState OnEvaluate()
+        protected override NodeState OnUpdate()
         {
             var target = this.GetData<Transform>("target");
 
@@ -18,7 +18,7 @@ namespace Infiltration
                 player.GetHit();
             }
 
-            return NodeState.RUNNING;
+            return NodeState.Success;
         }
     }
 }

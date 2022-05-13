@@ -6,7 +6,8 @@ namespace Infiltration
     public class GuardAI : BehaviorTreeAgent
     {
         [SerializeField] private float attackRange;
-        [SerializeField] private float fovRange;
+        [SerializeField] private float seeRange;
+        [SerializeField] private float unseeRange;
         [SerializeField] private float speed;
 
         protected override Node SetupTree()
@@ -30,12 +31,13 @@ namespace Infiltration
             var sequence2 = new Sequence();
             var checkEnemyInFOVRange = new CheckEnemyInFOVRange()
             {
-                FovRange = fovRange,
+                SeeRange = seeRange,
             };
 
             var taskGoTowardEnemy = new TaskGoTowardEnemy()
             {
                 Speed = speed,
+                UnseeRange = unseeRange
             };
 
             var taskGoPatrol = new TaskPatrol()
@@ -69,7 +71,7 @@ namespace Infiltration
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(currentPosition, attackRange);
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(currentPosition, fovRange);
+            Gizmos.DrawWireSphere(currentPosition, seeRange);
         }
     }
 }
