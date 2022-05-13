@@ -29,10 +29,16 @@ namespace VisualEditor.Editor {
             styleSheets.Add(styleSheet);
         }
 
+        /// <summary>
+        /// Gets NodeView ui object from a node metadata
+        /// </summary>
         NodeView FindNodeView(NodeEditorInstanceMetadata node) {
             return GetNodeByGuid(node.Id) as NodeView;
         }
 
+        /// <summary>
+        /// Populates graph view when the visual editor is loaded
+        /// </summary>
         public void PopulateView(BehaviorTreeObject behaviorTreeObject) {
             Engine.Update();
             
