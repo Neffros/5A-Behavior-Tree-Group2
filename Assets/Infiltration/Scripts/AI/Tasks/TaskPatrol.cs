@@ -18,12 +18,12 @@ namespace Infiltration
         private float _waitCounter;
         private bool _waiting;
 
-        protected override void OnInitialized()
+        protected override void OnInitialize()
         {
             this._waypoints = this.Agent.GetComponent<GuardSceneData>().Waypoints;
         }
 
-        protected override NodeState OnEvaluate()
+        protected override NodeState OnUpdate()
         {
             if (_waiting)
             {
@@ -52,7 +52,7 @@ namespace Infiltration
                 }
             }
 
-            return NodeState.RUNNING;
+            return NodeState.Success;
         }
     }
 }
