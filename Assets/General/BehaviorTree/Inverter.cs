@@ -12,31 +12,28 @@ namespace BehaviorTree
         /// Evaluate the node
         /// </summary>
         /// <returns>Return SUCCESS if a child node failed, FAILURE if a child node succeeded, or RUNNING</returns>
-        public override NodeState Evaluate()
+        protected override NodeState OnEvaluate()
         {
             var anyChildIsRunning = false;
 
             foreach (var node in Children)
             {
-                switch (node.Evaluate())
+                node.Evaluate();
+                switch (node.State)
                 {
                     case NodeState.FAILURE:
-                        State = NodeState.SUCCESS;
-                        return State;
+                        return NodeState.SUCCESS;
                     case NodeState.SUCCESS:
-                        State = NodeState.FAILURE;
-                        return State;
+                        return NodeState.FAILURE;
                     case NodeState.RUNNING:
                         anyChildIsRunning = true;
                         break;
                     default:
-                        State = NodeState.FAILURE;
-                        return State;
+                        return NodeState.FAILURE;
                 }
             }
 
-            State = anyChildIsRunning ? NodeState.RUNNING : NodeState.SUCCESS;
-            return State;
+            return anyChildIsRunning ? NodeState.RUNNING : NodeState.SUCCESS;
         }
     }
 }
