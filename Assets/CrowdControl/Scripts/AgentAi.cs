@@ -27,7 +27,7 @@ namespace CrowdControl
             CheckAiInFrontSpeed checkAiInFrontSpeed = new();
             Selector selector3 = new();
             TaskShiftOnTheLeft taskShiftOnTheLeft = new();
-            TaskShiftOnTheLeft taskShiftOnTheRight = new();
+            TaskShiftOnTheRight taskShiftOnTheRight = new();
 
 
             // Setup sequence 1
@@ -36,9 +36,8 @@ namespace CrowdControl
 
             // Setup sequence 2
             sequence2.Attach(checkAiInFront).Attach(checkSide).Attach(checkPatience).Attach(selector1);
-            selector1.Attach(selector2);
-            //     .Attach(sequence3);
-            // sequence3.Attach(checkAiInFrontSpeed).Attach(selector3);
+            selector1.Attach(selector2).Attach(sequence3);
+            sequence3.Attach(checkAiInFrontSpeed).Attach(selector3);
             selector2.Attach(taskLetIsPassLeft).Attach(taskLetIsPassRight);
             selector3.Attach(taskShiftOnTheLeft).Attach(taskShiftOnTheRight);
             nodeRoot.Attach(sequence2);

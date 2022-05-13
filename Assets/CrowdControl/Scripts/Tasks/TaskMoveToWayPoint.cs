@@ -7,8 +7,6 @@ namespace CrowdControl
 {
 	public class TaskMoveToWayPoint : Node
 	{
-		//[ExposedInVisualEditor]
-		//private float DistanceToWayPoint { get; set; } //TODO use property when visual is implemented
 		private float DistanceToWayPoint = 5f;
 
 		private Vector3 _targetWayPointPosition;

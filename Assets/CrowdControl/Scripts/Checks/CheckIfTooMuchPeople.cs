@@ -5,9 +5,6 @@ namespace CrowdControl
 {
     public class CheckIfTooMuchPeople : Node
     {
-        // [ExposedInVisualEditor]
-        // public float DetectionRange { get; set; }
-
         private int _aiLayerMask;
         private float _detectionRange;
 
@@ -20,11 +17,10 @@ namespace CrowdControl
         protected override NodeState OnUpdate()
         {
             Vector3 transform = Agent.transform.position;
-            Debug.DrawRay(transform, Agent.transform.right * 2f);
             Collider[] colliders = Physics.OverlapSphere(transform,
                 _detectionRange, _aiLayerMask);
 
-            if (colliders.Length > 4)
+            if (colliders.Length > 3)
             {
                 SetData("TooMuchPeople", true);
                 return NodeState.Failure;
