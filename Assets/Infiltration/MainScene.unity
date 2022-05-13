@@ -163,6 +163,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3518849569124592441, guid: cefbbc7153053b54b8b3fefce27444c2, type: 3}
@@ -214,6 +215,7 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cefbbc7153053b54b8b3fefce27444c2, type: 3}
 --- !u!1 &105871198 stripped
 GameObject:
@@ -238,6 +240,19 @@ MonoBehaviour:
   - {fileID: 395924347}
   - {fileID: 1515087989}
   - {fileID: 542009424}
+--- !u!114 &105871205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105871198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27285f3d9101427b9742ab17afc1cc52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behaviorTree: {fileID: 11400000, guid: fd55e2cb0c6a88647a53f051ea45de65, type: 2}
 --- !u!1 &263522820
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +705,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 710729068097120978, guid: 4373d83a10f54f84f963e8e2de037c9a, type: 3}
@@ -741,12 +757,14 @@ PrefabInstance:
       value: Victory zone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4373d83a10f54f84f963e8e2de037c9a, type: 3}
 --- !u!1001 &2637341522883081550
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2637341523543593728, guid: fa7f7fb8efd57094c8085bd831ce8bb2, type: 3}
@@ -802,12 +820,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7f7fb8efd57094c8085bd831ce8bb2, type: 3}
 --- !u!1001 &4523649155490339956
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4523649156650502658, guid: bfa06c4f83a10b74a8bdbe79a70e4b98, type: 3}
@@ -859,12 +879,14 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa06c4f83a10b74a8bdbe79a70e4b98, type: 3}
 --- !u!1001 &8375053457585384668
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8375053457969573356, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
@@ -874,6 +896,14 @@ PrefabInstance:
     - target: {fileID: 8375053457969573356, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
       propertyPath: fovRange
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375053457969573356, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+      propertyPath: seeRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375053457969573356, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+      propertyPath: unseeRange
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8375053457969573356, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
       propertyPath: attackRange
@@ -943,5 +973,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8375053457969573356, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}

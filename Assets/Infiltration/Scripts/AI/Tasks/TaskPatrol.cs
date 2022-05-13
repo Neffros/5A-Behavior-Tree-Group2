@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Infiltration
 {
     [VisualNode]
-    public class TaskPatrol : Node
-    {
-        [ExposedInVisualEditor]
-        public float Speed { get; set; }
+    public class TaskPatrol : Node {
+        [ExposedInVisualEditor] public float Speed { get; set; } = 6;
 
         private Transform[] _waypoints;
 
@@ -18,12 +16,12 @@ namespace Infiltration
         private float _waitCounter;
         private bool _waiting;
 
-        protected override void OnInitialized()
+        protected override void OnInitialize()
         {
             this._waypoints = this.Agent.GetComponent<GuardSceneData>().Waypoints;
         }
 
-        protected override NodeState OnEvaluate()
+        protected override NodeState OnUpdate()
         {
             if (_waiting)
             {
@@ -52,7 +50,7 @@ namespace Infiltration
                 }
             }
 
-            return NodeState.RUNNING;
+            return NodeState.Success;
         }
     }
 }

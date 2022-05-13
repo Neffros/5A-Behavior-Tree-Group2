@@ -6,14 +6,14 @@ namespace Infiltration
     [VisualNode]
     public class CheckGameState : Node
     {
-        protected override NodeState OnEvaluate()
+        protected override NodeState OnStart()
         {
             if (GameManager.StateSet)
             {
-                return NodeState.FAILURE;
+                return NodeState.Failure;
             }
 
-            return NodeState.SUCCESS;
+            return NodeState.Success;
         }
     }
 }

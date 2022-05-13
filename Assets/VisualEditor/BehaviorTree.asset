@@ -14,12 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _idToNode:
     m_keys:
-    - 778840fe-76e2-414b-9ba6-05b73aee58da
+    - 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
+    - c1471f16-1bbb-496f-8944-398359c5cef8
+    - 192e633b-7c8e-4103-a05c-cfe20fe3bb34
+    - bda02a74-0bdc-4ee4-8c89-c21fe8232a29
     m_values:
     - ChildrenIds: []
-      Id: 778840fe-76e2-414b-9ba6-05b73aee58da
+      Id: 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
       NodeTypeInternalName: Selector
       ParentId: 
-      PositionInEditor: {x: 0, y: 0}
+      PositionInEditor: {x: 345, y: 236}
+      Properties:
+        m_keys: []
+    - ChildrenIds:
+      - bda02a74-0bdc-4ee4-8c89-c21fe8232a29
+      Id: c1471f16-1bbb-496f-8944-398359c5cef8
+      NodeTypeInternalName: Selector
+      ParentId: 
+      PositionInEditor: {x: 345, y: 91}
+      Properties:
+        m_keys: []
+    - ChildrenIds:
+      - c1471f16-1bbb-496f-8944-398359c5cef8
+      - 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
+      Id: 192e633b-7c8e-4103-a05c-cfe20fe3bb34
+      NodeTypeInternalName: Sequence
+      ParentId: 
+      PositionInEditor: {x: 161, y: 115}
+      Properties:
+        m_keys: []
+    - ChildrenIds: []
+      Id: bda02a74-0bdc-4ee4-8c89-c21fe8232a29
+      NodeTypeInternalName: Selector
+      ParentId: 
+      PositionInEditor: {x: 477, y: 91}
+      Properties:
+        m_keys: []
   _initialized: 1
   _rootId: 778840fe-76e2-414b-9ba6-05b73aee58da
