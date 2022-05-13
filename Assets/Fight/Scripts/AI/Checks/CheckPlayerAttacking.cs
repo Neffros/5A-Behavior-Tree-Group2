@@ -1,8 +1,10 @@
 ﻿using BehaviorTree;
 using Fight.AI.Agents;
+using NodeReflection;
 
 namespace Fight.AI.Checks
 {
+	[VisualNode]
 	public class CheckPlayerAttacking : Node
 	{
 		private PlayerControllerScript _playerController;

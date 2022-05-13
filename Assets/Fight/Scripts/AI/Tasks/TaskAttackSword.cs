@@ -1,10 +1,12 @@
 ﻿using BehaviorTree;
 using DG.Tweening;
 using Fight.AI.Agents;
+using NodeReflection;
 using UnityEngine;
 
 namespace Fight.AI.Tasks
 {
+	[VisualNode]
 	public class TaskAttackSword : Node
 	{
 		private Transform _swordAnchor;
