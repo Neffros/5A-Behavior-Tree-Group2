@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using BehaviorTree;
-using NodeReflection;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,8 +7,6 @@ namespace CrowdControl
 {
 	public class TaskMoveToWayPoint : Node
 	{
-		//[ExposedInVisualEditor]
-		//private float DistanceToWayPoint { get; set; } //TODO use property when visual is implemented
 		private float DistanceToWayPoint = 5f;
 
 		private Vector3 _targetWayPointPosition;
@@ -44,7 +41,7 @@ namespace CrowdControl
 				_targetWayPointPosition = UpdatePosition(_targetWayPointPosition);
 				
 			_navMeshAgent.SetDestination(_targetWayPointPosition);
-			return NodeState.Running;
+			return NodeState.Success;
 		}
 	}
 }

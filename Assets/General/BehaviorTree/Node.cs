@@ -164,6 +164,22 @@ namespace BehaviorTree
         {
             _dataContext[key] = value;
         }
+        
+        /// <summary>
+        /// Add data to the root of the agent
+        /// </summary>
+        /// <param name="key">Key to be added</param>
+        /// <param name="value">Value to be added</param>
+        public void SetDataToRoot(string key, object value)
+        {
+            Node node = Parent;
+            while (node.Parent != null)
+            {
+                node = node.Parent;
+            }
+
+            node._dataContext[key] = value;
+        }
 
         #endregion
 
