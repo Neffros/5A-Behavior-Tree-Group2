@@ -1,7 +1,7 @@
 using BehaviorTree;
 using NodeReflection;
 using System;
-using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace BehaviorTreeSerializer.Data
@@ -46,6 +46,7 @@ namespace BehaviorTreeSerializer.Data
         /// </summary>
         private void Awake()
         {
+            Engine.Update();
             this.Initialize();
         }
 
@@ -76,9 +77,9 @@ namespace BehaviorTreeSerializer.Data
         /// <param name="positionInEditor">Position on the grid</param>
         /// <param name="parentId">ID of the parent node</param>
         /// <returns>The instantiated node metadata</returns>
-        public NodeEditorInstanceMetadata AddNode(string nodeTypeInternalName, SerializableDictionary<string, object> properties, Vector2 positionInEditor, string parentId)
+        public NodeEditorInstanceMetadata AddNode(string nodeTypeInternalName, Vector2 positionInEditor, string parentId)
         {
-            var node = new NodeEditorInstanceMetadata(nodeTypeInternalName, properties, positionInEditor, parentId);
+            var node = new NodeEditorInstanceMetadata(nodeTypeInternalName, positionInEditor, parentId);
 
             this.IdToNode.Add(node.Id, node);
 
@@ -102,13 +103,14 @@ namespace BehaviorTreeSerializer.Data
             var selectorName = typeof(Selector).Name;
             var root = this.AddNode(
                 selectorName,
-                new SerializableDictionary<string, object>(Engine.GetProperties(selectorName)),
                 Vector2.zero,
                 null
             );
             
             this._rootId = root.Id;
             this._initialized = true;
+
+            EditorUtility.SetDirty(this);
 
             return this;
         }
@@ -154,14 +156,62 @@ namespace BehaviorTreeSerializer.Data
         /// <param name="nodeId">ID of the node</param>
         /// <param name="property">Property name</param>
         /// <param name="value">Value of the property</param>
-        public void SetNodeProperty(string nodeId, string property, object value)
+        public void SetNodeBoolProperty(string nodeId, string property, bool value)
         {
             if (!this.IdToNode.ContainsKey(nodeId))
                 throw new Exception("Node not found");
-            if (!this.IdToNode[nodeId].Properties.ContainsKey(property))
+            if (!this.IdToNode[nodeId].PropertiesBool.ContainsKey(property))
                 throw new Exception("Property not found");
 
-            this.IdToNode[nodeId].Properties[property] = value;
+            this.IdToNode[nodeId].PropertiesBool[property] = value;
+        }
+
+        /// <summary>
+        /// Sets the property of a node
+        /// </summary>
+        /// <param name="nodeId">ID of the node</param>
+        /// <param name="property">Property name</param>
+        /// <param name="value">Value of the property</param>
+        public void SetNodeFloatProperty(string nodeId, string property, float value)
+        {
+            if (!this.IdToNode.ContainsKey(nodeId))
+                throw new Exception("Node not found");
+            if (!this.IdToNode[nodeId].PropertiesFloat.ContainsKey(property))
+                throw new Exception("Property not found");
+
+            this.IdToNode[nodeId].PropertiesFloat[property] = value;
+        }
+
+        /// <summary>
+        /// Sets the property of a node
+        /// </summary>
+        /// <param name="nodeId">ID of the node</param>
+        /// <param name="property">Property name</param>
+        /// <param name="value">Value of the property</param>
+        public void SetNodeIntProperty(string nodeId, string property, int value)
+        {
+            if (!this.IdToNode.ContainsKey(nodeId))
+                throw new Exception("Node not found");
+            if (!this.IdToNode[nodeId].PropertiesInt.ContainsKey(property))
+                throw new Exception("Property not found");
+
+            this.IdToNode[nodeId].PropertiesInt[property] = value;
+        }
+
+        /// <summary>
+        /// Sets the property of a node
+        /// </summary>
+        /// <param name="nodeId">ID of the node</param>
+        /// <param name="property">Property name</param>
+        /// <param name="value">Value of the property</param>
+        public void SetNodeStringProperty(string nodeId, string property, string value)
+        {
+            if (!this.IdToNode.ContainsKey(nodeId))
+                throw new Exception("Node not found");
+            if (!this.IdToNode[nodeId].PropertiesString.ContainsKey(property))
+                throw new Exception("Property not found");
+
+            this.IdToNode[nodeId].PropertiesString[property] = value;
         }
 
         #endregion

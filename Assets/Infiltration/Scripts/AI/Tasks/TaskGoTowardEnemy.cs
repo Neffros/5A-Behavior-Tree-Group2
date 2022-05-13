@@ -8,8 +8,7 @@ namespace Infiltration
     public class TaskGoTowardEnemy : Node {
         [ExposedInVisualEditor] public float Speed { get; set; } = 6;
 
-        [ExposedInVisualEditor]
-        public float UnseeRange { get; set; }
+        [ExposedInVisualEditor] public float UnseeRange { get; set; } = 7;
         
         private SpriteRenderer _renderer;
 
