@@ -43,7 +43,7 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Fired on serialized field edition in inspector
         /// </summary>
-        private void OnValidate()
+        private void Awake()
         {
             this.Initialize();
         }
