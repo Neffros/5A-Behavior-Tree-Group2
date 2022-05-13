@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27285f3d9101427b9742ab17afc1cc52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _behaviorTree: {fileID: 11400000, guid: fd55e2cb0c6a88647a53f051ea45de65, type: 2}
+  _behaviorTree: {fileID: 11400000, guid: 9155a90c4d175c74caa7bb5728172e3a, type: 2}
 --- !u!1001 &738057659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1140,4 +1140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27285f3d9101427b9742ab17afc1cc52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _behaviorTree: {fileID: 11400000, guid: fd55e2cb0c6a88647a53f051ea45de65, type: 2}
+  _behaviorTree: {fileID: 11400000, guid: 9c9c744de3cce0041bbaa8c909fd6763, type: 2}

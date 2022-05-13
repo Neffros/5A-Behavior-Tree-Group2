@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fd7f66316022294f94e3956b4dd9f72, type: 3}
-  m_Name: PatrolBehavior
+  m_Name: SlowGuardBehavior
   m_EditorClassIdentifier: 
   _idToNode:
     m_keys:
