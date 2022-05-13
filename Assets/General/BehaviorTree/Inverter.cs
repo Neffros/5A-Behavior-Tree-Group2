@@ -2,10 +2,10 @@
 
 namespace BehaviorTree
 {
-    [VisualNode]
     /// <summary>
     /// Inverts the result of the child node.
     /// </summary>
+    [VisualNode]
     public class Inverter : Node
     {
         /// <summary>
