@@ -1,5 +1,6 @@
 using System;
 using BehaviorTreeSerializer.Data;
+using NodeReflection;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -46,11 +47,13 @@ namespace VisualEditor.Editor {
             _graphView = root.Q<BehaviourTreeEditorGraphView>();
             _inspectorView = root.Q<BehaviourTreeEditorInspectorView>();
 
+            _graphView.OnNodeSelected = OnNodeSelectionChanged;
             _graphView.PopulateView(_targetObject);
+            _inspectorView.UpdateSelection(_targetObject, _targetObject.IdToNode[_targetObject.RootId]);
         }
 
-        private void OnGUI() {
-            rootVisualElement.MarkDirtyRepaint();
+        private void OnNodeSelectionChanged(NodeView obj) {
+            _inspectorView.UpdateSelection(_targetObject, obj.Node);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BehaviorTreeSerializer.Data;
 using NodeReflection;
@@ -13,6 +14,8 @@ namespace VisualEditor.Editor {
         public new class UxmlFactory : UxmlFactory<BehaviourTreeEditorGraphView, GraphView.UxmlTraits> {}
 
         private BehaviorTreeObject _behaviorTreeObject;
+
+        public Action<NodeView> OnNodeSelected;
         
         public BehaviourTreeEditorGraphView() {
             Insert(0, new GridBackground());
@@ -108,6 +111,7 @@ namespace VisualEditor.Editor {
 
         private void CreateNodeView(NodeEditorInstanceMetadata nodeData) {
             NodeView nodeView = new NodeView(nodeData);
+            nodeView.OnNodeSelected = OnNodeSelected;
             AddElement(nodeView);
         }
     }
