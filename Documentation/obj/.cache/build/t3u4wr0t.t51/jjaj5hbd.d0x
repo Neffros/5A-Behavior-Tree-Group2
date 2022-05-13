@@ -62,7 +62,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="unity-behavior-tree-api">Unity Behavior Tree API</h1>
 
-<h1 id="functional-documentation">Functional documentation</h1>
+<p>#Functional documentation</p>
 <h2 id="introduction">Introduction</h2>
 <p>This API facilitates the development of tree nodes and offers a visual tool to constitute behaviortrees based on these nodes.</p>
 <p>This tool is intuitive to use and can be used by game designers.</p>
