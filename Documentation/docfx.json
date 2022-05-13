@@ -7,6 +7,12 @@
             "**.cs"
           ],
           "src": "../Assets/General/BehaviorTree"
+        },
+        {
+          "files": [
+            "**.cs"
+          ],
+          "src": "../Assets/General/NodeReflection/Attribute"
         }
       ],
       "dest": "_api",

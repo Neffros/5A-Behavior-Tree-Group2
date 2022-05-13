@@ -22,6 +22,7 @@ items:
 references:
 - uid: BehaviorTree.BehaviorTreeAgent
   commentId: T:BehaviorTree.BehaviorTreeAgent
+  parent: BehaviorTree
   name: BehaviorTreeAgent
   nameWithType: BehaviorTreeAgent
   fullName: BehaviorTree.BehaviorTreeAgent
