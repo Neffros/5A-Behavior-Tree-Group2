@@ -1,4 +1,5 @@
-﻿using BehaviorTreeSerializer.Data;
+﻿using System;
+using BehaviorTreeSerializer.Data;
 using NodeReflection;
 using UnityEngine;
 
@@ -33,6 +34,10 @@ namespace BehaviorTree
         private void Awake()
         {
             this.Root = SetupTree();
+            if (this.Root == null)
+            {
+                throw new InvalidOperationException("Tree root must not be null.");
+            }
         }
 
         /// <summary>
@@ -40,7 +45,7 @@ namespace BehaviorTree
         /// </summary>
         private void Start()
         {
-            this.Root?.Initialize(this);
+            this.Root.Initialize(this);
         }
 
         /// <summary>
@@ -48,7 +53,12 @@ namespace BehaviorTree
         /// </summary>
         private void Update()
         {
-            this.Root?.Evaluate();
+            this.Root.Update();
+
+            if (Root.State is NodeState.Success or NodeState.Failure)
+            {
+                Root.Reset();
+            }
         }
 
         #endregion
@@ -58,7 +68,7 @@ namespace BehaviorTree
         /// <summary>
         /// Sets up nodes for the behavior of the agent
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The root node. Must not be null.</returns>
         protected virtual Node SetupTree()
         {
             if (this._behaviorTree == null)
