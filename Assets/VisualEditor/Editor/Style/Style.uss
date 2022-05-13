@@ -1,4 +1,11 @@
-.node {
+GridBackground{
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(193, 196, 192, 0.1);
+    --thick-line-color: rgba(193, 196, 192, 0.1);
+    --spacing: 15;
+}
+
+/*.node {
     width: 300px;
     height: 120px;
     background-color: rgb(56, 56, 56);
@@ -20,7 +27,7 @@
     width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
+}*/
 
 .node-sequence{
     flex-direction: row;

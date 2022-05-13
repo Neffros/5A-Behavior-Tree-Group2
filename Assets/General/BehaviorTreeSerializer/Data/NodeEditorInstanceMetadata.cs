@@ -41,7 +41,7 @@ namespace BehaviorTreeSerializer.Data
         /// <summary>
         /// Gets or sets the dictionary of properties of the node
         /// </summary>
-        public SerializableDictionary<string, object> Properties { get; set; }
+        public SerializableDictionary<string, object> Properties;
 
         #endregion
 

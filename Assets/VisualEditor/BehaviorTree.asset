@@ -14,26 +14,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _idToNode:
     m_keys:
-    - 778840fe-76e2-414b-9ba6-05b73aee58da
-    - f8ceb6e1-723a-40c6-a032-e363e84cb640
-    - 54ab45db-b423-43d0-a678-c236d35cbed7
+    - 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
+    - bfa37f59-87a8-4d8d-b00c-ae5fe21b31c0
+    - c1471f16-1bbb-496f-8944-398359c5cef8
+    - 192e633b-7c8e-4103-a05c-cfe20fe3bb34
+    - bda02a74-0bdc-4ee4-8c89-c21fe8232a29
     m_values:
     - ChildrenIds:
-      - f8ceb6e1-723a-40c6-a032-e363e84cb640
-      - 54ab45db-b423-43d0-a678-c236d35cbed7
-      Id: 778840fe-76e2-414b-9ba6-05b73aee58da
+      - bfa37f59-87a8-4d8d-b00c-ae5fe21b31c0
+      Id: 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
       NodeTypeInternalName: Selector
       ParentId: 
-      PositionInEditor: {x: -130.86018, y: -103.561844}
+      PositionInEditor: {x: 345, y: 236}
+      Properties:
+        m_keys: []
     - ChildrenIds: []
-      Id: f8ceb6e1-723a-40c6-a032-e363e84cb640
+      Id: bfa37f59-87a8-4d8d-b00c-ae5fe21b31c0
       NodeTypeInternalName: Selector
-      ParentId: 778840fe-76e2-414b-9ba6-05b73aee58da
-      PositionInEditor: {x: 397.55396, y: -206.589}
+      ParentId: 
+      PositionInEditor: {x: 477, y: 236}
+      Properties:
+        m_keys: []
+    - ChildrenIds:
+      - bda02a74-0bdc-4ee4-8c89-c21fe8232a29
+      Id: c1471f16-1bbb-496f-8944-398359c5cef8
+      NodeTypeInternalName: Selector
+      ParentId: 
+      PositionInEditor: {x: 345, y: 91}
+      Properties:
+        m_keys: []
+    - ChildrenIds:
+      - c1471f16-1bbb-496f-8944-398359c5cef8
+      - 9a2a0c1c-39b2-4fc4-8061-dd425fd7a593
+      Id: 192e633b-7c8e-4103-a05c-cfe20fe3bb34
+      NodeTypeInternalName: Sequence
+      ParentId: 
+      PositionInEditor: {x: 161, y: 115}
+      Properties:
+        m_keys: []
     - ChildrenIds: []
-      Id: 54ab45db-b423-43d0-a678-c236d35cbed7
+      Id: bda02a74-0bdc-4ee4-8c89-c21fe8232a29
       NodeTypeInternalName: Selector
-      ParentId: 778840fe-76e2-414b-9ba6-05b73aee58da
-      PositionInEditor: {x: 362.47498, y: 57.309174}
+      ParentId: 
+      PositionInEditor: {x: 477, y: 91}
+      Properties:
+        m_keys: []
   _initialized: 1
   _rootId: 778840fe-76e2-414b-9ba6-05b73aee58da
