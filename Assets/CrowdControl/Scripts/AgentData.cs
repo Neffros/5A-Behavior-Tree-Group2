@@ -10,9 +10,6 @@ public class AgentData : MonoBehaviour
     private List<Vector3> waypoints;
     [SerializeField]
     private NavMeshAgent navAgent;
-    
-    [SerializeField] 
-    private float radius = 5f;
     [SerializeField]
     private float minSpeed = 3.5f;
     [SerializeField]
@@ -20,8 +17,6 @@ public class AgentData : MonoBehaviour
     
     private float _patience;
     private float _speed;
-
-    public float Radius => radius;
 
     public float MinSpeed => minSpeed;
 
