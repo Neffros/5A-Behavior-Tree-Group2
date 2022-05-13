@@ -16,7 +16,7 @@ namespace CrowdControl
 		private List<Vector3> _waypoints;
 		private NavMeshAgent _navMeshAgent;
 		
-		public override void OnInitialized()
+		protected override void OnInitialized()
 		{
 			AgentData data = this.Agent.gameObject.GetComponent<AgentData>();
 			_navMeshAgent = data.NavAgent;
@@ -37,7 +37,7 @@ namespace CrowdControl
 			return _waypoints[newPosIndex];
 		}
 
-		public override NodeState Evaluate()
+		protected override NodeState OnEvaluate()
 		{
 			if (Vector3.Distance(_targetWayPointPosition, this.Agent.gameObject.transform.position) <
 			    DistanceToWayPoint)
