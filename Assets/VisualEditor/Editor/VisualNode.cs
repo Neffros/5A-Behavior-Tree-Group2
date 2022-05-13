@@ -1,4 +1,5 @@
-﻿using NodeReflection.Data;
+﻿using System;
+using NodeReflection.Data;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,15 +9,13 @@ namespace VisualEditor.Editor {
         private readonly string _guid;
         public string Guid => _guid;
 
-        public VisualNode(NodeMetadata data, StyleSheet nodeStyleSheet, string guid) {
+        public VisualNode(NodeMetadata data, StyleSheet nodeStyleSheet, string guid, Action clickEvent) {
             _guid = guid;
             AddToClassList("node");
             styleSheets.Add(nodeStyleSheet);
             
             _nodeText = new TextElement { text = data.Name };
-            var buttonAdd = new Button(() => {
-                
-            }) {
+            var buttonAdd = new Button(clickEvent) {
                 text = "+"
             };
             

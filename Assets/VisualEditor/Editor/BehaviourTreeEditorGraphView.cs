@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using BehaviorTreeSerializer.Data;
 using NodeReflection;
+using NodeReflection.Data;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -66,36 +67,67 @@ namespace VisualEditor.Editor {
             foreach (var nodeEditorInstanceMetadata in _behaviorTreeObject.IdToNode.Values) {
                 var nodeType = nodeEditorInstanceMetadata.NodeTypeInternalName;
                 var nodeMetaData = _nodeReflectionEngine.Metadata[nodeType];
-                var node = new VisualNode(nodeMetaData, _nodeStyleSheet, nodeEditorInstanceMetadata.Id) {
-                    style = {
-                        left = nodeEditorInstanceMetadata.PositionInEditor.x,
-                        top = nodeEditorInstanceMetadata.PositionInEditor.y
-                    }
-                };
-                node.RegisterCallback<MouseDownEvent>(evt => {
-                    _mousePosOnDown = evt.originalMousePosition;
-                    _selectedNode = node;
-                });
+                var nodePos = nodeEditorInstanceMetadata.PositionInEditor;
 
-                contentViewContainer.Add(node);
-                _nodes.Add(node);
+                DrawVisualNode(nodeMetaData, nodeEditorInstanceMetadata, nodePos);
             }
+        }
+
+        /// <summary>
+        /// Add visual node on graph from node serialized data
+        /// </summary>
+        private void DrawVisualNode(NodeMetadata nodeMetaData, NodeEditorInstanceMetadata nodeEditorInstanceMetadata, Vector2 nodePos) {
+            var node = new VisualNode(nodeMetaData, _nodeStyleSheet, nodeEditorInstanceMetadata.Id,
+                () => {
+                    AddNode(nodeMetaData, nodePos, nodeEditorInstanceMetadata.Id);
+                }) {
+                style = {
+                    left = nodePos.x,
+                    top = nodePos.y
+                }
+            };
+            node.RegisterCallback<MouseDownEvent>(evt => {
+                if (evt.button != (int)MouseButton.LeftMouse)
+                    return;
+                _mousePosOnDown = evt.originalMousePosition;
+                _selectedNode = node;
+            });
+            node.RegisterCallback<MouseUpEvent>(evt => {
+                if (evt.button != (int)MouseButton.RightMouse)
+                    return;
+                var menu = new GenericMenu();
+                menu.AddItem(new GUIContent("Delete Node"), false, () => {
+                    node.Clear();
+                    _behaviorTreeObject.RemoveNode(nodeEditorInstanceMetadata.Id);
+                    EditorUtility.SetDirty(_behaviorTreeObject);
+                    RepaintGraph();
+                });
+                menu.ShowAsContext();
+            });
+
+            contentViewContainer.Add(node);
+            _nodes.Add(node);
         }
 
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
             foreach (var nodeMetadata in _nodeReflectionEngine.Metadata.Values) {
                 evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {
-                    /*var node = new VisualNode(nodeMetadata, _nodeStyleSheet);
-                    contentViewContainer.Add(node);*/
-
-                    var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName, new SerializableDictionary<string, object>(),
-                        evt.mousePosition, null);
-                    
-                    EditorUtility.SetDirty(_behaviorTreeObject);
-                    
-                    RepaintGraph();
+                    Debug.Log(scale);
+                    var mousePos = Vector2.zero;//action.eventInfo.mousePosition;
+                    AddNode(nodeMetadata, mousePos, null);
                 });
             }
+        }
+
+        private NodeEditorInstanceMetadata AddNode(NodeMetadata nodeMetadata, Vector2 position, string parentId) {
+            Debug.Log("Drawing a node at position " + position);
+            var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName,
+                new SerializableDictionary<string, object>(), position, parentId);
+
+            EditorUtility.SetDirty(_behaviorTreeObject);
+                    
+            RepaintGraph();
+            return node;
         }
 
         /// <summary>
@@ -133,6 +165,7 @@ namespace VisualEditor.Editor {
         private void MoveNode(VisualNode node, Vector2 delta) {
             node.Move(delta);
             _behaviorTreeObject.IdToNode[node.Guid].PositionInEditor += delta;
+            EditorUtility.SetDirty(_behaviorTreeObject);
         }
     }
 }
