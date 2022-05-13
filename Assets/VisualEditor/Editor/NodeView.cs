@@ -59,7 +59,6 @@ namespace VisualEditor.Editor {
 
         public override void OnSelected() {
             base.OnSelected();
-            Debug.Log("NODE IS SELECTED, event : " + OnNodeSelected);
             if (OnNodeSelected != null) {
                 OnNodeSelected.Invoke(this);
             }
