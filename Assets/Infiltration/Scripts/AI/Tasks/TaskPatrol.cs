@@ -10,8 +10,7 @@ namespace Infiltration
         [ExposedInVisualEditor]
         public float Speed { get; set; }
 
-        [ExposedInVisualEditor]
-        public Transform[] Waypoints { get; set; }
+        private Transform[] _waypoints;
 
         private int _currentWaypointIndex;
 
@@ -19,7 +18,12 @@ namespace Infiltration
         private float _waitCounter;
         private bool _waiting;
 
-        public override NodeState Evaluate()
+        protected override void OnInitialized()
+        {
+            this._waypoints = this.Agent.GetComponent<GuardSceneData>().Waypoints;
+        }
+
+        protected override NodeState OnEvaluate()
         {
             if (_waiting)
             {
@@ -31,14 +35,14 @@ namespace Infiltration
             }
             else
             {
-                var wp = Waypoints[_currentWaypointIndex];
+                var wp = _waypoints[_currentWaypointIndex];
                 if (Vector3.Distance(this.Agent.transform.position, wp.position) < 0.01f)
                 {
                     this.Agent.transform.position = wp.position;
                     _waitCounter = 0f;
                     _waiting = true;
 
-                    _currentWaypointIndex = (_currentWaypointIndex + 1) % Waypoints.Length;
+                    _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
                 }
                 else
                 {
@@ -48,8 +52,7 @@ namespace Infiltration
                 }
             }
 
-            State = NodeState.RUNNING;
-            return State;
+            return NodeState.RUNNING;
         }
     }
 }

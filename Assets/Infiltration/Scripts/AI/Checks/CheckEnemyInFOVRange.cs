@@ -14,23 +14,22 @@ namespace Infiltration
 
         private SpriteRenderer _renderer;
 
-        public override void OnInitialized()
+        protected override void OnInitialized()
         {
-            this._renderer = this.Agent.GetComponentInChildren<SpriteRenderer>();
+            this._renderer = this.Agent.GetComponent<GuardSceneData>().FieldOfView;
         }
 
-        public override NodeState Evaluate()
+        protected override NodeState OnEvaluate()
         {
             var target = GetData<Transform>("target");
 
             if (target != null)
             {
-                if (Vector3.Distance(this.Agent.transform.position, ((Transform)target).position) > 8f)
+                if (Vector3.Distance(this.Agent.transform.position, target.position) > 8f)
                 {
                     RemoveData("target");
                     _renderer.color = Color.blue;
-                    State = NodeState.FAILURE;
-                    return State;
+                    return NodeState.FAILURE;
                 }
             }
 
@@ -45,16 +44,13 @@ namespace Infiltration
                 {
                     this.Root.SetData("target", colliders[0].transform);
                     _renderer.color = Color.red;
-                    State = NodeState.SUCCESS;
-                    return State;
+                    return NodeState.SUCCESS;
                 }
 
-                State = NodeState.FAILURE;
-                return State;
+                return NodeState.FAILURE;
             }
 
-            State = NodeState.SUCCESS;
-            return State;
+            return NodeState.SUCCESS;
         }
     }
 }

@@ -32,7 +32,12 @@ namespace NodeReflection.Data
         public string Name { get; private set; }
 
         /// <summary>
-        /// Gets the dictionary of exposed properties' names and types
+        /// Gets the dictionary of exposed properties' default values
+        /// </summary>
+        public Dictionary<string, object> NameToDefaultValue { get; private set; }
+
+        /// <summary>
+        /// Gets the dictionary of exposed properties' types
         /// </summary>
         public Dictionary<string, ExposedPropertyTypeEnum> NameToType { get; private set; }
 
@@ -40,6 +45,11 @@ namespace NodeReflection.Data
         /// Gets the type of node to instantiate
         /// </summary>
         public Type NodeType { get; private set; }
+
+        /// <summary>
+        /// Gets the path of the node category
+        /// </summary>
+        public string Path { get; private set; }
 
         #endregion
 
@@ -51,14 +61,16 @@ namespace NodeReflection.Data
         /// <param name="nodeData">Contains display information</param>
         /// <param name="classType">Node type to instantiate</param>
         /// <param name="nameToType">Properties of the node</param>
-        public NodeMetadata(VisualNodeAttribute nodeData, Type classType, Dictionary<string, ExposedPropertyTypeEnum> nameToType)
+        public NodeMetadata(VisualNodeAttribute nodeData, Type classType, Dictionary<string, ExposedPropertyTypeEnum> nameToType, Dictionary<string, object> nameToDefaultValue)
         {
             this.Description = nodeData.Description;
             this.DisplayAsBlock = nodeData.DisplayAsBlock;
             this.InternalName = classType.Name;
             this.Name = string.IsNullOrWhiteSpace(nodeData.Name) ? classType.Name : nodeData.Name;
+            this.NameToDefaultValue = nameToDefaultValue;
             this.NameToType = nameToType;
             this.NodeType = classType;
+            this.Path = nodeData.Path;
         }
 
         #endregion
