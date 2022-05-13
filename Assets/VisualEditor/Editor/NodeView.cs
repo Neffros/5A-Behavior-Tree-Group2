@@ -11,6 +11,9 @@ namespace VisualEditor.Editor {
         public Port Input;
         public Port Output;
 
+        /// <summary>
+        /// Generates a custom nodeview from node meta data
+        /// </summary>
         public NodeView(NodeEditorInstanceMetadata node) {
             Node = node;
             title = node.NodeTypeInternalName;
@@ -50,6 +53,9 @@ namespace VisualEditor.Editor {
             }
         }
 
+        /// <summary>
+        /// Set a new position for a visual node
+        /// </summary>
         public override void SetPosition(Rect newPos) {
             base.SetPosition(newPos);
 
@@ -57,6 +63,9 @@ namespace VisualEditor.Editor {
             Node.PositionInEditor.y = newPos.yMin;
         }
 
+        /// <summary>
+        /// Callback sent when a node is selected
+        /// </summary>
         public override void OnSelected() {
             base.OnSelected();
             if (OnNodeSelected != null) {
