@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Fight
 {
-	public class CharacterControllerScript : MonoBehaviour
+	public class PlayerControllerScript : MonoBehaviour
 	{
 		[SerializeField]
 		private CharacterController _characterController;
@@ -23,6 +23,9 @@ namespace Fight
 
 		private Sequence _attack;
 		private Sequence _shield;
+		
+		public bool IsBlocking { get; private set; }
+		public bool IsAttacking => _attack != null;
 		
 		private void Update()
 		{
@@ -115,6 +118,8 @@ namespace Fight
 				.DOLocalRotateQuaternion(Quaternion.Euler(0, 80, 0), 0.3f)
 				.SetEase(Ease.InOutQuad));
 			_shield.onComplete += () => _shield = null;
+
+			IsBlocking = true;
 		}
 
 		private void DisableShield()
@@ -130,6 +135,8 @@ namespace Fight
 				.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, 0), 0.3f)
 				.SetEase(Ease.InOutQuad));
 			_shield.onComplete += () => _shield = null;
+
+			IsBlocking = false;
 		}
 	}
 }

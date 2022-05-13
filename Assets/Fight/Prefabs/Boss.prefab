@@ -42,7 +42,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2314453129101343684}
   - component: {fileID: 8285293883255231806}
-  - component: {fileID: 3735917608146570342}
+  - component: {fileID: 9020718802128584916}
+  - component: {fileID: 1423793120064992701}
+  - component: {fileID: 1839738989139943865}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -86,7 +88,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.82, z: 0}
---- !u!114 &3735917608146570342
+--- !u!114 &9020718802128584916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122479395106726270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf054046b5148c8a2dce49b6e215f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behaviorTree: {fileID: 0}
+--- !u!114 &1423793120064992701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,12 +114,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterController: {fileID: 8285293883255231806}
-  _moveSpeed: 2
-  _jumpHeight: 1
   _playerTransform: {fileID: 0}
-  _swordAnchor: {fileID: 8867164996269199684}
-  _hammerAnchor: {fileID: 2868697588568268785}
-  _protectAnchor: {fileID: 4809347999224748467}
+--- !u!114 &1839738989139943865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122479395106726270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a6f4b6280248039b85654219a0c025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossController: {fileID: 1423793120064992701}
+  PlayerController: {fileID: 0}
+  MoveSpeed: 3
+  JumpHeight: 1
+  SwordAnchor: {fileID: 8867164996269199684}
+  HammerAnchor: {fileID: 2868697588568268785}
+  ProtectAnchor: {fileID: 4809347999224748467}
 --- !u!1 &4287850284875056457
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +203,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 8867164996269199684}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8a27f3385a3cdd04098c1c26e4af85f3, type: 3}
@@ -225,6 +255,7 @@ PrefabInstance:
       value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a27f3385a3cdd04098c1c26e4af85f3, type: 3}
 --- !u!4 &3247260455420646607 stripped
 Transform:
@@ -236,6 +267,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 2314453129101343684}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bf83681cc54b30242936035cc8c2b5d6, type: 3}
@@ -287,6 +319,7 @@ PrefabInstance:
       value: Body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: bf83681cc54b30242936035cc8c2b5d6, type: 3}
 --- !u!4 &4320741592684720141 stripped
 Transform:
@@ -298,6 +331,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 2868697588568268785}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a04ea6a5ce0ec8e42a80bcddca534aa5, type: 3}
@@ -349,6 +383,7 @@ PrefabInstance:
       value: Hammer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a04ea6a5ce0ec8e42a80bcddca534aa5, type: 3}
 --- !u!4 &4988915940037057368 stripped
 Transform:
