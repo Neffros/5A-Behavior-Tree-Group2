@@ -96,18 +96,17 @@ namespace BehaviorTreeSerializer.Data
             if (this._initialized)
                 return this;
 
+            this._idToNode = new SerializableDictionary<string, NodeEditorInstanceMetadata>();
+            
             var selectorName = typeof(Selector).Name;
-            var root = new NodeEditorInstanceMetadata(
+            var root = this.AddNode(
                 selectorName,
                 new SerializableDictionary<string, object>(Engine.GetProperties(selectorName)),
                 Vector2.zero,
                 null
             );
-
-            this._idToNode = new SerializableDictionary<string, NodeEditorInstanceMetadata>();
-            this.IdToNode.Add(root.Id, root);
+            
             this._rootId = root.Id;
-
             this._initialized = true;
 
             return this;
@@ -127,7 +126,7 @@ namespace BehaviorTreeSerializer.Data
                 throw new Exception("Child not found");
 
             this.IdToNode[parentId].ChildrenIds.Remove(childId);
-            this.IdToNode[childId].ParentId = string.Empty;
+            this.IdToNode[childId].ParentId = null;
         }
 
         /// <summary>
@@ -143,7 +142,7 @@ namespace BehaviorTreeSerializer.Data
                 this.RemoveChild(this.IdToNode[nodeId].ParentId, nodeId);
 
             foreach (var childId in this.IdToNode[nodeId].ChildrenIds)
-                this.IdToNode[childId].ParentId = string.Empty;
+                this.IdToNode[childId].ParentId = null;
 
             this.IdToNode.Remove(nodeId);
         }
