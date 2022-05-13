@@ -8,13 +8,10 @@ namespace Infiltration
         [SerializeField] private float attackRange;
         [SerializeField] private float fovRange;
         [SerializeField] private float speed;
-        [SerializeField] private Transform[] waypoints;
-        [SerializeField] private SpriteRenderer fieldOfView;
 
         protected override Node SetupTree()
         {
             var root = new Selector();
-            var currentTransform = transform;
 
             var inverter1 = new Inverter();
             var checkGameState = new CheckGameState();
@@ -23,34 +20,27 @@ namespace Infiltration
             var checkEnemyInRange = new CheckEnemyInRange()
             {
                 AttackRange = attackRange,
-                Transform = currentTransform,
 
             };
             var taskAttackPlayer = new TaskAttackPlayer()
             {
                 AttackRange = attackRange,
-                Transform = currentTransform,
             };
 
             var sequence2 = new Sequence();
             var checkEnemyInFOVRange = new CheckEnemyInFOVRange()
             {
                 FovRange = fovRange,
-                Renderer = fieldOfView,
-                Transform = currentTransform,
             };
 
             var taskGoTowardEnemy = new TaskGoTowardEnemy()
             {
                 Speed = speed,
-                Transform = currentTransform,
             };
 
             var taskGoPatrol = new TaskPatrol()
             {
                 Speed = speed,
-                Transform = currentTransform,
-                Waypoints = waypoints,
             };
 
             // Setup inverter1

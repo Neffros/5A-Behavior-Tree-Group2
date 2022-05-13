@@ -215,6 +215,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cefbbc7153053b54b8b3fefce27444c2, type: 3}
+--- !u!1 &105871198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8375053457969573367, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+  m_PrefabInstance: {fileID: 8375053457585384668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &105871204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105871198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3b677d428f3be4982bab4472d40c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldOfView: {fileID: 1984709261}
+  Waypoints:
+  - {fileID: 405053884}
+  - {fileID: 395924347}
+  - {fileID: 1515087989}
+  - {fileID: 542009424}
 --- !u!1 &263522820
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +586,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1984709261 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8375053458986646280, guid: db11884c4ecd6394089fa6ba7c6b3216, type: 3}
+  m_PrefabInstance: {fileID: 8375053457585384668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1987605146
 GameObject:
   m_ObjectHideFlags: 0

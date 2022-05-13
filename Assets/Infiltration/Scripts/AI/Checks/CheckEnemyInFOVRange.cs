@@ -12,22 +12,23 @@ namespace Infiltration
         [ExposedInVisualEditor]
         public float FovRange { get; set; }
 
-        [ExposedInVisualEditor]
-        public SpriteRenderer Renderer { get; set; }
+        private SpriteRenderer _renderer;
 
-        [ExposedInVisualEditor]
-        public Transform Transform { get; set; }
+        public override void OnInitialized()
+        {
+            this._renderer = this.Agent.GetComponent<GuardSceneData>().FieldOfView;
+        }
 
         public override NodeState Evaluate()
         {
-            var target = GetData("target");
+            var target = GetData<Transform>("target");
 
             if (target != null)
             {
-                if (Vector3.Distance(Transform.position, ((Transform)target).position) > 8f)
+                if (Vector3.Distance(this.Agent.transform.position, target.position) > 8f)
                 {
                     RemoveData("target");
-                    Renderer.color = Color.blue;
+                    _renderer.color = Color.blue;
                     State = NodeState.FAILURE;
                     return State;
                 }
@@ -35,11 +36,15 @@ namespace Infiltration
 
             if (target == null)
             {
-                var colliders = Physics.OverlapSphere(Transform.position, FovRange, PlayerLayerMask);
+                var colliders = Physics.OverlapSphere(
+                    this.Agent.transform.position,
+                    FovRange,
+                    PlayerLayerMask
+                );
                 if (colliders.Length > 0)
                 {
-                    Parent.Parent.SetData("target", colliders[0].transform);
-                    Renderer.color = Color.red;
+                    this.Root.SetData("target", colliders[0].transform);
+                    _renderer.color = Color.red;
                     State = NodeState.SUCCESS;
                     return State;
                 }
