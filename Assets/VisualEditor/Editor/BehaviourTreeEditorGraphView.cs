@@ -71,6 +71,9 @@ namespace VisualEditor.Editor {
                 endPort.direction != startPort.direction && endPort.node != startPort.node).ToList();
         }
 
+        /// <summary>
+        /// Callback received when graphview is changed (node or connection moved, added, deleted)
+        /// </summary>
         private GraphViewChange OnGraphViewChanged(GraphViewChange graphviewchange) {
             if (graphviewchange.elementsToRemove != null) {
                 graphviewchange.elementsToRemove.ForEach(e => {
@@ -100,6 +103,9 @@ namespace VisualEditor.Editor {
             return graphviewchange;
         }
 
+        /// <summary>
+        /// Generic menu showed when right clicking
+        /// </summary>
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
             foreach (var nodeMetadata in Engine.Metadata.Values) {
                 evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {
