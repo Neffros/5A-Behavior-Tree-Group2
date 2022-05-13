@@ -1,10 +1,12 @@
-﻿using BehaviorTreeSerializer.Data;
+﻿using System;
+using BehaviorTreeSerializer.Data;
 using NodeReflection;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace VisualEditor.Editor {
     public class NodeView : Node {
+        public Action<NodeView> OnNodeSelected;
         public NodeEditorInstanceMetadata Node;
         public Port Input;
         public Port Output;
@@ -53,6 +55,14 @@ namespace VisualEditor.Editor {
 
             Node.PositionInEditor.x = newPos.xMin;
             Node.PositionInEditor.y = newPos.yMin;
+        }
+
+        public override void OnSelected() {
+            base.OnSelected();
+            Debug.Log("NODE IS SELECTED, event : " + OnNodeSelected);
+            if (OnNodeSelected != null) {
+                OnNodeSelected.Invoke(this);
+            }
         }
     }
 }
