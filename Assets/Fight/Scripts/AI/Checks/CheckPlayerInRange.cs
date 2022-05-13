@@ -1,9 +1,11 @@
 ﻿using BehaviorTree;
 using Fight.AI.Agents;
+using NodeReflection;
 using UnityEngine;
 
 namespace Fight.AI.Checks
 {
+	[VisualNode]
 	public class CheckPlayerInRange : Node
 	{
 		private Transform _boss;

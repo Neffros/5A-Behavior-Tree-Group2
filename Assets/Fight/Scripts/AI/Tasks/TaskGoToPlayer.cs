@@ -1,9 +1,11 @@
 ﻿using BehaviorTree;
 using Fight.AI.Agents;
+using NodeReflection;
 using UnityEngine;
 
 namespace Fight.AI.Tasks
 {
+	[VisualNode]
 	public class TaskGoToPlayer : Node
 	{
 		private BossControllerScript _boss;
