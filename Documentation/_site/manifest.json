@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BehaviorTree.BehaviorTreeAgent.html",
-          "hash": "eXI5nCLhCgw9R3VEj0UcKWTMmVoeLb1QZMKFfGplH2I="
+          "hash": "nuYEEmvm98YEmH3aw+5zVwBKt19BiLuMeGyUVEkmBCk="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BehaviorTree.Inverter.html",
-          "hash": "BGDQueu0USDD+cgQj0u4MLj0qvt5p/xBfEAx8tPDObM="
+          "hash": "CGiIFS7iu71Jd6UY8obZQpHueVPDHHxtLQJquH/mUko="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BehaviorTree.Node.html",
-          "hash": "cS/U6iiCGsZ2wEQ7/d65B4pX96hW2JpMX6eynTLiY1U="
+          "hash": "ku3FASKn+h2aJo7ZJ2zitYA6dEl6LW5o8zCzI/mv36w="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "qTKwGkmaacHTxF9Tn/cdkqe2WfwXrYPthBtgOBEAIac="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BehaviorTree.Selector.html",
-          "hash": "ARVrsdcC7viyJUoX/aEBfBgWatcN1KMsy7D0I4pNpu8="
+          "hash": "ucwzgNGYZbyQTrJP+a/D3Kh8qQj3CImrzTHjTaQeigo="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/BehaviorTree.Sequence.html",
-          "hash": "zPaizZHnG1yGDwsNg++zBPeIXqJ5wG4x+lM1B9HOpIk="
+          "hash": "olCpiyjlPfbl9lutOCQenmsL2aU9p1I5GapOla6Yo9Q="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -84,7 +84,43 @@
           "hash": "uRVZixG6mBLX6rCFYuZtff7MYa/kX6esVR0AkknlbRk="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/NodeReflection.ExposedInVisualEditorAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeReflection.ExposedInVisualEditorAttribute.html",
+          "hash": "aqHzLM4bXBpu3mop//A9rwWyFRS9w5W/m0jhJqk05vM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/NodeReflection.VisualNodeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeReflection.VisualNodeAttribute.html",
+          "hash": "HzPLYZqBKu3KE3Ss7fOZM29bVhMjQvu1EG8JHSAD1tI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/NodeReflection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeReflection.html",
+          "hash": "GuCNfL9o0oWZG4EHA7zNMDwWFqOCkFMdr/Su3Uu1PKo="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "e0ywRQEn8xE2X3VsQv2ru78klnU+UcfbO12KL6hd9pM="
+          "hash": "iYjdYCLWvT1Z7Va9NSb1XUtvnpGAUWqaljWaS8Xuykk="
         }
       },
       "is_incremental": false,
@@ -108,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ClgKKg+4EhHfHEK/98FJKh6LxZMEpoOhRVdV/YACcJE="
+          "hash": "lz0mwScS02YzgaxLrraNlzpWOYl+uxXaG8PisuvrWgI="
         }
       },
       "is_incremental": true,
@@ -133,7 +169,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 7,
+          "total_file_count": 10,
           "skipped_file_count": 7
         },
         "TocDocumentProcessor": {

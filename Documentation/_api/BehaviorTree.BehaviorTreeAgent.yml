@@ -5,6 +5,7 @@ items:
   id: BehaviorTreeAgent
   parent: BehaviorTree
   children:
+  - BehaviorTree.BehaviorTreeAgent.Root
   - BehaviorTree.BehaviorTreeAgent.SetupTree
   langs:
   - csharp
@@ -16,7 +17,7 @@ items:
   source:
     id: BehaviorTreeAgent
     path: ''
-    startLine: 7
+    startLine: 9
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
@@ -37,6 +38,39 @@ items:
   - Public
   - MustInherit
   - Class
+- uid: BehaviorTree.BehaviorTreeAgent.Root
+  commentId: P:BehaviorTree.BehaviorTreeAgent.Root
+  id: Root
+  parent: BehaviorTree.BehaviorTreeAgent
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: BehaviorTreeAgent.Root
+  fullName: BehaviorTree.BehaviorTreeAgent.Root
+  type: Property
+  source:
+    id: Root
+    path: ''
+    startLine: 23
+  assemblies:
+  - cs.temp.dll
+  namespace: BehaviorTree
+  summary: "\nGets the root node that will contain children node\n"
+  example: []
+  syntax:
+    content: public Node Root { get; }
+    parameters: []
+    return:
+      type: BehaviorTree.Node
+    content.vb: Public ReadOnly Property Root As Node
+  overload: BehaviorTree.BehaviorTreeAgent.Root*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: BehaviorTree.BehaviorTreeAgent.SetupTree
   commentId: M:BehaviorTree.BehaviorTreeAgent.SetupTree
   id: SetupTree
@@ -51,25 +85,25 @@ items:
   source:
     id: SetupTree
     path: ''
-    startLine: 34
+    startLine: 61
   assemblies:
   - cs.temp.dll
   namespace: BehaviorTree
-  summary: "\nSetup nodes for the behavior of the agent\n"
+  summary: "\nSets up nodes for the behavior of the agent\n"
   example: []
   syntax:
-    content: protected abstract Node SetupTree()
+    content: protected virtual Node SetupTree()
     return:
       type: BehaviorTree.Node
       description: ''
-    content.vb: Protected MustOverride Function SetupTree As Node
+    content.vb: Protected Overridable Function SetupTree As Node
   overload: BehaviorTree.BehaviorTreeAgent.SetupTree*
   modifiers.csharp:
   - protected
-  - abstract
+  - virtual
   modifiers.vb:
   - Protected
-  - MustOverride
+  - Overridable
 references:
 - uid: BehaviorTree
   commentId: N:BehaviorTree
@@ -89,14 +123,19 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: BehaviorTree.BehaviorTreeAgent.SetupTree*
-  commentId: Overload:BehaviorTree.BehaviorTreeAgent.SetupTree
-  name: SetupTree
-  nameWithType: BehaviorTreeAgent.SetupTree
-  fullName: BehaviorTree.BehaviorTreeAgent.SetupTree
+- uid: BehaviorTree.BehaviorTreeAgent.Root*
+  commentId: Overload:BehaviorTree.BehaviorTreeAgent.Root
+  name: Root
+  nameWithType: BehaviorTreeAgent.Root
+  fullName: BehaviorTree.BehaviorTreeAgent.Root
 - uid: BehaviorTree.Node
   commentId: T:BehaviorTree.Node
   parent: BehaviorTree
   name: Node
   nameWithType: Node
   fullName: BehaviorTree.Node
+- uid: BehaviorTree.BehaviorTreeAgent.SetupTree*
+  commentId: Overload:BehaviorTree.BehaviorTreeAgent.SetupTree
+  name: SetupTree
+  nameWithType: BehaviorTreeAgent.SetupTree
+  fullName: BehaviorTree.BehaviorTreeAgent.SetupTree

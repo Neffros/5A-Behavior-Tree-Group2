@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NodeReflection
+  commentId: N:NodeReflection
+  id: NodeReflection
+  children:
+  - NodeReflection.ExposedInVisualEditorAttribute
+  - NodeReflection.VisualNodeAttribute
+  langs:
+  - csharp
+  - vb
+  name: NodeReflection
+  nameWithType: NodeReflection
+  fullName: NodeReflection
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: NodeReflection.ExposedInVisualEditorAttribute
+  commentId: T:NodeReflection.ExposedInVisualEditorAttribute
+  name: ExposedInVisualEditorAttribute
+  nameWithType: ExposedInVisualEditorAttribute
+  fullName: NodeReflection.ExposedInVisualEditorAttribute
+- uid: NodeReflection.VisualNodeAttribute
+  commentId: T:NodeReflection.VisualNodeAttribute
+  name: VisualNodeAttribute
+  nameWithType: VisualNodeAttribute
+  fullName: NodeReflection.VisualNodeAttribute

@@ -1,0 +1,272 @@
+### YamlMime:ManagedReference
+items:
+- uid: NodeReflection.VisualNodeAttribute
+  commentId: T:NodeReflection.VisualNodeAttribute
+  id: VisualNodeAttribute
+  parent: NodeReflection
+  children:
+  - NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+  - NodeReflection.VisualNodeAttribute.Description
+  - NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  - NodeReflection.VisualNodeAttribute.Name
+  - NodeReflection.VisualNodeAttribute.Path
+  langs:
+  - csharp
+  - vb
+  name: VisualNodeAttribute
+  nameWithType: VisualNodeAttribute
+  fullName: NodeReflection.VisualNodeAttribute
+  type: Class
+  source:
+    id: VisualNodeAttribute
+    path: ''
+    startLine: 455
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nCustom attribute for custom node\n"
+  example: []
+  syntax:
+    content: 'public class VisualNodeAttribute : Attribute'
+    content.vb: >-
+      Public Class VisualNodeAttribute
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NodeReflection.VisualNodeAttribute.Description
+  commentId: P:NodeReflection.VisualNodeAttribute.Description
+  id: Description
+  parent: NodeReflection.VisualNodeAttribute
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: VisualNodeAttribute.Description
+  fullName: NodeReflection.VisualNodeAttribute.Description
+  type: Property
+  source:
+    id: Description
+    path: ''
+    startLine: 464
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nGets the description of the node\n"
+  example: []
+  syntax:
+    content: public string Description { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Description As String
+  overload: NodeReflection.VisualNodeAttribute.Description*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  commentId: P:NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  id: DisplayAsBlock
+  parent: NodeReflection.VisualNodeAttribute
+  langs:
+  - csharp
+  - vb
+  name: DisplayAsBlock
+  nameWithType: VisualNodeAttribute.DisplayAsBlock
+  fullName: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  type: Property
+  source:
+    id: DisplayAsBlock
+    path: ''
+    startLine: 469
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nGets if the children should be displayed as a block\n"
+  example: []
+  syntax:
+    content: public bool DisplayAsBlock { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property DisplayAsBlock As Boolean
+  overload: NodeReflection.VisualNodeAttribute.DisplayAsBlock*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NodeReflection.VisualNodeAttribute.Name
+  commentId: P:NodeReflection.VisualNodeAttribute.Name
+  id: Name
+  parent: NodeReflection.VisualNodeAttribute
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: VisualNodeAttribute.Name
+  fullName: NodeReflection.VisualNodeAttribute.Name
+  type: Property
+  source:
+    id: Name
+    path: ''
+    startLine: 474
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nGets the name of the node\n"
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: NodeReflection.VisualNodeAttribute.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NodeReflection.VisualNodeAttribute.Path
+  commentId: P:NodeReflection.VisualNodeAttribute.Path
+  id: Path
+  parent: NodeReflection.VisualNodeAttribute
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: VisualNodeAttribute.Path
+  fullName: NodeReflection.VisualNodeAttribute.Path
+  type: Property
+  source:
+    id: Path
+    path: ''
+    startLine: 479
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nGets the path of the node category\n"
+  example: []
+  syntax:
+    content: public string Path { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Path As String
+  overload: NodeReflection.VisualNodeAttribute.Path*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+  commentId: M:NodeReflection.VisualNodeAttribute.#ctor(System.String,System.String,System.Boolean,System.String)
+  id: '#ctor(System.String,System.String,System.Boolean,System.String)'
+  parent: NodeReflection.VisualNodeAttribute
+  langs:
+  - csharp
+  - vb
+  name: VisualNodeAttribute(String, String, Boolean, String)
+  nameWithType: VisualNodeAttribute.VisualNodeAttribute(String, String, Boolean, String)
+  fullName: NodeReflection.VisualNodeAttribute.VisualNodeAttribute(System.String, System.String, System.Boolean, System.String)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 492
+  assemblies:
+  - cs.temp.dll
+  namespace: NodeReflection
+  summary: "\nClass constructor\n"
+  example: []
+  syntax:
+    content: public VisualNodeAttribute(string name = "", string description = "", bool displayAsBlock = false, string path = "Custom")
+    parameters:
+    - id: name
+      type: System.String
+      description: Node name, for display purposes
+    - id: description
+      type: System.String
+      description: Node description
+    - id: displayAsBlock
+      type: System.Boolean
+      description: Indicates if the children should be displayed as a block
+    - id: path
+      type: System.String
+      description: Path of the node in the editor
+    content.vb: Public Sub New(name As String = "", description As String = "", displayAsBlock As Boolean = False, path As String = "Custom")
+  overload: NodeReflection.VisualNodeAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NodeReflection
+  commentId: N:NodeReflection
+  name: NodeReflection
+  nameWithType: NodeReflection
+  fullName: NodeReflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NodeReflection.VisualNodeAttribute.Description*
+  commentId: Overload:NodeReflection.VisualNodeAttribute.Description
+  name: Description
+  nameWithType: VisualNodeAttribute.Description
+  fullName: NodeReflection.VisualNodeAttribute.Description
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NodeReflection.VisualNodeAttribute.DisplayAsBlock*
+  commentId: Overload:NodeReflection.VisualNodeAttribute.DisplayAsBlock
+  name: DisplayAsBlock
+  nameWithType: VisualNodeAttribute.DisplayAsBlock
+  fullName: NodeReflection.VisualNodeAttribute.DisplayAsBlock
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NodeReflection.VisualNodeAttribute.Name*
+  commentId: Overload:NodeReflection.VisualNodeAttribute.Name
+  name: Name
+  nameWithType: VisualNodeAttribute.Name
+  fullName: NodeReflection.VisualNodeAttribute.Name
+- uid: NodeReflection.VisualNodeAttribute.Path*
+  commentId: Overload:NodeReflection.VisualNodeAttribute.Path
+  name: Path
+  nameWithType: VisualNodeAttribute.Path
+  fullName: NodeReflection.VisualNodeAttribute.Path
+- uid: NodeReflection.VisualNodeAttribute.#ctor*
+  commentId: Overload:NodeReflection.VisualNodeAttribute.#ctor
+  name: VisualNodeAttribute
+  nameWithType: VisualNodeAttribute.VisualNodeAttribute
+  fullName: NodeReflection.VisualNodeAttribute.VisualNodeAttribute

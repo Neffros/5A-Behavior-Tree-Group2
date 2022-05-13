@@ -101,9 +101,7 @@ namespace VisualEditor.Editor {
         
         private void CreateNode(NodeMetadata nodeMetadata, string parentId) {
             Vector2 position = Vector2.zero;
-            var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName,
-                new SerializableDictionary<string, object>(Engine.GetProperties(nodeMetadata.InternalName)), position,
-                parentId);
+            var node = _behaviorTreeObject.AddNode(nodeMetadata.InternalName, position, parentId);
             EditorUtility.SetDirty(_behaviorTreeObject);
             CreateNodeView(node);
         }
