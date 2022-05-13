@@ -7,7 +7,7 @@ namespace BehaviorTree
     /// <summary>
     /// Main class for the behavior of the agent
     /// </summary>
-    public abstract class BehaviorTreeAgent : MonoBehaviour
+    public class BehaviorTreeAgent : MonoBehaviour
     {
         #region Unity Fields
 

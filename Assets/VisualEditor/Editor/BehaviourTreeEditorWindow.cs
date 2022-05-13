@@ -17,6 +17,7 @@ namespace VisualEditor.Editor {
         /// </summary>
         public static void OpenWindow(BehaviorTreeObject targetObject) {
             _targetObject = targetObject;
+            targetObject.Initialize();
             BehaviourTreeEditorWindow wnd = GetWindow<BehaviourTreeEditorWindow>();
             wnd.titleContent = new GUIContent("BehaviourTreeEditorWindow");
             if (!_guiCreated) {

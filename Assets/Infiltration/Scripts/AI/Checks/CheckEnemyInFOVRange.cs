@@ -9,8 +9,7 @@ namespace Infiltration
     {
         private const int PlayerLayerMask = 1 << 6;
 
-        [ExposedInVisualEditor]
-        public float FovRange { get; set; }
+        [ExposedInVisualEditor] public float FovRange { get; set; } = 6;
 
         private SpriteRenderer _renderer;
 
