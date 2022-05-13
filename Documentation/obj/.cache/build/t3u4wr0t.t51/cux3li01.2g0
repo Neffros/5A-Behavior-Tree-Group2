@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
   
@@ -60,22 +60,22 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="unity-behavior-tree-api">Unity Behavior Tree API</h1>
+<h1 id="unity-behavior-tree-api" sourcefile="index.md" sourcestartlinenumber="1">Unity Behavior Tree API</h1>
 
-<h1 id="functional-documentation">Functional documentation</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This API facilitates the development of tree nodes and offers a visual tool to constitute behaviortrees based on these nodes.</p>
-<p>This tool is intuitive to use and can be used by game designers.</p>
-<h2 id="getting-started">Getting started</h2>
-<p>First, the developer must create the tree's nodes.
-The abstract class <a href="api/BehaviorTree.Node.html">node</a> allows for an easy implementation of the node.
+<h1 id="functional-documentation" sourcefile="index.md" sourcestartlinenumber="3">Functional documentation</h1>
+<h2 id="introduction" sourcefile="index.md" sourcestartlinenumber="5">Introduction</h2>
+<p sourcefile="index.md" sourcestartlinenumber="7">This API facilitates the development of tree nodes and offers a visual tool to constitute behaviortrees based on these nodes.</p>
+<p sourcefile="index.md" sourcestartlinenumber="9">This tool is intuitive to use and can be used by game designers.</p>
+<h2 id="getting-started" sourcefile="index.md" sourcestartlinenumber="11">Getting started</h2>
+<p sourcefile="index.md" sourcestartlinenumber="13">First, the developer must create the tree's nodes.
+The abstract class <a href="api/BehaviorTree.Node.html" sourcefile="index.md" sourcestartlinenumber="14">node</a> allows for an easy implementation of the node.
 Every class that inherits from Node will be detected in the visual tool.</p>
-<h3 id="implementing-a-node">Implementing a node</h3>
-<p>In this case we will implement an action of AI in an infiltration game.
+<h3 id="implementing-a-node" sourcefile="index.md" sourcestartlinenumber="17">Implementing a node</h3>
+<p sourcefile="index.md" sourcestartlinenumber="19">In this case we will implement an action of AI in an infiltration game.
 The wanted behavior is that the AI runs after the player if they are spotted.</p>
-<h4 id="create-the-node">Create the node</h4>
-<p>First, we create a class for the desired action which inherits from <a href="api/BehaviorTree.Node.html">Node</a>.</p>
-<pre><code class="lang-c#">using BehaviorTree;
+<h4 id="create-the-node" sourcefile="index.md" sourcestartlinenumber="23">Create the node</h4>
+<p sourcefile="index.md" sourcestartlinenumber="25">First, we create a class for the desired action which inherits from <a href="api/BehaviorTree.Node.html" sourcefile="index.md" sourcestartlinenumber="25">Node</a>.</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="27">using BehaviorTree;
 using NodeReflection;
 using UnityEngine;
 
@@ -88,10 +88,10 @@ namespace Infiltration
     }
 }
 </code></pre>
-<p>The [VisualNode] tag lets the visual editor know this is a node which can be used.</p>
-<h4 id="adding-properties">Adding properties</h4>
-<p>We can define properties which can be altered in the visual editor with the [ExposedInVisualEditor] tag.</p>
-<pre><code class="lang-c#">namespace Infiltration
+<p sourcefile="index.md" sourcestartlinenumber="42">The [VisualNode] tag lets the visual editor know this is a node which can be used.</p>
+<h4 id="adding-properties" sourcefile="index.md" sourcestartlinenumber="44">Adding properties</h4>
+<p sourcefile="index.md" sourcestartlinenumber="46">We can define properties which can be altered in the visual editor with the [ExposedInVisualEditor] tag.</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="47">namespace Infiltration
 {
     [VisualNode] 
     public class TaskGoTowardEnemy : Node
@@ -104,11 +104,11 @@ namespace Infiltration
     }
 }
 </code></pre>
-<h4 id="retrieving-agent-components">Retrieving agent components</h4>
-<p>We retrieve the Spriterenderer from the data stored in the AI's gameobject so that we can modify it during the behavior.</p>
-<p>The OnInitialize method is called once when the tree is initialized</p>
-<p>The OnStart method is called when the status is not executed.</p>
-<pre><code class="lang-c#">namespace Infiltration
+<h4 id="retrieving-agent-components" sourcefile="index.md" sourcestartlinenumber="64">Retrieving agent components</h4>
+<p sourcefile="index.md" sourcestartlinenumber="66">We retrieve the Spriterenderer from the data stored in the AI's gameobject so that we can modify it during the behavior.</p>
+<p sourcefile="index.md" sourcestartlinenumber="68">The OnInitialize method is called once when the tree is initialized</p>
+<p sourcefile="index.md" sourcestartlinenumber="70">The OnStart method is called when the status is not executed.</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="72">namespace Infiltration
 {
     [VisualNode] 
     public class TaskGoTowardEnemy : Node
@@ -138,9 +138,9 @@ namespace Infiltration
     }
 }
 </code></pre>
-<h4 id="adding-the-verifications-and-behavior">Adding the verifications and behavior</h4>
-<p>All that is left to do is to add the verifications and behavior to get this finalized node:</p>
-<pre><code class="lang-c#">using BehaviorTree;
+<h4 id="adding-the-verifications-and-behavior" sourcefile="index.md" sourcestartlinenumber="104">Adding the verifications and behavior</h4>
+<p sourcefile="index.md" sourcestartlinenumber="106">All that is left to do is to add the verifications and behavior to get this finalized node:</p>
+<pre><code class="lang-c#" sourcefile="index.md" sourcestartlinenumber="107">using BehaviorTree;
 using NodeReflection;
 using UnityEngine;
 
@@ -203,11 +203,11 @@ namespace Infiltration
     }
 }
 </code></pre>
-<p>The node can now easily be used and apply actual behavior in the visaul editor as shown in the image below.
-<img src="visualeditor.png" alt="alt text" title="Title"></p>
-<h2 id="visual-editor">Visual Editor</h2>
-<h2 id="api-developper-documentation"><a href="api/toc.html">API Developper documentation</a></h2>
-<p>The documentation can be found <a href="api/toc.html">here</a></p>
+<p sourcefile="index.md" sourcestartlinenumber="172">The node can now easily be used and apply actual behavior in the visaul editor as shown in the image below.
+<img src="visualeditor.png" sourcefile="index.md" sourcestartlinenumber="173" alt="alt text" title="Title"></p>
+<h2 id="visual-editor" sourcefile="index.md" sourcestartlinenumber="175">Visual Editor</h2>
+<h2 id="api-developper-documentation" sourcefile="index.md" sourcestartlinenumber="177"><a href="api/toc.html" sourcefile="index.md" sourcestartlinenumber="177">API Developper documentation</a></h2>
+<p sourcefile="index.md" sourcestartlinenumber="179">The documentation can be found <a href="api/toc.html" sourcefile="index.md" sourcestartlinenumber="179">here</a></p>
 </article>
           </div>
           

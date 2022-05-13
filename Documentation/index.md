@@ -58,7 +58,8 @@ namespace Infiltration
     }
 }
 ```
-TODO faire une capture d'écran des propriétés
+
+
 
 #### Retrieving agent components
 
@@ -168,7 +169,8 @@ namespace Infiltration
 }
 ```
 
-The node can now easily be used and apply actual behavior in the visaul editor.
+The node can now easily be used and apply actual behavior in the visaul editor as shown in the image below.
+![alt text](visualeditor.png "Title")
 
 ## Visual Editor
 
