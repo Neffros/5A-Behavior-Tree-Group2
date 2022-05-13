@@ -973,9 +973,6 @@ references:
   name: RepeatMode
   nameWithType: RepeatMode
   fullName: BehaviorTree.RepeatMode
-- uid: System.InvalidOperationException
-  commentId: T:System.InvalidOperationException
-  isExternal: true
 - uid: BehaviorTree.Node.OnUpdate
   commentId: M:BehaviorTree.Node.OnUpdate
   parent: BehaviorTree.Node
@@ -1009,6 +1006,9 @@ references:
   name: OnUpdate
   nameWithType: Repeater.OnUpdate
   fullName: BehaviorTree.Repeater.OnUpdate
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
 - uid: BehaviorTree.NodeState
   commentId: T:BehaviorTree.NodeState
   parent: BehaviorTree

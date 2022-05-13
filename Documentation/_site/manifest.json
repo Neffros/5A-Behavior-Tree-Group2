@@ -24,7 +24,7 @@
           "hash": "oz/ECfbocLUWMlYGY/SLDRw2VY34a7D866VfBgvl49s="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "brdMugzP7oKvqfVCFdupHCdy3tOYKMyJ0Q5Mayorujs="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -72,7 +72,7 @@
           "hash": "KW5mSeJSaSAzl1j5E09yBWuB+Dy8vr0VqAFojpMcdnI="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -84,7 +84,7 @@
           "hash": "OkK5iQ83PQPjxgloEWcdjgxA76Wp/trf7AgiyB6nqDE="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "Kaqrbzlg8j5eBj4G41kBQHZEY5SI+bnuvQNKe83JV7o="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -108,7 +108,7 @@
           "hash": "HzJGtantC7icsb2JflV505VWoMJw/ebrTq2BnPgu/7Y="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -148,12 +148,120 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory.html",
+          "hash": "UUDHmXj5dA9MyWs4a1xEwEvTlULEYhU8MAeXmkO1daM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.BehaviourTreeEditorGraphView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.BehaviourTreeEditorGraphView.html",
+          "hash": "DgSLsKE22g+7hle3OTMTCOY43tEgv8l0w4ZCZWfY2uU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory.html",
+          "hash": "vMhkykb+nNKReyu5xR/J12bjk1LUGuxuLA6tg5saflA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.BehaviourTreeEditorInspectorView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.BehaviourTreeEditorInspectorView.html",
+          "hash": "673WOm9n3wvSxyKA7AjKjmRTI0Zkc8wRLXwbgriODgA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.BehaviourTreeEditorWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.BehaviourTreeEditorWindow.html",
+          "hash": "XgayRLBpfsmulug65f2cDulvhnZAptR8+NpUjylRAbs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.NodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.NodeView.html",
+          "hash": "7IprSktCveo/Ga0rBDOnykt4sCQfa+HRqbSXtCmcT2g="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.SplitView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.SplitView.UxmlFactory.html",
+          "hash": "poKYtooqbm1jB59ZiVLfyi6e7XjpA2C2CYJIpesozWA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.SplitView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.SplitView.html",
+          "hash": "LXxKtv5Ae86ECBnM1HzSAI/FZU6q8X0Gt8ky9tJnVdM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "_api/VisualEditor.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VisualEditor.Editor.html",
+          "hash": "xgTlYxCzlBoZckrfQD5bouOaBeaBt3jI8oXUIEe9QPw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "_api/toc.yml",
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Ncd/5cOvW/KLqlbnH0UzVn6BJHW8hexbPX25qrOW6hY="
+          "hash": "dEwapd7jTErtNTIYGDTJDGrGxXod3iZ+y24NDxm1TCA="
         }
       },
       "is_incremental": false,
@@ -168,10 +276,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "b1KgKDduLiv1vsnE26D5HKE0AjfJEhWCzGNgPVYbmKc="
+          "hash": "6tUIKW+cZY2n3s/a12/VSBNk+1EuzXj+4uMImW4sciw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     }
   ],
@@ -188,13 +296,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 1
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 12,
-          "skipped_file_count": 11
+          "total_file_count": 21,
+          "skipped_file_count": 21
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

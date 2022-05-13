@@ -13,6 +13,12 @@
             "**.cs"
           ],
           "src": "../Assets/General/NodeReflection/Attribute"
+        },
+        {
+          "files": [
+            "**.cs"
+          ],
+          "src": "../Assets/VisualEditor"
         }
       ],
       "dest": "_api",

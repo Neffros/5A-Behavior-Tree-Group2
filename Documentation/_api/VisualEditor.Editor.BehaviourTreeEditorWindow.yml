@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: VisualEditor.Editor.BehaviourTreeEditorWindow
+  commentId: T:VisualEditor.Editor.BehaviourTreeEditorWindow
+  id: BehaviourTreeEditorWindow
+  parent: VisualEditor.Editor
+  children:
+  - VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI
+  - VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow(BehaviorTreeObject)
+  langs:
+  - csharp
+  - vb
+  name: BehaviourTreeEditorWindow
+  nameWithType: BehaviourTreeEditorWindow
+  fullName: VisualEditor.Editor.BehaviourTreeEditorWindow
+  type: Class
+  source:
+    id: BehaviourTreeEditorWindow
+    path: ''
+    startLine: 897
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  syntax:
+    content: 'public class BehaviourTreeEditorWindow : EditorWindow'
+    content.vb: >-
+      Public Class BehaviourTreeEditorWindow
+          Inherits EditorWindow
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow(BehaviorTreeObject)
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow(BehaviorTreeObject)
+  id: OpenWindow(BehaviorTreeObject)
+  parent: VisualEditor.Editor.BehaviourTreeEditorWindow
+  langs:
+  - csharp
+  - vb
+  name: OpenWindow(BehaviorTreeObject)
+  nameWithType: BehaviourTreeEditorWindow.OpenWindow(BehaviorTreeObject)
+  fullName: VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow(BehaviorTreeObject)
+  type: Method
+  source:
+    id: OpenWindow
+    path: ''
+    startLine: 907
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  summary: "\nOpens visual editor and loads targetObject\n"
+  example: []
+  syntax:
+    content: public static void OpenWindow(BehaviorTreeObject targetObject)
+    parameters:
+    - id: targetObject
+      type: BehaviorTreeObject
+    content.vb: Public Shared Sub OpenWindow(targetObject As BehaviorTreeObject)
+  overload: VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI
+  commentId: M:VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI
+  id: CreateGUI
+  parent: VisualEditor.Editor.BehaviourTreeEditorWindow
+  langs:
+  - csharp
+  - vb
+  name: CreateGUI()
+  nameWithType: BehaviourTreeEditorWindow.CreateGUI()
+  fullName: VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI()
+  type: Method
+  source:
+    id: CreateGUI
+    path: ''
+    startLine: 921
+  assemblies:
+  - cs.temp.dll
+  namespace: VisualEditor.Editor
+  summary: "\nFunction called when window is loaded, builds window with data\n"
+  example: []
+  syntax:
+    content: public void CreateGUI()
+    content.vb: Public Sub CreateGUI
+  overload: VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: VisualEditor.Editor
+  commentId: N:VisualEditor.Editor
+  name: VisualEditor.Editor
+  nameWithType: VisualEditor.Editor
+  fullName: VisualEditor.Editor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow
+  name: OpenWindow
+  nameWithType: BehaviourTreeEditorWindow.OpenWindow
+  fullName: VisualEditor.Editor.BehaviourTreeEditorWindow.OpenWindow
+- uid: BehaviorTreeObject
+  isExternal: true
+  name: BehaviorTreeObject
+  nameWithType: BehaviorTreeObject
+  fullName: BehaviorTreeObject
+- uid: VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI*
+  commentId: Overload:VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI
+  name: CreateGUI
+  nameWithType: BehaviourTreeEditorWindow.CreateGUI
+  fullName: VisualEditor.Editor.BehaviourTreeEditorWindow.CreateGUI

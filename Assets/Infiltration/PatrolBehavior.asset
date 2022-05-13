@@ -27,9 +27,9 @@ MonoBehaviour:
     m_values:
     - ChildrenIds:
       - 0461dfbd-01ad-4b45-906b-35da61328383
+      - 4c552506-bafd-4638-9192-51c39c9045da
       - 44edb97d-15e2-47b0-8fbd-2001598cbfb7
       - 708f8d21-95db-4987-a50e-57e9b1ecaf2c
-      - 4c552506-bafd-4638-9192-51c39c9045da
       Id: 93a2502b-a3d5-4611-8685-b7fdf34e2141
       NodeTypeInternalName: Selector
       ParentId: 
@@ -68,7 +68,7 @@ MonoBehaviour:
       Id: 9f9e04fd-9848-4c28-9dfb-44bf045c25f6
       NodeTypeInternalName: TaskGoTowardEnemy
       ParentId: 
-      PositionInEditor: {x: 490.99997, y: 535}
+      PositionInEditor: {x: 525.5849, y: 654.2251}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -77,8 +77,8 @@ MonoBehaviour:
         - Speed
         - UnseeRange
         m_values:
-        - 0
-        - 0
+        - 5
+        - 7
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -106,7 +106,7 @@ MonoBehaviour:
       Id: c8834161-033f-47ca-a157-15582f71da0f
       NodeTypeInternalName: CheckEnemyInRange
       ParentId: 
-      PositionInEditor: {x: 515.2, y: 213.6}
+      PositionInEditor: {x: 510.4325, y: 346.5325}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -114,7 +114,7 @@ MonoBehaviour:
         m_keys:
         - AttackRange
         m_values:
-        - 0
+        - 1
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -125,7 +125,7 @@ MonoBehaviour:
       Id: c2bd454a-704d-44fb-8aaa-e6993e9cbb21
       NodeTypeInternalName: TaskAttackPlayer
       ParentId: 
-      PositionInEditor: {x: 532.4, y: 315.59998}
+      PositionInEditor: {x: 528.0325, y: 448.9326}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -133,7 +133,7 @@ MonoBehaviour:
         m_keys:
         - AttackRange
         m_values:
-        - 0
+        - 1
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -144,7 +144,7 @@ MonoBehaviour:
       Id: 93866b17-34d2-4efa-8d03-e9e487c04f1c
       NodeTypeInternalName: CheckEnemyInFOVRange
       ParentId: 
-      PositionInEditor: {x: 517.80005, y: 414}
+      PositionInEditor: {x: 512.83234, y: 547.33246}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -152,7 +152,7 @@ MonoBehaviour:
         m_keys:
         - SeeRange
         m_values:
-        - 0
+        - 6
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -165,7 +165,7 @@ MonoBehaviour:
       Id: 44edb97d-15e2-47b0-8fbd-2001598cbfb7
       NodeTypeInternalName: Sequence
       ParentId: 
-      PositionInEditor: {x: 330.40002, y: 242.20001}
+      PositionInEditor: {x: 325.63242, y: 375.3325}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -184,7 +184,7 @@ MonoBehaviour:
       Id: 708f8d21-95db-4987-a50e-57e9b1ecaf2c
       NodeTypeInternalName: Sequence
       ParentId: 
-      PositionInEditor: {x: 333.92, y: 371}
+      PositionInEditor: {x: 328.83246, y: 504.13257}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -201,7 +201,7 @@ MonoBehaviour:
       Id: 4c552506-bafd-4638-9192-51c39c9045da
       NodeTypeInternalName: TaskPatrol
       ParentId: 
-      PositionInEditor: {x: 326.51996, y: 492}
+      PositionInEditor: {x: 379.40002, y: 242}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -209,7 +209,7 @@ MonoBehaviour:
         m_keys:
         - Speed
         m_values:
-        - 0
+        - 5
       PropertiesInt:
         m_keys: []
         m_values: 

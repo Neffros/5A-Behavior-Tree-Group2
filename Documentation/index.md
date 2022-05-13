@@ -11,12 +11,14 @@ This tool is intuitive to use and can be used by game designers.
 ## Getting started
 
 First, the developer must create the tree's nodes. 
-The abstract class [node](api/BehaviorTree.Node.html) allows for an easy implementation of the node. 
-Every class that inherits from Node will be detected in the visual tool.
+The abstract class [Node](api/BehaviorTree.Node.html) allows for an easy implementation of the node. 
+Every class that inherits from Node and has the decorator [VisualNode] will be detected in the visual tool.
 
 ### Implementing a node
 
-In this case we will implement an action of AI in an infiltration game. 
+To represent how the API can be used, we will implement an action of AI in an infiltration game. 
+
+
 The wanted behavior is that the AI runs after the player if they are spotted.
 
 
@@ -172,6 +174,34 @@ namespace Infiltration
 The node can now easily be used and apply actual behavior in the visual editor as shown in the image below.
 ![alt text](visualeditor.png "Title")
 ## Visual Editor
+
+The visual editor lets users make a behavior tree fully visually.
+
+Any of the nodes implemented by the developers will be available in the visual editor.
+
+
+### Creating a behavior tree
+
+The visual editor stores data in a scriptable object. Right click in the assets and select: [Behavior Tree -> Create Object] to create an instance of a behavior tree.
+
+![alt text](scriptableobject.png "Title")
+### Controls
+
+#### Create a node
+
+Right click to open a window displaying all available nodes as shown in the image below.
+
+![alt text](rightclick.png "Title")
+#### Move a node
+
+Upon clicking on a node, it appears on the visual tool. You can then click and drag to move the node around.
+
+#### Link a node
+
+Upon clicking on the dots, hold a click and release on another node's endpoint to put them as a child.
+You may also link them by connecting from a child to a parent.
+
+![alt text](linknode.png "Title")
 
 ## [API Developper documentation](api/toc.html)
 

@@ -25,3 +25,22 @@
     name: ExposedInVisualEditorAttribute
   - uid: NodeReflection.VisualNodeAttribute
     name: VisualNodeAttribute
+- uid: VisualEditor.Editor
+  name: VisualEditor.Editor
+  items:
+  - uid: VisualEditor.Editor.BehaviourTreeEditorGraphView
+    name: BehaviourTreeEditorGraphView
+  - uid: VisualEditor.Editor.BehaviourTreeEditorGraphView.UxmlFactory
+    name: BehaviourTreeEditorGraphView.UxmlFactory
+  - uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView
+    name: BehaviourTreeEditorInspectorView
+  - uid: VisualEditor.Editor.BehaviourTreeEditorInspectorView.UxmlFactory
+    name: BehaviourTreeEditorInspectorView.UxmlFactory
+  - uid: VisualEditor.Editor.BehaviourTreeEditorWindow
+    name: BehaviourTreeEditorWindow
+  - uid: VisualEditor.Editor.NodeView
+    name: NodeView
+  - uid: VisualEditor.Editor.SplitView
+    name: SplitView
+  - uid: VisualEditor.Editor.SplitView.UxmlFactory
+    name: SplitView.UxmlFactory

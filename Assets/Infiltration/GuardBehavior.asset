@@ -77,8 +77,8 @@ MonoBehaviour:
         - Speed
         - UnseeRange
         m_values:
-        - 0
-        - 0
+        - 5
+        - 7
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -133,7 +133,7 @@ MonoBehaviour:
         m_keys:
         - AttackRange
         m_values:
-        - 0
+        - 1
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -152,7 +152,7 @@ MonoBehaviour:
         m_keys:
         - SeeRange
         m_values:
-        - 0
+        - 6
       PropertiesInt:
         m_keys: []
         m_values: 
@@ -209,7 +209,7 @@ MonoBehaviour:
         m_keys:
         - Speed
         m_values:
-        - 0
+        - 5
       PropertiesInt:
         m_keys: []
         m_values: 
