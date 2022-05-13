@@ -10,24 +10,21 @@ namespace Infiltration
         [ExposedInVisualEditor]
         public float AttackRange { get; set; }
 
-        public override NodeState Evaluate()
+        protected override NodeState OnEvaluate()
         {
             var target = this.GetData<Transform>("target");
 
             if (target == null)
             {
-                State = NodeState.FAILURE;
-                return State;
+                return NodeState.FAILURE;
             }
 
             if (Vector3.Distance(this.Agent.transform.position, target.position) <= AttackRange)
             {
-                State = NodeState.SUCCESS;
-                return State;
+                return NodeState.SUCCESS;
             }
 
-            State = NodeState.FAILURE;
-            return State;
+            return NodeState.FAILURE;
         }
     }
 }

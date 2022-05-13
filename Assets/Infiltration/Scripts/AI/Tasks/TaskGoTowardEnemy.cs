@@ -10,7 +10,7 @@ namespace Infiltration
         [ExposedInVisualEditor]
         public float Speed { get; set; }
 
-        public override NodeState Evaluate()
+        protected override NodeState OnEvaluate()
         {
             var target = this.GetData<Transform>("target");
 
@@ -24,8 +24,7 @@ namespace Infiltration
                 this.Agent.transform.LookAt(target);
             }
 
-            State = NodeState.RUNNING;
-            return State;
+            return NodeState.RUNNING;
         }
     }
 }

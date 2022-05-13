@@ -44,7 +44,7 @@ namespace BehaviorTree
         /// <summary>
         /// Current state of the node
         /// </summary>
-        public NodeState State { get; set; }
+        public NodeState State { get; private set; }
 
         #endregion
 
@@ -125,6 +125,14 @@ namespace BehaviorTree
         }
 
         /// <summary>
+        /// Triggers the evaluation of the node
+        /// </summary>
+        public void Evaluate()
+        {
+            State = OnEvaluate();
+        }
+
+        /// <summary>
         /// Adds data to the dictionary
         /// </summary>
         /// <param name="key">Key to be added</param>
@@ -136,18 +144,18 @@ namespace BehaviorTree
 
         #endregion
 
-        #region Public Overrideable Methods
+        #region Protected Overrideable Methods
 
         /// <summary>
         /// Evaluate children node
         /// </summary>
         /// <returns>Return FAILURE by default</returns>
-        public virtual NodeState Evaluate() => NodeState.FAILURE;
+        protected virtual NodeState OnEvaluate() => NodeState.FAILURE;
 
         /// <summary>
         /// Fired on tree initialization
         /// </summary>
-        public virtual void OnInitialized() { }
+        protected virtual void OnInitialized() { }
 
         #endregion
 
