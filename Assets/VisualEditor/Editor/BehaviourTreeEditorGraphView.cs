@@ -29,10 +29,16 @@ namespace VisualEditor.Editor {
             styleSheets.Add(styleSheet);
         }
 
+        /// <summary>
+        /// Gets NodeView ui object from a node metadata
+        /// </summary>
         NodeView FindNodeView(NodeEditorInstanceMetadata node) {
             return GetNodeByGuid(node.Id) as NodeView;
         }
 
+        /// <summary>
+        /// Populates graph view when the visual editor is loaded
+        /// </summary>
         public void PopulateView(BehaviorTreeObject behaviorTreeObject) {
             Engine.Update();
             
@@ -65,6 +71,9 @@ namespace VisualEditor.Editor {
                 endPort.direction != startPort.direction && endPort.node != startPort.node).ToList();
         }
 
+        /// <summary>
+        /// Callback received when graphview is changed (node or connection moved, added, deleted)
+        /// </summary>
         private GraphViewChange OnGraphViewChanged(GraphViewChange graphviewchange) {
             if (graphviewchange.elementsToRemove != null) {
                 graphviewchange.elementsToRemove.ForEach(e => {
@@ -94,6 +103,9 @@ namespace VisualEditor.Editor {
             return graphviewchange;
         }
 
+        /// <summary>
+        /// Generic menu showed when right clicking
+        /// </summary>
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
             foreach (var nodeMetadata in Engine.Metadata.Values) {
                 evt.menu.AppendAction("Create Node/" + nodeMetadata.Name, action => {

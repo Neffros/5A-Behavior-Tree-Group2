@@ -1,5 +1,6 @@
 ﻿using BehaviorTreeSerializer.Data;
 using NodeReflection;
+using UnityEditor;
 using UnityEngine.UIElements;
 
 namespace VisualEditor.Editor {
@@ -12,6 +13,11 @@ namespace VisualEditor.Editor {
 
         }
 
+        /// <summary>
+        /// Updates inspector to display selected node information
+        /// </summary>
+        /// <param name="tree">Behaviour tree scriptable object used by visual editor</param>
+        /// <param name="node">Node metadata reference</param>
         public void UpdateSelection(BehaviorTreeObject tree, NodeEditorInstanceMetadata node)
         {
             this.Clear();
@@ -43,7 +49,10 @@ namespace VisualEditor.Editor {
         {
             var floatField = new FloatField(property) { value = value };
 
-            floatField.RegisterValueChangedCallback(eventArg => this._tree.SetNodeFloatProperty(nodeId, property, eventArg.newValue));
+            floatField.RegisterValueChangedCallback(eventArg => {
+                this._tree.SetNodeFloatProperty(nodeId, property, eventArg.newValue);
+                EditorUtility.SetDirty(_tree);
+            });
             return floatField;
         }
 
@@ -58,7 +67,10 @@ namespace VisualEditor.Editor {
         {
             var integerField = new IntegerField(property) { value = value };
 
-            integerField.RegisterValueChangedCallback(eventArg => this._tree.SetNodeIntProperty(nodeId, property, eventArg.newValue));
+            integerField.RegisterValueChangedCallback(eventArg => {
+                this._tree.SetNodeIntProperty(nodeId, property, eventArg.newValue);
+                EditorUtility.SetDirty(_tree);
+            });
             return integerField;
         }
 
@@ -73,7 +85,10 @@ namespace VisualEditor.Editor {
         {
             var textField = new TextField(property) { value = value };
 
-            textField.RegisterValueChangedCallback(eventArg => this._tree.SetNodeStringProperty(nodeId, property, eventArg.newValue));
+            textField.RegisterValueChangedCallback(eventArg => {
+                this._tree.SetNodeStringProperty(nodeId, property, eventArg.newValue);
+                EditorUtility.SetDirty(_tree);
+            });
             return textField;
         }
 
@@ -88,7 +103,10 @@ namespace VisualEditor.Editor {
         {
             var toggle = new Toggle(property) { value = value };
 
-            toggle.RegisterValueChangedCallback(eventArg => this._tree.SetNodeBoolProperty(nodeId, property, eventArg.newValue));
+            toggle.RegisterValueChangedCallback(eventArg => {
+                this._tree.SetNodeBoolProperty(nodeId, property, eventArg.newValue);
+                EditorUtility.SetDirty(_tree);
+            });
             return toggle;
         }
 

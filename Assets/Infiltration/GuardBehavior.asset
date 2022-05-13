@@ -33,7 +33,7 @@ MonoBehaviour:
       Id: 93a2502b-a3d5-4611-8685-b7fdf34e2141
       NodeTypeInternalName: Selector
       ParentId: 
-      PositionInEditor: {x: 163.28, y: 111.16}
+      PositionInEditor: {x: 162, y: 108}
       PropertiesBool:
         m_keys: []
         m_values: 
@@ -114,7 +114,7 @@ MonoBehaviour:
         m_keys:
         - AttackRange
         m_values:
-        - 0
+        - 1
       PropertiesInt:
         m_keys: []
         m_values: 

@@ -27,6 +27,9 @@ namespace VisualEditor.Editor {
             }
         }
 
+        /// <summary>
+        /// Function called when window is loaded, builds window with data
+        /// </summary>
         public void CreateGUI() {
             rootVisualElement.Clear();
             if (_targetObject == null) {
@@ -52,6 +55,9 @@ namespace VisualEditor.Editor {
             _inspectorView.UpdateSelection(_targetObject, _targetObject.IdToNode[_targetObject.RootId]);
         }
 
+        /// <summary>
+        /// Callback received when selecting a node
+        /// </summary>
         private void OnNodeSelectionChanged(NodeView obj) {
             _inspectorView.UpdateSelection(_targetObject, obj.Node);
         }
