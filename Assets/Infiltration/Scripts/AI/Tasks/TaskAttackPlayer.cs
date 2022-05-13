@@ -1,25 +1,20 @@
 ﻿using BehaviorTree;
+using NodeReflection;
 using UnityEngine;
 
 namespace Infiltration
 {
+    [VisualNode]
     public class TaskAttackPlayer : Node
     {
-        private readonly Transform _transform;
-        private readonly float _attackRange;
-
-        public TaskAttackPlayer(Transform transform, float attackRange)
-        {
-            _transform = transform;
-            _attackRange = attackRange;
-        }
+        [ExposedInVisualEditor]
+        public float AttackRange { get; set; }
 
         public override NodeState Evaluate()
         {
-            var target = (Transform)GetData("target");
+            var target = this.GetData<Transform>("target");
 
-
-            if (Vector3.Distance(_transform.position, target.position) <= _attackRange)
+            if (Vector3.Distance(this.Agent.transform.position, target.position) <= AttackRange)
             {
                 var player = target.GetComponent<PlayerMovement>();
                 player.GetHit();

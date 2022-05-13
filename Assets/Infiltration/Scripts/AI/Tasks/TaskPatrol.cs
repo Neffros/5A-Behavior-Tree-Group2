@@ -1,11 +1,16 @@
 using BehaviorTree;
+using NodeReflection;
 using UnityEngine;
 
 namespace Infiltration
 {
-    public class TaskPatrol : Node{
-        private readonly Transform _transform;
-        private readonly Transform[] _waypoints;
+    [VisualNode]
+    public class TaskPatrol : Node
+    {
+        [ExposedInVisualEditor]
+        public float Speed { get; set; }
+
+        private Transform[] _waypoints;
 
         private int _currentWaypointIndex;
 
@@ -13,12 +18,9 @@ namespace Infiltration
         private float _waitCounter;
         private bool _waiting;
 
-        private readonly float _speed;
-        public TaskPatrol(Transform transform, Transform[] waypoints, float speed)
+        public override void OnInitialized()
         {
-            _transform = transform;
-            _waypoints = waypoints;
-            _speed = speed;
+            this._waypoints = this.Agent.GetComponent<GuardSceneData>().Waypoints;
         }
 
         public override NodeState Evaluate()
@@ -34,9 +36,9 @@ namespace Infiltration
             else
             {
                 var wp = _waypoints[_currentWaypointIndex];
-                if (Vector3.Distance(_transform.position, wp.position) < 0.01f)
+                if (Vector3.Distance(this.Agent.transform.position, wp.position) < 0.01f)
                 {
-                    _transform.position = wp.position;
+                    this.Agent.transform.position = wp.position;
                     _waitCounter = 0f;
                     _waiting = true;
 
@@ -45,11 +47,10 @@ namespace Infiltration
                 else
                 {
                     var position = wp.position;
-                    _transform.position = Vector3.MoveTowards(_transform.position, position, _speed * Time.deltaTime);
-                    _transform.LookAt(position);
+                    this.Agent.transform.position = Vector3.MoveTowards(this.Agent.transform.position, position, Speed * Time.deltaTime);
+                    this.Agent.transform.LookAt(position);
                 }
             }
-
 
             State = NodeState.RUNNING;
             return State;

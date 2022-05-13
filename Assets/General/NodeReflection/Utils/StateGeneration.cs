@@ -12,6 +12,15 @@ namespace NodeReflection.Utils
     /// </summary>
     public static class StateGeneration
     {
+        #region Private Static Fields
+
+        private static Type boolType = typeof(bool);
+        private static Type floatType = typeof(float);
+        private static Type intType = typeof(int);
+        private static Type stringType = typeof(string);
+
+        #endregion
+
         #region Public Static Methods
 
         /// <summary>
@@ -53,27 +62,31 @@ namespace NodeReflection.Utils
             var properties = Reflection.GetExposedProperties(classType);
             var nodeAttribute = Reflection.GetNodeAttribute(classType);
             var nameToType = new Dictionary<string, ExposedPropertyTypeEnum>();
+            var nameToDefaultValue = new Dictionary<string, object>();
 
             foreach (var propertyType in properties)
             {
                 var exposedAttribute = Reflection.GetExposedAttribute(propertyType);
                 ExposedPropertyTypeEnum typeValue;
 
-                if (propertyType.PropertyType.Equals(typeof(int)))
-                    typeValue = ExposedPropertyTypeEnum.INT;
-                else if (propertyType.PropertyType.Equals(typeof(string)))
-                    typeValue = ExposedPropertyTypeEnum.STRING;
-                else if (propertyType.PropertyType.Equals(typeof(float)))
-                    typeValue = ExposedPropertyTypeEnum.FLOAT;
-                else if (propertyType.PropertyType.Equals(typeof(bool)))
+                if (propertyType.PropertyType.Equals(boolType))
                     typeValue = ExposedPropertyTypeEnum.BOOL;
+                else if (propertyType.PropertyType.Equals(floatType))
+                    typeValue = ExposedPropertyTypeEnum.FLOAT;
+                else if (propertyType.PropertyType.Equals(intType))
+                    typeValue = ExposedPropertyTypeEnum.INT;
+                else if (propertyType.PropertyType.Equals(stringType))
+                    typeValue = ExposedPropertyTypeEnum.STRING;
                 else
                     continue;
 
-                nameToType.Add(string.IsNullOrWhiteSpace(exposedAttribute.Name) ? propertyType.Name : exposedAttribute.Name, typeValue);
+                var name = string.IsNullOrWhiteSpace(exposedAttribute.Name) ? propertyType.Name : exposedAttribute.Name;
+
+                nameToType.Add(name, typeValue);
+                nameToDefaultValue.Add(name, exposedAttribute.DefaultValue);
             }
 
-            return new NodeMetadata(nodeAttribute, classType, nameToType);
+            return new NodeMetadata(nodeAttribute, classType, nameToType, nameToDefaultValue);
         }
 
         #endregion

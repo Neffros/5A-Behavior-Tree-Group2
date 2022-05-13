@@ -1,20 +1,18 @@
 using BehaviorTree;
+using NodeReflection;
 using UnityEngine;
 
 namespace Infiltration
 {
+    [VisualNode]
     public class CheckEnemyInRange : Node
     {
-        private readonly Transform _transform;
-        private readonly float _attackRange;
-        public CheckEnemyInRange(Transform transform, float attackRange)
-        {
-            _transform = transform;
-            _attackRange = attackRange;
-        }
+        [ExposedInVisualEditor]
+        public float AttackRange { get; set; }
+
         public override NodeState Evaluate()
         {
-            var target = GetData("target");
+            var target = this.GetData<Transform>("target");
 
             if (target == null)
             {
@@ -22,9 +20,7 @@ namespace Infiltration
                 return State;
             }
 
-            var targetPos = (Transform)target;
-
-            if (Vector3.Distance(_transform.position, targetPos.position) <= _attackRange)
+            if (Vector3.Distance(this.Agent.transform.position, target.position) <= AttackRange)
             {
                 State = NodeState.SUCCESS;
                 return State;
